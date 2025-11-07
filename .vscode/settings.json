@@ -66,5 +66,6 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj",
     },
-    "dotnet.defaultSolution": "PX411.sln"
+    "dotnet.defaultSolution": "PX411.sln",
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
 }
