@@ -26,6 +26,11 @@ public class SettingsMenu : MonoBehaviour
             
         }
     };
+    [Header("MenuMangerReferences")]
+    [SerializeField] private GameObject titleMenuReference;
+    [SerializeField] private GameObject pauseMenuReference;
+
+    [Header("AudioReferences")]
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider masterVolumeSliderIn, soundVolumeSliderIn, musicVolumeSliderIn;
     private AudioVolumeSlider masterVolumeSlider, soundVolumeSlider, musicVolumeSlider;
@@ -38,5 +43,12 @@ public class SettingsMenu : MonoBehaviour
         musicVolumeSlider = new(musicVolumeSliderIn, AudioUtil.Constants.musicVolumeParameter);
     }
 
-
+    public void ReturnButtonOnClick()
+    {
+        gameObject.SetActive(false);
+        if (GlobalDataStore.Instance.menuManager.TitleMenuOpen)
+            titleMenuReference.SetActive(true);
+        else 
+            pauseMenuReference.SetActive(true);
+    }
 }

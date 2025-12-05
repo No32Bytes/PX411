@@ -1,0 +1,15 @@
+using System.IO;
+using UnityEngine;
+public class SaveUtil
+{
+    public static void SaveObjectToFile(string savePath, object obj)
+    {
+        string json = JsonUtility.ToJson(obj);
+        File.WriteAllText(savePath, json,System.Text.Encoding.ASCII);
+    }
+    public static T LoadObjectFromFile<T>(string savePath)
+    {
+        string json = File.ReadAllText(savePath,System.Text.Encoding.ASCII);
+        return JsonUtility.FromJson<T>(json);
+    }
+};

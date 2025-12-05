@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    [System.Serializable]
+    [Serializable]
     internal class MusicSoundTrack
     {
         public string soundTrackName;
@@ -19,9 +19,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private string defaultGroupName;
     [SerializeField] private MusicSoundTrack[] musicSoundTrackStore;
     public string CurrentDefaultGroupName { set; get; }
-    private static readonly List<MusicSoundTrack> musicManagerQueue = new();
+    private static readonly Queue<MusicSoundTrack> musicManagerQueue = new();
     public static AudioManager Instance { get; private set; }
     private static AudioSource musicAudioSource;
+    private static bool isPlaying = true;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -39,6 +40,8 @@ public class AudioManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(!isPlaying) return;
+
         if (musicAudioSource.isPlaying)
             return;
 
@@ -54,7 +57,9 @@ public class AudioManager : MonoBehaviour
     {
         if (!playDefaultGroupAtEmpty)
             return false;
-        musicManagerQueue.AddRange(Array.FindAll(musicSoundTrackStore, m => m.soundTrackGroup == CurrentDefaultGroupName));
+        foreach(MusicSoundTrack musicSoundTrack in Array.FindAll(musicSoundTrackStore, m => m.soundTrackGroup == CurrentDefaultGroupName))
+            musicManagerQueue.Enqueue(musicSoundTrack);
+            
         return musicManagerQueue.Count != 0;
     }
     public void PlaySoundTrackName(string soundTrackName)
@@ -77,14 +82,14 @@ public class AudioManager : MonoBehaviour
         }
         defaultGroupName = soundTrackGroup;
         musicManagerQueue.Clear();
-        musicManagerQueue.AddRange(soundTracks);
+        foreach(MusicSoundTrack soundtrack in soundTracks)
+            musicManagerQueue.Enqueue(soundtrack);
         PlaySoundTrackFromQueue();
     }
     private void PlaySoundTrackFromQueue()
     {
         if (musicManagerQueue.Count == 0) return;
-        MusicSoundTrack soundTrack = musicManagerQueue[0];
-        musicManagerQueue.RemoveAt(0);
+        MusicSoundTrack soundTrack = musicManagerQueue.Dequeue();
         PlaySoundTrack(soundTrack);
     }
     private void PlaySoundTrack(MusicSoundTrack soundTrack)
@@ -95,10 +100,12 @@ public class AudioManager : MonoBehaviour
     }
     public void Pause()
     {
+        isPlaying = false;
         musicAudioSource.Pause();
     }
     public void UnPause()
     {
+        isPlaying = true;
         musicAudioSource.UnPause();
     }
     public void Stop()
