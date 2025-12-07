@@ -1,5 +1,5 @@
+using System;
 using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
 
 public class SaveData
@@ -10,11 +10,11 @@ public class SaveManager
 {
     private readonly string persistentDataPath;
     private string currentSaveID;
-    private SaveData currentSave;
+    public SaveData currentSave;
     public SaveManager(string persistentDataPath)
     {
         this.persistentDataPath = persistentDataPath;
-        Load("default");
+        Load(GlobalDataStore.Instance.settingsManager.settingsData.lastSaveID);
     }
     private string GetSaveDataPath(string saveID)
     {
@@ -32,18 +32,32 @@ public class SaveManager
     {
         SaveUtil.SaveObjectToFile(GetSaveDataPath(currentSaveID), currentSave);
     }
-    public bool Load(string saveID)
+    public void Load(string saveID)
     {
-        if (currentSaveID == saveID) return true;
-        Save();
+        if (currentSaveID == saveID) return;
+        if (!string.IsNullOrEmpty(currentSaveID))
+            Save();
+
         currentSaveID = saveID;
         if (!File.Exists(GetSaveDataPath(saveID)))
         {
             currentSave = new();
-            return true;
+            Save();
         }
-        currentSave = SaveUtil.LoadObjectFromFile<SaveData>(GetSaveDataPath(saveID));
-        currentSave ??= new();
-        return true;
+        else
+        {
+            currentSave = SaveUtil.LoadObjectFromFile<SaveData>(GetSaveDataPath(saveID));
+            if (currentSave == null)
+            {
+                currentSave = new();
+                Save();
+            }
+        }
+        GlobalDataStore.Instance.settingsManager.settingsData.lastSaveID = saveID;
+    }
+    public bool PeekSaveData(string saveID, out SaveData saveData)
+    {
+        saveData = SaveUtil.LoadObjectFromFile<SaveData>(GetSaveDataPath(saveID));
+        return saveData != null;
     }
 };

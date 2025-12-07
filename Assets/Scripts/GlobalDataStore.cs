@@ -2,7 +2,8 @@ using UnityEngine;
 public class GlobalDataStore : MonoBehaviour
 {
     public SaveManager saveManager;
-    public MenuManager menuManager = new();
+    public SettingsManager settingsManager;
+    public MenuManager menuManager;
     public static GlobalDataStore Instance { get; private set; }
     private void Awake()
     {
@@ -12,9 +13,22 @@ public class GlobalDataStore : MonoBehaviour
             return;
         }
         Instance = this;
-        saveManager = new(Application.persistentDataPath);
         DontDestroyOnLoad(gameObject);
+        
+        Initalize();
     }
+    private void OnApplicationQuit()
+    {
+        settingsManager.Save();
+        saveManager.Save();
+    }
+    private void Initalize()
+    {
+        settingsManager = new(Application.persistentDataPath);
+        saveManager = new(Application.persistentDataPath);
+        menuManager = new();
+    }
+
     public class MenuManager 
     {
         public bool TitleMenuOpen = true;
