@@ -1,4 +1,5 @@
 using UnityEngine;
+[DefaultExecutionOrder(-1)]
 public class GlobalDataStore : MonoBehaviour
 {
     public SaveManager saveManager;

@@ -12,4 +12,8 @@ public class SaveUtil
         string json = File.ReadAllText(savePath,System.Text.Encoding.ASCII);
         return JsonUtility.FromJson<T>(json);
     }
+    public static void DeleteFile(string path)
+    {
+        File.Delete(path);
+    }
 };

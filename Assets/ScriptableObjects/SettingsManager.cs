@@ -23,6 +23,10 @@ public class SettingsManager
     {
         SaveUtil.SaveObjectToFile(GetSettingsDataPath(),settingsData);
     }
+    public void Reset()
+    {
+        settingsData = new();
+    }
     public void Load()
     {
         if (!File.Exists(GetSettingsDataPath()))
