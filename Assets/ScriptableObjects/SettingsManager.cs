@@ -4,6 +4,10 @@ using System.IO;
 public class SettingsData
 {
     public string lastSaveID = "default";
+    public float mouseSensitivity = 100f;
+    public float audioMasterVolume = AudioUtil.Constants.defaultVolume;
+    public float audioSoundVolume = AudioUtil.Constants.defaultVolume;
+    public float audioMusicVolume = AudioUtil.Constants.defaultVolume;
 };
 
 public class SettingsManager
@@ -21,7 +25,7 @@ public class SettingsManager
     }
     public void Save()
     {
-        SaveUtil.SaveObjectToFile(GetSettingsDataPath(),settingsData);
+        SaveUtil.SaveObjectToFile(GetSettingsDataPath(), settingsData);
     }
     public void Reset()
     {

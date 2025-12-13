@@ -6,6 +6,7 @@ public class SaveUtil
     {
         string json = JsonUtility.ToJson(obj);
         File.WriteAllText(savePath, json,System.Text.Encoding.ASCII);
+        Debug.Log("Writing to path " + savePath + " Data: " + json);
     }
     public static T LoadObjectFromFile<T>(string savePath)
     {

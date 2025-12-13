@@ -8,22 +8,30 @@ public class SettingsMenu : MonoBehaviour
     {
         public static AudioMixer AudioMixer_ { get; set; }
         private readonly Slider volumeSlider_;
-        public readonly string volumeParameter_;
+        private readonly string volumeParameter_;
         public AudioVolumeSlider(Slider volumeSlider, string volumeParameter)
         {
             volumeSlider_ = volumeSlider;
             volumeParameter_ = volumeParameter;
-            if (AudioMixer_.GetFloat(volumeParameter_, out float currentVolume))
-                volumeSlider_.value = AudioUtil.ConvertVolumeToRawVolume(currentVolume);
+            volumeSlider_.value = GetSettingsVolume();
+            AudioMixer_.SetFloat(volumeParameter_, AudioUtil.ConvertRawVolumeToVolume(GetSettingsVolume()));
 
             volumeSlider.onValueChanged.AddListener(OnSliderChanged);
+        }
+        private float GetSettingsVolume()
+        {
+            return AudioUtil.GetSettingsVolumeRef(volumeParameter_);
+        }
+        private void SetSettingsVolume(float volume)
+        {
+            AudioUtil.GetSettingsVolumeRef(volumeParameter_) = volume;
         }
         private void OnSliderChanged(float volume)
         {
             if (volume == 0)
                 volume = -180;
             AudioMixer_.SetFloat(volumeParameter_, AudioUtil.ConvertRawVolumeToVolume(volume));
-            
+            SetSettingsVolume(volume);
         }
     };
     [Header("MenuMangerReferences")]
@@ -43,8 +51,9 @@ public class SettingsMenu : MonoBehaviour
         musicVolumeSlider = new(musicVolumeSliderIn, AudioUtil.Constants.musicVolumeParameter);
     }
 
-    public void ReturnButtonOnClick()
+    public void BackButtonOnClick()
     {
+        GlobalDataStore.Instance.settingsManager.Save();
         gameObject.SetActive(false);
         if (GlobalDataStore.Instance.menuManager.TitleMenuOpen)
             titleMenuReference.SetActive(true);

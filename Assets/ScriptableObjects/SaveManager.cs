@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -14,7 +13,7 @@ public class SaveManager
     public SaveManager(string persistentDataPath)
     {
         this.persistentDataPath = persistentDataPath;
-        Load(GlobalDataStore.Instance.settingsManager.settingsData.lastSaveID);
+        Load(GlobalDataStore.GetSettingsData().lastSaveID);
     }
     private string GetSaveDataPath(string saveID)
     {
@@ -53,7 +52,7 @@ public class SaveManager
                 Save();
             }
         }
-        GlobalDataStore.Instance.settingsManager.settingsData.lastSaveID = saveID;
+        GlobalDataStore.GetSettingsData().lastSaveID = saveID;
     }
     public void Delete(string saveID)
     {

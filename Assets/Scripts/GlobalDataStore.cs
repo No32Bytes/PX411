@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 [DefaultExecutionOrder(-1)]
 public class GlobalDataStore : MonoBehaviour
@@ -28,6 +29,15 @@ public class GlobalDataStore : MonoBehaviour
         settingsManager = new(Application.persistentDataPath);
         saveManager = new(Application.persistentDataPath);
         menuManager = new();
+    }
+
+    public static SettingsData GetSettingsData()
+    {
+        return Instance.settingsManager.settingsData;
+    }
+    public static SaveData GetSaveData()
+    {
+        return Instance.saveManager.currentSave;
     }
 
     public class MenuManager 

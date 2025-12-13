@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public class AudioUtil
 {
@@ -9,8 +10,17 @@ public class AudioUtil
     {
         return Mathf.Pow(10, volume / 20);
     }
+    public static ref float GetSettingsVolumeRef(string volumeParameter)
+    {
+        if(volumeParameter == Constants.masterVolumeParameter)
+            return ref GlobalDataStore.GetSettingsData().audioMasterVolume;
+        if(volumeParameter == Constants.musicVolumeParameter)
+            return ref GlobalDataStore.GetSettingsData().audioMusicVolume;
+        return ref GlobalDataStore.GetSettingsData().audioSoundVolume;
+    }
     public struct Constants
     {
+        public const float defaultVolume = 0.5f;
         public const string masterVolumeParameter = "MasterVolume";
         public const string soundVolumeParameter = "SoundVolume";
         public const string musicVolumeParameter = "MusicVolume";
@@ -18,7 +28,6 @@ public class AudioUtil
         public const string masterMixerGroup = "Master";
         public const string musicMixerGroup = "Music";
         public const string soundMixerGroup = "Sound";
-
     }
 
 }
