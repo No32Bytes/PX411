@@ -1,52 +1,11 @@
 using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-
+using SaveMenuHelper;
 public class SaveMenu : MonoBehaviour
 {
-    [Serializable]
-    internal class SaveSlot
-    {
-        private readonly string EmptySaveName = "Empty";
-        [SerializeField] private TMP_Text saveName;
-        [SerializeField] private Image borderImage;
-        private Button button;
-        private void SetActiveSaveState(bool active)
-        {
-            if (active)
-                borderImage.color = Color.forestGreen;
-            else
-                borderImage.color = Color.red;
-        }
-        public void SetSaveName(string saveName)
-        {
-            this.saveName.text = saveName;
-            SetActiveSaveState(saveName == GlobalDataStore.Instance.saveManager.CurrentSaveID);
-        }
-        public void DisplaySaveStats()
-        {
-            // TODO when there are stats
-        }
-        public void Clear()
-        {
-            SetSaveName(EmptySaveName);
-        }
-        private void OnClick(SaveMenu saveMenu)
-        {
-            GlobalDataStore.Instance.saveManager.Load(saveName.text);
-            saveMenu.TitleMenuReference.SetActive(true);
-            saveMenu.gameObject.SetActive(false);
-        }
-        public void Initalize(SaveMenu saveMenu)
-        {
-            button = borderImage.GetComponent<Button>();
-            button.onClick.AddListener(() => OnClick(saveMenu));
-        }
-    };
     [SerializeField] private GameObject TitleMenuReference;
-    [Header("Saves")]
+    [Header("SaveSlots")]
     [SerializeField] private SaveSlot[] saveSlots;
     private int maxPage = 0;
     private List<string> cachedSaveIDs;
@@ -67,6 +26,12 @@ public class SaveMenu : MonoBehaviour
         currentPage = 0;
         maxPage = (int)Math.Ceiling((double)((cachedSaveIDs.Count -1) / saveSlots.Length));
         SaveSlotsUpdate();
+    }
+    public void ReturnToTitleMenu(string saveID)
+    {
+        GlobalDataStore.Instance.saveManager.Load(saveID);
+        TitleMenuReference.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     public void OnClickBackButton()

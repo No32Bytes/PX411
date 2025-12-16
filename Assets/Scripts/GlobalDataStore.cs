@@ -1,11 +1,10 @@
-using Unity.VisualScripting;
 using UnityEngine;
 [DefaultExecutionOrder(-1)]
 public class GlobalDataStore : MonoBehaviour
 {
     public SaveManager saveManager;
     public SettingsManager settingsManager;
-    public MenuManager menuManager;
+    public StateManager stateManager;
     public static GlobalDataStore Instance { get; private set; }
     private void Awake()
     {
@@ -28,7 +27,7 @@ public class GlobalDataStore : MonoBehaviour
     {
         settingsManager = new(Application.persistentDataPath);
         saveManager = new(Application.persistentDataPath);
-        menuManager = new();
+        stateManager = new();
     }
 
     public static SettingsData GetSettingsData()
@@ -39,9 +38,8 @@ public class GlobalDataStore : MonoBehaviour
     {
         return Instance.saveManager.currentSave;
     }
-
-    public class MenuManager 
+    public static StateManager GetStateManager()
     {
-        public bool TitleMenuOpen = true;
-    };
+        return Instance.stateManager;
+    }
 }

@@ -7,6 +7,7 @@ public class SaveData
 };
 public class SaveManager
 {
+    private static readonly string defaultSaveID = "default";
     private readonly string persistentDataPath;
     public string CurrentSaveID {get; private set;}
     public SaveData currentSave;
@@ -56,8 +57,14 @@ public class SaveManager
     }
     public void Delete(string saveID)
     {
+        if(CurrentSaveID == defaultSaveID)
+        {
+            currentSave = new();
+            return;
+        }
+
         if(CurrentSaveID == saveID)
-            Load("default");
+            Load(defaultSaveID);
         
         SaveUtil.DeleteFile(GetSaveDataPath(saveID));
     }
