@@ -1,20 +1,46 @@
+using System;
 using System.IO;
 using UnityEngine;
 public class SaveUtil
 {
-    public static void SaveObjectToFile(string savePath, object obj)
+    public static bool SaveObjectToFile(string savePath, object obj)
     {
         string json = JsonUtility.ToJson(obj);
-        File.WriteAllText(savePath, json,System.Text.Encoding.ASCII);
-        Debug.Log("Writing to path " + savePath + " Data: " + json);
+        try
+        {
+            File.WriteAllText(savePath, json, System.Text.Encoding.ASCII);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Unable to Write to path {savePath} because of error {e.Message}");
+            return false;
+        }
+        Debug.Log($"Successfully written to {savePath}");
+        return true;
     }
-    public static T LoadObjectFromFile<T>(string savePath)
+    public static bool LoadObjectFromFile<T>(string savePath, out T data)
     {
-        string json = File.ReadAllText(savePath,System.Text.Encoding.ASCII);
-        return JsonUtility.FromJson<T>(json);
+        data = default;
+        if (!File.Exists(savePath)) return false;
+
+        string json;
+        try
+        {
+            json = File.ReadAllText(savePath, System.Text.Encoding.ASCII);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Unable to Load File with Error: {e.Message}");
+            return false;
+        }
+
+        data = JsonUtility.FromJson<T>(json);
+        Debug.Log($"Successfully loaded data from {savePath}");
+        return true;
     }
     public static void DeleteFile(string path)
     {
+        if (!File.Exists(path)) return;
         File.Delete(path);
     }
 };

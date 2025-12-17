@@ -33,13 +33,7 @@ public class SettingsManager
     }
     public void Load()
     {
-        if (!File.Exists(GetSettingsDataPath()))
-        {
-            settingsData = new();
-            Save();
-            return;
-        }
-        settingsData = SaveUtil.LoadObjectFromFile<SettingsData>(GetSettingsDataPath());
+        SaveUtil.LoadObjectFromFile(GetSettingsDataPath(),out settingsData);
         settingsData ??= new();
     }
 }

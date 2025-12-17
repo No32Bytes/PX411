@@ -9,7 +9,7 @@ public class SaveManager
 {
     private static readonly string defaultSaveID = "default";
     private readonly string persistentDataPath;
-    public string CurrentSaveID {get; private set;}
+    public string CurrentSaveID { get; private set; }
     public SaveData currentSave;
     public SaveManager(string persistentDataPath)
     {
@@ -39,38 +39,28 @@ public class SaveManager
             Save();
 
         CurrentSaveID = saveID;
-        if (!File.Exists(GetSaveDataPath(saveID)))
-        {
-            currentSave = new();
-            Save();
-        }
+        if (SaveUtil.LoadObjectFromFile(GetSaveDataPath(saveID), out currentSave))
+            currentSave ??= new();
         else
-        {
-            currentSave = SaveUtil.LoadObjectFromFile<SaveData>(GetSaveDataPath(saveID));
-            if (currentSave == null)
-            {
-                currentSave = new();
-                Save();
-            }
-        }
+            currentSave = new();
+
         GlobalDataStore.GetSettingsData().lastSaveID = saveID;
     }
     public void Delete(string saveID)
     {
-        if(CurrentSaveID == defaultSaveID)
+        if (CurrentSaveID == defaultSaveID)
         {
             currentSave = new();
             return;
         }
 
-        if(CurrentSaveID == saveID)
+        if (CurrentSaveID == saveID)
             Load(defaultSaveID);
-        
+
         SaveUtil.DeleteFile(GetSaveDataPath(saveID));
     }
     public bool PeekSaveData(string saveID, out SaveData saveData)
     {
-        saveData = SaveUtil.LoadObjectFromFile<SaveData>(GetSaveDataPath(saveID));
-        return saveData != null;
+        return SaveUtil.LoadObjectFromFile(GetSaveDataPath(saveID), out saveData);
     }
 };
