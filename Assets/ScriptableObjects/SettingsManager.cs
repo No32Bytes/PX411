@@ -4,7 +4,7 @@ using System.IO;
 public class SettingsData
 {
     public string lastSaveID = "default";
-    public float mouseSensitivity = 100f;
+    public float mouseSensitivity = 10f;
     public float audioMasterVolume = AudioUtil.Constants.defaultVolume;
     public float audioSoundVolume = AudioUtil.Constants.defaultVolume;
     public float audioMusicVolume = AudioUtil.Constants.defaultVolume;

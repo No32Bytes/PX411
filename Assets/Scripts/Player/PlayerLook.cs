@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerLook : MonoBehaviour
 {
-    // TODO Flashlight 
     [SerializeField] private Transform playerBody;
     [SerializeField] private Camera playerCamera;
     private float xRotation = 0f;
