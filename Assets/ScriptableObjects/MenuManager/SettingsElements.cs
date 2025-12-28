@@ -1,7 +1,7 @@
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-namespace SettingsMenuHelper
+namespace SettingsElements
 {
     public sealed class  AudioVolumeSlider
     {

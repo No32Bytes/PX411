@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using SaveMenuHelper;
+using SaveMenuElements;
 public class SaveMenu : MonoBehaviour
 {
     [SerializeField] private GameObject TitleMenuReference;
@@ -46,7 +46,7 @@ public class SaveMenu : MonoBehaviour
         currentPage++;
         SaveSlotsUpdate();
     }
-    public void SaveSlotsUpdate()
+    private void SaveSlotsUpdate()
     {
         for (int i = 0; i < saveSlots.Length; i++)
         {
@@ -59,5 +59,14 @@ public class SaveMenu : MonoBehaviour
             saveSlot.SetSaveName(cachedSaveIDs[i + currentPage * saveSlots.Length]);
             saveSlot.DisplaySaveStats();
         }
+    }
+
+    public void ForceReload()
+    {
+        OnEnable();
+    }
+    public void SetSaveMenuInteractableState(bool active)
+    {
+        UIHelper.SetSelectableObjectState(transform.gameObject,active);
     }
 }
