@@ -11,9 +11,14 @@ namespace SaveMenuElements
     internal class SaveSlot
     {
         private readonly string EmptySaveName = "Empty";
+        private static SaveMenu saveMenuReference;
         [SerializeField] private TMP_Text saveName;
         [SerializeField] private Image borderImage;
-        private Button button;
+        [SerializeField] private Button deleteButton;
+        public static void SetGlobalSaveMenuReference(SaveMenu saveMenu)
+        {
+            saveMenuReference = saveMenu;
+        }
         private void SetActiveSaveState(bool active)
         {
             if (active)
@@ -34,14 +39,21 @@ namespace SaveMenuElements
         {
             SetSaveName(EmptySaveName);
         }
-        private void OnClick(SaveMenu saveMenu)
+        private void OnSaveLoadClick()
         {
-            saveMenu.ReturnToTitleMenu(saveName.text);
+            GlobalDataStore.Instance.saveManager.Load(saveName.text);
+            saveMenuReference.ReturnToTitleMenu();
         }
-        public void Initalize(SaveMenu saveMenu)
+        private void OnDeleteButtonOnClick()
         {
-            button = borderImage.GetComponent<Button>();
-            button.onClick.AddListener(() => OnClick(saveMenu));
+            GlobalDataStore.Instance.saveManager.Delete(saveName.text);
+            saveMenuReference.ForceReload();
+        }
+        public void Initalize()
+        {
+            borderImage.GetComponent<Button>().onClick.AddListener(()=> OnSaveLoadClick());
+            
+            deleteButton.onClick.AddListener(() => OnDeleteButtonOnClick());
         }
     };
 }

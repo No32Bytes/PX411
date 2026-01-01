@@ -48,7 +48,7 @@ public class SaveManager
     }
     public void Delete(string saveID)
     {
-        if (CurrentSaveID == defaultSaveID)
+        if (CurrentSaveID == defaultSaveID && CurrentSaveID == saveID)
         {
             currentSave = new();
             return;

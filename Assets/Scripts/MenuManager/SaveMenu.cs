@@ -12,10 +12,10 @@ public class SaveMenu : MonoBehaviour
     private int currentPage = 0;
     void Start()
     {
+        SaveSlot.SetGlobalSaveMenuReference(this);
         foreach (SaveSlot saveSlot in saveSlots)
-        {
-            saveSlot.Initalize(this);
-        }
+            saveSlot.Initalize();
+        
     }
     void OnEnable()
     {
@@ -27,9 +27,8 @@ public class SaveMenu : MonoBehaviour
         maxPage = (int)Math.Ceiling((double)((cachedSaveIDs.Count -1) / saveSlots.Length));
         SaveSlotsUpdate();
     }
-    public void ReturnToTitleMenu(string saveID)
+    public void ReturnToTitleMenu()
     {
-        GlobalDataStore.Instance.saveManager.Load(saveID);
         TitleMenuReference.SetActive(true);
         gameObject.SetActive(false);
     }

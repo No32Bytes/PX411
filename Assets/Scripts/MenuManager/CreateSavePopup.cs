@@ -10,6 +10,7 @@ public class CreateSavePopup : MonoBehaviour
     void OnEnable()
     {
         inputTextTMP.text = "";
+        inputTextTMP.ActivateInputField();
         inputErrorLabel.SetActive(false);
     }
     public void CreateButtonOnClick()

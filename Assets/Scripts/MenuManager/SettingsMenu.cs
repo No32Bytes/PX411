@@ -13,6 +13,14 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider masterVolumeSliderIn, soundVolumeSliderIn, musicVolumeSliderIn;
 
+    [Header("OtherSettings")]
+    [SerializeField] private Slider mouseSensitivitySlider;
+    private void OnEnable()
+    {
+        mouseSensitivitySlider.value = GlobalDataStore.GetSettingsData().mouseSensitivity;
+        mouseSensitivitySlider.onValueChanged.AddListener((value) => GlobalDataStore.GetSettingsData().mouseSensitivity = value);
+    }
+
     private void Start()
     {
         AudioVolumeSlider.SetGlobalAudioMixer(audioMixer);
