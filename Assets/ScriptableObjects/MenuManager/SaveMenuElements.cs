@@ -14,6 +14,7 @@ namespace SaveMenuElements
         private static SaveMenu saveMenuReference;
         [SerializeField] private TMP_Text saveName;
         [SerializeField] private Image borderImage;
+        [SerializeField] private Button loadButton;
         [SerializeField] private Button deleteButton;
         public static void SetGlobalSaveMenuReference(SaveMenu saveMenu)
         {
@@ -51,7 +52,7 @@ namespace SaveMenuElements
         }
         public void Initalize()
         {
-            borderImage.GetComponent<Button>().onClick.AddListener(()=> OnSaveLoadClick());
+            loadButton.onClick.AddListener(()=> OnSaveLoadClick());
             
             deleteButton.onClick.AddListener(() => OnDeleteButtonOnClick());
         }

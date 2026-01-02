@@ -269,6 +269,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 603342851}
     m_Modifications:
+    - target: {fileID: 2055471202601193412, guid: f997a39e0a401924d8a8d8aa46354550, type: 3}
+      propertyPath: m_Name
+      value: SaveNameLabelTMP
+      objectReference: {fileID: 0}
     - target: {fileID: 4998559180016188648, guid: f997a39e0a401924d8a8d8aa46354550, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1261,6 +1265,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3825519123228027721, guid: 1007fbae58590af498075aa7617d3b09, type: 3}
   m_PrefabInstance: {fileID: 469242393}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &469242395 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2240069716906336917, guid: 1007fbae58590af498075aa7617d3b09, type: 3}
+  m_PrefabInstance: {fileID: 469242393}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &550847552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3642,8 +3657,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SaveMenu
   TitleMenuReference: {fileID: 2073499498}
   saveSlots:
-  - saveName: {fileID: 0}
+  - saveName: {fileID: 1628396959}
     borderImage: {fileID: 439476516}
+    loadButton: {fileID: 439476518}
+    deleteButton: {fileID: 469242395}
 --- !u!1001 &1546299850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4057,6 +4074,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1685622316733528784, guid: d9034de355a103c42885777c0c9cb057, type: 3}
   m_PrefabInstance: {fileID: 1600958805}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1628396959 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5661335220257431889, guid: f997a39e0a401924d8a8d8aa46354550, type: 3}
+  m_PrefabInstance: {fileID: 90719641}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1664837420
 GameObject:
   m_ObjectHideFlags: 0

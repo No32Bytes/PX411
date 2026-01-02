@@ -32,10 +32,10 @@ public class SaveManager
     {
         SaveUtil.SaveObjectToFile(GetSaveDataPath(CurrentSaveID), currentSave);
     }
-    public void Load(string saveID)
+    public void Load(string saveID,bool saveBeforeLoad = true)
     {
         if (CurrentSaveID == saveID) return;
-        if (!string.IsNullOrEmpty(CurrentSaveID))
+        if (!string.IsNullOrEmpty(CurrentSaveID) && saveBeforeLoad == true)
             Save();
 
         CurrentSaveID = saveID;
@@ -54,10 +54,13 @@ public class SaveManager
             return;
         }
 
-        if (CurrentSaveID == saveID)
-            Load(defaultSaveID);
-
         SaveUtil.DeleteFile(GetSaveDataPath(saveID));
+        if (CurrentSaveID != saveID) return;
+
+        string loadSaveID = defaultSaveID;
+        if(GetExistingSaveIDs().Count > 0)
+            loadSaveID = GetExistingSaveIDs()[0];
+        Load(loadSaveID,false);
     }
     public bool PeekSaveData(string saveID, out SaveData saveData)
     {
