@@ -1,11 +1,17 @@
 using System;
+using Entity;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 14f;
+    [SerializeField] private float movementSpeed = 10f;
+    [SerializeField] private float runMultiplicator = 1.5f;
+    [SerializeField] private StaminaBar staminaBar = new();
+
+
     [SerializeField] private LayerMask groundLayerMask;
     [SerializeField] private float groundCheckLength = 0.3f;
     [SerializeField] private float gravity = -9.81f;
@@ -13,24 +19,40 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController characterController;
     private InputAction movementAction;
     private InputAction jumpAction;
+    private InputAction runAction;
     private Vector3 gravityVector;
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         movementAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
+        runAction = InputSystem.actions.FindAction("Sprint");
         Enable();
     }
     void Update()
     {
+        staminaBar.Update();
+
         bool isGroundedCheck = IsGrounded();
+
+
 
         Vector2 movementInput = movementAction.ReadValue<Vector2>();
         Vector3 movementVector = transform.right * movementInput.x;
         movementVector += transform.forward * movementInput.y;
-        characterController.Move(movementSpeed * Time.deltaTime * movementVector.normalized);
+
+        if (runAction.IsPressed() && staminaBar.GetCurrentStamina() > 0)
+        {
+            characterController.Move(movementSpeed * runMultiplicator * Time.deltaTime * movementVector.normalized);
+            ReducePlayerStamina(1);
+        }
+        else 
+        {
+            characterController.Move(movementSpeed * Time.deltaTime * movementVector.normalized);
+        }
         
-        if(!isGroundedCheck)
+
+        if (!isGroundedCheck)
             gravityVector.y += gravity * Time.deltaTime;
         if(isGroundedCheck && gravityVector.y < 0)
             gravityVector.y = 0;
@@ -56,4 +78,8 @@ public class PlayerMovement : MonoBehaviour
         jumpAction.Disable();
         Cursor.lockState = CursorLockMode.None;
     }
+
+    public void ReducePlayerStamina(float staminaMinusAmount) { staminaBar.ReduceStamina(staminaMinusAmount); }
+    public void IncreasePlayerStamina(float staminaPlusAmount) { staminaBar.IncreaseStamina(staminaPlusAmount); }
+
 };
