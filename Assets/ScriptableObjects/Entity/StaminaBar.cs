@@ -65,11 +65,5 @@ namespace Entity
                 CurrentStamina = maxStamina;
         }
 
-        public float GetCurrentStamina()
-        {
-            return CurrentStamina;
-        }
-
-        
     };
 };

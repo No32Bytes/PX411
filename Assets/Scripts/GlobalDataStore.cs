@@ -2,6 +2,7 @@ using UnityEngine;
 [DefaultExecutionOrder(-1)]
 public class GlobalDataStore : MonoBehaviour
 {
+    public ItemDataBase itemDataBase;
     public SaveManager saveManager;
     public SettingsManager settingsManager;
     public StateManager stateManager;
@@ -29,7 +30,10 @@ public class GlobalDataStore : MonoBehaviour
         saveManager = new(Application.persistentDataPath);
         stateManager = new();
     }
-
+    public static ItemDataBase GetItemDataBase()
+    {
+        return Instance.itemDataBase;
+    }
     public static SettingsData GetSettingsData()
     {
         return Instance.settingsManager.settingsData;

@@ -35,13 +35,11 @@ public class PlayerMovement : MonoBehaviour
 
         bool isGroundedCheck = IsGrounded();
 
-
-
         Vector2 movementInput = movementAction.ReadValue<Vector2>();
         Vector3 movementVector = transform.right * movementInput.x;
         movementVector += transform.forward * movementInput.y;
 
-        if (runAction.IsPressed() && staminaBar.GetCurrentStamina() > 0)
+        if (runAction.IsPressed() && staminaBar.CurrentStamina > 0)
         {
             characterController.Move(movementSpeed * runMultiplicator * Time.deltaTime * movementVector.normalized);
             ReducePlayerStamina(1);
@@ -50,20 +48,19 @@ public class PlayerMovement : MonoBehaviour
         {
             characterController.Move(movementSpeed * Time.deltaTime * movementVector.normalized);
         }
-        
 
         if (!isGroundedCheck)
             gravityVector.y += gravity * Time.deltaTime;
         if(isGroundedCheck && gravityVector.y < 0)
             gravityVector.y = 0;
-        if(isGroundedCheck && jumpAction.triggered)
+        if(isGroundedCheck && jumpAction.IsPressed())
             gravityVector.y = (float)Math.Sqrt(jumpHeight * -2f * gravity);
         characterController.Move(gravityVector * Time.deltaTime);
 
     }
     bool IsGrounded()
     {
-        Debug.DrawRay(transform.position,-transform.up,Color.red,groundCheckLength);
+        // Debug.DrawRay(transform.position,-transform.up,Color.red,groundCheckLength);
         return Physics.Raycast(transform.position,-transform.up,groundCheckLength,groundLayerMask);
     }
     public void Enable()

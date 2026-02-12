@@ -3,7 +3,7 @@ using System.IO;
 
 public class SaveData
 {
-    public int a = 1;
+    public Inventory inventory = new();
 };
 public class SaveManager
 {
