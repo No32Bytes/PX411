@@ -1,52 +1,54 @@
 using System;
+using UnityEngine;
 using System.Collections.Generic;
 
-[Serializable]
-public class ItemCollectable
+public class InventoryConfig
 {
-    public string internalName = "";
-    public int itemCount = 0;
-    public List<string> collectedItemEntityIDs = new();
-    public ItemCollectable(string internalName)
-    {
-        this.internalName = internalName;
-    }
-    public void CollectItem(string itemEntityId)
-    {
-        itemCount++;
-        collectedItemEntityIDs.Add(itemEntityId);
-    }
-    public bool HasItemEntityID(string itemEntityId)
-    {
-        return collectedItemEntityIDs.Contains(itemEntityId);
-    }
+    public static readonly int MaxInventorySize = 10; 
 }
-[Serializable]
-public class ItemStoreable
-{
-    
-}
+
 [Serializable]
 public class Inventory
 {
-    public List<ItemCollectable> collectableInventory = new();
-    public bool HasCollectableItemBeenCollected(string internalName,string itemEntityId)
+    [SerializeField] private List<InventoryItem> collectableInventory = new();
+    [SerializeField] private List<InventoryItem> storeableInventory = new();
+    public bool HasItemBeenCollected(string internalName,string itemEntityId)
     {
-        int index = collectableInventory.FindIndex((collectable) => collectable.internalName == internalName);
-        if(index == -1)
-            return false;
+        int index = collectableInventory.FindIndex((collectable) => collectable.GetInternalName() == internalName);
+        if(index != -1)
+            return collectableInventory[index].HasItemEntityId(itemEntityId);
         
-        return collectableInventory[index].HasItemEntityID(itemEntityId);
+        index = storeableInventory.FindIndex((storeable) => storeable.GetInternalName() == internalName);
+        if(index != -1)
+            return collectableInventory[index].HasItemEntityId(itemEntityId);
+        
+        return false;
     }
-    public ItemCollectable GetCollectableItem(string internalName)
+
+    public bool PickupItem(string internalName,string itemEntityId)
     {
-        int index = collectableInventory.FindIndex((collectable) => collectable.internalName == internalName);
-        if (index == -1)
+        if(!GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName,out ItemData itemData))
+            return false;
+
+        if (!itemData.storeable)
         {
-            ItemCollectable itemCollectable = new(internalName);
-            collectableInventory.Add(itemCollectable);
-            return itemCollectable;
-        }
-        return collectableInventory[index];
+            GetInventoryItem(collectableInventory,internalName).PickupItem(itemEntityId);
+            return true;
+        }   
+        
+        if(storeableInventory.Count == InventoryConfig.MaxInventorySize) return false;
+        GetInventoryItem(storeableInventory,internalName).PickupItem(itemEntityId);
+        return true;
+    }
+
+    private InventoryItem GetInventoryItem(List<InventoryItem> targetInventory,string internalName)
+    {
+        int index = targetInventory.FindIndex((item) => item.GetInternalName() == internalName);
+        if(index != -1)
+            return collectableInventory[index];
+        
+        InventoryItem inventoryItem = new(internalName);
+        targetInventory.Add(inventoryItem);
+        return inventoryItem;
     }
 }

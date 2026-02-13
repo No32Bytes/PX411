@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   displayName: test display
-  internalName: 
+  internalName: test
+  storeable: 0
   icon: {fileID: 0}
   description: test description

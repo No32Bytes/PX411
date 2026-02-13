@@ -46,4 +46,8 @@ public class GlobalDataStore : MonoBehaviour
     {
         return Instance.stateManager;
     }
+    public static Inventory GetInventory()
+    {
+        return Instance.saveManager.currentSave.inventory;
+    }
 }

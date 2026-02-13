@@ -763,6 +763,10 @@ PrefabInstance:
       propertyPath: m_ClearFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 731282044192118950, guid: eda19d5d6c67b984f97b6f2dc5e002fd, type: 3}
+      propertyPath: field of view
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 2479688348437588262, guid: eda19d5d6c67b984f97b6f2dc5e002fd, type: 3}
       propertyPath: playerIgnoreLayerMask.m_Bits
       value: 55
