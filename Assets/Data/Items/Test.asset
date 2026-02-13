@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 070baa4e3ded2494f93ba97ce90d2238, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  displayName: test display
-  internalName: test
+  displayName: display
+  internalName: internal
   storeable: 0
   icon: {fileID: 0}
-  description: test description
+  description: description

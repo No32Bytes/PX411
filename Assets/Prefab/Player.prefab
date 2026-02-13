@@ -298,10 +298,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7177178643104399246}
+  - component: {fileID: 3470613122442077390}
   - component: {fileID: 3212940267802613033}
   - component: {fileID: 2479688348437588262}
-  - component: {fileID: 2558715092119534997}
   - component: {fileID: 4452787170240197072}
+  - component: {fileID: 2558715092119534997}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -328,6 +329,20 @@ Transform:
   - {fileID: 3713061800718208913}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3470613122442077390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2622205391481938993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482409910f801c24ab3914712889fd3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerReferences
+  playerBody: {fileID: 7177178643104399246}
+  playerCamera: {fileID: 731282044192118950}
 --- !u!114 &3212940267802613033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adac60da70a704644bb1d548652b0107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  playerRef: {fileID: 3470613122442077390}
   healthBar:
     maxHealth: 100
     healthRegenRate: 1
@@ -356,33 +372,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1340b736ea72eb24da75eaecc67753ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLook
-  playerBody: {fileID: 7177178643104399246}
-  playerCamera: {fileID: 731282044192118950}
---- !u!143 &2558715092119534997
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2622205391481938993}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
+  playerRef: {fileID: 3470613122442077390}
+  playerInteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1.9
-  m_Radius: 0.35
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.9, z: 0}
+    m_Bits: 55
+  maxItemInteractionDistance: 1
+  interactionCooldownSeconds: 1
 --- !u!114 &4452787170240197072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +403,31 @@ MonoBehaviour:
   groundCheckLength: 0.3
   gravity: -9.81
   jumpHeight: 2
+--- !u!143 &2558715092119534997
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2622205391481938993}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.9
+  m_Radius: 0.35
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!1 &2690034546754749753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,7 +1162,7 @@ Camera:
   m_GameObject: {fileID: 6505655762162796288}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1166,7 +1186,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 100
+  field of view: 75
   orthographic: 0
   orthographic size: 5
   m_Depth: 0

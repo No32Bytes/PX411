@@ -27,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
         movementAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
         runAction = InputSystem.actions.FindAction("Sprint");
-        Enable();
     }
     void Update()
     {
@@ -62,18 +61,6 @@ public class PlayerMovement : MonoBehaviour
     {
         // Debug.DrawRay(transform.position,-transform.up,Color.red,groundCheckLength);
         return Physics.Raycast(transform.position, -transform.up, groundCheckLength, groundLayerMask);
-    }
-    public void Enable()
-    {
-        movementAction.Enable();
-        jumpAction.Enable();
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-    public void Disable()
-    {
-        movementAction.Disable();
-        jumpAction.Disable();
-        Cursor.lockState = CursorLockMode.None;
     }
 
     public void ReducePlayerStamina(float staminaMinusAmount) { staminaBar.ReduceStamina(staminaMinusAmount); }

@@ -1,5 +1,6 @@
 using UnityEngine;
 [DefaultExecutionOrder(-1)]
+
 public class GlobalDataStore : MonoBehaviour
 {
     public ItemDataBase itemDataBase;
@@ -29,6 +30,9 @@ public class GlobalDataStore : MonoBehaviour
         settingsManager = new(Application.persistentDataPath);
         saveManager = new(Application.persistentDataPath);
         stateManager = new();
+        if(!gameObject.TryGetComponent(out stateManager.eventSystem))
+            throw new System.Exception("GlobalDataStore must be possess an Eventsystem must be manually added");
+        
     }
     public static ItemDataBase GetItemDataBase()
     {

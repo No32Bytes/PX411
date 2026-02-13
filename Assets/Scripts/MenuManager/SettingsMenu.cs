@@ -6,8 +6,7 @@ using SettingsElements;
 public class SettingsMenu : MonoBehaviour
 {
     [Header("BackButtonOnClick")]
-    [SerializeField] private GameObject titleMenuReference;
-    [SerializeField] private GameObject pauseMenuReference;
+    [SerializeField] private MenuManager menuManagerRef;
 
     [Header("AudioSettings")]
     [SerializeField] private AudioMixer audioMixer;
@@ -34,8 +33,8 @@ public class SettingsMenu : MonoBehaviour
         GlobalDataStore.Instance.settingsManager.Save();
         gameObject.SetActive(false);
         if (GlobalDataStore.GetStateManager().menuManger.TitleMenuOpen)
-            titleMenuReference.SetActive(true);
+            menuManagerRef.titleMenuRef.SetActive(true);
         else
-            pauseMenuReference.SetActive(true);
+            menuManagerRef.pauseMenuRef.SetActive(true);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using SaveMenuElements;
 public class SaveMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject TitleMenuReference;
+    [SerializeField] private MenuManager menuManagerRef;
     [Header("SaveSlots")]
     [SerializeField] private SaveSlot[] saveSlots;
     private int maxPage = 0;
@@ -29,7 +29,7 @@ public class SaveMenu : MonoBehaviour
     }
     public void ReturnToTitleMenu()
     {
-        TitleMenuReference.SetActive(true);
+        menuManagerRef.titleMenuRef.SetActive(true);
         gameObject.SetActive(false);
     }
 
