@@ -15,16 +15,16 @@ public class SaveMenu : MonoBehaviour
         SaveSlot.SetGlobalSaveMenuReference(this);
         foreach (SaveSlot saveSlot in saveSlots)
             saveSlot.Initalize();
-        
+
     }
     void OnEnable()
     {
         cachedSaveIDs = GlobalDataStore.Instance.saveManager.GetExistingSaveIDs();
         cachedSaveIDs = cachedSaveIDs.FindAll((str) => str != GlobalDataStore.Instance.saveManager.CurrentSaveID);
-        cachedSaveIDs.Insert(0,GlobalDataStore.Instance.saveManager.CurrentSaveID);
+        cachedSaveIDs.Insert(0, GlobalDataStore.Instance.saveManager.CurrentSaveID);
 
         currentPage = 0;
-        maxPage = (int)Math.Ceiling((double)((cachedSaveIDs.Count -1) / saveSlots.Length));
+        maxPage = (int)Math.Ceiling((double)((cachedSaveIDs.Count - 1) / saveSlots.Length));
         SaveSlotsUpdate();
     }
     public void ReturnToTitleMenu()
@@ -66,6 +66,6 @@ public class SaveMenu : MonoBehaviour
     }
     public void SetSaveMenuInteractableState(bool active)
     {
-        UIHelper.SetSelectableObjectState(transform.gameObject,active);
+        UIHelper.SetSelectableObjectState(transform.gameObject, active);
     }
 }

@@ -24,8 +24,8 @@ public class SettingsMenu : MonoBehaviour
     private void Start()
     {
         AudioVolumeSlider.SetGlobalAudioMixer(audioMixer);
-        new AudioVolumeSlider(masterVolumeSliderIn,AudioUtil.Constants.masterVolumeParameter);
-        new AudioVolumeSlider(soundVolumeSliderIn,AudioUtil.Constants.soundVolumeParameter);
+        new AudioVolumeSlider(masterVolumeSliderIn, AudioUtil.Constants.masterVolumeParameter);
+        new AudioVolumeSlider(soundVolumeSliderIn, AudioUtil.Constants.soundVolumeParameter);
         new AudioVolumeSlider(musicVolumeSliderIn, AudioUtil.Constants.musicVolumeParameter);
     }
 
@@ -35,7 +35,7 @@ public class SettingsMenu : MonoBehaviour
         gameObject.SetActive(false);
         if (GlobalDataStore.GetStateManager().menuManger.TitleMenuOpen)
             titleMenuReference.SetActive(true);
-        else 
+        else
             pauseMenuReference.SetActive(true);
     }
 }

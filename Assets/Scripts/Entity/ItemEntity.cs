@@ -15,12 +15,12 @@ public class ItemEntity : MonoBehaviour
         if (GlobalDataStore.GetInventory().HasItemBeenCollected(itemData.internalName, itemEntityId))
             DestroyItemEntity();
     }
-    
+
     public void PickupItem()
     {
-        if(!GlobalDataStore.GetInventory().PickupItem(itemData.internalName,itemEntityId))
+        if (!GlobalDataStore.GetInventory().PickupItem(itemData.internalName, itemEntityId))
             return;
-        
+
         DestroyItemEntity();
     }
 

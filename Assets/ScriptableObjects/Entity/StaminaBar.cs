@@ -15,7 +15,7 @@ namespace Entity
         private bool canRegen;
         private float regenTimer;
 
-        public float CurrentStamina { get; private set;}
+        public float CurrentStamina { get; private set; }
         public StaminaBar()
         {
             CurrentStamina = maxStamina;

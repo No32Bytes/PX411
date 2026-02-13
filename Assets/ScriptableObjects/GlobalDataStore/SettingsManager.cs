@@ -32,7 +32,7 @@ public class SettingsManager
     }
     public void Load()
     {
-        SaveUtil.LoadObjectFromFile(GetSettingsDataPath(),out settingsData);
+        SaveUtil.LoadObjectFromFile(GetSettingsDataPath(), out settingsData);
         settingsData ??= new();
     }
 }

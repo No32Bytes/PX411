@@ -10,7 +10,7 @@ namespace Entity
         [SerializeField] private float maxHealth = 100f;
         [SerializeField] private float healthRegenRate = 1f;
         [SerializeField] private Slider healthSlider;
-        public float CurrentHealth {get; private set;}
+        public float CurrentHealth { get; private set; }
         public delegate void OnDeath();
         private OnDeath onDeathCallback = null;
         public HealthBar()
@@ -27,9 +27,9 @@ namespace Entity
 
             healthSlider.maxValue = maxHealth;
             float currentHealthRegenerated = healthRegenRate * Time.deltaTime;
-            if(CurrentHealth + currentHealthRegenerated >= maxHealth)
+            if (CurrentHealth + currentHealthRegenerated >= maxHealth)
                 CurrentHealth = maxHealth;
-            else 
+            else
                 CurrentHealth += currentHealthRegenerated;
             healthSlider.value = CurrentHealth;
         }

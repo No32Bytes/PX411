@@ -18,7 +18,7 @@ public class CreateSavePopup : MonoBehaviour
         if (inputTextTMP.text == "")
         {
             SetInputError("Save Name cannot be empty");
-            return;   
+            return;
         }
 
         List<string> exisitingSaveIDs = GlobalDataStore.Instance.saveManager.GetExistingSaveIDs();
@@ -26,8 +26,8 @@ public class CreateSavePopup : MonoBehaviour
         if (exisitingSaveIDs.Contains(inputTextTMP.text.ToLower()))
         {
             SetInputError($"{inputTextTMP.text} already exists");
-            return;  
-        } 
+            return;
+        }
 
         GlobalDataStore.Instance.saveManager.Load(inputTextTMP.text);
         GlobalDataStore.Instance.saveManager.Save();

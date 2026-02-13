@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 namespace SaveMenuElements
 {
-    
 
-[Serializable]
+
+    [Serializable]
     internal class SaveSlot
     {
         private readonly string EmptySaveName = "Empty";
@@ -52,8 +52,8 @@ namespace SaveMenuElements
         }
         public void Initalize()
         {
-            loadButton.onClick.AddListener(()=> OnSaveLoadClick());
-            
+            loadButton.onClick.AddListener(() => OnSaveLoadClick());
+
             deleteButton.onClick.AddListener(() => OnDeleteButtonOnClick());
         }
     };

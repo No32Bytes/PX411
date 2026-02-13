@@ -44,16 +44,16 @@ public class PlayerMovement : MonoBehaviour
             characterController.Move(movementSpeed * runMultiplicator * Time.deltaTime * movementVector.normalized);
             ReducePlayerStamina(1);
         }
-        else 
+        else
         {
             characterController.Move(movementSpeed * Time.deltaTime * movementVector.normalized);
         }
 
         if (!isGroundedCheck)
             gravityVector.y += gravity * Time.deltaTime;
-        if(isGroundedCheck && gravityVector.y < 0)
+        if (isGroundedCheck && gravityVector.y < 0)
             gravityVector.y = 0;
-        if(isGroundedCheck && jumpAction.IsPressed())
+        if (isGroundedCheck && jumpAction.IsPressed())
             gravityVector.y = (float)Math.Sqrt(jumpHeight * -2f * gravity);
         characterController.Move(gravityVector * Time.deltaTime);
 
@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
     bool IsGrounded()
     {
         // Debug.DrawRay(transform.position,-transform.up,Color.red,groundCheckLength);
-        return Physics.Raycast(transform.position,-transform.up,groundCheckLength,groundLayerMask);
+        return Physics.Raycast(transform.position, -transform.up, groundCheckLength, groundLayerMask);
     }
     public void Enable()
     {

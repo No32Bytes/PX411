@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace SettingsElements
 {
-    public sealed class  AudioVolumeSlider
+    public sealed class AudioVolumeSlider
     {
         private static AudioMixer audioMixer_;
         private readonly Slider volumeSlider_;

@@ -16,7 +16,7 @@ public class GlobalDataStore : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        
+
         Initalize();
     }
     private void OnApplicationQuit()

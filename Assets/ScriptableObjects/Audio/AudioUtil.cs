@@ -11,9 +11,9 @@ public class AudioUtil
     }
     public static ref float GetSettingsVolumeRef(string volumeParameter)
     {
-        if(volumeParameter == Constants.masterVolumeParameter)
+        if (volumeParameter == Constants.masterVolumeParameter)
             return ref GlobalDataStore.GetSettingsData().audioMasterVolume;
-        if(volumeParameter == Constants.musicVolumeParameter)
+        if (volumeParameter == Constants.musicVolumeParameter)
             return ref GlobalDataStore.GetSettingsData().audioMusicVolume;
         return ref GlobalDataStore.GetSettingsData().audioSoundVolume;
     }

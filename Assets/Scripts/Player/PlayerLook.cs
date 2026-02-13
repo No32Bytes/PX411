@@ -29,9 +29,9 @@ public class PlayerLook : MonoBehaviour
 
     void FixedUpdate()
     {
-        Ray raycast = new(playerCamera.transform.position,playerCamera.transform.forward);
+        Ray raycast = new(playerCamera.transform.position, playerCamera.transform.forward);
         Debug.DrawRay(raycast.origin, raycast.direction, Color.red, maxItemInteractionDistance);
-        if(!Physics.Raycast(raycast, out RaycastHit raycastHit, Mathf.Infinity, playerInteractionLayerMask) || raycastHit.distance > maxItemInteractionDistance)
+        if (!Physics.Raycast(raycast, out RaycastHit raycastHit, Mathf.Infinity, playerInteractionLayerMask) || raycastHit.distance > maxItemInteractionDistance)
         {
             // Nothing hit 
             return;
@@ -44,7 +44,7 @@ public class PlayerLook : MonoBehaviour
     {
         lookAction.Enable();
     }
-    
+
     public void Disable()
     {
         lookAction.Disable();

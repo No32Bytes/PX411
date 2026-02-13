@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!isPlaying) return;
+        if (!isPlaying) return;
 
         if (musicAudioSource.isPlaying)
             return;
@@ -57,9 +57,9 @@ public class AudioManager : MonoBehaviour
     {
         if (!playDefaultGroupAtEmpty)
             return false;
-        foreach(MusicSoundTrack musicSoundTrack in Array.FindAll(musicSoundTrackStore, m => m.soundTrackGroup == CurrentDefaultGroupName))
+        foreach (MusicSoundTrack musicSoundTrack in Array.FindAll(musicSoundTrackStore, m => m.soundTrackGroup == CurrentDefaultGroupName))
             musicManagerQueue.Enqueue(musicSoundTrack);
-            
+
         return musicManagerQueue.Count != 0;
     }
     public void PlaySoundTrackName(string soundTrackName)
@@ -82,7 +82,7 @@ public class AudioManager : MonoBehaviour
         }
         defaultGroupName = soundTrackGroup;
         musicManagerQueue.Clear();
-        foreach(MusicSoundTrack soundtrack in soundTracks)
+        foreach (MusicSoundTrack soundtrack in soundTracks)
             musicManagerQueue.Enqueue(soundtrack);
         PlaySoundTrackFromQueue();
     }

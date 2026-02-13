@@ -24,7 +24,7 @@ public class InventoryItem
 
     public bool PickupItem(string itemEntityId)
     {
-        if(HasItemEntityId(itemEntityId)) return true;
+        if (HasItemEntityId(itemEntityId)) return true;
         itemCount++;
         itemEntityIdsCollected.Add(itemEntityId);
         return true;
@@ -32,8 +32,8 @@ public class InventoryItem
 
     public bool RemoveItem()
     {
-        if(itemCount == 0) return false;
-        if(itemEntityIdsCollected.Count == 0) return false;
+        if (itemCount == 0) return false;
+        if (itemEntityIdsCollected.Count == 0) return false;
 
         itemEntityIdsCollected.RemoveAt(itemEntityIdsCollected.Count - 1);
         return true;
