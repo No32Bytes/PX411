@@ -14,6 +14,9 @@ public class PauseMenu : MonoBehaviour
     }
     public void ReturnTitleMenuButtonOnClick()
     {
-        
+        GlobalDataStore.GetStateManager().menuManger.TitleMenuOpen = true;
+        menuManagerRef.ForceAwake();
+        menuManagerRef.RemoveOverlayCameraFromTargetCamera();
+        SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
     }
 }

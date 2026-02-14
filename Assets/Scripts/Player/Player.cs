@@ -8,13 +8,12 @@ public class Player : MonoBehaviour
     [SerializeField] private HealthBar healthBar = new();
     private AudioListener audioListener;
     private InputAction pauseAction;
-
     private void Start()
     {
         healthBar.SetOnDeathCallback(OnPlayerDeath);
         pauseAction = InputSystem.actions.FindAction("Pause");
         audioListener = gameObject.AddComponent<AudioListener>();
-        EnableInputActions();
+        EnableGamePlay();
     }
     private void Update()
     {
@@ -22,7 +21,7 @@ public class Player : MonoBehaviour
             if(GlobalDataStore.GetStateManager().player.unLoadPauseMenuSceneCount != SceneManager.sceneCount)
             {
                 GlobalDataStore.GetStateManager().player.unLoadPauseMenuSignal = false;
-                UnloadPauseMenu();
+                EnableGamePlay();
             }
 
         healthBar.Update();
@@ -42,7 +41,7 @@ public class Player : MonoBehaviour
         GlobalDataStore.GetStateManager().menuManger.menuOverlayCameraTarget = playerRef.playerCamera;
         SceneManager.LoadScene(StateManager.MenuManger.MenuMangerScenceId,LoadSceneMode.Additive);
     }
-    public void UnloadPauseMenu()
+    public void EnableGamePlay()
     {
         EnableInputActions();
         audioListener.enabled = true;

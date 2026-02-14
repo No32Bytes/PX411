@@ -13,6 +13,7 @@ public class PlayerLook : MonoBehaviour
     private float lastInteractionTimer = 0f;
     void Start()
     {
+        playerRef.playerCamera.enabled = true;
         lookAction = InputSystem.actions.FindAction("Look");
         interactAction = InputSystem.actions.FindAction("Interact");
         lookAction.Enable();

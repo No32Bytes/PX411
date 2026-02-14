@@ -11,15 +11,23 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
+        bool titleMenuOpen = GlobalDataStore.GetStateManager().menuManger.TitleMenuOpen;
+        mainCamera.enabled = titleMenuOpen;
+        if(GlobalDataStore.GetStateManager().menuManger.menuOverlayCameraTarget)
+            GlobalDataStore.GetStateManager().menuManger.menuOverlayCameraTarget.enabled = !titleMenuOpen;
+        titleMenuRef.SetActive(titleMenuOpen);
+        pauseMenuRef.SetActive(!titleMenuOpen);
+
         if (GlobalDataStore.GetStateManager().menuManger.TitleMenuOpen)
         {
             return;   
         }
         
-        mainCamera.enabled = false;
-        titleMenuRef.SetActive(false);
-        pauseMenuRef.SetActive(true);
         AddOverlayCameraToTargetCamera();
+    }
+    public void ForceAwake()
+    {
+        Awake();
     }
     public void AddOverlayCameraToTargetCamera()
     {
