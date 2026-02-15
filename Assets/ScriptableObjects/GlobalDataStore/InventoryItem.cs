@@ -35,7 +35,13 @@ public class InventoryItem
         if (itemCount == 0) return false;
         if (itemEntityIdsCollected.Count == 0) return false;
 
+        itemCount--;
         itemEntityIdsCollected.RemoveAt(itemEntityIdsCollected.Count - 1);
         return true;
+    }
+    public string GetLastItemEntityId()
+    {
+        if(itemEntityIdsCollected.Count == 0) return "";
+        return itemEntityIdsCollected[^1];
     }
 }

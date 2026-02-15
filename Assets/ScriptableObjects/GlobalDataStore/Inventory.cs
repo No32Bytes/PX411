@@ -32,23 +32,23 @@ public class Inventory
 
         if (!itemData.storeable)
         {
-            GetInventoryItem(collectableInventory, internalName).PickupItem(itemEntityId);
+            GetInventoryItemFromInventory(collectableInventory, internalName).PickupItem(itemEntityId);
             return true;
         }
 
         if (storeableInventory.Count == InventoryConfig.MaxInventorySize) return false;
-        GetInventoryItem(storeableInventory, internalName).PickupItem(itemEntityId);
+        GetInventoryItemFromInventory(storeableInventory, internalName).PickupItem(itemEntityId);
         return true;
     }
 
-    public bool DropItem(string internalName,out ItemData itemData)
+    public bool DropItem(string internalName, out ItemData itemData)
     {
         if (!GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName, out itemData))
             return false;
 
         if (!itemData.storeable)
         {
-            GetInventoryItem(collectableInventory, internalName).RemoveItem();
+            GetInventoryItemFromInventory(collectableInventory, internalName).RemoveItem();
             return true;
         }
 
@@ -62,7 +62,17 @@ public class Inventory
 
         return true;
     }
-    private InventoryItem GetInventoryItem(List<InventoryItem> targetInventory, string internalName)
+    public bool GetStoreableInventoryItem(string internalName,out InventoryItem inventoryItem)
+    {
+        inventoryItem = default;
+        int index = storeableInventory.FindIndex((item) => item.GetInternalName() == internalName);
+        if(index == -1)
+            return false;
+        
+        inventoryItem = storeableInventory[index];
+        return true;
+    }
+    private InventoryItem GetInventoryItemFromInventory(List<InventoryItem> targetInventory, string internalName)
     {
         int index = targetInventory.FindIndex((item) => item.GetInternalName() == internalName);
         if (index != -1)
@@ -72,4 +82,6 @@ public class Inventory
         targetInventory.Add(inventoryItem);
         return inventoryItem;
     }
+    public List<InventoryItem> GetCollectableInventory() { return collectableInventory; }
+    public List<InventoryItem> GetStoreableInventory() { return storeableInventory; }
 }

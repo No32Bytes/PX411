@@ -38,7 +38,7 @@ public class PlayerLook : MonoBehaviour
     private void HandlePlayerLooking()
     {
         Ray raycast = new(playerRef.playerCamera.transform.position, playerRef.playerCamera.transform.forward);
-        Debug.DrawRay(raycast.origin, raycast.direction, Color.red, maxItemInteractionDistance);
+        //Debug.DrawRay(raycast.origin, raycast.direction, Color.red, maxItemInteractionDistance);
         if (!Physics.Raycast(raycast, out RaycastHit raycastHit, Mathf.Infinity, playerInteractionLayerMask) || !(raycastHit.distance < maxItemInteractionDistance))
         {
             return;

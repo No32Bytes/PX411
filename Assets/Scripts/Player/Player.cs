@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerReferences playerRef;
     [SerializeField] private HealthBar healthBar = new();
+    [SerializeField] private float itemDropDistance = 1.5f;
     private AudioListener audioListener;
     private InputAction pauseAction;
     private void Start()
@@ -33,19 +34,37 @@ public class Player : MonoBehaviour
     }
     public void LoadPauseMenu()
     {
-        Time.timeScale = 0f;
+        DisableGamePlay();
         audioListener.enabled = false;
-        DisableInputActions();
-        
+
         GlobalDataStore.GetStateManager().menuManger.TitleMenuOpen = false;
         GlobalDataStore.GetStateManager().menuManger.menuOverlayCameraTarget = playerRef.playerCamera;
         SceneManager.LoadScene(StateManager.MenuManger.MenuMangerScenceId,LoadSceneMode.Additive);
+    }
+    public void DisableGamePlay()
+    {
+        Time.timeScale = 0f;
+        DisableInputActions();
     }
     public void EnableGamePlay()
     {
         EnableInputActions();
         audioListener.enabled = true;
         Time.timeScale = 1f;
+    }
+    public void DropItem(string internalName)
+    {
+        if(!GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName,out ItemData itemData))
+            return;
+        if(!itemData.storeable || itemData.storeableSpawnPrefab == null)
+            return;
+        if(!GlobalDataStore.GetInventory().GetStoreableInventoryItem(internalName,out InventoryItem inventoryItem))
+            return;
+        string itemEntityIdNewPrefab = inventoryItem.GetLastItemEntityId();
+        if(!ItemEntity.TryDropItem(playerRef.playerCamera,itemData,itemEntityIdNewPrefab,itemDropDistance))
+            return;
+
+        GlobalDataStore.GetInventory().DropItem(internalName,out _);
     }
     public void DamagePlayer(float damageAmount) { healthBar.ReduceHealth(damageAmount); }
     public void HealPlayer(float healAmount) { healthBar.IncreaseHealth(healAmount); }
