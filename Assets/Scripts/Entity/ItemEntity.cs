@@ -1,30 +1,25 @@
 using UnityEngine;
-public class ItemEntity : MonoBehaviour
+
+public class ItemEntity : BaseEntity
 {
-    [SerializeField] private string itemEntityId = "";
     [SerializeField] private ItemData itemData;
 
-    private void DestroyItemEntity()
-    {
-        gameObject.hideFlags = HideFlags.DontSave;
-        DestroyImmediate(gameObject);
-    }
     private void Awake()
     {
-        if (itemEntityId == "")
+        if(string.IsNullOrEmpty(entityId))
             return;
-
-        if (GlobalDataStore.GetInventory().HasItemBeenCollected(itemData.internalName, itemEntityId))
-            DestroyItemEntity();
+        
+        if (GlobalDataStore.GetInventory().HasItemBeenCollected(itemData.internalName, entityId))
+            DestroyEntity();
     }
-    public void SetItemEntityId(string itemEntityId) { this.itemEntityId = itemEntityId; }
-    public void PickupItem()
+    public override void EntityInteraction()
     {
-        if (!GlobalDataStore.GetInventory().PickupItem(itemData.internalName, itemEntityId))
+        if (!GlobalDataStore.GetInventory().PickupItem(itemData.internalName, entityId))
             return;
 
-        DestroyItemEntity();
+        DestroyEntity();
     }
+
     public static bool TryDropItem(Camera playerCamera, ItemData itemData, string itemEntityId, float distance)
     {
         Vector3 prefabCreatePosition = playerCamera.transform.position + playerCamera.transform.forward * distance;
@@ -34,7 +29,7 @@ public class ItemEntity : MonoBehaviour
         if (isSpaceEmpty)
         {
             GameObject ItemEntityObject = Instantiate(itemData.storeableSpawnPrefab, prefabCreatePosition, new Quaternion());
-            ItemEntityObject.GetComponent<ItemEntity>().SetItemEntityId(itemEntityId);
+            ItemEntityObject.GetComponent<ItemEntity>().SetBaseEntityId(itemEntityId);
         }
         return isSpaceEmpty;
     }

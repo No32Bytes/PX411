@@ -739,7 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367241c503402b4468a26db4533ea48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemEntity
-  itemEntityId: test
+  entityId: test
   itemData: {fileID: 11400000, guid: c4883eeb16da8bf429592af3369dbb80, type: 2}
 --- !u!1001 &1714860965513826727
 PrefabInstance:
@@ -945,6 +945,10 @@ PrefabInstance:
     - target: {fileID: 6691424108696424793, guid: 71d0fd1497141714cb114fec9fd34a72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878145488737186380, guid: 71d0fd1497141714cb114fec9fd34a72, type: 3}
+      propertyPath: entityId
+      value: test2
       objectReference: {fileID: 0}
     - target: {fileID: 8878145488737186380, guid: 71d0fd1497141714cb114fec9fd34a72, type: 3}
       propertyPath: itemEntityId
