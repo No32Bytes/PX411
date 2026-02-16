@@ -33,6 +33,11 @@ public class GlobalDataStore : MonoBehaviour
         if(!gameObject.TryGetComponent(out stateManager.eventSystem))
             throw new System.Exception("GlobalDataStore must be possess an Eventsystem must be manually added");
         
+        DebugDev.DebugFunction.Start();
+    }
+    private void Update()
+    {
+        DebugDev.DebugFunction.Update();
     }
     public static ItemDataBase GetItemDataBase()
     {

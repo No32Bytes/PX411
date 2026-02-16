@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
         pauseAction = InputSystem.actions.FindAction("Pause");
         audioListener = gameObject.AddComponent<AudioListener>();
         EnableGamePlay();
+
+        DebugDev.DebugFunction.RegisterDebugCallback(() => DropItem("testStoreInternal"));
     }
     private void Update()
     {
