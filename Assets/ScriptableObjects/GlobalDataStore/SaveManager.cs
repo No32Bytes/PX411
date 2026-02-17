@@ -4,6 +4,7 @@ using System.IO;
 public class SaveData
 {
     public Inventory inventory = new();
+    public EntityStateStore entityStateStore = new();
 };
 public class SaveManager
 {

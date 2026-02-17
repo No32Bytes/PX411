@@ -4,11 +4,8 @@ public class ItemEntity : BaseEntity
 {
     [SerializeField] private ItemData itemData;
 
-    private void Awake()
+    protected override void EntityAwake()
     {
-        if(string.IsNullOrEmpty(entityId))
-            return;
-        
         if (GlobalDataStore.GetInventory().HasItemBeenCollected(itemData.internalName, entityId))
             DestroyEntity();
     }
