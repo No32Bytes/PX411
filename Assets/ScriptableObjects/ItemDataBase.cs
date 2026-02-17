@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ItemDataBase", menuName = "Item/ItemDataBase")]
+//[CreateAssetMenu(fileName = "ItemDataBase", menuName = "Item/ItemDataBase")]
 public class ItemDataBase : ScriptableObject
 {
     [SerializeField] private List<ItemData> itemDataBase = new();
@@ -16,4 +16,9 @@ public class ItemDataBase : ScriptableObject
         itemData = itemDataBase[index];
         return true;
     }
+
+#if UNITY_EDITOR
+    public List<ItemData> EditorGetItemDataContent(){return itemDataBase;}
+#endif
+
 }
