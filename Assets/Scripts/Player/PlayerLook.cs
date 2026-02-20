@@ -1,6 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-
+using InputUtil;
 public class PlayerLook : MonoBehaviour
 {
     [SerializeField] private PlayerReferences playerRef;
@@ -8,14 +7,14 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] private float maxItemInteractionDistance = 1f;
     [SerializeField] private float interactionCooldownSeconds = 1f;
     private float xRotation = 0f;
-    private InputAction lookAction;
-    private InputAction interactAction;
-    private float lastInteractionTimer = 0f;
+    private InputHandler lookAction;
+    private InputHandlerCooldown interactAction;
     void Start()
     {
+        lookAction = new("Look");
+        interactAction = new("Interact",interactionCooldownSeconds);
+        
         playerRef.playerCamera.enabled = true;
-        lookAction = InputSystem.actions.FindAction("Look");
-        interactAction = InputSystem.actions.FindAction("Interact");
         lookAction.Enable();
     }
 
@@ -29,10 +28,6 @@ public class PlayerLook : MonoBehaviour
         xRotation -= lookVector.y;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         playerRef.playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-    }
-
-    private void FixedUpdate()
-    {
         HandlePlayerLooking();
     }
     private void HandlePlayerLooking()
@@ -42,29 +37,17 @@ public class PlayerLook : MonoBehaviour
         {
             return;
         }
+        
         HandlePlayerLookingRaycastHit(raycastHit);
-        return;
+        
     }
     private void HandlePlayerLookingRaycastHit(RaycastHit raycastHit)
     {
         GameObject hitObject = raycastHit.transform.gameObject;
         if (hitObject.TryGetComponent(out BaseEntity baseEntity))
         {
-            if(InteractWithCooldown())
+            if (interactAction.InteractWithCooldown())
                 baseEntity.EntityInteraction();
         }
-    }
-    private bool InteractWithCooldown()
-    {
-        lastInteractionTimer += Time.fixedDeltaTime;
-        if(lastInteractionTimer < interactionCooldownSeconds)
-            return false;
-
-        if (interactAction.IsPressed())
-        {
-            lastInteractionTimer = 0;
-            return true;
-        }
-        return false;
     }
 }

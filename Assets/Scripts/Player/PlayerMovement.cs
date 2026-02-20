@@ -1,7 +1,7 @@
 using System;
 using Entity;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using InputUtil;
 
 
 [RequireComponent(typeof(CharacterController))]
@@ -17,16 +17,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 2f;
     private CharacterController characterController;
-    private InputAction movementAction;
-    private InputAction jumpAction;
-    private InputAction runAction;
+    private InputHandler movementAction, jumpAction, runAction;
     private Vector3 gravityVector;
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        movementAction = InputSystem.actions.FindAction("Move");
-        jumpAction = InputSystem.actions.FindAction("Jump");
-        runAction = InputSystem.actions.FindAction("Sprint");
+        movementAction = new("Move");
+        jumpAction = new("Jump");
+        runAction = new("Sprint");
     }
     void Update()
     {

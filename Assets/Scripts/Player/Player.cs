@@ -1,5 +1,6 @@
 using UnityEngine;
 using Entity;
+using InputUtil;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
@@ -8,11 +9,12 @@ public class Player : MonoBehaviour
     [SerializeField] private HealthBar healthBar = new();
     [SerializeField] private float itemDropDistance = 1.5f;
     private AudioListener audioListener;
-    private InputAction pauseAction;
+    private InputHandler pauseAction;
     private void Start()
     {
+        pauseAction = new("Pause");
+
         healthBar.SetOnDeathCallback(OnPlayerDeath);
-        pauseAction = InputSystem.actions.FindAction("Pause");
         audioListener = gameObject.AddComponent<AudioListener>();
         EnableGamePlay();
 

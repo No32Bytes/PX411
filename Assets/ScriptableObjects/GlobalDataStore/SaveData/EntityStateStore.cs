@@ -11,6 +11,7 @@ public class EntityState
     {
         this.entityId = entityId;
     }
+    public string entityStateData = "";
 }
 
 [Serializable]
@@ -40,5 +41,13 @@ public class EntityStateStore
     public bool GetEntityIdEnabledState(string entityId)
     {
         return GetEntityState(entityId).isEnabled;
+    }
+    public void SetEntityStateData(string entityId, string entityStateData)
+    {
+        GetEntityState(entityId).entityStateData = entityStateData;
+    }
+    public string GetEntityStateData(string entityId)
+    {
+        return GetEntityState(entityId).entityStateData;
     }
 }
