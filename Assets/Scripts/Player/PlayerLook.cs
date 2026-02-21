@@ -6,14 +6,16 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] private LayerMask playerInteractionLayerMask;
     [SerializeField] private float maxItemInteractionDistance = 1f;
     [SerializeField] private float interactionCooldownSeconds = 1f;
+    [SerializeField] private float holdActionCooldownSeconds = 0.5f;
     private float xRotation = 0f;
     private InputHandler lookAction;
-    private InputHandlerCooldown interactAction;
+    private InputHandlerCooldown interactAction, holdAction;
     void Start()
     {
         lookAction = new("Look");
-        interactAction = new("Interact",interactionCooldownSeconds);
-        
+        interactAction = new("Interact", interactionCooldownSeconds);
+        holdAction = new("Hold", holdActionCooldownSeconds);
+
         playerRef.playerCamera.enabled = true;
         lookAction.Enable();
     }
@@ -33,13 +35,11 @@ public class PlayerLook : MonoBehaviour
     private void HandlePlayerLooking()
     {
         Ray raycast = new(playerRef.playerCamera.transform.position, playerRef.playerCamera.transform.forward);
-        if (!Physics.Raycast(raycast, out RaycastHit raycastHit, Mathf.Infinity, playerInteractionLayerMask) || !(raycastHit.distance < maxItemInteractionDistance))
-        {
-            return;
-        }
-        
-        HandlePlayerLookingRaycastHit(raycastHit);
-        
+        if (Physics.Raycast(raycast, out RaycastHit raycastHit, Mathf.Infinity, playerInteractionLayerMask) || !(raycastHit.distance < maxItemInteractionDistance))
+            HandlePlayerLookingRaycastHit(raycastHit);
+
+        if (holdAction.InteractWithCooldown() && EntityDraggable.IsEntitySelected)
+            EntityDraggable.CurrentDraggedEntity.DeselectEntity();
     }
     private void HandlePlayerLookingRaycastHit(RaycastHit raycastHit)
     {
@@ -47,7 +47,19 @@ public class PlayerLook : MonoBehaviour
         if (hitObject.TryGetComponent(out BaseEntity baseEntity))
         {
             if (interactAction.InteractWithCooldown())
+            {
                 baseEntity.EntityInteraction();
+                return;
+            }
+        }
+
+        if (!EntityDraggable.IsEntitySelected)
+        {
+            if (hitObject.TryGetComponent(out EntityDraggable entityDraggable))
+            {
+                if (holdAction.InteractWithCooldown())
+                    entityDraggable.SelectEntity(playerRef.playerCamera);
+            }
         }
     }
 }

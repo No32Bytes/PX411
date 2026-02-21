@@ -26,7 +26,7 @@ namespace InputUtil
     public class InputHandlerCooldown : InputHandler
     {
         public float InputCooldownSeconds { get; private set; }
-        private float lastInteractionTimer = Mathf.Infinity;
+        private float lastInteractionTimer = Mathf.NegativeInfinity;
         public InputHandlerCooldown(string actionNameOrId, float inputCooldownSeconds)
         : base(actionNameOrId)
         {
@@ -34,14 +34,13 @@ namespace InputUtil
         }
         public bool InteractWithCooldown()
         {
-            lastInteractionTimer += Time.deltaTime;
-            if (lastInteractionTimer < InputCooldownSeconds)
+            if (Time.time - lastInteractionTimer < InputCooldownSeconds)
                 return false;
 
             if (!inputAction.IsPressed())
                 return false;
 
-            lastInteractionTimer = 0;
+            lastInteractionTimer = Time.time;
             return true;
         }
     }
