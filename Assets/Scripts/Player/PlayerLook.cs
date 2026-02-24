@@ -28,7 +28,7 @@ public class PlayerLook : MonoBehaviour
         playerRef.playerBody.Rotate(Vector3.up * lookVector.x);
 
         xRotation -= lookVector.y;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -83f, 83f);
         playerRef.playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         HandlePlayerLooking();
     }
