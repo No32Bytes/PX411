@@ -104,6 +104,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "FlashLightToggle",
+                    "type": "Button",
+                    "id": "18d365ea-f386-44ec-8b47-6a0b7c465dae",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -522,6 +531,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Debug",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0daa3829-e5df-4ac5-8c85-64635214168a",
+                    "path": "Keyboard/F",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlashLightToggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

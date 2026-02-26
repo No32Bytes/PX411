@@ -17,8 +17,6 @@ public class Player : MonoBehaviour
         healthBar.SetOnDeathCallback(OnPlayerDeath);
         audioListener = gameObject.AddComponent<AudioListener>();
         EnableGamePlay();
-
-        DebugDev.DebugFunction.RegisterDebugCallback(() => DropItem("testStoreInternal"));
     }
     private void Update()
     {

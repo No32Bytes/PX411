@@ -1,16 +1,20 @@
+using InputUtil;
 using UnityEngine;
 
 public class Handy : MonoBehaviour
 {
     [SerializeField] private Light flashLight;
-
-    
-    public void SetFlashLightState(bool enabledState)
+    [SerializeField] private float flashLightToggleActionCooldownSeconds = 0.2f;
+    private InputHandlerCooldown flashLightToggleAction;
+    public void Start()
     {
-        flashLight.enabled = enabledState;
+        flashLightToggleAction = new("FlashLightToggle",flashLightToggleActionCooldownSeconds);
     }
-    public void ToggleFlashLight()
+    public void Update()
     {
-        flashLight.enabled = !flashLight.enabled;
+        if (flashLightToggleAction.InteractWithCooldown())
+        {
+            flashLight.enabled = !flashLight.enabled;   
+        }
     }
 }
