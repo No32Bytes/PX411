@@ -1,8 +1,8 @@
 using UnityEngine;
-
 public abstract class BaseEntity : MonoBehaviour
 {
     [SerializeField] protected string entityId;
+    [SerializeField] private bool useGravity = true;
     private void Awake()
     {
         if (string.IsNullOrEmpty(entityId))
@@ -13,7 +13,25 @@ public abstract class BaseEntity : MonoBehaviour
             DestroyEntity();
             return;
         }
+
+        AwakeGravity();
+        
         EntityAwake();
+    }
+    private void AwakeGravity()
+    {
+        Rigidbody entityRigibody;
+        if (!useGravity)
+        {
+            if(gameObject.TryGetComponent(out entityRigibody))
+                DestroyImmediate(entityRigibody);
+            return;
+        }        
+
+        if(!gameObject.TryGetComponent(out entityRigibody))
+            entityRigibody = gameObject.AddComponent<Rigidbody>();
+
+        entityRigibody.useGravity = useGravity;
     }
     protected abstract void EntityAwake();
     public abstract void EntityInteraction();
