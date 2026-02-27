@@ -3,18 +3,19 @@ using UnityEngine.EventSystems;
 
 public class StateManager
 {
-    public class MenuManger
+    public class MenuMangerState
     {
         public bool TitleMenuOpen = true;
-        public const int MenuMangerScenceId = 0;
+        public int MenuMangerScenceId = 0;
         public Camera menuOverlayCameraTarget;
     };
-    public class Player
+    public class PlayerState
     {
         public bool unLoadPauseMenuSignal = false;
         public int unLoadPauseMenuSceneCount = 0;  
+        public Player playerReference;
     };
-    public MenuManger menuManger = new();
-    public Player player = new();
+    public MenuMangerState menuManger = new();
+    public PlayerState player = new();
     public EventSystem eventSystem;
 };

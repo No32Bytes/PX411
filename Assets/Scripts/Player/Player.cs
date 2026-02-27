@@ -3,16 +3,20 @@ using Entity;
 using InputUtil;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.Universal;
 public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerReferences playerRef;
     [SerializeField] private HealthBar healthBar = new();
     [SerializeField] private float itemDropDistance = 1.5f;
     private AudioListener audioListener;
-    private InputHandler pauseAction;
+    private InputHandler pauseAction,viewHandyAction;
     private void Start()
     {
+        GlobalDataStore.GetStateManager().player.playerReference = this;
+
         pauseAction = new("Pause");
+        viewHandyAction = new("ViewHandy");
 
         healthBar.SetOnDeathCallback(OnPlayerDeath);
         audioListener = gameObject.AddComponent<AudioListener>();
@@ -20,6 +24,8 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        healthBar.Update();
+        
         if(GlobalDataStore.GetStateManager().player.unLoadPauseMenuSignal)
             if(GlobalDataStore.GetStateManager().player.unLoadPauseMenuSceneCount != SceneManager.sceneCount)
             {
@@ -27,32 +33,37 @@ public class Player : MonoBehaviour
                 EnableGamePlay();
             }
 
-        healthBar.Update();
         if (pauseAction.IsPressed())
         {
             LoadPauseMenu();
             return;
         }
+        if(viewHandyAction.IsPressed())
+        {
+            ViewHandyLarge();
+            return;
+        }
     }
-    public void LoadPauseMenu()
+
+    private void ViewHandyLarge()
+    {
+        DisableGamePlay();
+        playerRef.playerCamera.GetUniversalAdditionalCameraData().cameraStack.Add(playerRef.handyScreenCamera);
+    }
+    public void RemoveHandyLarge()
+    {
+        playerRef.playerCamera.GetUniversalAdditionalCameraData().cameraStack.Remove(playerRef.handyScreenCamera);
+        EnableGamePlay();
+    }
+
+    private void LoadPauseMenu()
     {
         DisableGamePlay();
         audioListener.enabled = false;
 
         GlobalDataStore.GetStateManager().menuManger.TitleMenuOpen = false;
         GlobalDataStore.GetStateManager().menuManger.menuOverlayCameraTarget = playerRef.playerCamera;
-        SceneManager.LoadScene(StateManager.MenuManger.MenuMangerScenceId,LoadSceneMode.Additive);
-    }
-    public void DisableGamePlay()
-    {
-        Time.timeScale = 0f;
-        DisableInputActions();
-    }
-    public void EnableGamePlay()
-    {
-        EnableInputActions();
-        audioListener.enabled = true;
-        Time.timeScale = 1f;
+        SceneManager.LoadScene(GlobalDataStore.GetStateManager().menuManger.MenuMangerScenceId,LoadSceneMode.Additive);
     }
     public void DropItem(string internalName)
     {
@@ -68,8 +79,17 @@ public class Player : MonoBehaviour
 
         GlobalDataStore.GetInventory().DropItem(internalName,out _);
     }
-    public void DamagePlayer(float damageAmount) { healthBar.ReduceHealth(damageAmount); }
-    public void HealPlayer(float healAmount) { healthBar.IncreaseHealth(healAmount); }
+    public void DisableGamePlay()
+    {
+        Time.timeScale = 0f;
+        DisableInputActions();
+    }
+    public void EnableGamePlay()
+    {
+        EnableInputActions();
+        audioListener.enabled = true;
+        Time.timeScale = 1f;
+    }
 
     public void DisableInputActions()
     {
@@ -86,4 +106,6 @@ public class Player : MonoBehaviour
     {
         return;
     }
+    public void DamagePlayer(float damageAmount) { healthBar.ReduceHealth(damageAmount); }
+    public void HealPlayer(float healAmount) { healthBar.IncreaseHealth(healAmount); }
 }

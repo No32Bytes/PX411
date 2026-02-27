@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 
 public struct EntityDraggableConfig
 {
     public const float MaxDistance = 5f;
     public const float MaxLinearVelocity = 10f;
-
+    public const float selectedMultMass = 10f;
     public const float IgnoreCalcDistance = 0.1f;
     public const float CloseDistanceBegin = 8f;
 
@@ -13,6 +14,10 @@ public struct EntityDraggableConfig
 
     public const float LongDistanceMax = 0.4f;
     public const float LongDistanceMult = -0.01f;
+
+
+    public const float antiGravityModifier = 9;
+    public const float targetPositionSlowDown = 2;
 }
 
 
@@ -62,8 +67,9 @@ public class EntityDraggable : MonoBehaviour
     private void Move(Vector3 moveVector)
     {
         Vector3 partialMoveVector = CalculatePartialMoveVector(moveVector);
-        entityRigibody.AddForce(partialMoveVector * partialMoveVector.magnitude / entityRigibody.mass, ForceMode.Impulse);
-        entityRigibody.linearDamping = 1 / partialMoveVector.sqrMagnitude;
+        entityRigibody.AddForce(partialMoveVector * partialMoveVector.magnitude, ForceMode.Impulse);
+        entityRigibody.AddForce(EntityDraggableConfig.antiGravityModifier * entityRigibody.mass * Vector3.up);
+        entityRigibody.linearDamping = EntityDraggableConfig.targetPositionSlowDown / moveVector.sqrMagnitude;
 
         remainingMoveVector = moveVector - partialMoveVector;
     }
@@ -89,11 +95,13 @@ public class EntityDraggable : MonoBehaviour
         distance = 0f;
         remainingMoveVector = Vector3.zero;
         linearDampingSave = entityRigibody.linearDamping;
+        entityRigibody.mass *= EntityDraggableConfig.selectedMultMass;
     }
     public void DeselectEntity()
     {
         isSelected = false;
 
         entityRigibody.linearDamping = linearDampingSave;
+        entityRigibody.mass /= EntityDraggableConfig.selectedMultMass;
     }
 }
