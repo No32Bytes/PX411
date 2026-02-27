@@ -38,7 +38,7 @@ public class PlayerLook : MonoBehaviour
         if (Physics.Raycast(raycast, out RaycastHit raycastHit, Mathf.Infinity, playerInteractionLayerMask) || !(raycastHit.distance < maxItemInteractionDistance))
             HandlePlayerLookingRaycastHit(raycastHit);
 
-        if (holdAction.InteractWithCooldown() && EntityDraggable.IsEntitySelected)
+        if (holdAction.InteractWithCooldown() && EntityDraggable.IsEntitySelected())
             EntityDraggable.CurrentDraggedEntity.DeselectEntity();
     }
     private void HandlePlayerLookingRaycastHit(RaycastHit raycastHit)
@@ -53,7 +53,7 @@ public class PlayerLook : MonoBehaviour
             }
         }
 
-        if (!EntityDraggable.IsEntitySelected)
+        if (!EntityDraggable.IsEntitySelected())
         {
             if (hitObject.TryGetComponent(out EntityDraggable entityDraggable))
             {

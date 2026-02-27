@@ -2,7 +2,7 @@ using UnityEngine;
 public abstract class BaseEntity : MonoBehaviour
 {
     [SerializeField] protected string entityId;
-    [SerializeField] private bool useGravity = true;
+    [SerializeField] protected bool useGravity = true;
     private void Awake()
     {
         if (string.IsNullOrEmpty(entityId))
@@ -33,7 +33,7 @@ public abstract class BaseEntity : MonoBehaviour
 
         entityRigibody.useGravity = useGravity;
     }
-    protected abstract void EntityAwake();
+    protected virtual void EntityAwake(){}
     public abstract void EntityInteraction();
     public void SetBaseEntityId(string entityId)
     {
