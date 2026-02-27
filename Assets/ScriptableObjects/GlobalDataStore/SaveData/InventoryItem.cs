@@ -14,7 +14,10 @@ public class InventoryItem
     }
 
     public string GetInternalName() { return internalName; }
-
+    public ItemData GetItemData()
+    {
+        return GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
+    }
     public int GetItemCount() { return itemCount; }
 
     public bool HasItemEntityId(string itemEntityId)

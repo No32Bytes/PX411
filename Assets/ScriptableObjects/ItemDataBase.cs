@@ -6,15 +6,13 @@ using UnityEngine;
 public class ItemDataBase : ScriptableObject
 {
     [SerializeField] private List<ItemData> itemDataBase = new();
-    public bool GetItemDataFromInternalName(string internalName, out ItemData itemData)
+    public ItemData GetItemDataFromInternalName(string internalName)
     {
-        itemData = null;
         int index = itemDataBase.FindIndex((item) => item.internalName == internalName);
         if (index == -1)
             throw new System.Exception("internalName of an Item must point to an itemData object in the ItemDataBase. It doesn't :(");
 
-        itemData = itemDataBase[index];
-        return true;
+        return itemDataBase[index];
     }
 
 #if UNITY_EDITOR

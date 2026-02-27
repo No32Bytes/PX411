@@ -27,8 +27,7 @@ public class Inventory
 
     public bool PickupItem(string internalName, string itemEntityId)
     {
-        if (!GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName, out ItemData itemData))
-            return false;
+        ItemData itemData = GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
 
         if (!itemData.storeable)
         {
@@ -43,8 +42,8 @@ public class Inventory
 
     public bool DropItem(string internalName, out ItemData itemData)
     {
-        if (!GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName, out itemData))
-            return false;
+        itemData = GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
+
 
         if (!itemData.storeable)
         {

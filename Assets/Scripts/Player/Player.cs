@@ -67,8 +67,8 @@ public class Player : MonoBehaviour
     }
     public void DropItem(string internalName)
     {
-        if(!GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName,out ItemData itemData))
-            return;
+        ItemData itemData = GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
+
         if(!itemData.storeable || itemData.storeableSpawnPrefab == null)
             return;
         if(!GlobalDataStore.GetInventory().GetStoreableInventoryItem(internalName,out InventoryItem inventoryItem))
