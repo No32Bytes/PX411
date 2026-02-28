@@ -65,19 +65,20 @@ public class Player : MonoBehaviour
         GlobalDataStore.GetStateManager().menuManger.menuOverlayCameraTarget = playerRef.playerCamera;
         SceneManager.LoadScene(GlobalDataStore.GetStateManager().menuManger.MenuMangerScenceId,LoadSceneMode.Additive);
     }
-    public void DropItem(string internalName)
+    public bool DropItem(string internalName)
     {
         ItemData itemData = GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
 
         if(!itemData.storeable || itemData.storeableSpawnPrefab == null)
-            return;
+            return false;
         if(!GlobalDataStore.GetInventory().GetStoreableInventoryItem(internalName,out InventoryItem inventoryItem))
-            return;
+            return false;
         string itemEntityIdNewPrefab = inventoryItem.GetLastItemEntityId();
         if(!ItemEntity.TryDropItem(playerRef.playerCamera,itemData,itemEntityIdNewPrefab,itemDropDistance))
-            return;
+            return false;
 
         GlobalDataStore.GetInventory().DropItem(internalName,out _);
+        return true;
     }
     public void DisableGamePlay()
     {
