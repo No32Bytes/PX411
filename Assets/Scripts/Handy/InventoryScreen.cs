@@ -7,6 +7,7 @@ public class InventoryScreen : MonoBehaviour
     [SerializeField] private ScrollRect inventoryScrollView;
     [SerializeField] private float scrollViewExtend = 500;
     [SerializeField] private GameObject inventoryItemUI;
+    [SerializeField] private GameObject inventoryEmptyMessage;
     private void OnEnable()
     {
         RenderInventoryScreen();
@@ -27,6 +28,9 @@ public class InventoryScreen : MonoBehaviour
     }
     private void RenderInventoryScreen()
     {
+        for(int i = 0; i < inventoryScrollView.content.transform.childCount; i++)
+            Destroy(inventoryScrollView.content.GetChild(i).gameObject);
+
         List<InventoryItem> inventory = GlobalDataStore.GetInventory().GetStoreableInventory();
         foreach(InventoryItem inventoryItem in inventory)
         {
@@ -35,5 +39,8 @@ public class InventoryScreen : MonoBehaviour
         }
         if(inventory.Count <= 2)
             inventoryScrollView.content.transform.localPosition = new Vector3(scrollViewExtend / 2,0,0);
+        
+        inventoryEmptyMessage.SetActive(inventory.Count == 0);
+
     }
 }

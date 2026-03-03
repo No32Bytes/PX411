@@ -3,7 +3,6 @@ using Entity;
 using InputUtil;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.Rendering.Universal;
 public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerReferences playerRef;
@@ -13,6 +12,8 @@ public class Player : MonoBehaviour
     private InputHandler pauseAction,viewHandyAction;
     private void Start()
     {
+        playerRef.handyScreenUI.SetActive(false);
+
         GlobalDataStore.GetStateManager().player.playerReference = this;
 
         pauseAction = new("Pause");
@@ -48,11 +49,11 @@ public class Player : MonoBehaviour
     private void ViewHandyLarge()
     {
         DisableGamePlay();
-        playerRef.playerCamera.GetUniversalAdditionalCameraData().cameraStack.Add(playerRef.handyScreenCamera);
+        playerRef.handyScreenUI.SetActive(true);
     }
     public void RemoveHandyLarge()
     {
-        playerRef.playerCamera.GetUniversalAdditionalCameraData().cameraStack.Remove(playerRef.handyScreenCamera);
+        playerRef.handyScreenUI.SetActive(false);
         EnableGamePlay();
     }
 

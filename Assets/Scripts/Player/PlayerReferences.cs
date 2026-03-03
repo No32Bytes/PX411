@@ -4,5 +4,5 @@ public class PlayerReferences : MonoBehaviour
 {
     public Transform playerBody;
     public Camera playerCamera;
-    public Camera handyScreenCamera;
+    public GameObject handyScreenUI;
 }
