@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private HealthBar healthBar = new();
     [SerializeField] private float itemDropDistance = 1.5f;
     private AudioListener audioListener;
-    private InputHandler pauseAction,viewHandyAction;
+    private InputHandler pauseAction;
     private void Start()
     {
         playerRef.handyScreenUI.SetActive(false);
@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
         GlobalDataStore.GetStateManager().player.playerReference = this;
 
         pauseAction = new("Pause");
-        viewHandyAction = new("ViewHandy");
 
         healthBar.SetOnDeathCallback(OnPlayerDeath);
         audioListener = gameObject.AddComponent<AudioListener>();
@@ -26,9 +25,9 @@ public class Player : MonoBehaviour
     private void Update()
     {
         healthBar.Update();
-        
-        if(GlobalDataStore.GetStateManager().player.unLoadPauseMenuSignal)
-            if(GlobalDataStore.GetStateManager().player.unLoadPauseMenuSceneCount != SceneManager.sceneCount)
+
+        if (GlobalDataStore.GetStateManager().player.unLoadPauseMenuSignal)
+            if (GlobalDataStore.GetStateManager().player.unLoadPauseMenuSceneCount != SceneManager.sceneCount)
             {
                 GlobalDataStore.GetStateManager().player.unLoadPauseMenuSignal = false;
                 EnableGamePlay();
@@ -39,20 +38,18 @@ public class Player : MonoBehaviour
             LoadPauseMenu();
             return;
         }
-        if(viewHandyAction.IsPressed())
+    }
+    public void HandySetActive(bool active)
+    {
+        if(SceneManager.sceneCount != 1)
+            return;
+
+        if (active)
         {
-            ViewHandyLarge();
+            DisableGamePlay();
+            playerRef.handyScreenUI.SetActive(true);
             return;
         }
-    }
-
-    private void ViewHandyLarge()
-    {
-        DisableGamePlay();
-        playerRef.handyScreenUI.SetActive(true);
-    }
-    public void RemoveHandyLarge()
-    {
         playerRef.handyScreenUI.SetActive(false);
         EnableGamePlay();
     }
@@ -64,21 +61,21 @@ public class Player : MonoBehaviour
 
         GlobalDataStore.GetStateManager().menuManger.TitleMenuOpen = false;
         GlobalDataStore.GetStateManager().menuManger.menuOverlayCameraTarget = playerRef.playerCamera;
-        SceneManager.LoadScene(GlobalDataStore.GetStateManager().menuManger.MenuMangerScenceId,LoadSceneMode.Additive);
+        SceneManager.LoadScene(GlobalDataStore.GetStateManager().menuManger.MenuMangerScenceId, LoadSceneMode.Additive);
     }
     public bool DropItem(string internalName)
     {
         ItemData itemData = GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
 
-        if(!itemData.storeable || itemData.storeableSpawnPrefab == null)
+        if (!itemData.storeable || itemData.storeableSpawnPrefab == null)
             return false;
-        if(!GlobalDataStore.GetInventory().GetStoreableInventoryItem(internalName,out InventoryItem inventoryItem))
+        if (!GlobalDataStore.GetInventory().GetStoreableInventoryItem(internalName, out InventoryItem inventoryItem))
             return false;
         string itemEntityIdNewPrefab = inventoryItem.GetLastItemEntityId();
-        if(!ItemEntity.TryDropItem(playerRef.playerCamera,itemData,itemEntityIdNewPrefab,itemDropDistance))
+        if (!ItemEntity.TryDropItem(playerRef.playerCamera, itemData, itemEntityIdNewPrefab, itemDropDistance))
             return false;
 
-        GlobalDataStore.GetInventory().DropItem(internalName,out _);
+        GlobalDataStore.GetInventory().DropItem(internalName, out _);
         return true;
     }
     public void DisableGamePlay()
@@ -102,7 +99,6 @@ public class Player : MonoBehaviour
     {
         InputSystem.actions.FindActionMap("Player").Enable();
         Cursor.lockState = CursorLockMode.Locked;
-    
     }
     private void OnPlayerDeath()
     {

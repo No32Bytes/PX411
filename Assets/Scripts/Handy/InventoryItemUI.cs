@@ -36,7 +36,7 @@ public class InventoryItemUI : MonoBehaviour
     private void DropButtonOnClick()
     {
         GlobalDataStore.GetStateManager().player.playerReference.DropItem(inventoryItem.GetInternalName());
-        GlobalDataStore.GetStateManager().player.playerReference.RemoveHandyLarge();
+        GlobalDataStore.GetStateManager().player.playerReference.HandySetActive(false);
         
     }
 }

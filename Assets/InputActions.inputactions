@@ -95,15 +95,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "ViewHandy",
-                    "type": "Button",
-                    "id": "60140b12-fdad-412f-8c1a-b83d4da366a9",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -476,7 +467,7 @@
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "Debug",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -487,19 +478,8 @@
                     "path": "Keyboard/F",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "FlashLightToggle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2615b2c0-a0db-4786-87c9-5bb3e960bc94",
-                    "path": "Keyboard/Y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ViewHandy",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1016,6 +996,34 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Handy",
+            "id": "0d1cb23a-dcbf-4140-a1c1-8e95b91daabd",
+            "actions": [
+                {
+                    "name": "ToggleViewHandy",
+                    "type": "Button",
+                    "id": "de478ea6-3101-4916-bcb1-7815f0525aff",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ef796282-a7a3-4e90-9123-eeeee5f5ce03",
+                    "path": "<Keyboard>/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "ToggleViewHandy",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

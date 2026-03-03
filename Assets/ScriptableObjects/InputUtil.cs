@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 
 namespace InputUtil
 {
-
     public class InputHandler
     {
         public readonly InputAction inputAction;
@@ -25,23 +24,44 @@ namespace InputUtil
     }
     public class InputHandlerCooldown : InputHandler
     {
+        public enum CooldownType
+        {
+            Time,
+            TimeFixed,
+            TimeUnscaled,
+            TimeFixedUnscaled
+        }
+        private readonly CooldownType cooldownType;
         public float InputCooldownSeconds { get; private set; }
         private float lastInteractionTimer = Mathf.NegativeInfinity;
-        public InputHandlerCooldown(string actionNameOrId, float inputCooldownSeconds)
+
+        public InputHandlerCooldown(string actionNameOrId, float inputCooldownSeconds, CooldownType cooldownType = CooldownType.Time)
         : base(actionNameOrId)
         {
             InputCooldownSeconds = inputCooldownSeconds;
+            this.cooldownType = cooldownType;
         }
         public bool InteractWithCooldown()
         {
-            if (Time.time - lastInteractionTimer < InputCooldownSeconds)
+            if (GetCurrentTime() - lastInteractionTimer < InputCooldownSeconds)
                 return false;
 
-            if (!inputAction.IsPressed())
+            if (!IsPressed())
                 return false;
 
-            lastInteractionTimer = Time.time;
+            lastInteractionTimer = GetCurrentTime();
             return true;
         }
+        private float GetCurrentTime()
+        {
+            return cooldownType switch
+            {
+                CooldownType.TimeFixed => Time.fixedTime,
+                CooldownType.TimeUnscaled => Time.unscaledTime,
+                CooldownType.TimeFixedUnscaled => Time.fixedUnscaledTime,
+                _ => Time.time,
+            };
+        }
     }
+
 }
