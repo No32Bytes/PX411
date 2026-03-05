@@ -71,12 +71,9 @@ public class Player : MonoBehaviour
             return false;
         if (!GlobalDataStore.GetInventory().GetStoreableInventoryItem(internalName, out InventoryItem inventoryItem))
             return false;
+        
         string itemEntityIdNewPrefab = inventoryItem.GetLastItemEntityId();
-        if (!ItemEntity.TryDropItem(playerRef.playerCamera, itemData, itemEntityIdNewPrefab, itemDropDistance))
-            return false;
-
-        GlobalDataStore.GetInventory().DropItem(internalName, out _);
-        return true;
+        return ItemEntity.TryDropItem(playerRef.playerCamera, itemData, itemEntityIdNewPrefab, itemDropDistance);
     }
     public void DisableGamePlay()
     {
