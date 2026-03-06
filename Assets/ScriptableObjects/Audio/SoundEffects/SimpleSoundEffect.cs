@@ -1,16 +1,15 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Audio/SimpleSoundEffect")]
-public class SimpleSoundEffect : SoundEffect
+public class SimpleSoundEffect : BaseSoundEffect
 {
     [SerializeField] private AudioClip audioClip;
     [SerializeField] private float volume;
-    [SerializeField] private float minPitch;
-    [SerializeField] private float maxPitch;
+    [SerializeField] private AudioUtil.RandomRange pitch;
     public override void Play(AudioSource audioSource)
     {
         audioSource.clip = audioClip;
-        audioSource.pitch = UnityEngine.Random.Range(minPitch, maxPitch);
+        audioSource.pitch = pitch.GetRandom();
         audioSource.volume = volume;
 
         audioSource.Play();

@@ -86,15 +86,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "FlashLightToggle",
-                    "type": "Button",
-                    "id": "18d365ea-f386-44ec-8b47-6a0b7c465dae",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -469,17 +460,6 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Debug",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0daa3829-e5df-4ac5-8c85-64635214168a",
-                    "path": "Keyboard/F",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "FlashLightToggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1013,6 +993,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "FlashLightToggle",
+                    "type": "Button",
+                    "id": "d788b4af-dbf0-400b-929d-806562f839e4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1024,6 +1013,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "ToggleViewHandy",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cac33339-d2b2-4830-bf74-c3960476539f",
+                    "path": "Keyboard/F",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "FlashLightToggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

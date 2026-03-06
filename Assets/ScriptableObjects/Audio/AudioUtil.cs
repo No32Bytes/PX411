@@ -1,6 +1,17 @@
+using System;
 using UnityEngine;
 public class AudioUtil
 {
+    [Serializable]
+    public class RandomRange
+    {
+        [SerializeField] private float min;
+        [SerializeField] private float max;
+        public float GetRandom()
+        {
+            return UnityEngine.Random.Range(min,max);
+        }
+    }
     public static float ConvertRawVolumeToVolume(float infloat)
     {
         return Mathf.Log10(infloat) * 20;

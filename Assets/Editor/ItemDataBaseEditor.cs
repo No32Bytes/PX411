@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 
-
 [CustomEditor(typeof(ItemDataBase))]
 class ItemDataBaseEditor : Editor
 {
@@ -15,18 +14,7 @@ class ItemDataBaseEditor : Editor
     }
     private void GenerateContent()
     {
-        ItemDataBase itemDataBase = target as ItemDataBase;
-        List<ItemData> itemDataBaseList = itemDataBase.EditorGetItemDataContent();
-        itemDataBaseList.Clear();
-
-        string[] itemDatGuid = AssetDatabase.FindAssets($"t:{typeof(ItemData).Name}");
-        foreach(string guid in itemDatGuid)
-        {
-            ItemData itemData = AssetDatabase.LoadAssetByGUID<ItemData>(new GUID(guid));
-            itemDataBaseList.Add(itemData);
-        }
-
-        EditorUtility.SetDirty(target);
-        AssetDatabase.SaveAssets();
+        List<ItemData> itemDataBaseList = (target as ItemDataBase).InternalGetItemDataBaseList;
+        EditorHelper.FindAssetsAndSaveToList(itemDataBaseList,target);
     }
 }

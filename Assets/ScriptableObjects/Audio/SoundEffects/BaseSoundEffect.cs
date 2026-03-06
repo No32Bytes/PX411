@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class SoundEffect : ScriptableObject
+public abstract class BaseSoundEffect : ScriptableObject
 {
     public abstract void Play(AudioSource audiosource);
 }

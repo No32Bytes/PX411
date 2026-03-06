@@ -5,24 +5,17 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    [Serializable]
-    internal class MusicSoundTrack
-    {
-        public string soundTrackName;
-        public string soundTrackGroup;
-        public AudioClip audioClip;
-        public float volume = 1.0f;
-    };
-    [SerializeField] private AudioMixer audioMixer;
-    [Header("MusicManager")]
-    [SerializeField] private bool playDefaultGroupAtEmpty;
-    [SerializeField] private string defaultGroupName;
-    [SerializeField] private MusicSoundTrack[] musicSoundTrackStore;
-    public string CurrentDefaultGroupName { set; get; }
-    private static readonly Queue<MusicSoundTrack> musicManagerQueue = new();
+    [Header("AudioManager")] 
+    [SerializeField] private AudioMixerGroup musicMixerGroup;
+    [SerializeField] private List<SoundTrack> soundTrackStore = new();
+    public List<SoundTrack> InternalGetSoundTrackStore => soundTrackStore;
     public static AudioManager Instance { get; private set; }
-    private static AudioSource musicAudioSource;
-    private static bool isPlaying = true;
+
+    private AudioSource audioSource;
+    private bool isPlaying = false;
+    private string currentSoundTrackId = "";
+    private string currentSoundTrackGroup = "";
+    private readonly List<SoundTrack> soundTrackQueue = new();
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -33,83 +26,73 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        CurrentDefaultGroupName = defaultGroupName;
-        musicAudioSource = gameObject.AddComponent<AudioSource>();
-        musicAudioSource.outputAudioMixerGroup = audioMixer.FindMatchingGroups(AudioUtil.Constants.musicMixerGroup)[0];
+        Initalize();
+    }
+    private void Initalize()
+    {
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.outputAudioMixerGroup = musicMixerGroup;
     }
 
     private void FixedUpdate()
     {
-        if (!isPlaying) return;
-
-        if (musicAudioSource.isPlaying)
+        if (!isPlaying)
             return;
 
-        if (musicManagerQueue.Count == 0)
-        {
-            if (!HandleEmptyMusicQueue())
-                return;
-        }
+        if (audioSource.isPlaying)
+            return;
 
-        PlaySoundTrackFromQueue();
-    }
-    private bool HandleEmptyMusicQueue()
-    {
-        if (!playDefaultGroupAtEmpty)
-            return false;
-        foreach (MusicSoundTrack musicSoundTrack in Array.FindAll(musicSoundTrackStore, m => m.soundTrackGroup == CurrentDefaultGroupName))
-            musicManagerQueue.Enqueue(musicSoundTrack);
-
-        return musicManagerQueue.Count != 0;
-    }
-    public void PlaySoundTrackName(string soundTrackName)
-    {
-        int index = Array.FindIndex(musicSoundTrackStore, track => track.soundTrackName == soundTrackName);
-        if (index == -1)
+        if (soundTrackQueue.Count != 0)
         {
-            Debug.Log("soundTrackName could not be found");
+            PlaySoundTrackFromQueue();
             return;
         }
-        PlaySoundTrack(musicSoundTrackStore[index]);
-    }
-    public void PlaySoundTrackGroup(string soundTrackGroup)
-    {
-        MusicSoundTrack[] soundTracks = Array.FindAll(musicSoundTrackStore, track => track.soundTrackGroup == soundTrackGroup);
-        if (soundTracks.Length == 0)
-        {
-            Debug.Log("soundTrackGroup could not be found");
-            return;
-        }
-        defaultGroupName = soundTrackGroup;
-        musicManagerQueue.Clear();
-        foreach (MusicSoundTrack soundtrack in soundTracks)
-            musicManagerQueue.Enqueue(soundtrack);
-        PlaySoundTrackFromQueue();
+        HandleEmptySoundTrackQueue();
     }
     private void PlaySoundTrackFromQueue()
     {
-        if (musicManagerQueue.Count == 0) return;
-        MusicSoundTrack soundTrack = musicManagerQueue.Dequeue();
-        PlaySoundTrack(soundTrack);
+        soundTrackQueue[0].Play(audioSource);
+        soundTrackQueue.RemoveAt(0);
     }
-    private void PlaySoundTrack(MusicSoundTrack soundTrack)
+    private void HandleEmptySoundTrackQueue()
     {
-        musicAudioSource.clip = soundTrack.audioClip;
-        musicAudioSource.volume = soundTrack.volume;
-        musicAudioSource.Play();
+        if (!string.IsNullOrEmpty(currentSoundTrackId))
+        {
+            soundTrackQueue.Add(soundTrackStore.Find(track => track.GetSoundTrackId() == currentSoundTrackId));
+            return;
+        }
+
+        List<SoundTrack> soundTracks = soundTrackStore.FindAll(track => track.GetSoundTrackGroup() == currentSoundTrackGroup);
+        if (soundTracks.Count == 0)
+        {
+            isPlaying = false;
+            return;
+        }
+
+        soundTrackQueue.AddRange(soundTracks);
+    }
+    public void PlaySoundTrackId(SoundTrack soundTrack)
+    {
+        currentSoundTrackId = soundTrack.GetSoundTrackId();
+        soundTrackQueue.Clear();
+        audioSource.Stop();
+        isPlaying = true;
+    }
+    public void PlaySoundTrackGroup(SoundTrack soundTrack)
+    {
+        currentSoundTrackGroup = soundTrack.GetSoundTrackGroup();
+        soundTrackQueue.Clear();
+        audioSource.Stop();
+        isPlaying = true;
     }
     public void Pause()
     {
         isPlaying = false;
-        musicAudioSource.Pause();
+        audioSource.Pause();
     }
-    public void UnPause()
+    public void Resume()
     {
         isPlaying = true;
-        musicAudioSource.UnPause();
-    }
-    public void Stop()
-    {
-        musicAudioSource.Stop();
+        audioSource.UnPause();
     }
 }

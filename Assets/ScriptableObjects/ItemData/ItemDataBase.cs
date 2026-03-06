@@ -6,6 +6,7 @@ using UnityEngine;
 public class ItemDataBase : ScriptableObject
 {
     [SerializeField] private List<ItemData> itemDataBase = new();
+    public List<ItemData> InternalGetItemDataBaseList => itemDataBase;
     public ItemData GetItemDataFromInternalName(string internalName)
     {
         int index = itemDataBase.FindIndex((item) => item.internalName == internalName);
@@ -14,9 +15,4 @@ public class ItemDataBase : ScriptableObject
 
         return itemDataBase[index];
     }
-
-#if UNITY_EDITOR
-    public List<ItemData> EditorGetItemDataContent(){return itemDataBase;}
-#endif
-
 }

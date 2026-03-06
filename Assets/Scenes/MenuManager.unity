@@ -2060,17 +2060,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 873086310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ade7d36e481e1404997d8af4638a2dff, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f1c67662b45d7a4b8332f91a894fff4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MusicManager
-  audioMixer: {fileID: 24100000, guid: 869cba9b06f71b445ad96093144a6f23, type: 2}
-  playDefaultGroupAtEmpty: 0
-  defaultGroupName: default
-  musicSoundTrackStore:
-  - soundTrackName: Test
-    soundTrackGroup: default
-    audioClip: {fileID: 8300000, guid: 4ec53ab848bf32e488b7f84cd0c40e40, type: 3}
-    volume: 1
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  musicMixerGroup: {fileID: 7857975254284373963, guid: 869cba9b06f71b445ad96093144a6f23, type: 2}
+  soundTrackStore:
+  - {fileID: 11400000, guid: 437b078e34f32d04fade2530d35c1ad8, type: 2}
 --- !u!1 &883981725
 GameObject:
   m_ObjectHideFlags: 0
