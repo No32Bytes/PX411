@@ -1,8 +1,10 @@
 using System.IO;
+using UnityEngine.InputSystem;
 
 public class SettingsData
 {
     public string lastSaveID = "default";
+    public string bindingOverridesJson = "";
     public float mouseSensitivity = 10f;
     public float audioMasterVolume = AudioUtil.Constants.defaultVolume;
     public float audioSoundVolume = AudioUtil.Constants.defaultVolume;
@@ -24,6 +26,7 @@ public class SettingsManager
     }
     public void Save()
     {
+        settingsData.bindingOverridesJson = InputSystem.actions.SaveBindingOverridesAsJson();
         SaveUtil.SaveObjectToFile(GetSettingsDataPath(), settingsData);
     }
     public void Reset()
@@ -33,6 +36,9 @@ public class SettingsManager
     public void Load()
     {
         SaveUtil.LoadObjectFromFile(GetSettingsDataPath(), out settingsData);
+        if(settingsData.bindingOverridesJson != "")
+            InputSystem.actions.LoadBindingOverridesFromJson(settingsData.bindingOverridesJson);
+
         settingsData ??= new();
     }
 }
