@@ -1,0 +1,270 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03844929fc98104090d9c985cf48892, type: 3}
+  m_Name: KeybindManagerConfig
+  m_EditorClassIdentifier: Assembly-CSharp::KeybindManagerConfig
+  showOnlyEnabled: 1
+  activeActionMaps:
+  - UI
+  configData:
+  - actionName: Move
+    relativeBindingIndex: 0
+    displayName: 
+    showKeybind: 0
+  - actionName: Move
+    relativeBindingIndex: 2
+    displayName: Move Forward
+    showKeybind: 1
+  - actionName: Move
+    relativeBindingIndex: 3
+    displayName: Move Backward
+    showKeybind: 1
+  - actionName: Move
+    relativeBindingIndex: 4
+    displayName: Move Left
+    showKeybind: 1
+  - actionName: Move
+    relativeBindingIndex: 5
+    displayName: Move Right
+    showKeybind: 1
+  - actionName: Move
+    relativeBindingIndex: 6
+    displayName: 
+    showKeybind: 0
+  - actionName: Move
+    relativeBindingIndex: 7
+    displayName: 
+    showKeybind: 0
+  - actionName: Look
+    relativeBindingIndex: 0
+    displayName: 
+    showKeybind: 0
+  - actionName: Look
+    relativeBindingIndex: 1
+    displayName: 
+    showKeybind: 0
+  - actionName: Look
+    relativeBindingIndex: 2
+    displayName: 
+    showKeybind: 0
+  - actionName: Hold
+    relativeBindingIndex: 0
+    displayName: 
+    showKeybind: 0
+  - actionName: Hold
+    relativeBindingIndex: 1
+    displayName: 
+    showKeybind: 0
+  - actionName: Hold
+    relativeBindingIndex: 2
+    displayName: 
+    showKeybind: 0
+  - actionName: Hold
+    relativeBindingIndex: 3
+    displayName: 
+    showKeybind: 0
+  - actionName: Hold
+    relativeBindingIndex: 4
+    displayName: 
+    showKeybind: 0
+  - actionName: Interact
+    relativeBindingIndex: 0
+    displayName: Interact
+    showKeybind: 1
+  - actionName: Interact
+    relativeBindingIndex: 1
+    displayName: 
+    showKeybind: 0
+  - actionName: Crouch
+    relativeBindingIndex: 0
+    displayName: 
+    showKeybind: 0
+  - actionName: Crouch
+    relativeBindingIndex: 1
+    displayName: Crouch
+    showKeybind: 1
+  - actionName: Jump
+    relativeBindingIndex: 0
+    displayName: Jump
+    showKeybind: 1
+  - actionName: Jump
+    relativeBindingIndex: 1
+    displayName: 
+    showKeybind: 0
+  - actionName: Sprint
+    relativeBindingIndex: 0
+    displayName: Sprint
+    showKeybind: 1
+  - actionName: Sprint
+    relativeBindingIndex: 1
+    displayName: 
+    showKeybind: 0
+  - actionName: Pause
+    relativeBindingIndex: 0
+    displayName: Pause
+    showKeybind: 1
+  - actionName: Pause
+    relativeBindingIndex: 1
+    displayName: 
+    showKeybind: 0
+  - actionName: Debug
+    relativeBindingIndex: 0
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 1
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 2
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 3
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 4
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 5
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 6
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 7
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 8
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 9
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 11
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 12
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 13
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 14
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 16
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 17
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 18
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 19
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 20
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 21
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 22
+    displayName: 
+    showKeybind: 0
+  - actionName: Navigate
+    relativeBindingIndex: 23
+    displayName: 
+    showKeybind: 0
+  - actionName: Submit
+    relativeBindingIndex: 0
+    displayName: 
+    showKeybind: 0
+  - actionName: Cancel
+    relativeBindingIndex: 0
+    displayName: 
+    showKeybind: 0
+  - actionName: Point
+    relativeBindingIndex: 0
+    displayName: 
+    showKeybind: 0
+  - actionName: Point
+    relativeBindingIndex: 1
+    displayName: 
+    showKeybind: 0
+  - actionName: Point
+    relativeBindingIndex: 2
+    displayName: 
+    showKeybind: 0
+  - actionName: Click
+    relativeBindingIndex: 0
+    displayName: 
+    showKeybind: 0
+  - actionName: Click
+    relativeBindingIndex: 1
+    displayName: 
+    showKeybind: 0
+  - actionName: Click
+    relativeBindingIndex: 2
+    displayName: 
+    showKeybind: 0
+  - actionName: Click
+    relativeBindingIndex: 3
+    displayName: 
+    showKeybind: 0
+  - actionName: RightClick
+    relativeBindingIndex: 0
+    displayName: 
+    showKeybind: 0
+  - actionName: MiddleClick
+    relativeBindingIndex: 0
+    displayName: 
+    showKeybind: 0
+  - actionName: ScrollWheel
+    relativeBindingIndex: 0
+    displayName: 
+    showKeybind: 0
+  - actionName: TrackedDevicePosition
+    relativeBindingIndex: 0
+    displayName: 
+    showKeybind: 0
+  - actionName: TrackedDeviceOrientation
+    relativeBindingIndex: 0
+    displayName: 
+    showKeybind: 0
+  - actionName: ToggleViewHandy
+    relativeBindingIndex: 0
+    displayName: View Handy
+    showKeybind: 1
+  - actionName: FlashLightToggle
+    relativeBindingIndex: 0
+    displayName: Toggle FlashLight
+    showKeybind: 1

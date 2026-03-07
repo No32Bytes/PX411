@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class KeybindManager : MonoBehaviour
 {
+    [SerializeField] private KeybindManagerConfig keybindManagerData;
     [SerializeField] private GameObject KeybindManagerPrefab;
     [SerializeField] private ScrollRect keybindScrollView;
     public struct RebindKeyOperation
@@ -25,18 +26,25 @@ public class KeybindManager : MonoBehaviour
     }
     private void Awake()
     {
-        AddKeybind(InputSystem.actions.FindAction("ToggleViewHandy"),"Open Handy");
+        Initalize();
     }
-
-
-    private void AddKeybind(InputAction inputAction,string displayName)
+    private void Initalize()
     {
-        KeybindHelper keybindHelper = Instantiate(KeybindManagerPrefab,keybindScrollView.content.transform).GetComponent<KeybindHelper>();
-        keybindHelper.Initalize(inputAction,inputAction.bindings[0],this,displayName);
+        foreach (KeybindManagerConfig.KeybindMangerData data in keybindManagerData.configData)
+        {
+            if(!data.showKeybind)
+                continue;
+            AddKeybind(data.GetAction(), data.relativeBindingIndex, data.displayName);
+        }
+    }
+    private void AddKeybind(InputAction inputAction, int relativeBindingIndex, string displayName)
+    {
+        KeybindHelper keybindHelper = Instantiate(KeybindManagerPrefab, keybindScrollView.content.transform).GetComponent<KeybindHelper>();
+        keybindHelper.Initalize(inputAction, inputAction.bindings[relativeBindingIndex], this, displayName);
     }
     public void CompleteRebindKeyOperation()
     {
-        if(!rebindKeyOperationActive)
+        if (!rebindKeyOperationActive)
             return;
 
         currentInputListener?.Dispose();
