@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ public class KeybindHelper : MonoBehaviour
     private InputAction inputAction;
     private InputBinding inputBinding;
     private string inputBindingName;
+    private string KeyDisplayString => inputAction.GetBindingDisplayString(inputAction.GetBindingIndex(inputBinding));
 
     private void Awake()
     {
@@ -26,11 +28,10 @@ public class KeybindHelper : MonoBehaviour
         inputBindingName = targetInputBindingName;
         Reload();
     }
-
     private void Reload()
     {
         actionName.text = inputBindingName;
-        currentActionKeyName.text = inputAction.GetBindingDisplayString(inputAction.GetBindingIndex(inputBinding));
+        currentActionKeyName.text = KeyDisplayString;
     }
 
     private void RebindActionOnClick()
@@ -44,8 +45,33 @@ public class KeybindHelper : MonoBehaviour
         keybindManager.RegisterRebindKeyOperation(rebindKeyOperation);
     }
 
+    private bool CheckIfBindingIsNotInUse(string newDisplayString)
+    {
+        IEnumerator<InputBinding> enumerator = InputSystem.actions.bindings.GetEnumerator();
+        while(enumerator.MoveNext())
+        {
+            if(enumerator.Current.isComposite)
+                continue;
+            if(enumerator.Current.Matches(inputBinding))
+                continue;
+            if(!keybindManager.IsActionKeybindEnabled(enumerator.Current.action))
+                continue;
+
+            if(newDisplayString.ToUpper() == enumerator.Current.ToDisplayString().ToUpper())
+                return false;
+        }
+        return true;
+    }
+
     private void RebindActionExecute(InputControl inputControl)
     {
+        string newDisplayString = new InputBinding(inputControl.path).ToDisplayString();
+        if (!CheckIfBindingIsNotInUse(newDisplayString))
+        {
+            keybindManager.ErrorRebindKeyOperation(newDisplayString);
+            return;
+        }
+        
         int bindingIndex = inputAction.GetBindingIndex(inputBinding);
         inputAction.ApplyBindingOverride(bindingIndex,inputControl.path);
         keybindManager.CompleteRebindKeyOperation();
@@ -59,7 +85,14 @@ public class KeybindHelper : MonoBehaviour
 
     private void ResetActionOnClick()
     {
-        inputBinding.overridePath = null;
+        string newDisplayString = inputBinding.ToDisplayString(InputBinding.DisplayStringOptions.IgnoreBindingOverrides);
+        if(!CheckIfBindingIsNotInUse(newDisplayString))
+        {
+            keybindManager.ErrorRebindKeyOperation(newDisplayString);
+            return;
+        }
+        int bindingIndex = inputAction.GetBindingIndex(inputBinding);
+        inputAction.RemoveBindingOverride(bindingIndex);
         Reload();
     }
 }

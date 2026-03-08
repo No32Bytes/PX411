@@ -7,8 +7,10 @@ using UnityEngine.UI;
 public class KeybindManager : MonoBehaviour
 {
     [SerializeField] private KeybindManagerConfig keybindManagerData;
-    [SerializeField] private GameObject KeybindManagerPrefab;
+    [SerializeField] private GameObject keybindHelperPrefab;
     [SerializeField] private ScrollRect keybindScrollView;
+    [SerializeField] private GameObject errorMessage;
+    [SerializeField] private TMPro.TMP_Text errorMessageText;
     public struct RebindKeyOperation
     {
         public delegate void RebindActionExecute(InputControl inputControl);
@@ -20,6 +22,10 @@ public class KeybindManager : MonoBehaviour
     private bool rebindKeyOperationActive = false;
     private IDisposable currentInputListener;
 
+    private void OnEnable()
+    {
+        errorMessage.SetActive(false);
+    }
     private void OnDisable()
     {
         CompleteRebindKeyOperation();
@@ -32,15 +38,25 @@ public class KeybindManager : MonoBehaviour
     {
         foreach (KeybindManagerConfig.KeybindMangerData data in keybindManagerData.configData)
         {
-            if(!data.showKeybind)
+            if (!data.showKeybind)
                 continue;
             AddKeybind(data.GetAction(), data.relativeBindingIndex, data.displayName);
         }
     }
     private void AddKeybind(InputAction inputAction, int relativeBindingIndex, string displayName)
     {
-        KeybindHelper keybindHelper = Instantiate(KeybindManagerPrefab, keybindScrollView.content.transform).GetComponent<KeybindHelper>();
+        KeybindHelper keybindHelper = Instantiate(keybindHelperPrefab, keybindScrollView.content.transform).GetComponent<KeybindHelper>();
         keybindHelper.Initalize(inputAction, inputAction.bindings[relativeBindingIndex], this, displayName);
+    }
+    public bool IsActionKeybindEnabled(string actionName)
+    {
+        return keybindManagerData.configData.FindIndex(data => data.actionName == actionName && data.showKeybind) != -1;
+    }
+    public void ErrorRebindKeyOperation(string usedKey)
+    {
+        errorMessageText.text = $"The key {usedKey} is already in use";
+        errorMessage.SetActive(true);
+        CompleteRebindKeyOperation();
     }
     public void CompleteRebindKeyOperation()
     {
