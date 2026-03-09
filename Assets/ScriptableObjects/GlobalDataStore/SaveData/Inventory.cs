@@ -12,17 +12,20 @@ public class Inventory
 {
     [SerializeField] private List<InventoryItem> collectableInventory = new();
     [SerializeField] private List<InventoryItem> storeableInventory = new();
+    private static bool HasItemBeenCollectedInInventory(List<InventoryItem> targetInventory,string internalName,string itemEntityId)
+    {
+        int index = targetInventory.FindIndex((item) => item.GetInternalName() == internalName);
+        if(index != -1)
+            return targetInventory[index].HasItemEntityId(itemEntityId);
+        return false;
+    }
     public bool HasItemBeenCollected(string internalName, string itemEntityId)
     {
-        int index = collectableInventory.FindIndex((collectable) => collectable.GetInternalName() == internalName);
-        if (index != -1)
-            return collectableInventory[index].HasItemEntityId(itemEntityId);
-
-        index = storeableInventory.FindIndex((storeable) => storeable.GetInternalName() == internalName);
-        if (index != -1)
-            return collectableInventory[index].HasItemEntityId(itemEntityId);
-
-        return false;
+        bool collected = HasItemBeenCollectedInInventory(collectableInventory,internalName,itemEntityId);
+        if(collected)
+            return true;
+        
+        return HasItemBeenCollectedInInventory(storeableInventory,internalName,itemEntityId);
     }
 
     public bool PickupItem(string internalName, string itemEntityId)
@@ -71,11 +74,11 @@ public class Inventory
         inventoryItem = storeableInventory[index];
         return true;
     }
-    private InventoryItem GetInventoryItemFromInventory(List<InventoryItem> targetInventory, string internalName)
+    private static InventoryItem GetInventoryItemFromInventory(List<InventoryItem> targetInventory, string internalName)
     {
         int index = targetInventory.FindIndex((item) => item.GetInternalName() == internalName);
         if (index != -1)
-            return collectableInventory[index];
+            return targetInventory[index];
 
         InventoryItem inventoryItem = new(internalName);
         targetInventory.Add(inventoryItem);
