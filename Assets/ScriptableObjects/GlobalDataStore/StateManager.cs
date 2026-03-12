@@ -12,7 +12,7 @@ public class StateManager
     public class PlayerState
     {
         public bool unLoadPauseMenuSignal = false;
-        public int unLoadPauseMenuSceneCount = 0;  
+        public int unLoadPauseMenuSceneCount = 0;
         public Player playerReference;
     };
     public MenuMangerState menuManger = new();

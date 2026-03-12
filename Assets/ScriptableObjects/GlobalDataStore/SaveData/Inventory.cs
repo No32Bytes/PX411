@@ -12,20 +12,20 @@ public class Inventory
 {
     [SerializeField] private List<InventoryItem> collectableInventory = new();
     [SerializeField] private List<InventoryItem> storeableInventory = new();
-    private static bool HasItemBeenCollectedInInventory(List<InventoryItem> targetInventory,string internalName,string itemEntityId)
+    private static bool HasItemBeenCollectedInInventory(List<InventoryItem> targetInventory, string internalName, string itemEntityId)
     {
         int index = targetInventory.FindIndex((item) => item.GetInternalName() == internalName);
-        if(index != -1)
+        if (index != -1)
             return targetInventory[index].HasItemEntityId(itemEntityId);
         return false;
     }
     public bool HasItemBeenCollected(string internalName, string itemEntityId)
     {
-        bool collected = HasItemBeenCollectedInInventory(collectableInventory,internalName,itemEntityId);
-        if(collected)
+        bool collected = HasItemBeenCollectedInInventory(collectableInventory, internalName, itemEntityId);
+        if (collected)
             return true;
-        
-        return HasItemBeenCollectedInInventory(storeableInventory,internalName,itemEntityId);
+
+        return HasItemBeenCollectedInInventory(storeableInventory, internalName, itemEntityId);
     }
 
     public bool PickupItem(string internalName, string itemEntityId)
@@ -64,13 +64,13 @@ public class Inventory
 
         return true;
     }
-    public bool GetStoreableInventoryItem(string internalName,out InventoryItem inventoryItem)
+    public bool GetStoreableInventoryItem(string internalName, out InventoryItem inventoryItem)
     {
         inventoryItem = default;
         int index = storeableInventory.FindIndex((item) => item.GetInternalName() == internalName);
-        if(index == -1)
+        if (index == -1)
             return false;
-        
+
         inventoryItem = storeableInventory[index];
         return true;
     }

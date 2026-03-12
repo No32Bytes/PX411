@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    [Header("AudioManager")] 
+    [Header("AudioManager")]
     [SerializeField] private AudioMixerGroup musicMixerGroup;
     [SerializeField] private List<SoundTrack> soundTrackStore = new();
     public List<SoundTrack> InternalGetSoundTrackStore => soundTrackStore;

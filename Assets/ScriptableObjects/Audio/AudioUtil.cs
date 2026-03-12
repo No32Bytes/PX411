@@ -9,7 +9,7 @@ public class AudioUtil
         [SerializeField] private float max;
         public float GetRandom()
         {
-            return UnityEngine.Random.Range(min,max);
+            return UnityEngine.Random.Range(min, max);
         }
     }
     public static float ConvertRawVolumeToVolume(float infloat)

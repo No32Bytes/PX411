@@ -44,7 +44,7 @@ public class InventoryItem
     }
     public string GetLastItemEntityId()
     {
-        if(itemEntityIdsCollected.Count == 0) return "";
+        if (itemEntityIdsCollected.Count == 0) return "";
         return itemEntityIdsCollected[^1];
     }
 }

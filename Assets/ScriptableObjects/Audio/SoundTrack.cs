@@ -7,8 +7,8 @@ public class SoundTrack : ScriptableObject
     [SerializeField] private string soundTrackGroup;
     [SerializeField] private AudioClip audioClip;
     [SerializeField] private float volume = 1.0f;
-    public string GetSoundTrackId(){return soundTrackId;}
-    public string GetSoundTrackGroup(){return soundTrackGroup;}
+    public string GetSoundTrackId() { return soundTrackId; }
+    public string GetSoundTrackGroup() { return soundTrackGroup; }
     public void Play(AudioSource audioSource)
     {
         audioSource.clip = audioClip;

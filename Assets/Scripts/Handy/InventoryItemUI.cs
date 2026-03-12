@@ -15,15 +15,15 @@ public class InventoryItemUI : MonoBehaviour
     {
         this.inventoryItem = inventoryItem;
         ItemData itemData = inventoryItem.GetItemData();
-        
+
         itemIcon.overrideSprite = itemData.icon;
-    
+
         itemName.text = itemData.displayName;
-        
-        if(inventoryItem.GetItemCount() == 1)
+
+        if (inventoryItem.GetItemCount() == 1)
             itemCount.text = "";
-        else 
-            itemCount.text = inventoryItem.GetItemCount() +"x";
+        else
+            itemCount.text = inventoryItem.GetItemCount() + "x";
 
         itemDescription.text = itemData.description;
 
@@ -36,7 +36,7 @@ public class InventoryItemUI : MonoBehaviour
     private void DropButtonOnClick()
     {
         GlobalDataStore.GetStateManager().player.playerReference.DropItem(inventoryItem.GetInternalName());
-        GlobalDataStore.GetStateManager().player.playerReference.HandySetActive(false);
-        
+        GlobalDataStore.GetStateManager().player.playerReference.HandyUISetActive(false);
+
     }
 }

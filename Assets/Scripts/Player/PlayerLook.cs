@@ -5,16 +5,17 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] private PlayerReferences playerRef;
     [SerializeField] private LayerMask playerInteractionLayerMask;
     [SerializeField] private float maxItemInteractionDistance = 1f;
-    [SerializeField] private float interactionCooldownSeconds = 1f;
-    [SerializeField] private float holdActionCooldownSeconds = 0.5f;
+    [SerializeField] private float interactActionCooldownS;
+    [SerializeField] private float holdActionCooldownS;
+
+    private InputHandlerCooldown interactAction, holdAction;
     private float xRotation = 0f;
     private InputHandler lookAction;
-    private InputHandlerCooldown interactAction, holdAction;
     void Start()
     {
         lookAction = new("Look");
-        interactAction = new("Interact", interactionCooldownSeconds);
-        holdAction = new("Hold", holdActionCooldownSeconds);
+        interactAction = new("Interact", interactActionCooldownS);
+        holdAction = new("Hold", holdActionCooldownS);
 
         playerRef.playerCamera.enabled = true;
         lookAction.Enable();

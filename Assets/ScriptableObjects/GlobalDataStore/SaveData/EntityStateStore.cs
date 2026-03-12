@@ -17,7 +17,7 @@ public class EntityState
 [Serializable]
 public class EntityStateStore
 {
-    [SerializeField]private List<EntityState> entityStateStore = new();
+    [SerializeField] private List<EntityState> entityStateStore = new();
     private bool FindEntityState(string entityId, out EntityState entityState)
     {
         entityState = null;

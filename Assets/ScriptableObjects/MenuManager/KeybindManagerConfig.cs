@@ -20,11 +20,11 @@ public class KeybindManagerConfig : ScriptableObject
 
         public InputAction GetAction()
         {
-            foreach(InputActionMap map in InputSystem.actions.actionMaps)
+            foreach (InputActionMap map in InputSystem.actions.actionMaps)
             {
-                foreach(InputAction action in map)
+                foreach (InputAction action in map)
                 {
-                    if(action.name == actionName)
+                    if (action.name == actionName)
                         return action;
                 }
             }

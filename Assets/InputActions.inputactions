@@ -909,7 +909,7 @@
             "id": "0d1cb23a-dcbf-4140-a1c1-8e95b91daabd",
             "actions": [
                 {
-                    "name": "ToggleViewHandy",
+                    "name": "ToggleHandyUI",
                     "type": "Button",
                     "id": "de478ea6-3101-4916-bcb1-7815f0525aff",
                     "expectedControlType": "",
@@ -918,7 +918,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "FlashLightToggle",
+                    "name": "ToggleHandy",
                     "type": "Button",
                     "id": "d788b4af-dbf0-400b-929d-806562f839e4",
                     "expectedControlType": "",
@@ -935,7 +935,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "ToggleViewHandy",
+                    "action": "ToggleHandyUI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -946,7 +946,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "FlashLightToggle",
+                    "action": "ToggleHandy",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

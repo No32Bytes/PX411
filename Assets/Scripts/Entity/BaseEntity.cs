@@ -15,7 +15,7 @@ public abstract class BaseEntity : MonoBehaviour
         }
 
         AwakeGravity();
-        
+
         EntityAwake();
     }
     private void AwakeGravity()
@@ -23,17 +23,17 @@ public abstract class BaseEntity : MonoBehaviour
         Rigidbody entityRigibody;
         if (!useGravity)
         {
-            if(gameObject.TryGetComponent(out entityRigibody))
+            if (gameObject.TryGetComponent(out entityRigibody))
                 DestroyImmediate(entityRigibody);
             return;
-        }        
+        }
 
-        if(!gameObject.TryGetComponent(out entityRigibody))
+        if (!gameObject.TryGetComponent(out entityRigibody))
             entityRigibody = gameObject.AddComponent<Rigidbody>();
 
         entityRigibody.useGravity = useGravity;
     }
-    protected virtual void EntityAwake(){}
+    protected virtual void EntityAwake() { }
     public abstract void EntityInteraction();
     public void SetBaseEntityId(string entityId)
     {

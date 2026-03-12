@@ -74,13 +74,13 @@ namespace DebugDev
     {
         public static bool Physics_CheckBox(Vector3 center, Vector3 halfExtents)
         {
-            DebugDraw.DrawCheckBox(center,halfExtents);
-            return Physics.CheckBox(center,halfExtents);
+            DebugDraw.DrawCheckBox(center, halfExtents);
+            return Physics.CheckBox(center, halfExtents);
         }
-        public static bool Physics_Raycast(Ray ray, out RaycastHit hitInfo, float maxDistance, int layerMask,int debugRayLength)
+        public static bool Physics_Raycast(Ray ray, out RaycastHit hitInfo, float maxDistance, int layerMask, int debugRayLength)
         {
             Debug.DrawRay(ray.origin, ray.direction, Color.red, debugRayLength);
             return Physics.Raycast(ray, out hitInfo, maxDistance, layerMask);
-        }  
+        }
     };
 };

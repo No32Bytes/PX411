@@ -25,7 +25,7 @@ public class ItemEntity : BaseEntity
         bool isSpaceEmpty = !Physics.CheckBox(prefabCreatePosition, prefabSize / 2);
         if (isSpaceEmpty)
         {
-            GlobalDataStore.GetInventory().DropItem(itemData.internalName,out _);
+            GlobalDataStore.GetInventory().DropItem(itemData.internalName, out _);
             GameObject ItemEntityObject = Instantiate(itemData.storeableSpawnPrefab, prefabCreatePosition, new Quaternion());
             ItemEntityObject.name = itemEntityId + " - " + itemData.internalName;
             ItemEntityObject.GetComponent<ItemEntity>().SetBaseEntityId(itemEntityId);

@@ -30,7 +30,7 @@ public class GlobalDataStore : MonoBehaviour
         settingsManager = new(Application.persistentDataPath);
         saveManager = new(Application.persistentDataPath);
         stateManager = new();
-        if(!gameObject.TryGetComponent(out stateManager.eventSystem))
+        if (!gameObject.TryGetComponent(out stateManager.eventSystem))
             throw new System.Exception("GlobalDataStore must be possess an Eventsystem must be manually added");
 
         DebugDev.DebugFunction.Start();

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -32,18 +33,18 @@ namespace InputUtil
             TimeFixedUnscaled
         }
         private readonly CooldownType cooldownType;
-        public float InputCooldownSeconds { get; private set; }
+        private readonly float inputCooldownSeconds;
         private float lastInteractionTimer = Mathf.NegativeInfinity;
 
         public InputHandlerCooldown(string actionNameOrId, float inputCooldownSeconds, CooldownType cooldownType = CooldownType.Time)
         : base(actionNameOrId)
         {
-            InputCooldownSeconds = inputCooldownSeconds;
+            this.inputCooldownSeconds = inputCooldownSeconds;
             this.cooldownType = cooldownType;
         }
         public bool InteractWithCooldown()
         {
-            if (GetCurrentTime() - lastInteractionTimer < InputCooldownSeconds)
+            if (GetCurrentTime() - lastInteractionTimer < inputCooldownSeconds)
                 return false;
 
             if (!IsPressed())
