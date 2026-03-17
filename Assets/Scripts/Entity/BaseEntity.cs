@@ -34,7 +34,7 @@ public abstract class BaseEntity : MonoBehaviour
         entityRigibody.useGravity = useGravity;
     }
     protected virtual void EntityAwake() { }
-    public abstract void EntityInteraction();
+    public virtual void EntityInteraction(){}
     public void SetBaseEntityId(string entityId)
     {
         this.entityId = entityId;

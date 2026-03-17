@@ -19,19 +19,23 @@ namespace Entity
         }
         public void Update()
         {
+            if(healthSlider != null)
+                healthSlider.maxValue = maxHealth;
+            
             if (CurrentHealth <= 0)
             {
                 onDeathCallback?.Invoke();
                 return;
             }
 
-            healthSlider.maxValue = maxHealth;
             float currentHealthRegenerated = healthRegenRate * Time.deltaTime;
             if (CurrentHealth + currentHealthRegenerated >= maxHealth)
                 CurrentHealth = maxHealth;
             else
                 CurrentHealth += currentHealthRegenerated;
-            healthSlider.value = CurrentHealth;
+
+            if(healthSlider != null)
+                healthSlider.value = CurrentHealth;
         }
         public void SetOnDeathCallback(OnDeath onDeathCallback)
         {
