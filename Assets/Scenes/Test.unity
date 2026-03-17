@@ -1108,6 +1108,11 @@ MonoBehaviour:
     maxHealth: 100
     healthRegenRate: 1
     healthSlider: {fileID: 1989460620}
+--- !u!95 &1920658512 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6688645440453263909, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
+  m_PrefabInstance: {fileID: 6101861056853742118}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1989460619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,10 +1440,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 152689484228126651, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 857974607693062053, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1479,6 +1480,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2986001983048084926, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
+      propertyPath: toggleHandyActionCooldownS
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986001983048084926, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
+      propertyPath: toggleHandyAnimationParamter.animator
+      value: 
+      objectReference: {fileID: 1920658512}
+    - target: {fileID: 2986001983048084926, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
+      propertyPath: toggleHandyAnimationParamter.paramterName
+      value: HandyShowState
+      objectReference: {fileID: 0}
     - target: {fileID: 4558536933535554284, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1490,14 +1503,6 @@ PrefabInstance:
     - target: {fileID: 5947897615398049941, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499082087463225246, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7892591299419616066, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9039394068981085245, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_AnchorMax.x

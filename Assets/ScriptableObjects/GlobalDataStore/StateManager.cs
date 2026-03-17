@@ -11,11 +11,11 @@ public class StateManager
     };
     public class PlayerState
     {
-        public bool unLoadPauseMenuSignal = false;
-        public int unLoadPauseMenuSceneCount = 0;
-        public Player playerReference;
+        public SignalUtil.SignalUnloadPauseMenu signalUnloadPauseMenu = new();
+        public Player player;
+        public PlayerItemHandler playerItemHandler;
     };
     public MenuMangerState menuManger = new();
-    public PlayerState player = new();
+    public PlayerState playerState = new();
     public EventSystem eventSystem;
 };

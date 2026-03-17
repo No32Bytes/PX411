@@ -7,9 +7,7 @@ public class PauseMenu : MonoBehaviour
     {
         menuManagerRef.RemoveOverlayCameraFromTargetCamera();
 
-        GlobalDataStore.GetStateManager().player.unLoadPauseMenuSceneCount = SceneManager.sceneCount;
-        GlobalDataStore.GetStateManager().player.unLoadPauseMenuSignal = true;
-
+        GlobalDataStore.GetStateManager().playerState.signalUnloadPauseMenu.TriggerSignal(SceneManager.sceneCount);
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(SceneManager.sceneCount - 1));
     }
     public void ReturnTitleMenuButtonOnClick()

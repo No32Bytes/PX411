@@ -4,13 +4,13 @@ using UnityEngine.UI;
 
 public class InventoryItemUI : MonoBehaviour
 {
-    [SerializeField] private InventoryItem inventoryItem;
     [SerializeField] private Image itemIcon;
     [SerializeField] private TMP_Text itemName;
     [SerializeField] private TMP_Text itemCount;
     [SerializeField] private TMP_Text itemDescription;
     [SerializeField] private Button dropButton;
     [SerializeField] private Button equipButton;
+    private InventoryItem inventoryItem;
     public void SetInventoryItemUI(InventoryItem inventoryItem)
     {
         this.inventoryItem = inventoryItem;
@@ -35,8 +35,8 @@ public class InventoryItemUI : MonoBehaviour
     }
     private void DropButtonOnClick()
     {
-        GlobalDataStore.GetStateManager().player.playerReference.DropItem(inventoryItem.GetInternalName());
-        GlobalDataStore.GetStateManager().player.playerReference.HandyUISetActive(false);
+        GlobalDataStore.GetStateManager().playerState.playerItemHandler.DropItem(inventoryItem.GetInternalName());
+        GlobalDataStore.GetStateManager().playerState.player.DisableHandyScreenUI();
 
     }
 }

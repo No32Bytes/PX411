@@ -1605,7 +1605,8 @@ GameObject:
   m_Component:
   - component: {fileID: 857974607693062053}
   - component: {fileID: 3365217639543896046}
-  - component: {fileID: 5070006366690729012}
+  - component: {fileID: 5830073693923073851}
+  - component: {fileID: 2986001983048084926}
   - component: {fileID: 2030288991526930040}
   - component: {fileID: 1701829394085909098}
   - component: {fileID: 4782497412097584315}
@@ -1653,7 +1654,7 @@ MonoBehaviour:
   playerBody: {fileID: 857974607693062053}
   playerCamera: {fileID: 3253371939972054904}
   handyScreenUI: {fileID: 7892591299419616066}
---- !u!114 &5070006366690729012
+--- !u!114 &5830073693923073851
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1662,7 +1663,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5947897615398049941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adac60da70a704644bb1d548652b0107, type: 3}
+  m_Script: {fileID: 11500000, guid: 628ffae6053e93c40980e08182cfae14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   playerRef: {fileID: 3365217639543896046}
@@ -1670,9 +1671,22 @@ MonoBehaviour:
     maxHealth: 100
     healthRegenRate: 1
     healthSlider: {fileID: 7499082087463225246}
-  itemDropDistance: 1.5
   toggleHandyUIActionCooldownS: 0
-  toggleHandyActionCooldownS: 0.25
+--- !u!114 &2986001983048084926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5947897615398049941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d084aeb82c218e469f33e2a2499b237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerItemHandler
+  playerRef: {fileID: 3365217639543896046}
+  itemDropDistance: 1.5
+  toggleHandyActionCooldownS: 0.1
   toggleHandyAnimationParamter:
     animator: {fileID: 6688645440453263909}
     paramterName: HandyShowState
@@ -2564,7 +2578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &26444760087354467
 RectTransform:
   m_ObjectHideFlags: 0
