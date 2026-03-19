@@ -1654,6 +1654,8 @@ MonoBehaviour:
   playerBody: {fileID: 857974607693062053}
   playerCamera: {fileID: 3253371939972054904}
   handyScreenUI: {fileID: 7892591299419616066}
+  leftPlayerArm: {fileID: 0}
+  leftPlayerArmItemAnchor: {fileID: 0}
 --- !u!114 &5830073693923073851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,10 +1688,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerItemHandler
   playerRef: {fileID: 3365217639543896046}
   itemDropDistance: 1.5
-  toggleHandyActionCooldownS: 0.1
+  toggleHandyActionCooldownS: 0.5
   toggleHandyAnimationParamter:
     animator: {fileID: 6688645440453263909}
     paramterName: HandyShowState
+  leftArmAnimationParamter:
+    animator: {fileID: 0}
+    paramterName: 
 --- !u!114 &2030288991526930040
 MonoBehaviour:
   m_ObjectHideFlags: 0

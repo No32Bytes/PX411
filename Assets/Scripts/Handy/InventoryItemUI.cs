@@ -29,9 +29,9 @@ public class InventoryItemUI : MonoBehaviour
 
         dropButton.onClick.AddListener(DropButtonOnClick);
 
-        bool canBeEquipped = itemData.optionalheldItemData != null;
-        equipButton.enabled = canBeEquipped;
-        equipButton.gameObject.SetActive(canBeEquipped);
+
+        equipButton.enabled = itemData.HasHeldItemData;
+        equipButton.gameObject.SetActive(itemData.HasHeldItemData);
     }
     private void DropButtonOnClick()
     {

@@ -8,6 +8,8 @@ public class ItemData : ScriptableObject
     public bool storeable;
     public GameObject storeableSpawnPrefab;
     public Sprite icon;
-    public HeldItemData optionalheldItemData = null;
+    public HeldItemData heldItemData = null;
     [TextArea] public string description;
+    
+    public bool HasHeldItemData => heldItemData != null;
 }

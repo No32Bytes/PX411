@@ -5,4 +5,6 @@ public class PlayerReferences : MonoBehaviour
     public Transform playerBody;
     public Camera playerCamera;
     public GameObject handyScreenUI;
+    public GameObject leftPlayerArm;
+    public GameObject leftPlayerArmItemAnchor;
 }
