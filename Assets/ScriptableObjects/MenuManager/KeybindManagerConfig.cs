@@ -17,7 +17,18 @@ public class KeybindManagerConfig : ScriptableObject
         public int relativeBindingIndex;
         public string displayName;
         public bool showKeybind;
-
+        public bool CheckActionValid()
+        {
+            try
+            {
+                GetAction();
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
         public InputAction GetAction()
         {
             foreach (InputActionMap map in InputSystem.actions.actionMaps)

@@ -81,8 +81,10 @@ public class KeybindManagerConfigEditor : Editor
             }
         }
 
-        List<string> actionNames = new();
-        actionNames.Add("None");
+        List<string> actionNames = new()
+        {
+            "None"
+        };
 
         foreach (KeybindManagerConfig.KeybindMangerData data in keybindManagerConfig.configData)
         {
@@ -135,10 +137,20 @@ public class KeybindManagerConfigEditor : Editor
 
     public override void OnInspectorGUI()
     {
-        keybindManagerConfig = (target as KeybindManagerConfig);
+        keybindManagerConfig = target as KeybindManagerConfig;
         AddMissingActionsToConfig();
 
         DrawBaseConfigSelector();
+
+        for(int i = 0; i < keybindManagerConfig.configData.Count; i++)
+        {
+            if(keybindManagerConfig.configData[i].CheckActionValid())
+                continue;
+
+            keybindManagerConfig.configData.Remove(keybindManagerConfig.configData[i]);
+            i--;
+            SaveThis();
+        }
 
         foreach (KeybindManagerConfig.KeybindMangerData data in keybindManagerConfig.configData)
         {

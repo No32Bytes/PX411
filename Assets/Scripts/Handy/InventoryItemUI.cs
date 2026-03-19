@@ -32,6 +32,13 @@ public class InventoryItemUI : MonoBehaviour
 
         equipButton.enabled = itemData.HasHeldItemData;
         equipButton.gameObject.SetActive(itemData.HasHeldItemData);
+        if (itemData.HasHeldItemData)
+            equipButton.onClick.AddListener(EquipButtonOnClick);
+    }
+    private void EquipButtonOnClick()
+    {
+        GlobalDataStore.GetStateManager().playerState.playerItemHandler.EquipItem(inventoryItem.GetInternalName());
+        GlobalDataStore.GetStateManager().playerState.player.DisableHandyScreenUI();
     }
     private void DropButtonOnClick()
     {

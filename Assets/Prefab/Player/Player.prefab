@@ -1689,12 +1689,20 @@ MonoBehaviour:
   playerRef: {fileID: 3365217639543896046}
   itemDropDistance: 1.5
   toggleHandyActionCooldownS: 0.5
+  attackActionCooldownS: 0
+  throwActionCooldownS: 0
   toggleHandyAnimationParamter:
     animator: {fileID: 6688645440453263909}
     paramterName: HandyShowState
   leftArmAnimationParamter:
-    animator: {fileID: 0}
-    paramterName: 
+    animator: {fileID: 6688645440453263909}
+    paramterName: LeftArmStateItemId
+  leftArmAttackAnimationParamter:
+    animator: {fileID: 6688645440453263909}
+    paramterName: LeftArmAttack
+  leftArmThrowAnimationParamter:
+    animator: {fileID: 6688645440453263909}
+    paramterName: LeftArmThrow
 --- !u!114 &2030288991526930040
 MonoBehaviour:
   m_ObjectHideFlags: 0

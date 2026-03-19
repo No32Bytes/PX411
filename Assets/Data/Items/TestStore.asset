@@ -17,4 +17,5 @@ MonoBehaviour:
   storeable: 1
   storeableSpawnPrefab: {fileID: 272118437342803925, guid: 71d0fd1497141714cb114fec9fd34a72, type: 3}
   icon: {fileID: 0}
+  heldItemData: {fileID: 11400000, guid: f058ad2674521b64aa1cfbb378309173, type: 2}
   description: this is storeable

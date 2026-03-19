@@ -21,4 +21,6 @@ public class AnimationParamterInfo
         get { return animator.GetInteger(paramterName); }
         set { animator.SetInteger(paramterName, value); }
     }
+    public void SetTrigger() => animator.SetTrigger(paramterName);
+    public void ResetTrigger() => animator.ResetTrigger(paramterName);
 }

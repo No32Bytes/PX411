@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeybindManagerConfig
   showOnlyEnabled: 1
   activeActionMaps:
-  - UI
+  - Handy
+  - Player
   configData:
   - actionName: Move
     relativeBindingIndex: 0
@@ -22,19 +23,19 @@ MonoBehaviour:
     showKeybind: 0
   - actionName: Move
     relativeBindingIndex: 2
-    displayName: Move Forward
+    displayName: Forward
     showKeybind: 1
   - actionName: Move
     relativeBindingIndex: 3
-    displayName: Move Backward
+    displayName: Backward
     showKeybind: 1
   - actionName: Move
     relativeBindingIndex: 4
-    displayName: Move Left
+    displayName: Left
     showKeybind: 1
   - actionName: Move
     relativeBindingIndex: 5
-    displayName: Move Right
+    displayName: Right
     showKeybind: 1
   - actionName: Move
     relativeBindingIndex: 6
@@ -120,6 +121,14 @@ MonoBehaviour:
     relativeBindingIndex: 0
     displayName: 
     showKeybind: 0
+  - actionName: AttackItem
+    relativeBindingIndex: 0
+    displayName: Attack
+    showKeybind: 1
+  - actionName: ThrowItem
+    relativeBindingIndex: 0
+    displayName: Throw
+    showKeybind: 1
   - actionName: Navigate
     relativeBindingIndex: 1
     displayName: 
@@ -260,11 +269,11 @@ MonoBehaviour:
     relativeBindingIndex: 0
     displayName: 
     showKeybind: 0
-  - actionName: ToggleViewHandy
+  - actionName: ToggleHandyUI
     relativeBindingIndex: 0
-    displayName: View Handy
+    displayName: Toggle Handy Screen
     showKeybind: 1
-  - actionName: FlashLightToggle
+  - actionName: ToggleHandy
     relativeBindingIndex: 0
-    displayName: Toggle FlashLight
+    displayName: Toggle Handy
     showKeybind: 1

@@ -13,8 +13,23 @@ public class KeybindHelper : MonoBehaviour
     private InputAction inputAction;
     private InputBinding inputBinding;
     private string inputBindingName;
-    private string KeyDisplayString => inputAction.GetBindingDisplayString(inputAction.GetBindingIndex(inputBinding));
+    private string KeyDisplayString => inputAction.GetBindingDisplayString(GetBindingIndex());
 
+    private int GetBindingIndex()
+    {
+            int index = inputAction.GetBindingIndex(inputBinding);
+            if (index == -1)
+            {
+                for(int i = 0; i < inputAction.bindings.Count; i++)
+                {
+                    if(inputAction.bindings[i] != inputBinding)
+                        continue;
+                    index = i;
+                    break;
+                }
+            }
+            return index;
+    }
     private void Awake()
     {
         rebindActionButton.onClick.AddListener(RebindActionOnClick);
@@ -50,14 +65,15 @@ public class KeybindHelper : MonoBehaviour
         IEnumerator<InputBinding> enumerator = InputSystem.actions.bindings.GetEnumerator();
         while (enumerator.MoveNext())
         {
-            if (enumerator.Current.isComposite)
+            InputBinding Current = enumerator.Current;
+            if (Current.isComposite)
                 continue;
-            if (enumerator.Current.Matches(inputBinding))
+            if (Current.Matches(inputBinding))
                 continue;
-            if (!keybindManager.IsActionKeybindEnabled(enumerator.Current.action))
+            if (!keybindManager.IsActionKeybindEnabled(Current.action))
                 continue;
 
-            if (newDisplayString.ToUpper() == enumerator.Current.ToDisplayString().ToUpper())
+            if (newDisplayString.ToUpper() == Current.ToDisplayString().ToUpper() && inputBinding.groups == Current.groups)
                 return false;
         }
         return true;
@@ -72,7 +88,7 @@ public class KeybindHelper : MonoBehaviour
             return;
         }
 
-        int bindingIndex = inputAction.GetBindingIndex(inputBinding);
+        int bindingIndex = GetBindingIndex();
         inputAction.ApplyBindingOverride(bindingIndex, inputControl.path);
         keybindManager.CompleteRebindKeyOperation();
     }
@@ -91,7 +107,7 @@ public class KeybindHelper : MonoBehaviour
             keybindManager.ErrorRebindKeyOperation(newDisplayString);
             return;
         }
-        int bindingIndex = inputAction.GetBindingIndex(inputBinding);
+        int bindingIndex = GetBindingIndex();
         inputAction.RemoveBindingOverride(bindingIndex);
         Reload();
     }
