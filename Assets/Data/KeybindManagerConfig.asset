@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03844929fc98104090d9c985cf48892, type: 3}
   m_Name: KeybindManagerConfig
   m_EditorClassIdentifier: Assembly-CSharp::KeybindManagerConfig
-  showOnlyEnabled: 1
+  showOnlyEnabled: 0
   activeActionMaps:
-  - Handy
   - Player
   configData:
   - actionName: Move
@@ -276,4 +275,8 @@ MonoBehaviour:
   - actionName: ToggleHandy
     relativeBindingIndex: 0
     displayName: Toggle Handy
+    showKeybind: 1
+  - actionName: DropItem
+    relativeBindingIndex: 0
+    displayName: Drop
     showKeybind: 1

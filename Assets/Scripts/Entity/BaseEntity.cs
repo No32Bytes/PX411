@@ -2,7 +2,7 @@ using UnityEngine;
 public abstract class BaseEntity : MonoBehaviour
 {
     [SerializeField] protected string entityId;
-    [SerializeField] protected bool useGravity = true;
+    [SerializeField] protected bool usePhysics = true;
     private void Awake()
     {
         if (string.IsNullOrEmpty(entityId))
@@ -14,24 +14,23 @@ public abstract class BaseEntity : MonoBehaviour
             return;
         }
 
-        AwakeGravity();
+        SetPhysicsState(usePhysics);
 
         EntityAwake();
     }
-    private void AwakeGravity()
+    private Rigidbody GetEntityRigibody()
     {
-        Rigidbody entityRigibody;
-        if (!useGravity)
-        {
-            if (gameObject.TryGetComponent(out entityRigibody))
-                DestroyImmediate(entityRigibody);
-            return;
-        }
-
-        if (!gameObject.TryGetComponent(out entityRigibody))
+        if (!gameObject.TryGetComponent(out Rigidbody entityRigibody))
             entityRigibody = gameObject.AddComponent<Rigidbody>();
+        return entityRigibody;
+    }
+    public void SetPhysicsState(bool enabled)
+    {
+        usePhysics = enabled;
 
-        entityRigibody.useGravity = useGravity;
+        Rigidbody rigidbody = GetEntityRigibody();
+        rigidbody.useGravity = usePhysics;
+        rigidbody.isKinematic = !usePhysics;
     }
     protected virtual void EntityAwake() { }
     public virtual void EntityInteraction(){}

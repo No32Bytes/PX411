@@ -8,17 +8,17 @@ public class InventoryItem
     [SerializeField] private string internalName;
     [SerializeField] private int itemCount = 0;
     [SerializeField] private List<string> itemEntityIdsCollected = new();
+    public int ItemCount => itemCount;
+    public string InternalName => internalName;
     public InventoryItem(string internalName)
     {
         this.internalName = internalName;
     }
 
-    public string GetInternalName() { return internalName; }
     public ItemData GetItemData()
     {
         return GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
     }
-    public int GetItemCount() { return itemCount; }
 
     public bool HasItemEntityId(string itemEntityId)
     {

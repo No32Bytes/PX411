@@ -20,13 +20,13 @@ public class ItemEntity : BaseEntity
     public static bool TryDropItem(Camera playerCamera, ItemData itemData, string itemEntityId, float distance)
     {
         Vector3 prefabCreatePosition = playerCamera.transform.position + playerCamera.transform.forward * distance;
-        Vector3 prefabSize = itemData.storeableSpawnPrefab.GetComponent<BoxCollider>().size;
+        Vector3 prefabSize = itemData.storeableItemData.spawnPrefab.GetComponent<BoxCollider>().size;
 
         bool isSpaceEmpty = !Physics.CheckBox(prefabCreatePosition, prefabSize / 2);
         if (isSpaceEmpty)
         {
             GlobalDataStore.GetInventory().DropItem(itemData.internalName, out _);
-            GameObject ItemEntityObject = Instantiate(itemData.storeableSpawnPrefab, prefabCreatePosition, new Quaternion());
+            GameObject ItemEntityObject = Instantiate(itemData.storeableItemData.spawnPrefab, prefabCreatePosition, new Quaternion());
             ItemEntityObject.name = itemEntityId + " - " + itemData.internalName;
             ItemEntityObject.GetComponent<ItemEntity>().SetBaseEntityId(itemEntityId);
         }

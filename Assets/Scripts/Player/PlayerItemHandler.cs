@@ -1,5 +1,6 @@
 using UnityEngine;
 using InputUtil;
+using Unity.VisualScripting;
 public class PlayerItemHandler : MonoBehaviour
 {
     [SerializeField] private PlayerReferences playerRef;
@@ -7,18 +8,22 @@ public class PlayerItemHandler : MonoBehaviour
     [SerializeField] private float toggleHandyActionCooldownS;
     [SerializeField] private float attackActionCooldownS;
     [SerializeField] private float throwActionCooldownS;
+    [SerializeField] private float dropActionCooldownS;
+    [Header("Animation Paramters")]
     [SerializeField] private AnimationParamterInfo toggleHandyAnimationParamter;
     [SerializeField] private AnimationParamterInfo leftArmAnimationParamter;
     [SerializeField] private AnimationParamterInfo leftArmAttackAnimationParamter;
     [SerializeField] private AnimationParamterInfo leftArmThrowAnimationParamter;
-    private InputHandlerCooldown attackAction, throwAction;
+    [SerializeField] private AnimationParamterInfo leftArmDropAnimatiomParamter;
+    private InputHandlerCooldown attackAction, throwAction, dropAction;
     private InputHandlerCooldown toggleHandyAction;
     private InventoryItem equippedItem;
     private void Start()
     {
         toggleHandyAction = new("ToggleHandy", toggleHandyActionCooldownS);
-        attackAction = new("AttackItem",attackActionCooldownS);
-        throwAction = new("ThrowItem",throwActionCooldownS);
+        attackAction = new("AttackItem", attackActionCooldownS);
+        throwAction = new("ThrowItem", throwActionCooldownS);
+        dropAction = new("DropItem",dropActionCooldownS);
 
         GlobalDataStore.GetStateManager().playerState.playerItemHandler = this;
     }
@@ -26,35 +31,54 @@ public class PlayerItemHandler : MonoBehaviour
     {
         if (toggleHandyAction.InteractWithCooldown())
             toggleHandyAnimationParamter.ValueBool = !toggleHandyAnimationParamter.ValueBool;
-        
-        if(attackAction.InteractWithCooldown())
+
+        if (attackAction.InteractWithCooldown())
             leftArmAttackAnimationParamter.SetTrigger();
 
-        if(throwAction.InteractWithCooldown())
+        if (throwAction.InteractWithCooldown())
             leftArmThrowAnimationParamter.SetTrigger();
+
+        if (dropAction.InteractWithCooldown())
+            leftArmDropAnimatiomParamter.SetTrigger();
 
     }
     private void PlayerItemActionResetTrigger()
     {
         leftArmAttackAnimationParamter.ResetTrigger();
         leftArmThrowAnimationParamter.ResetTrigger();
+        leftArmDropAnimatiomParamter.ResetTrigger();
     }
     public void PlayerItemAttack()
     {
         PlayerItemActionResetTrigger();
-        Debug.Log("attack");
     }
     public void PlayerItemThrow()
     {
         PlayerItemActionResetTrigger();
-        Debug.Log("throw");
+        if(equippedItem == null)
+            return;
+                
+        if(equippedItem.ItemCount == 0)
+            UnEquipCurrentItem();
+    }
+    public void PlayerItemDrop()
+    {
+        PlayerItemActionResetTrigger();
+        if(equippedItem == null)
+            return;
+
+        if(!DropItem(equippedItem.InternalName))
+            return;
+        
+        if(equippedItem.ItemCount == 0)
+            UnEquipCurrentItem();
     }
 
     public bool DropItem(string internalName)
     {
         ItemData itemData = GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
 
-        if (!itemData.storeable || itemData.storeableSpawnPrefab == null)
+        if (!itemData.Storeable || itemData.storeableItemData.spawnPrefab == null)
             return false;
         if (!GlobalDataStore.GetInventory().GetStoreableInventoryItem(internalName, out InventoryItem inventoryItem))
             return false;
@@ -71,12 +95,12 @@ public class PlayerItemHandler : MonoBehaviour
             return false;
 
         ItemData itemData = GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
-        if (!itemData.HasHeldItemData)
+        if (!itemData.Equippable)
             return false;
 
-        leftArmAnimationParamter.ValueInt = itemData.heldItemData.GeldHeldItemAniamtionIdHash();
+        leftArmAnimationParamter.ValueInt = itemData.InternalNameIntHash;
         equippedItem = inventoryItem;
-        Debug.Log("Equipped Item" + inventoryItem.GetInternalName());
+        Debug.Log("Equipped Item" + inventoryItem.InternalName);
         return true;
     }
     public void UnEquipCurrentItem()
@@ -84,7 +108,7 @@ public class PlayerItemHandler : MonoBehaviour
         if (equippedItem == null)
             return;
 
-        Debug.Log("UnEquipped Item" + equippedItem.GetInternalName());
+        Debug.Log("UnEquipped Item" + equippedItem.InternalName);
         leftArmAnimationParamter.ValueInt = 0;
         equippedItem = null;
     }

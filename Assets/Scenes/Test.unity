@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeacherMullerEntity
   entityId: muller
-  useGravity: 1
+  usePhysics: 1
   healthBar:
     maxHealth: 100
     healthRegenRate: 1
@@ -1323,7 +1323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemEntity
   entityId: test
-  useGravity: 0
+  usePhysics: 0
   itemData: {fileID: 11400000, guid: c4883eeb16da8bf429592af3369dbb80, type: 2}
 --- !u!1 &2072224422
 GameObject:

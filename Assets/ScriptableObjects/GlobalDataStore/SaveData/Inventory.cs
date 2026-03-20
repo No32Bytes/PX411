@@ -14,7 +14,7 @@ public class Inventory
     [SerializeField] private List<InventoryItem> storeableInventory = new();
     private static bool HasItemBeenCollectedInInventory(List<InventoryItem> targetInventory, string internalName, string itemEntityId)
     {
-        int index = targetInventory.FindIndex((item) => item.GetInternalName() == internalName);
+        int index = targetInventory.FindIndex((item) => item.InternalName == internalName);
         if (index != -1)
             return targetInventory[index].HasItemEntityId(itemEntityId);
         return false;
@@ -32,7 +32,7 @@ public class Inventory
     {
         ItemData itemData = GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
 
-        if (!itemData.storeable)
+        if (!itemData.Storeable)
         {
             GetInventoryItemFromInventory(collectableInventory, internalName).PickupItem(itemEntityId);
             return true;
@@ -48,18 +48,18 @@ public class Inventory
         itemData = GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
 
 
-        if (!itemData.storeable)
+        if (!itemData.Storeable)
         {
             GetInventoryItemFromInventory(collectableInventory, internalName).RemoveItem();
             return true;
         }
 
-        int index = storeableInventory.FindIndex((item) => item.GetInternalName() == internalName);
+        int index = storeableInventory.FindIndex((item) => item.InternalName == internalName);
         if (index == -1)
             return false;
 
         storeableInventory[index].RemoveItem();
-        if (storeableInventory[index].GetItemCount() == 0)
+        if (storeableInventory[index].ItemCount == 0)
             storeableInventory.RemoveAt(index);
 
         return true;
@@ -67,7 +67,7 @@ public class Inventory
     public bool GetStoreableInventoryItem(string internalName, out InventoryItem inventoryItem)
     {
         inventoryItem = default;
-        int index = storeableInventory.FindIndex((item) => item.GetInternalName() == internalName);
+        int index = storeableInventory.FindIndex((item) => item.InternalName == internalName);
         if (index == -1)
             return false;
 
@@ -76,7 +76,7 @@ public class Inventory
     }
     private static InventoryItem GetInventoryItemFromInventory(List<InventoryItem> targetInventory, string internalName)
     {
-        int index = targetInventory.FindIndex((item) => item.GetInternalName() == internalName);
+        int index = targetInventory.FindIndex((item) => item.InternalName == internalName);
         if (index != -1)
             return targetInventory[index];
 
