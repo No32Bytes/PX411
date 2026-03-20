@@ -23,7 +23,7 @@ public class PlayerItemHandler : MonoBehaviour
         toggleHandyAction = new("ToggleHandy", toggleHandyActionCooldownS);
         attackAction = new("AttackItem", attackActionCooldownS);
         throwAction = new("ThrowItem", throwActionCooldownS);
-        dropAction = new("DropItem",dropActionCooldownS);
+        dropAction = new("DropItem", dropActionCooldownS);
 
         GlobalDataStore.GetStateManager().playerState.playerItemHandler = this;
     }
@@ -55,30 +55,42 @@ public class PlayerItemHandler : MonoBehaviour
     public void PlayerItemThrow()
     {
         PlayerItemActionResetTrigger();
-        if(equippedItem == null)
+        if (equippedItem == null)
             return;
-                
-        if(equippedItem.ItemCount == 0)
+
+        if (!ThrowItem(equippedItem))
+            return;
+
+        if (equippedItem.ItemCount == 0)
             UnEquipCurrentItem();
     }
     public void PlayerItemDrop()
     {
         PlayerItemActionResetTrigger();
-        if(equippedItem == null)
+        if (equippedItem == null)
             return;
 
-        if(!DropItem(equippedItem.InternalName))
+        if (!DropItem(equippedItem.InternalName))
             return;
-        
-        if(equippedItem.ItemCount == 0)
+
+        if (equippedItem.ItemCount == 0)
             UnEquipCurrentItem();
     }
+    private bool ThrowItem(InventoryItem inventoryItem)
+    {
+        ItemData itemData = GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(inventoryItem.InternalName);
 
+        if (!itemData.Storeable)
+            return false;
+
+        string itemEntityIdNewPrefab = inventoryItem.GetLastItemEntityId();
+        return ItemEntity.TryDropItem(playerRef.playerCamera, itemData, itemEntityIdNewPrefab, itemDropDistance, itemData.heldItemData.throwVelocity);
+    }
     public bool DropItem(string internalName)
     {
         ItemData itemData = GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
 
-        if (!itemData.Storeable || itemData.storeableItemData.spawnPrefab == null)
+        if (!itemData.Storeable)
             return false;
         if (!GlobalDataStore.GetInventory().GetStoreableInventoryItem(internalName, out InventoryItem inventoryItem))
             return false;
@@ -103,7 +115,7 @@ public class PlayerItemHandler : MonoBehaviour
         Debug.Log("Equipped Item" + inventoryItem.InternalName);
         return true;
     }
-    public void UnEquipCurrentItem()
+    private void UnEquipCurrentItem()
     {
         if (equippedItem == null)
             return;

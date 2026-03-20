@@ -18,7 +18,7 @@ public abstract class BaseEntity : MonoBehaviour
 
         EntityAwake();
     }
-    private Rigidbody GetEntityRigibody()
+    public Rigidbody GetEntityRigibody()
     {
         if (!gameObject.TryGetComponent(out Rigidbody entityRigibody))
             entityRigibody = gameObject.AddComponent<Rigidbody>();

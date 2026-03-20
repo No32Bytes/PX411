@@ -16,8 +16,7 @@ public class ItemEntity : BaseEntity
 
         DestroyEntity();
     }
-
-    public static bool TryDropItem(Camera playerCamera, ItemData itemData, string itemEntityId, float distance)
+    public static bool TryDropItem(Camera playerCamera, ItemData itemData, string itemEntityId, float distance, float startVelocity = 0f)
     {
         Vector3 prefabCreatePosition = playerCamera.transform.position + playerCamera.transform.forward * distance;
         Vector3 prefabSize = itemData.storeableItemData.spawnPrefab.GetComponent<BoxCollider>().size;
@@ -28,7 +27,11 @@ public class ItemEntity : BaseEntity
             GlobalDataStore.GetInventory().DropItem(itemData.internalName, out _);
             GameObject ItemEntityObject = Instantiate(itemData.storeableItemData.spawnPrefab, prefabCreatePosition, new Quaternion());
             ItemEntityObject.name = itemEntityId + " - " + itemData.internalName;
-            ItemEntityObject.GetComponent<ItemEntity>().SetBaseEntityId(itemEntityId);
+
+            ItemEntity itemEntity = ItemEntityObject.GetComponent<ItemEntity>();
+            itemEntity.SetBaseEntityId(itemEntityId);
+            itemEntity.GetEntityRigibody().linearVelocity = startVelocity * playerCamera.transform.forward;
+
         }
         return isSpaceEmpty;
     }
