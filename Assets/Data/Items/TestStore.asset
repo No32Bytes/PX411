@@ -22,4 +22,4 @@ MonoBehaviour:
   heldItemData:
     equippable: 1
     heldItemPrefab: {fileID: 272118437342803925, guid: 71d0fd1497141714cb114fec9fd34a72, type: 3}
-    throwVelocity: 0
+    throwVelocity: 10
