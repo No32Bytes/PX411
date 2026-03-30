@@ -1670,8 +1670,7 @@ MonoBehaviour:
   playerBody: {fileID: 857974607693062053}
   playerCamera: {fileID: 3253371939972054904}
   handyScreenUI: {fileID: 7892591299419616066}
-  leftPlayerArm: {fileID: 0}
-  leftPlayerArmItemAnchor: {fileID: 0}
+  leftPlayerArmItemAnchor: {fileID: 7608278344563737578}
 --- !u!114 &5830073693923073851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1948,8 +1947,8 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras:
-  - {fileID: 6618299938157571313}
   - {fileID: 3323273500910984476}
+  - {fileID: 6618299938157571313}
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2

@@ -10,14 +10,10 @@ public class InventoryItem
     [SerializeField] private List<string> itemEntityIdsCollected = new();
     public int ItemCount => itemCount;
     public string InternalName => internalName;
+    public ItemData ItemData => GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
     public InventoryItem(string internalName)
     {
         this.internalName = internalName;
-    }
-
-    public ItemData GetItemData()
-    {
-        return GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
     }
 
     public bool HasItemEntityId(string itemEntityId)

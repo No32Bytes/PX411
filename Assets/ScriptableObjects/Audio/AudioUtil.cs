@@ -5,8 +5,8 @@ public class AudioUtil
     [Serializable]
     public class RandomRange
     {
-        [SerializeField] private float min;
-        [SerializeField] private float max;
+        [SerializeField] private float min = 1f;
+        [SerializeField] private float max = 1f;
         public float GetRandom()
         {
             return UnityEngine.Random.Range(min, max);

@@ -1,6 +1,6 @@
 using UnityEngine;
 using InputUtil;
-using Unity.VisualScripting;
+
 public class PlayerItemHandler : MonoBehaviour
 {
     [SerializeField] private PlayerReferences playerRef;
@@ -18,6 +18,12 @@ public class PlayerItemHandler : MonoBehaviour
     private InputHandlerCooldown attackAction, throwAction, dropAction;
     private InputHandlerCooldown toggleHandyAction;
     private InventoryItem equippedItem;
+    private GameObject equippedItemGameObject;
+    private AudioSource audioSource;
+    private void Awake()
+    {
+        audioSource = gameObject.AddComponent<AudioSource>();
+    }
     private void Start()
     {
         toggleHandyAction = new("ToggleHandy", toggleHandyActionCooldownS);
@@ -51,6 +57,7 @@ public class PlayerItemHandler : MonoBehaviour
     public void PlayerItemAttack()
     {
         PlayerItemActionResetTrigger();
+        equippedItem.ItemData.heldItemData.attackSoundEffect.Play(audioSource);
     }
     public void PlayerItemThrow()
     {
@@ -100,9 +107,6 @@ public class PlayerItemHandler : MonoBehaviour
     }
     public bool EquipItem(string internalName)
     {
-        if (equippedItem != null)
-            UnEquipCurrentItem();
-
         if (!GlobalDataStore.GetInventory().GetStoreableInventoryItem(internalName, out InventoryItem inventoryItem))
             return false;
 
@@ -110,10 +114,25 @@ public class PlayerItemHandler : MonoBehaviour
         if (!itemData.Equippable)
             return false;
 
+        if (equippedItem != null)
+            UnEquipCurrentItem();
+
         leftArmAnimationParamter.ValueInt = itemData.InternalNameIntHash;
         equippedItem = inventoryItem;
+
+        EquipItemGameObject();
         Debug.Log("Equipped Item" + inventoryItem.InternalName);
+
         return true;
+    }
+    private void EquipItemGameObject()
+    {
+        equippedItemGameObject = Instantiate(equippedItem.ItemData.heldItemData.heldItemPrefab,playerRef.leftPlayerArmItemAnchor.transform);
+    }
+    private void UnequipItemGameObject()
+    {
+        Destroy(equippedItemGameObject);
+        equippedItemGameObject = null;
     }
     private void UnEquipCurrentItem()
     {
@@ -121,6 +140,8 @@ public class PlayerItemHandler : MonoBehaviour
             return;
 
         Debug.Log("UnEquipped Item" + equippedItem.InternalName);
+        UnequipItemGameObject();
+        
         leftArmAnimationParamter.ValueInt = 0;
         equippedItem = null;
     }

@@ -14,7 +14,7 @@ public class InventoryItemUI : MonoBehaviour
     public void SetInventoryItemUI(InventoryItem inventoryItem)
     {
         this.inventoryItem = inventoryItem;
-        ItemData itemData = inventoryItem.GetItemData();
+        ItemData itemData = inventoryItem.ItemData;
 
         itemIcon.overrideSprite = itemData.icon;
 

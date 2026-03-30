@@ -16,10 +16,12 @@ MonoBehaviour:
   internalName: testStoreInternal
   icon: {fileID: 0}
   description: this is storeable
+  collisionSoundEffect: {fileID: 0}
   storeableItemData:
     storeable: 1
     spawnPrefab: {fileID: 272118437342803925, guid: 71d0fd1497141714cb114fec9fd34a72, type: 3}
   heldItemData:
     equippable: 1
-    heldItemPrefab: {fileID: 272118437342803925, guid: 71d0fd1497141714cb114fec9fd34a72, type: 3}
+    heldItemPrefab: {fileID: 272118437342803925, guid: dfde60fb026d6804e98b9800e777255d, type: 3}
     throwVelocity: 10
+    attackSoundEffect: {fileID: 11400000, guid: d4bbc2e4207978e4a8f68b24274ae1f3, type: 2}

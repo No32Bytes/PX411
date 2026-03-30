@@ -1,5 +1,4 @@
 using System;
-using System.Text;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ItemData", menuName = "Item/ItemData")]
@@ -9,6 +8,7 @@ public class ItemData : ScriptableObject
     public string internalName;
     public Sprite icon;
     [TextArea] public string description;
+    public SimpleSoundEffect collisionSoundEffect;
 
     [Serializable]
     public struct StoreableItemData
@@ -31,6 +31,7 @@ public class ItemData : ScriptableObject
         public bool equippable;
         public GameObject heldItemPrefab;
         public float throwVelocity;
+        public SimpleSoundEffect attackSoundEffect;
     }
     public HeldItemData heldItemData;
     public bool Equippable
