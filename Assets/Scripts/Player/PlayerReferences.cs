@@ -6,4 +6,5 @@ public class PlayerReferences : MonoBehaviour
     public Camera playerCamera;
     public GameObject handyScreenUI;
     public GameObject leftPlayerArmItemAnchor;
+    public GameObject overlayFPS;
 }

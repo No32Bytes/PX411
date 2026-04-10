@@ -1,5 +1,6 @@
 using UnityEngine;
 using InputUtil;
+using System;
 
 public class PlayerItemHandler : MonoBehaviour
 {
@@ -54,33 +55,46 @@ public class PlayerItemHandler : MonoBehaviour
         leftArmThrowAnimationParamter.ResetTrigger();
         leftArmDropAnimatiomParamter.ResetTrigger();
     }
-    public void PlayerItemAttack()
+    private bool PlayerItemActionStateCheck()
     {
         PlayerItemActionResetTrigger();
+        if(equippedItem == null)
+            return false;
+        if(audioSource.isPlaying)
+            return false;
+
+        return true;
+    }
+    public void PlayerItemAttack()
+    {
+        if(!PlayerItemActionStateCheck())
+            return;
+
         equippedItem.ItemData.heldItemData.attackSoundEffect.Play(audioSource);
     }
     public void PlayerItemThrow()
     {
-        PlayerItemActionResetTrigger();
-        if (equippedItem == null)
+        if(!PlayerItemActionStateCheck())
             return;
 
         if (!ThrowItem(equippedItem))
             return;
 
-        if (equippedItem.ItemCount == 0)
-            UnEquipCurrentItem();
+        UpdateEquippedItem();
     }
     public void PlayerItemDrop()
     {
-        PlayerItemActionResetTrigger();
-        if (equippedItem == null)
+        if(!PlayerItemActionStateCheck())
             return;
 
         if (!DropItem(equippedItem.InternalName))
             return;
-
-        if (equippedItem.ItemCount == 0)
+        
+        UpdateEquippedItem();
+    }
+    private void UpdateEquippedItem()
+    {
+        if(equippedItem == null)
             UnEquipCurrentItem();
     }
     private bool ThrowItem(InventoryItem inventoryItem)
@@ -102,6 +116,9 @@ public class PlayerItemHandler : MonoBehaviour
         if (!GlobalDataStore.GetInventory().GetStoreableInventoryItem(internalName, out InventoryItem inventoryItem))
             return false;
 
+        if(inventoryItem.InternalName == equippedItem.InternalName && equippedItem.ItemCount == 1)
+            UnEquipCurrentItem();
+
         string itemEntityIdNewPrefab = inventoryItem.GetLastItemEntityId();
         return ItemEntity.TryDropItem(playerRef.playerCamera, itemData, itemEntityIdNewPrefab, itemDropDistance);
     }
@@ -116,6 +133,8 @@ public class PlayerItemHandler : MonoBehaviour
 
         if (equippedItem != null)
             UnEquipCurrentItem();
+
+        PlayerItemActionResetTrigger();
 
         leftArmAnimationParamter.ValueInt = itemData.InternalNameIntHash;
         equippedItem = inventoryItem;

@@ -1,5 +1,5 @@
 using UnityEngine;
-public abstract class BaseEntity : MonoBehaviour
+public class BaseEntity : MonoBehaviour
 {
     [SerializeField] protected string entityId;
     [SerializeField] protected bool usePhysics = true;

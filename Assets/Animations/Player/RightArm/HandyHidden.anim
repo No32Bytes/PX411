@@ -30,7 +30,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: BaseCamera/RightPlayerArmContainer
+    path: OverlayFPS/RightArmContainer
   m_ScaleCurves: []
   m_FloatCurves:
   - serializedVersion: 2
@@ -50,7 +50,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: BaseCamera/RightPlayerArmContainer
+    path: OverlayFPS/RightArmContainer
     classID: 1
     script: {fileID: 0}
     flags: 16
@@ -71,7 +71,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: BaseCamera/RightPlayerArmContainer/Handy/FlashLight
+    path: OverlayFPS/RightArmContainer/Handy/FlashLight
     classID: 108
     script: {fileID: 0}
     flags: 0
@@ -149,7 +149,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: BaseCamera/RightPlayerArmContainer
+    path: OverlayFPS/RightArmContainer
     classID: 1
     script: {fileID: 0}
     flags: 16
@@ -170,7 +170,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: BaseCamera/RightPlayerArmContainer
+    path: OverlayFPS/RightArmContainer
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -191,7 +191,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: BaseCamera/RightPlayerArmContainer
+    path: OverlayFPS/RightArmContainer
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -212,7 +212,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: BaseCamera/RightPlayerArmContainer
+    path: OverlayFPS/RightArmContainer
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -233,7 +233,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: BaseCamera/RightPlayerArmContainer/Handy/FlashLight
+    path: OverlayFPS/RightArmContainer/Handy/FlashLight
     classID: 108
     script: {fileID: 0}
     flags: 0
