@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
 
 
     [SerializeField] private LayerMask groundLayerMask;
-    [SerializeField] private float groundCheckLength = 0.3f;
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 2f;
     private CharacterController characterController;
@@ -57,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     }
     bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, -transform.up, groundCheckLength, groundLayerMask);
+        return characterController.isGrounded;
     }
 
     public void ReducePlayerStamina(float staminaMinusAmount) { staminaBar.ReduceStamina(staminaMinusAmount); }
