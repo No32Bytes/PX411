@@ -19,6 +19,7 @@ public class PlayerItemHandler : MonoBehaviour
     private InputHandlerCooldown attackAction, throwAction, dropAction;
     private InputHandlerCooldown toggleHandyAction;
     private InventoryItem equippedItem;
+    public bool HasItemEquipped => equippedItem != null;
     private GameObject equippedItemGameObject;
     private AudioSource audioSource;
     private void Awake()
@@ -58,7 +59,7 @@ public class PlayerItemHandler : MonoBehaviour
     private bool PlayerItemActionStateCheck()
     {
         PlayerItemActionResetTrigger();
-        if(equippedItem == null)
+        if(!HasItemEquipped)
             return false;
         if(audioSource.isPlaying)
             return false;
@@ -77,7 +78,7 @@ public class PlayerItemHandler : MonoBehaviour
         if(!PlayerItemActionStateCheck())
             return;
 
-        if (!ThrowItem(equippedItem))
+        if (!ThrowItem(equippedItem.InternalName))
             return;
 
         UpdateEquippedItem();
@@ -94,33 +95,36 @@ public class PlayerItemHandler : MonoBehaviour
     }
     private void UpdateEquippedItem()
     {
-        if(equippedItem == null)
+        if(!HasItemEquipped)
             UnEquipCurrentItem();
     }
-    private bool ThrowItem(InventoryItem inventoryItem)
-    {
-        ItemData itemData = GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(inventoryItem.InternalName);
-
-        if (!itemData.Storeable)
-            return false;
-
-        string itemEntityIdNewPrefab = inventoryItem.GetLastItemEntityId();
-        return ItemEntity.TryDropItem(playerRef.playerCamera, itemData, itemEntityIdNewPrefab, itemDropDistance, itemData.heldItemData.throwVelocity);
-    }
-    public bool DropItem(string internalName)
+    private bool DropItemInternal(string internalName,bool throwItem)
     {
         ItemData itemData = GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
 
-        if (!itemData.Storeable)
-            return false;
-        if (!GlobalDataStore.GetInventory().GetStoreableInventoryItem(internalName, out InventoryItem inventoryItem))
-            return false;
+        float velocity = 0f;
+        if(throwItem)
+            velocity = itemData.heldItemData.throwVelocity;
 
-        if(inventoryItem.InternalName == equippedItem.InternalName && equippedItem.ItemCount == 1)
-            UnEquipCurrentItem();
-
+        if(!itemData.Storeable)
+            return false;
+        if(!GlobalDataStore.GetInventory().GetStoreableInventoryItem(internalName,out InventoryItem inventoryItem))
+            return false;
+        
+        if(HasItemEquipped)
+            if(inventoryItem.InternalName == equippedItem.InternalName && equippedItem.ItemCount == 1)
+                UnEquipCurrentItem();
+        
         string itemEntityIdNewPrefab = inventoryItem.GetLastItemEntityId();
-        return ItemEntity.TryDropItem(playerRef.playerCamera, itemData, itemEntityIdNewPrefab, itemDropDistance);
+        return ItemEntity.TryDropItem(playerRef.playerCamera, itemData, itemEntityIdNewPrefab, itemDropDistance,velocity);
+    }
+    private bool ThrowItem(string internalName)
+    {
+        return DropItemInternal(internalName,true);
+    }
+    public bool DropItem(string internalName)
+    {
+        return DropItemInternal(internalName,false);
     }
     public bool EquipItem(string internalName)
     {
@@ -131,7 +135,7 @@ public class PlayerItemHandler : MonoBehaviour
         if (!itemData.Equippable)
             return false;
 
-        if (equippedItem != null)
+        if (!HasItemEquipped)
             UnEquipCurrentItem();
 
         PlayerItemActionResetTrigger();

@@ -14,6 +14,10 @@ public class ItemEntity : BaseEntity
         if (!GlobalDataStore.GetInventory().PickupItem(itemData.internalName, entityId))
             return;
 
+        PlayerItemHandler playerItemHandler = GlobalDataStore.GetStateManager().playerState.playerItemHandler;
+        if(!playerItemHandler.HasItemEquipped)
+            playerItemHandler.EquipItem(itemData.internalName);
+
         DestroyEntity();
     }
     public static bool TryDropItem(Camera playerCamera, ItemData itemData, string itemEntityId, float distance, float startVelocity = 0f)

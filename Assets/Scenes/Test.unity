@@ -1765,6 +1765,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5830073693923073851, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
+      propertyPath: toggleHandyUIActionCooldownS
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5947897615398049941, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_Name
       value: Player

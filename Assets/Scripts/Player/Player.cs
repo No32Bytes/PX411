@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         pauseAction = new("Pause");
-        toggleHandyUIAction = new("ToggleHandyUI", toggleHandyUIActionCooldownS);
+        toggleHandyUIAction = new("ToggleHandyUI", toggleHandyUIActionCooldownS,InputHandlerCooldown.CooldownType.TimeUnscaled);
 
         GlobalDataStore.GetStateManager().playerState.player = this;
         EnableGamePlay();
@@ -39,7 +39,17 @@ public class Player : MonoBehaviour
         }
 
         if (toggleHandyUIAction.InteractWithCooldown())
+        {
+            if(audioListener.enabled == false)
+                return;
+                
+            if(Time.timeScale == 0)
+            {
+                DisableHandyScreenUI();
+                return;
+            }
             EnableHandyScreenUI();
+        }
             
         
 
