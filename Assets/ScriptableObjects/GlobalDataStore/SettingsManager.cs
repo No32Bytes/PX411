@@ -36,8 +36,10 @@ public class SettingsManager
     public void Load()
     {
         SaveUtil.LoadObjectFromFile(GetSettingsDataPath(), out settingsData);
-        if (settingsData.bindingOverridesJson != "")
-            InputSystem.actions.LoadBindingOverridesFromJson(settingsData.bindingOverridesJson);
+        
+        if(settingsData != null)
+            if (settingsData.bindingOverridesJson != "")
+                InputSystem.actions.LoadBindingOverridesFromJson(settingsData.bindingOverridesJson);
 
         settingsData ??= new();
     }
