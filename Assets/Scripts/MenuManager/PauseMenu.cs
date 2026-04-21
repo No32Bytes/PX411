@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private MenuManager menuManagerRef;
@@ -17,4 +18,13 @@ public class PauseMenu : MonoBehaviour
         menuManagerRef.RemoveOverlayCameraFromTargetCamera();
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
     }
+
+   void Update()
+    {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+         ReturnButtonOnClick();
+        }
+    }
 }
+

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using SettingsElements;
+using UnityEngine.InputSystem;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -36,5 +37,13 @@ public class SettingsMenu : MonoBehaviour
             menuManagerRef.titleMenuRef.SetActive(true);
         else
             menuManagerRef.pauseMenuRef.SetActive(true);
+    }
+
+    void Update()
+    {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            BackButtonOnClick();
+        }
     }
 }

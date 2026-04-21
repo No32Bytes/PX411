@@ -135,7 +135,7 @@ public class PlayerItemHandler : MonoBehaviour
         if (!itemData.Equippable)
             return false;
 
-        if (!HasItemEquipped)
+        if (HasItemEquipped)
             UnEquipCurrentItem();
 
         PlayerItemActionResetTrigger();
