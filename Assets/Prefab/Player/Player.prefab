@@ -62,9 +62,9 @@ Transform:
   m_GameObject: {fileID: 174331939391116388}
   serializedVersion: 2
   m_LocalRotation: {x: 0.017936762, y: 0.09125542, z: -0.04058131, w: 0.9948386}
-  m_LocalPosition: {x: 0.479, y: -0.287, z: 1.082}
-  m_LocalScale: {x: 0.12133771, y: 0.22173834, z: 0.011590002}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.532, y: -0.287, z: 0.802}
+  m_LocalScale: {x: 0.25, y: 0.45686194, z: 0.023879636}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2275404276666198074}
   m_Father: {fileID: 3465589673435963104}
@@ -1465,6 +1465,7 @@ MonoBehaviour:
     maxHealth: 100
     healthRegenRate: 1
     healthSlider: {fileID: 7499082087463225246}
+  togglePauseMenuCooldownS: 0.2
   toggleHandyUIActionCooldownS: 0.1
 --- !u!114 &2986001983048084926
 MonoBehaviour:
@@ -2995,6 +2996,10 @@ PrefabInstance:
     - target: {fileID: 461392702117330276, guid: e2e88455f13399c44b681ed507ca2fce, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 461392702117330276, guid: e2e88455f13399c44b681ed507ca2fce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 473569195900417044, guid: e2e88455f13399c44b681ed507ca2fce, type: 3}
       propertyPath: m_Layer

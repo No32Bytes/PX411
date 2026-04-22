@@ -8,9 +8,10 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerReferences playerRef;
     [SerializeField] private HealthBar healthBar;
-    [SerializeField] private float toggleHandyUIActionCooldownS;
+    [SerializeField] private float togglePauseMenuCooldownS = 0.5f;
+    [SerializeField] private float toggleHandyUIActionCooldownS = 0.1f;
     private InputHandlerCooldown toggleHandyUIAction;
-    private InputHandler pauseAction;
+    public InputHandlerCooldown pauseAction;
     private AudioListener audioListener;
 
     private void Awake()
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        pauseAction = new("Pause");
+        pauseAction = new("Pause",togglePauseMenuCooldownS,InputHandlerCooldown.CooldownType.TimeUnscaled);
         toggleHandyUIAction = new("ToggleHandyUI", toggleHandyUIActionCooldownS,InputHandlerCooldown.CooldownType.TimeUnscaled);
 
         GlobalDataStore.GetStateManager().playerState.player = this;
@@ -52,11 +53,9 @@ public class Player : MonoBehaviour
         }
             
         
-
-        if (pauseAction.IsPressed())
-            LoadPauseMenu();
-            
-        
+        if(audioListener.enabled == true)
+            if (pauseAction.InteractWithCooldown())
+                LoadPauseMenu();
     }
 
     private void LoadPauseMenu()

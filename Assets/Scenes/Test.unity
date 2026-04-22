@@ -1873,6 +1873,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tisch
       objectReference: {fileID: 0}
+    - target: {fileID: 7553197114243801022, guid: 55bf6788499860a4594225a50f106c72, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

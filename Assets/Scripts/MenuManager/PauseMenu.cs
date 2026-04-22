@@ -18,13 +18,11 @@ public class PauseMenu : MonoBehaviour
         menuManagerRef.RemoveOverlayCameraFromTargetCamera();
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
     }
-
-   void Update()
+    private void Update()
     {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-         ReturnButtonOnClick();
-        }
+        var pauseAction = GlobalDataStore.GetStateManager().playerState.player.pauseAction;
+        
+        if(pauseAction.InteractWithCooldown())
+            ReturnButtonOnClick();
     }
 }
-
