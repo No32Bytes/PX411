@@ -671,7 +671,13 @@ MonoBehaviour:
   - {fileID: 1094847574}
   - {fileID: 934133992}
   - {fileID: 1588814590}
-  speed: 5
+  playerCamera: {fileID: 1211185709}
+  speed: 3
+  rotationSpeed: 8
+  stopDistance: 5
+  loseDistance: 15
+  rightArmContainer: {fileID: 1984100543}
+  timeUntilChase: 3
 --- !u!135 &953418983
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -749,7 +755,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953418981}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &953418986
 Transform:
   m_ObjectHideFlags: 0
@@ -1004,6 +1010,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6691424108696424793, guid: 71d0fd1497141714cb114fec9fd34a72, type: 3}
   m_PrefabInstance: {fileID: 7460820637178257805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1211185709 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6287022887350789284, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
+  m_PrefabInstance: {fileID: 6101861056853742118}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1369938982
 GameObject:
@@ -1496,12 +1507,17 @@ Transform:
   m_GameObject: {fileID: 1588814589}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.32948, y: 2.85, z: 12.01}
+  m_LocalPosition: {x: 6.32948, y: 2.85, z: 20.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1984100543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3227939834739080691, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
+  m_PrefabInstance: {fileID: 6101861056853742118}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1989460619
 GameObject:
   m_ObjectHideFlags: 0
