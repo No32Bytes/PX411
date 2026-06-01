@@ -6,7 +6,10 @@ public class BaseEntity : MonoBehaviour
     private void Awake()
     {
         if (string.IsNullOrEmpty(entityId))
+        {
+            Debug.Log(gameObject.name + " - has an empty entityId");
             return;
+        }
 
         if (!GlobalDataStore.GetSaveData().entityStateStore.GetEntityIdEnabledState(entityId))
         {
@@ -33,7 +36,7 @@ public class BaseEntity : MonoBehaviour
         rigidbody.isKinematic = !usePhysics;
     }
     protected virtual void EntityAwake() { }
-    public virtual void EntityInteraction(){}
+    public virtual void EntityInteraction() { }
     public void SetBaseEntityId(string entityId)
     {
         this.entityId = entityId;

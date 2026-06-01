@@ -74,6 +74,16 @@ public class Inventory
         inventoryItem = storeableInventory[index];
         return true;
     }
+    public bool GetCollectableInventoryItem(string internalName, out InventoryItem inventoryItem)
+    {
+        inventoryItem = default;
+        int index = collectableInventory.FindIndex((item) => item.InternalName == internalName);
+        if (index == -1)
+            return false;
+
+        inventoryItem = collectableInventory[index];
+        return true;
+    }
     private static InventoryItem GetInventoryItemFromInventory(List<InventoryItem> targetInventory, string internalName)
     {
         int index = targetInventory.FindIndex((item) => item.InternalName == internalName);

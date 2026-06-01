@@ -11,6 +11,9 @@ public class ItemEntity : BaseEntity
     }
     public override void EntityInteraction()
     {
+        if(itemData == null)
+            throw new System.Exception("ItemEntity has no itemData associated with it.");
+
         if (!GlobalDataStore.GetInventory().PickupItem(itemData.internalName, entityId))
             return;
 

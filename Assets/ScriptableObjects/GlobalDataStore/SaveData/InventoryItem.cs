@@ -38,6 +38,15 @@ public class InventoryItem
         itemEntityIdsCollected.RemoveAt(itemEntityIdsCollected.Count - 1);
         return true;
     }
+    public bool RemoveItemForever()
+    {
+        string id = GetLastItemEntityId();
+        if (string.IsNullOrEmpty(id))
+            return false;
+        GlobalDataStore.GetSaveData().entityStateStore.SetEntityIdEnabledState(id, false);
+        RemoveItem();
+        return true;
+    }
     public string GetLastItemEntityId()
     {
         if (itemEntityIdsCollected.Count == 0) return "";
