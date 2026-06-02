@@ -7,4 +7,10 @@ public class PlayerReferences : MonoBehaviour
     public GameObject handyScreenUI;
     public GameObject leftPlayerArmItemAnchor;
     public GameObject overlayFPS;
+    public GameObject overlayInformationView;
+
+    private void Awake()
+    {
+        GlobalDataStore.GetStateManager().playerState.playerRef = this;
+    }
 }

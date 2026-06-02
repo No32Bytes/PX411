@@ -8,7 +8,7 @@ public class SimpleSoundEffect : BaseSoundEffect
     [SerializeField] private AudioUtil.RandomRange pitch;
     public override void Play(AudioSource audioSource)
     {
-        if(audioClip == null) return;
+        if (audioClip == null) return;
 
         audioSource.clip = audioClip;
         audioSource.pitch = pitch.GetRandom();

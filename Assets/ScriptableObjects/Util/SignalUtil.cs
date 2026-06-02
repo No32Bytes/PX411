@@ -14,9 +14,9 @@ namespace SignalUtil
         }
         public bool Valid()
         {
-            if(!isActive)
+            if (!isActive)
                 return false;
-            
+
             return targetScenceCount != SceneManager.sceneCount;
         }
         public void Reset()

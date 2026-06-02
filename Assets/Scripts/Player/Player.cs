@@ -18,14 +18,15 @@ public class Player : MonoBehaviour
     {
         audioListener = gameObject.AddComponent<AudioListener>();
         healthBar.SetOnDeathCallback(OnPlayerDeath);
+
+        GlobalDataStore.GetStateManager().playerState.player = this;
     }
 
     private void Start()
     {
-        pauseAction = new("Pause",togglePauseMenuCooldownS,InputHandlerCooldown.CooldownType.TimeUnscaled);
-        toggleHandyUIAction = new("ToggleHandyUI", toggleHandyUIActionCooldownS,InputHandlerCooldown.CooldownType.TimeUnscaled);
+        pauseAction = new("Pause", togglePauseMenuCooldownS, InputHandlerCooldown.CooldownType.TimeUnscaled);
+        toggleHandyUIAction = new("ToggleHandyUI", toggleHandyUIActionCooldownS, InputHandlerCooldown.CooldownType.TimeUnscaled);
 
-        GlobalDataStore.GetStateManager().playerState.player = this;
         EnableGamePlay();
     }
 
@@ -41,19 +42,19 @@ public class Player : MonoBehaviour
 
         if (toggleHandyUIAction.InteractWithCooldown())
         {
-            if(audioListener.enabled == false)
+            if (audioListener.enabled == false)
                 return;
-                
-            if(Time.timeScale == 0)
+
+            if (Time.timeScale == 0)
             {
                 DisableHandyScreenUI();
                 return;
             }
             EnableHandyScreenUI();
         }
-            
-        
-        if(audioListener.enabled == true)
+
+
+        if (audioListener.enabled == true)
             if (pauseAction.InteractWithCooldown())
                 LoadPauseMenu();
     }
@@ -82,9 +83,9 @@ public class Player : MonoBehaviour
     }
     public void EnableHandyScreenUI()
     {
-        if(Time.timeScale == 0f) 
+        if (Time.timeScale == 0f)
             return;
-        
+
         DisableGamePlay();
         playerRef.handyScreenUI.SetActive(true);
     }

@@ -9,12 +9,12 @@ class AudioManagerEditor : Editor
     {
         base.OnInspectorGUI();
 
-        if(GUILayout.Button("Generate SoundTrack content"))
+        if (GUILayout.Button("Generate SoundTrack content"))
             GenerateContent();
     }
     private void GenerateContent()
     {
         List<SoundTrack> soundTrackStore = (target as AudioManager).InternalGetSoundTrackStore;
-        EditorHelper.FindAssetsAndSaveToList(soundTrackStore,target);
+        EditorHelper.FindAssetsAndSaveToList(soundTrackStore, target);
     }
 }
