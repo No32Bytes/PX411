@@ -278,7 +278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f4b1f3d676a2646868df1268599020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  playerPlayer: {fileID: 1423529858}
   muller: {fileID: 1464319813}
   timerMax: 5
   damage: 10
@@ -557,7 +556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f4b1f3d676a2646868df1268599020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  playerPlayer: {fileID: 1423529858}
   muller: {fileID: 1464319813}
   timerMax: 5
   damage: 10
@@ -1275,7 +1273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f4b1f3d676a2646868df1268599020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  playerPlayer: {fileID: 1423529858}
   muller: {fileID: 1464319813}
   timerMax: 5
   damage: 10
@@ -1529,9 +1526,10 @@ MonoBehaviour:
   gravity: -9.81
   playerMovement: {fileID: 1423529855}
   playerPlayer: {fileID: 1423529858}
-  ball1: {fileID: 1428412892}
-  ball2: {fileID: 176341779}
-  ball3: {fileID: 790198682}
+  balls:
+  - {fileID: 1428412892}
+  - {fileID: 176341779}
+  - {fileID: 790198682}
   startTimerMax: 2
 --- !u!136 &1464319814
 CapsuleCollider:

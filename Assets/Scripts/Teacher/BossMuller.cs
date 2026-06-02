@@ -1,43 +1,44 @@
+using System.Collections.Generic;
 using Entity;
 using UnityEngine;
-using System;
-using InputUtil;
 
 [RequireComponent(typeof(CharacterController))]
-public class TeacherMullerEntity : BaseEntity
+[DefaultExecutionOrder(1)]
+public class TeacherMullerEntity : EnemeyEntity
 {
     private CharacterController characterController;
     [SerializeField] private HealthBar healthBar = new();
-    [SerializeField] private LayerMask groundLayerMask;
-    [SerializeField] private float groundCheckLength = 0.3f;
     [SerializeField] private float gravity = -9.81f;
     private Vector3 gravityVector;
 
-    [SerializeField] private PlayerMovement playerMovement;
-    [SerializeField] private Player playerPlayer;
+    private PlayerMovement playerMovement;
+    private Player playerPlayer;
 
-    [SerializeField] private DamagePlayer ball1;
-    [SerializeField] private DamagePlayer ball2;
-    [SerializeField] private DamagePlayer ball3;
-
-
+    [SerializeField] private BallOfDoom[] balls;
+    private readonly List<Vector3> throwDirections = new();
     private float attackGroundTimer = 0f;
 
     private float attackChargeTimer = 0f;
     private float chargeSpeed = 0.8f;
     private Vector3 chargeRichtung;
     private bool chargeState = false;
-
-    private Vector3 throwDirection, throwDirection2, throwDirection3;
-    private float throwSpeed = 0.05f;
-
-    private bool attacking = false;
+    [SerializeField] private float throwSpeed = 0.05f;
 
     //Attacks Timer
     private float startTimer;
     private bool starttiming;
     [SerializeField] private float startTimerMax = 2f;
 
+    private void Awake()
+    {
+        playerPlayer = GlobalDataStore.GetStateManager().playerState.player;
+        if (playerPlayer == null)
+            throw new System.Exception("Player is null");
+
+        playerMovement = playerPlayer.GetComponent<PlayerMovement>();
+        if (playerMovement == null)
+            throw new System.Exception("PlayersMovement is null");
+    }
     private void Start()
     {
         healthBar.SetOnDeathCallback(OnDeath);
@@ -93,8 +94,7 @@ public class TeacherMullerEntity : BaseEntity
 
     public void StartAttack()
     {
-        int x = UnityEngine.Random.Range(1, 4);
-        Damage(20);
+        int x = Random.Range(1, 4);
         if (x == 3)
         {
             AttackGroundActivate();
@@ -112,7 +112,7 @@ public class TeacherMullerEntity : BaseEntity
     //ground attack; activate ground attack
     public void AttackGroundActivate()
     {
-        Debug.Log("GroundAttack");
+        //Debug.Log("GroundAttack");
         attackGroundTimer = 6f;
     }
     //ground attack; ground attack state
@@ -138,7 +138,7 @@ public class TeacherMullerEntity : BaseEntity
     //Charge attack; activate the charge attack state
     public void ChargeAttackActivate()
     {
-        Debug.Log("ChargeAttack");
+        //Debug.Log("ChargeAttack");
         attackChargeTimer = 12f;
         Vector3 playerPosition = playerMovement.moveTransform.position;
 
@@ -181,11 +181,14 @@ public class TeacherMullerEntity : BaseEntity
 
     public void AcidAttackActivate()
     {
-        Debug.Log("AcidAttack");
+        //Debug.Log("AcidAttack");
         Vector3 playerPosition = playerMovement.moveTransform.position;
 
+        throwDirections.Clear();
+        Vector3 throwDirection;
         throwDirection = (playerPosition - transform.position).normalized;
         throwDirection.y -= throwDirection.y;
+        throwDirections.Add(throwDirection);
 
         Vector3 playerPosition2 = playerPosition;
         playerPosition2.x = 2f * playerPosition2.x;
@@ -194,15 +197,16 @@ public class TeacherMullerEntity : BaseEntity
         Vector3 playerPosition3 = playerPosition;
         playerPosition3.x = -playerPosition3.x;
 
-        throwDirection2 = (playerPosition2 - transform.position).normalized;
-        throwDirection2.y -= throwDirection2.y;
+        throwDirection = (playerPosition2 - transform.position).normalized;
+        throwDirection.y -= throwDirection.y;
+        throwDirections.Add(throwDirection);
 
-        throwDirection3 = (playerPosition3 - transform.position).normalized;
-        throwDirection3.y -= throwDirection3.y;
+        throwDirection = (playerPosition3 - transform.position).normalized;
+        throwDirection.y -= throwDirection.y;
+        throwDirections.Add(throwDirection);
 
-        ball1.activateTimer();
-        ball2.activateTimer();
-        ball3.activateTimer();
+        foreach (var ball in balls)
+            ball.ActiveTimer();
 
     }
 
@@ -210,17 +214,11 @@ public class TeacherMullerEntity : BaseEntity
     //Acid attack;  the acid attack state
     public void AcidAttack()
     {
-        if (ball1.CanBallDamage())
+        for (int i = 0; i < balls.Length; i++)
         {
-            ball1.transform.Translate(throwDirection * throwSpeed);
-        }
-        if (ball2.CanBallDamage())
-        {
-            ball2.transform.Translate(throwDirection2 * throwSpeed);
-        }
-        if (ball3.CanBallDamage())
-        {
-            ball3.transform.Translate(throwDirection3 * throwSpeed);
+            BallOfDoom ball = balls[i];
+            if (ball.CanBallDamage())
+                ball.transform.Translate(throwDirections[i] * throwSpeed);
         }
     }
 
@@ -228,22 +226,23 @@ public class TeacherMullerEntity : BaseEntity
 
     bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, -transform.up, groundCheckLength, groundLayerMask);
+        return characterController.isGrounded;
     }
 
-    public Transform mullerCoordinations()
-    {
-        return characterController.transform;
-    }
+    public Transform MullerTransform => characterController.transform;
+
 
     private void OnDeath()
     {
-        //Irgendein Objekt will noch auf Herr Muller zugreifen, nachdem er tot ist. 
-        //Wird als Fehler angezeigt, scheint das Spiel allerdings nicht zu st�ren.
-        this.DestroyEntity();
+        Destroy(gameObject);
     }
 
-
-    public void Damage(float damageAmount) { healthBar.ReduceHealth(damageAmount); }
-    public void Heal(float healAmount) { healthBar.IncreaseHealth(healAmount); }
+    public override void EntityDamage(float amount)
+    {
+        healthBar.ReduceHealth(amount);
+    }
+    public override void EntityHeal(float amount)
+    {
+        healthBar.IncreaseHealth(amount);
+    }
 }

@@ -19,9 +19,9 @@ namespace Entity
         }
         public void Update()
         {
-            if(healthSlider != null)
+            if (healthSlider != null)
                 healthSlider.maxValue = maxHealth;
-            
+
             if (CurrentHealth <= 0)
             {
                 onDeathCallback?.Invoke();
@@ -34,7 +34,7 @@ namespace Entity
             else
                 CurrentHealth += currentHealthRegenerated;
 
-            if(healthSlider != null)
+            if (healthSlider != null)
                 healthSlider.value = CurrentHealth;
         }
         public void SetOnDeathCallback(OnDeath onDeathCallback)

@@ -1,6 +1,5 @@
 using UnityEngine;
 using InputUtil;
-using System;
 
 public class PlayerItemHandler : MonoBehaviour
 {
@@ -25,6 +24,7 @@ public class PlayerItemHandler : MonoBehaviour
     private void Awake()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
+        GlobalDataStore.GetStateManager().playerState.playerItemHandler = this;
     }
     private void Start()
     {
@@ -33,7 +33,6 @@ public class PlayerItemHandler : MonoBehaviour
         throwAction = new("ThrowItem", throwActionCooldownS);
         dropAction = new("DropItem", dropActionCooldownS);
 
-        GlobalDataStore.GetStateManager().playerState.playerItemHandler = this;
     }
     private void Update()
     {
@@ -59,23 +58,25 @@ public class PlayerItemHandler : MonoBehaviour
     private bool PlayerItemActionStateCheck()
     {
         PlayerItemActionResetTrigger();
-        if(!HasItemEquipped)
+        if (!HasItemEquipped)
             return false;
-        if(audioSource.isPlaying)
+        if (audioSource.isPlaying)
             return false;
 
         return true;
     }
     public void PlayerItemAttack()
     {
-        if(!PlayerItemActionStateCheck())
+        if (!PlayerItemActionStateCheck())
             return;
 
-        equippedItem.ItemData.heldItemData.attackSoundEffect.Play(audioSource);
+        if (equippedItem.ItemData.heldItemData.attackSoundEffect != null)
+            equippedItem.ItemData.heldItemData.attackSoundEffect.Play(audioSource);
+        GlobalDataStore.GetStateManager().playerState.playerLook.HandlePlayerLookAttack(equippedItem.ItemData.weaponDamage);
     }
     public void PlayerItemThrow()
     {
-        if(!PlayerItemActionStateCheck())
+        if (!PlayerItemActionStateCheck())
             return;
 
         if (!ThrowItem(equippedItem.InternalName))
@@ -85,46 +86,46 @@ public class PlayerItemHandler : MonoBehaviour
     }
     public void PlayerItemDrop()
     {
-        if(!PlayerItemActionStateCheck())
+        if (!PlayerItemActionStateCheck())
             return;
 
         if (!DropItem(equippedItem.InternalName))
             return;
-        
+
         UpdateEquippedItem();
     }
     private void UpdateEquippedItem()
     {
-        if(!HasItemEquipped)
+        if (!HasItemEquipped)
             UnEquipCurrentItem();
     }
-    private bool DropItemInternal(string internalName,bool throwItem)
+    private bool DropItemInternal(string internalName, bool throwItem)
     {
         ItemData itemData = GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
 
         float velocity = 0f;
-        if(throwItem)
+        if (throwItem)
             velocity = itemData.heldItemData.throwVelocity;
 
-        if(!itemData.Storeable)
+        if (!itemData.Storeable)
             return false;
-        if(!GlobalDataStore.GetInventory().GetStoreableInventoryItem(internalName,out InventoryItem inventoryItem))
+        if (!GlobalDataStore.GetInventory().GetStoreableInventoryItem(internalName, out InventoryItem inventoryItem))
             return false;
-        
-        if(HasItemEquipped)
-            if(inventoryItem.InternalName == equippedItem.InternalName && equippedItem.ItemCount == 1)
+
+        if (HasItemEquipped)
+            if (inventoryItem.InternalName == equippedItem.InternalName && equippedItem.ItemCount == 1)
                 UnEquipCurrentItem();
-        
+
         string itemEntityIdNewPrefab = inventoryItem.GetLastItemEntityId();
-        return ItemEntity.TryDropItem(playerRef.playerCamera, itemData, itemEntityIdNewPrefab, itemDropDistance,velocity);
+        return ItemEntity.TryDropItem(playerRef.playerCamera, itemData, itemEntityIdNewPrefab, itemDropDistance, velocity);
     }
     private bool ThrowItem(string internalName)
     {
-        return DropItemInternal(internalName,true);
+        return DropItemInternal(internalName, true);
     }
     public bool DropItem(string internalName)
     {
-        return DropItemInternal(internalName,false);
+        return DropItemInternal(internalName, false);
     }
     public bool EquipItem(string internalName)
     {
@@ -150,7 +151,7 @@ public class PlayerItemHandler : MonoBehaviour
     }
     private void EquipItemGameObject()
     {
-        equippedItemGameObject = Instantiate(equippedItem.ItemData.heldItemData.heldItemPrefab,playerRef.leftPlayerArmItemAnchor.transform);
+        equippedItemGameObject = Instantiate(equippedItem.ItemData.heldItemData.heldItemPrefab, playerRef.leftPlayerArmItemAnchor.transform);
     }
     private void UnequipItemGameObject()
     {
@@ -164,7 +165,7 @@ public class PlayerItemHandler : MonoBehaviour
 
         Debug.Log("UnEquipped Item" + equippedItem.InternalName);
         UnequipItemGameObject();
-        
+
         leftArmAnimationParamter.ValueInt = 0;
         equippedItem = null;
     }

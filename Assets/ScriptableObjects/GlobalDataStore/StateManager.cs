@@ -14,6 +14,7 @@ public class StateManager
         public SignalUtil.SignalUnloadPauseMenu signalUnloadPauseMenu = new();
         public Player player;
         public PlayerItemHandler playerItemHandler;
+        public PlayerLook playerLook;
     };
     public MenuMangerState menuManger = new();
     public PlayerState playerState = new();

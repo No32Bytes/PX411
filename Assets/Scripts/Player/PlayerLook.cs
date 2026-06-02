@@ -1,5 +1,6 @@
 using UnityEngine;
 using InputUtil;
+using Unity.VisualScripting;
 public class PlayerLook : MonoBehaviour
 {
     [SerializeField] private PlayerReferences playerRef;
@@ -11,6 +12,10 @@ public class PlayerLook : MonoBehaviour
     private InputHandlerCooldown interactAction, holdAction;
     private float xRotation = 0f;
     private InputHandler lookAction;
+    void Awake()
+    {
+        GlobalDataStore.GetStateManager().playerState.playerLook = this;
+    }
     void Start()
     {
         lookAction = new("Look");
@@ -32,7 +37,7 @@ public class PlayerLook : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -83f, 83f);
         playerRef.playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerRef.overlayFPS.transform.localRotation = playerRef.playerCamera.transform.localRotation;
-        
+
         HandlePlayerLooking();
     }
     private void HandlePlayerLooking()
@@ -64,5 +69,17 @@ public class PlayerLook : MonoBehaviour
                     entityDraggable.SelectEntity(playerRef.playerCamera);
             }
         }
+    }
+
+    public void HandlePlayerLookAttack(float damageAmount)
+    {
+        Ray raycast = new(playerRef.playerCamera.transform.position, playerRef.playerCamera.transform.forward);
+        if (!Physics.Raycast(raycast, out RaycastHit raycastHit, Mathf.Infinity, playerInteractionLayerMask) || !(raycastHit.distance < maxItemInteractionDistance))
+            return;
+
+        GameObject hitObject = raycastHit.transform.gameObject;
+        if (hitObject.TryGetComponent(out EnemeyEntity enemeyEntity))
+            enemeyEntity.EntityDamage(damageAmount);
+
     }
 }

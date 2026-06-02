@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class DamagePlayer : MonoBehaviour
+[DefaultExecutionOrder(1)]
+public class BallOfDoom : MonoBehaviour
 {
 
-    [SerializeField] private Player playerPlayer;
+    private Player playerPlayer;
     [SerializeField] private TeacherMullerEntity muller;
 
     private bool canDamage = false;
@@ -14,18 +15,21 @@ public class DamagePlayer : MonoBehaviour
 
     private bool timerActive = false;
 
-    
+    void Awake()
+    {
+        playerPlayer = GlobalDataStore.GetStateManager().playerState.player;
+    }
 
     void Update()
     {
-        
+
         if (timerActive == true)
         {
-            timerState();
+            TimerUpdate();
         }
     }
 
-    
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -33,7 +37,7 @@ public class DamagePlayer : MonoBehaviour
         {
             playerPlayer.Damage(damage);
             canDamage = false;
-            backToMuller();
+            BackToMuller();
         }
     }
 
@@ -42,25 +46,25 @@ public class DamagePlayer : MonoBehaviour
         return canDamage;
     }
 
-    public void backToMuller()
+    public void BackToMuller()
     {
-        transform.position = muller.mullerCoordinations().position;
+        transform.position = muller.MullerTransform.position;
     }
 
-    private void timerState()
+    private void TimerUpdate()
     {
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
             timerActive = false;
             canDamage = false;
-            backToMuller();
+            BackToMuller();
             timer = timerMax;
-            
+
         }
     }
 
-    public void activateTimer()
+    public void ActiveTimer()
     {
         canDamage = true;
         timer = timerMax;
