@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[DefaultExecutionOrder(1)]
+
 public class BallOfDoom : MonoBehaviour
 {
 
@@ -15,7 +15,7 @@ public class BallOfDoom : MonoBehaviour
 
     private bool timerActive = false;
 
-    void Awake()
+    void Start()
     {
         playerPlayer = GlobalDataStore.GetStateManager().playerState.player;
     }
@@ -33,7 +33,8 @@ public class BallOfDoom : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && canDamage)
+        bool isPlayer = playerPlayer.gameObject.GetEntityId() == other.gameObject.GetEntityId();
+        if (isPlayer && canDamage)
         {
             playerPlayer.Damage(damage);
             canDamage = false;

@@ -125,5 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367241c503402b4468a26db4533ea48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemEntity
-  itemEntityId: 
+  entityId: 
+  usePhysics: 1
   itemData: {fileID: 11400000, guid: 3b72533bb9a9a2a46b8ffb25fc81bc97, type: 2}

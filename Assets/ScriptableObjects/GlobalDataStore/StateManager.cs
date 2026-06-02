@@ -13,6 +13,7 @@ public class StateManager
     {
         public SignalUtil.SignalUnloadPauseMenu signalUnloadPauseMenu = new();
         public Player player;
+        public PlayerReferences playerRef;
         public PlayerItemHandler playerItemHandler;
         public PlayerLook playerLook;
     };

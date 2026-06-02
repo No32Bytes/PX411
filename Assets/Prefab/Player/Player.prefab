@@ -1407,7 +1407,7 @@ GameObject:
   - component: {fileID: 6688645440453263909}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1445,6 +1445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerReferences
   playerBody: {fileID: 857974607693062053}
   playerCamera: {fileID: 3253371939972054904}
+  playerOverlayCamera: {fileID: 6618299938157571313}
   handyScreenUI: {fileID: 7892591299419616066}
   leftPlayerArmItemAnchor: {fileID: 7608278344563737578}
   overlayFPS: {fileID: 8545747475216034309}
@@ -1463,7 +1464,7 @@ MonoBehaviour:
   playerRef: {fileID: 3365217639543896046}
   healthBar:
     maxHealth: 100
-    healthRegenRate: 1
+    healthRegenRate: 0
     healthSlider: {fileID: 7499082087463225246}
   togglePauseMenuCooldownS: 0.2
   toggleHandyUIActionCooldownS: 0.1
@@ -1531,7 +1532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf76c740bc14a24f9ff5381d2069ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  movementSpeed: 5
+  movementSpeed: 10
   runMultiplicator: 2
   staminaBar:
     maxStamina: 100

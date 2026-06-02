@@ -3,10 +3,10 @@ using Entity;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-[DefaultExecutionOrder(1)]
 public class TeacherMullerEntity : EnemeyEntity
 {
     private CharacterController characterController;
+    [SerializeField] private Canvas overlayMullerUI;
     [SerializeField] private HealthBar healthBar = new();
     [SerializeField] private float gravity = -9.81f;
     private Vector3 gravityVector;
@@ -16,10 +16,12 @@ public class TeacherMullerEntity : EnemeyEntity
 
     [SerializeField] private BallOfDoom[] balls;
     private readonly List<Vector3> throwDirections = new();
-    private float attackGroundTimer = 0f;
+    [SerializeField] private float attackGroundTimer = 0f;
 
-    private float attackChargeTimer = 0f;
-    private float chargeSpeed = 0.8f;
+    [SerializeField] private float attackChargeTimer = 0f;
+    [SerializeField] private float chargeSpeed = 0.8f;
+    [SerializeField] private float chargeDamage = 50f;
+    [SerializeField] private float groundDamage = 10f;
     private Vector3 chargeRichtung;
     private bool chargeState = false;
     [SerializeField] private float throwSpeed = 0.05f;
@@ -29,20 +31,13 @@ public class TeacherMullerEntity : EnemeyEntity
     private bool starttiming;
     [SerializeField] private float startTimerMax = 2f;
 
-    private void Awake()
-    {
-        playerPlayer = GlobalDataStore.GetStateManager().playerState.player;
-        if (playerPlayer == null)
-            throw new System.Exception("Player is null");
-
-        playerMovement = playerPlayer.GetComponent<PlayerMovement>();
-        if (playerMovement == null)
-            throw new System.Exception("PlayersMovement is null");
-    }
     private void Start()
     {
-        healthBar.SetOnDeathCallback(OnDeath);
+        playerPlayer = GlobalDataStore.GetStateManager().playerState.player;
+        playerMovement = playerPlayer.GetComponent<PlayerMovement>();
+        overlayMullerUI.worldCamera = GlobalDataStore.GetStateManager().playerState.playerRef.playerOverlayCamera;
 
+        healthBar.SetOnDeathCallback(OnDeath);
         characterController = GetComponent<CharacterController>();
 
         StartAttackTimerActivate(startTimerMax);
@@ -128,7 +123,7 @@ public class TeacherMullerEntity : EnemeyEntity
         {
             if (playerMovement.IsGrounded())
             {
-                playerPlayer.Damage(10);
+                playerPlayer.Damage(groundDamage);
                 attackGroundTimer = 0;
             }
         }
@@ -158,6 +153,11 @@ public class TeacherMullerEntity : EnemeyEntity
         {
             chargeState = true;
             characterController.Move(chargeRichtung * chargeSpeed);
+            //  Correct position of balls
+            foreach (var ball in balls)
+            {
+                ball.transform.Translate(-chargeRichtung * chargeSpeed);
+            }
         }
         else if (attackChargeTimer < 0f)
         {
@@ -169,9 +169,10 @@ public class TeacherMullerEntity : EnemeyEntity
     //Charge attack; collision with player and damage
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && chargeState == true)
+        bool isPlayer = playerPlayer.gameObject.GetEntityId() == other.gameObject.GetEntityId();
+        if (isPlayer && chargeState == true)
         {
-            playerPlayer.Damage(50);
+            playerPlayer.Damage(chargeDamage);
             chargeState = false;
             attackChargeTimer = 0f;
         }
