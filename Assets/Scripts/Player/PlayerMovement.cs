@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController characterController;
     private InputHandler movementAction, jumpAction, runAction;
     private Vector3 gravityVector;
+
+    public Transform moveTransform => transform;
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -54,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(gravityVector * Time.deltaTime);
 
     }
-    bool IsGrounded()
+    public bool IsGrounded()
     {
         return characterController.isGrounded;
     }

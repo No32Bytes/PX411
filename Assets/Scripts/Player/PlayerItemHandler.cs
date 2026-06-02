@@ -1,6 +1,5 @@
 using UnityEngine;
 using InputUtil;
-using System;
 
 public class PlayerItemHandler : MonoBehaviour
 {
@@ -71,7 +70,9 @@ public class PlayerItemHandler : MonoBehaviour
         if (!PlayerItemActionStateCheck())
             return;
 
-        equippedItem.ItemData.heldItemData.attackSoundEffect.Play(audioSource);
+        if (equippedItem.ItemData.heldItemData.attackSoundEffect != null)
+            equippedItem.ItemData.heldItemData.attackSoundEffect.Play(audioSource);
+        GlobalDataStore.GetStateManager().playerState.playerLook.HandlePlayerLookAttack(equippedItem.ItemData.weaponDamage);
     }
     public void PlayerItemThrow()
     {

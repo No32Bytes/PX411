@@ -1,5 +1,6 @@
 using UnityEngine;
 using InputUtil;
+using Unity.VisualScripting;
 public class PlayerLook : MonoBehaviour
 {
     [SerializeField] private PlayerReferences playerRef;
@@ -11,6 +12,10 @@ public class PlayerLook : MonoBehaviour
     private InputHandlerCooldown interactAction, holdAction;
     private float xRotation = 0f;
     private InputHandler lookAction;
+    void Awake()
+    {
+        GlobalDataStore.GetStateManager().playerState.playerLook = this;
+    }
     void Start()
     {
         lookAction = new("Look");
@@ -67,5 +72,17 @@ public class PlayerLook : MonoBehaviour
 
         EntityInformationView entityInformationView = hitObject.GetComponent<EntityInformationView>();
         EntityInformationView.SelectEntity(entityInformationView);
+    }
+
+    public void HandlePlayerLookAttack(float damageAmount)
+    {
+        Ray raycast = new(playerRef.playerCamera.transform.position, playerRef.playerCamera.transform.forward);
+        if (!Physics.Raycast(raycast, out RaycastHit raycastHit, Mathf.Infinity, playerInteractionLayerMask) || !(raycastHit.distance < maxItemInteractionDistance))
+            return;
+
+        GameObject hitObject = raycastHit.transform.gameObject;
+        if (hitObject.TryGetComponent(out EnemeyEntity enemeyEntity))
+            enemeyEntity.EntityDamage(damageAmount);
+
     }
 }

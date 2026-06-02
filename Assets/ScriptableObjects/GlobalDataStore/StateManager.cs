@@ -15,6 +15,7 @@ public class StateManager
         public Player player;
         public PlayerReferences playerRef;
         public PlayerItemHandler playerItemHandler;
+        public PlayerLook playerLook;
     };
     public MenuMangerState menuManger = new();
     public PlayerState playerState = new();

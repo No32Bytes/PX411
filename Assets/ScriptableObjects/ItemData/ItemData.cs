@@ -43,4 +43,5 @@ public class ItemData : ScriptableObject
     }
     public int InternalNameIntHash => HashUtil.FNV1.ComputeHash_24Bytes(internalName);
 
+    public float weaponDamage = 0.0f;
 }
