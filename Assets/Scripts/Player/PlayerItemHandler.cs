@@ -19,6 +19,7 @@ public class PlayerItemHandler : MonoBehaviour
     private InputHandlerCooldown attackAction, throwAction, dropAction;
     private InputHandlerCooldown toggleHandyAction;
     private InventoryItem equippedItem;
+    public string EquippedItemInternalName => equippedItem != null ? equippedItem.InternalName : string.Empty;
     public bool HasItemEquipped => equippedItem != null;
     private GameObject equippedItemGameObject;
     private AudioSource audioSource;

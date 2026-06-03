@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070baa4e3ded2494f93ba97ce90d2238, type: 3}
+  m_Name: Item_screw
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  displayName: Schraube
+  internalName: screw
+  icon: {fileID: 0}
+  description: 
+  collisionSoundEffect: {fileID: 0}
+  storeableItemData:
+    storeable: 0
+    spawnPrefab: {fileID: 4232241948209837159, guid: b52076aa31139d2429a125c191bfc35f, type: 3}
+  heldItemData:
+    equippable: 0
+    heldItemPrefab: {fileID: 0}
+    throwVelocity: 5
+    attackSoundEffect: {fileID: 0}
