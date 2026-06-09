@@ -31,7 +31,10 @@ public class EntityStateStore
     private EntityState GetEntityState(string entityId)
     {
         if (!FindEntityState(entityId, out EntityState entityState))
-            entityState = new(entityId);
+        {
+            entityStateStore.Add(new(entityId));
+            FindEntityState(entityId, out entityState);
+        }
         return entityState;
     }
     public void SetEntityIdEnabledState(string entityId, bool isEnabled)
@@ -49,5 +52,21 @@ public class EntityStateStore
     public string GetEntityStateData(string entityId)
     {
         return GetEntityState(entityId).entityStateData;
+    }
+    public void SetEntityStateDataObject(string entityId, object stateData)
+    {
+        string json = JsonUtility.ToJson(stateData);
+        SetEntityStateData(entityId, json);
+    }
+    public void GetEntityStateDataObject<T>(string entityId, out T stateData)
+    {
+        stateData = default;
+        string json = GetEntityStateData(entityId);
+        if (string.IsNullOrEmpty(json))
+            return;
+        T retData = JsonUtility.FromJson<T>(json);
+        if (retData == null)
+            return;
+        stateData = retData;
     }
 }

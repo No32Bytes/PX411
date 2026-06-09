@@ -147,8 +147,8 @@ public class TeacherMovement : MonoBehaviour
         }
     }
     private void Start()
-     {
-       DebugDev.DebugFunction.RegisterDebugCallback(Run);
+    {
+        DebugDev.DebugFunction.RegisterDebugCallback(Run);
     }
-    
+
 }

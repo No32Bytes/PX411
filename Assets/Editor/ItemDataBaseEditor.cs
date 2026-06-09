@@ -9,12 +9,12 @@ class ItemDataBaseEditor : Editor
     {
         base.OnInspectorGUI();
 
-        if(GUILayout.Button("Generate ItemDataBase content"))
+        if (GUILayout.Button("Generate ItemDataBase content"))
             GenerateContent();
     }
     private void GenerateContent()
     {
         List<ItemData> itemDataBaseList = (target as ItemDataBase).InternalGetItemDataBaseList;
-        EditorHelper.FindAssetsAndSaveToList(itemDataBaseList,target);
+        EditorHelper.FindAssetsAndSaveToList(itemDataBaseList, target);
     }
 }

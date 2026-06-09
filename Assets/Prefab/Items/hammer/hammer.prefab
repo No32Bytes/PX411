@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367241c503402b4468a26db4533ea48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemEntity
-  entityId: hammer_
+  entityId: 
   usePhysics: 1
   itemData: {fileID: 11400000, guid: a2666281bd8146640a061b5e13ba88d2, type: 2}
 --- !u!65 &2780532148642194871

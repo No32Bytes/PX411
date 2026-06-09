@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(ItemData))]
-public class ItemDataEditor : Editor 
+public class ItemDataEditor : Editor
 {
     private void DrawInternalNameHashCopySection()
     {
@@ -20,9 +20,9 @@ public class ItemDataEditor : Editor
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        if(target == null)
+        if (target == null)
             return;
 
         DrawInternalNameHashCopySection();
     }
-}    
+}

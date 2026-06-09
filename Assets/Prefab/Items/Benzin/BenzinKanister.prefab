@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2483912498077654659
+--- !u!1 &5807157868605555780
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2929723899901785643}
-  - component: {fileID: 3498143729318511076}
-  - component: {fileID: 8956456521911432972}
-  - component: {fileID: -8810500136428761753}
-  - component: {fileID: 5829704208047050028}
-  - component: {fileID: 2603123517674018846}
+  - component: {fileID: 5773737666443073632}
+  - component: {fileID: 4865501471550749855}
+  - component: {fileID: 207604924302177648}
+  - component: {fileID: 5193399863494737137}
+  - component: {fileID: 8555099108319852125}
   m_Layer: 0
-  m_Name: Cable
+  m_Name: BenzinKanister
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2929723899901785643
+--- !u!4 &5773737666443073632
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2483912498077654659}
+  m_GameObject: {fileID: 5807157868605555780}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.88, y: 3.07, z: 5.87}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.06, y: 5.47, z: 11.47}
+  m_LocalScale: {x: 0.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3498143729318511076
+--- !u!33 &4865501471550749855
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2483912498077654659}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8956456521911432972
+  m_GameObject: {fileID: 5807157868605555780}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &207604924302177648
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2483912498077654659}
+  m_GameObject: {fileID: 5807157868605555780}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -93,28 +92,13 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-8810500136428761753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2483912498077654659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 367241c503402b4468a26db4533ea48f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemEntity
-  entityId: cable_
-  usePhysics: 1
-  itemData: {fileID: 11400000, guid: 6b35c354abfb2664a9808335e8080dc2, type: 2}
---- !u!65 &5829704208047050028
+--- !u!65 &5193399863494737137
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2483912498077654659}
+  m_GameObject: {fileID: 5807157868605555780}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -127,20 +111,20 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2603123517674018846
+--- !u!114 &8555099108319852125
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2483912498077654659}
+  m_GameObject: {fileID: 5807157868605555780}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 367241c503402b4468a26db4533ea48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemEntity
-  entityId: cable_
+  entityId: 
   usePhysics: 1
-  itemData: {fileID: 11400000, guid: 6b35c354abfb2664a9808335e8080dc2, type: 2}
+  itemData: {fileID: 11400000, guid: edea15c36369111429673dd1d4a5d7a6, type: 2}

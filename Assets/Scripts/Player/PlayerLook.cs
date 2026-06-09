@@ -32,7 +32,7 @@ public class PlayerLook : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -83f, 83f);
         playerRef.playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerRef.overlayFPS.transform.localRotation = playerRef.playerCamera.transform.localRotation;
-        
+
         HandlePlayerLooking();
     }
     private void HandlePlayerLooking()

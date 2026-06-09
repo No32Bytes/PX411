@@ -17,18 +17,18 @@ public class KeybindHelper : MonoBehaviour
 
     private int GetBindingIndex()
     {
-            int index = inputAction.GetBindingIndex(inputBinding);
-            if (index == -1)
+        int index = inputAction.GetBindingIndex(inputBinding);
+        if (index == -1)
+        {
+            for (int i = 0; i < inputAction.bindings.Count; i++)
             {
-                for(int i = 0; i < inputAction.bindings.Count; i++)
-                {
-                    if(inputAction.bindings[i] != inputBinding)
-                        continue;
-                    index = i;
-                    break;
-                }
+                if (inputAction.bindings[i] != inputBinding)
+                    continue;
+                index = i;
+                break;
             }
-            return index;
+        }
+        return index;
     }
     private void Awake()
     {

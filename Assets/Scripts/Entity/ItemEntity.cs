@@ -11,14 +11,14 @@ public class ItemEntity : BaseEntity
     }
     public override void EntityInteraction()
     {
-        if(itemData == null)
+        if (itemData == null)
             throw new System.Exception("ItemEntity has no itemData associated with it.");
 
         if (!GlobalDataStore.GetInventory().PickupItem(itemData.internalName, entityId))
             return;
 
         PlayerItemHandler playerItemHandler = GlobalDataStore.GetStateManager().playerState.playerItemHandler;
-        if(!playerItemHandler.HasItemEquipped)
+        if (!playerItemHandler.HasItemEquipped)
             playerItemHandler.EquipItem(itemData.internalName);
 
         DestroyEntity();

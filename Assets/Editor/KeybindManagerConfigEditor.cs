@@ -117,7 +117,7 @@ public class KeybindManagerConfigEditor : Editor
     }
     private void AddMissingBindingToConfig(List<KeybindManagerConfig.KeybindMangerData> actionConfig, InputAction inputAction)
     {
-        for(int i = 0; i < inputAction.bindings.Count; i++)
+        for (int i = 0; i < inputAction.bindings.Count; i++)
         {
             InputBinding inputBinding = inputAction.bindings[i];
             int index = actionConfig.FindIndex(data => data.relativeBindingIndex == i);
@@ -142,9 +142,9 @@ public class KeybindManagerConfigEditor : Editor
 
         DrawBaseConfigSelector();
 
-        for(int i = 0; i < keybindManagerConfig.configData.Count; i++)
+        for (int i = 0; i < keybindManagerConfig.configData.Count; i++)
         {
-            if(keybindManagerConfig.configData[i].CheckActionValid())
+            if (keybindManagerConfig.configData[i].CheckActionValid())
                 continue;
 
             keybindManagerConfig.configData.Remove(keybindManagerConfig.configData[i]);

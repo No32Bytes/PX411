@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 825146048857680391}
   - component: {fileID: 7463689384187479831}
   m_Layer: 0
-  m_Name: "\xD6lHeld"
+  m_Name: OilHeld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
