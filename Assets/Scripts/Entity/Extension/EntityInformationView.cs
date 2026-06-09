@@ -1,5 +1,4 @@
-
-
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EntityInformationView : MonoBehaviour
@@ -19,32 +18,40 @@ public class EntityInformationView : MonoBehaviour
             Current.Show();
     }
 
-    [SerializeField] private GameObject informationObjectPrefab;
-    [SerializeField] private Vector3 informationPosition = new();
-    private GameObject informationObjectInstance;
+    [SerializeField] private GameObject[] informationObjectPrefab;
+    private readonly List<GameObject> informationObjectInstance = new();
     public void Show()
     {
-        if (informationObjectInstance != null)
+        if (informationObjectInstance.Count != 0)
             return;
 
         GameObject infoView = GlobalDataStore.GetStateManager().playerState.playerRef.overlayInformationView;
         if (infoView == null)
             return;
-        if (informationObjectPrefab == null)
+        if (informationObjectPrefab.Length == 0)
             return;
 
-        informationObjectInstance = Instantiate(informationObjectPrefab, infoView.transform);
-        if (informationObjectInstance == null)
-            return;
-        informationObjectInstance.transform.Translate(informationPosition);
+
+        foreach (GameObject gameObject in informationObjectPrefab)
+        {
+            GameObject newObject = Instantiate(gameObject, infoView.transform);
+            if (newObject == null)
+                continue;
+            informationObjectInstance.Add(newObject);
+        }
+
+
     }
 
     public void Hide()
     {
-        if (informationObjectInstance == null)
+        if (informationObjectInstance.Count == 0)
             return;
 
-        Destroy(informationObjectInstance);
-        informationObjectInstance = null;
+        foreach (GameObject gameObject in informationObjectInstance)
+        {
+            Destroy(gameObject);
+        }
+        informationObjectInstance.Clear();
     }
 }

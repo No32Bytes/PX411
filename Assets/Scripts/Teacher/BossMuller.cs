@@ -3,7 +3,7 @@ using Entity;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class TeacherMullerEntity : EnemeyEntity
+public class BossMuller : EnemeyEntity
 {
     private CharacterController characterController;
     [SerializeField] private Canvas overlayMullerUI;
@@ -16,20 +16,24 @@ public class TeacherMullerEntity : EnemeyEntity
 
     [SerializeField] private BallOfDoom[] balls;
     private readonly List<Vector3> throwDirections = new();
-    [SerializeField] private float attackGroundTimer = 0f;
-
-    [SerializeField] private float attackChargeTimer = 0f;
-    [SerializeField] private float chargeSpeed = 0.8f;
+    [SerializeField] private float attackGroundTimerStart = 6f;
+    private bool attackGroundDidDamage;
+    private float attackGroundTimer = 0f;
+    [SerializeField] private ParticleSystem attackGround;
+    private float attackChargeTimer = 0f;
     [SerializeField] private float chargeDamage = 50f;
     [SerializeField] private float groundDamage = 10f;
     private Vector3 chargeRichtung;
     private bool chargeState = false;
+    private int chargeStep;
+    [SerializeField] private int chargeStepAmount = 10;
     [SerializeField] private float throwSpeed = 0.05f;
 
     //Attacks Timer
     private float startTimer;
     private bool starttiming;
     [SerializeField] private float startTimerMax = 2f;
+    [SerializeField] private float attackChargeTimerStart = 5f;
 
     private void Start()
     {
@@ -56,9 +60,17 @@ public class TeacherMullerEntity : EnemeyEntity
             gravityVector.y = 0;
         characterController.Move(gravityVector * Time.deltaTime);
 
+        ChargeAttackActivate();
+        //states for the attacks, every frame active, only activated by using the corresponding activate fuctions
 
 
+        //Timer for Attacks
+        StartAttackTimer();
 
+    }
+
+    private void FixedUpdate()
+    {
         //states for the attacks, every frame active, only activated by using the corresponding activate fuctions
         AttackGround();
         ChargeAttack();
@@ -66,7 +78,6 @@ public class TeacherMullerEntity : EnemeyEntity
 
         //Timer for Attacks
         StartAttackTimer();
-
     }
 
     public void StartAttackTimerActivate(float timer)
@@ -77,7 +88,7 @@ public class TeacherMullerEntity : EnemeyEntity
 
     public void StartAttackTimer()
     {
-        startTimer -= Time.deltaTime;
+        startTimer -= Time.fixedDeltaTime;
         if (startTimer <= 0 && starttiming == true)
         {
             StartAttack();
@@ -107,61 +118,66 @@ public class TeacherMullerEntity : EnemeyEntity
     //ground attack; activate ground attack
     public void AttackGroundActivate()
     {
+        if (attackGroundTimer >= 0)
+        {
+            AcidAttackActivate();
+            return;
+
+        }
         //Debug.Log("GroundAttack");
-        attackGroundTimer = 6f;
+        attackGroundDidDamage = false;
+        attackGroundTimer = attackGroundTimerStart;
     }
     //ground attack; ground attack state
     public void AttackGround()
     {
-        attackGroundTimer -= Time.deltaTime * 7;
-        if (attackGroundTimer > 2f)
-        {
-            //Debug.Log(attackGroundTimer);
-        }
+        if (attackGroundTimer == attackGroundTimerStart)
+            attackGround.Play();
 
-        if (attackGroundTimer > 0f && attackGroundTimer < 2f)
-        {
-            if (playerMovement.IsGrounded())
-            {
-                playerPlayer.Damage(groundDamage);
-                attackGroundTimer = 0;
-            }
-        }
+        attackGroundTimer -= Time.fixedDeltaTime;
     }
 
 
     //Charge attack; activate the charge attack state
     public void ChargeAttackActivate()
     {
-        //Debug.Log("ChargeAttack");
-        attackChargeTimer = 12f;
+        if (attackChargeTimer >= 0)
+            return;
         Vector3 playerPosition = playerMovement.moveTransform.position;
-
-        chargeRichtung = (playerPosition - transform.position).normalized;
+        chargeRichtung = playerPosition - transform.position;
         chargeRichtung.y = 0;
+        chargeRichtung /= chargeStepAmount;
+
+        attackChargeTimer = attackChargeTimerStart;
+        chargeStep = 0;
+        //Debug.Log("ChargeAttack");
     }
     //Charge attack; charge attack state
     public void ChargeAttack()
     {
-        attackChargeTimer -= Time.deltaTime * 7;
-        if (attackChargeTimer > 1f)
+        attackChargeTimer -= Time.fixedDeltaTime;
+        if (attackChargeTimer > 3f)
         {
             //Debug.Log(attackChargeTimer);
             chargeState = false;
         }
-        else if (attackChargeTimer > 0f && attackChargeTimer < 1f)
+        else if (attackChargeTimer > 0f && chargeStep < chargeStepAmount)
         {
+            chargeStep++;
             chargeState = true;
-            characterController.Move(chargeRichtung * chargeSpeed);
+            characterController.Move(chargeRichtung);
             //  Correct position of balls
             foreach (var ball in balls)
             {
-                ball.transform.Translate(-chargeRichtung * chargeSpeed);
+                ball.transform.Translate(-chargeRichtung);
             }
         }
-        else if (attackChargeTimer < 0f)
+        else
         {
+            if (attackChargeTimer >= 0)
+                attackChargeTimer = 0;
             chargeState = false;
+            chargeRichtung = Vector3.zero;
         }
 
     }
@@ -170,7 +186,11 @@ public class TeacherMullerEntity : EnemeyEntity
     private void OnTriggerEnter(Collider other)
     {
         bool isPlayer = playerPlayer.gameObject.GetEntityId() == other.gameObject.GetEntityId();
-        if (isPlayer && chargeState == true)
+        if (!isPlayer)
+            return;
+
+        playerMovement.playerMovementController.Move(chargeRichtung);
+        if (chargeState == true)
         {
             playerPlayer.Damage(chargeDamage);
             chargeState = false;
@@ -211,6 +231,19 @@ public class TeacherMullerEntity : EnemeyEntity
 
     }
 
+    public void DoGroundDamage(GameObject other)
+    {
+        if (attackGroundDidDamage)
+            return;
+        if (!other.TryGetComponent(out Player player))
+            return;
+
+        if (player.GetEntityId() == playerPlayer.GetEntityId())
+        {
+            attackGroundDidDamage = true;
+            playerPlayer.Damage(groundDamage);
+        }
+    }
 
     //Acid attack;  the acid attack state
     public void AcidAttack()

@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 2f;
     private CharacterController characterController;
+    public CharacterController playerMovementController => characterController;
     private InputHandler movementAction, jumpAction, runAction;
     private Vector3 gravityVector;
 

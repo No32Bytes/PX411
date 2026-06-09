@@ -231,6 +231,83 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131254657}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &269494863
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2186080952361581124, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2186080952361581124, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041164587691399986, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: m_Name
+      value: HerrMuller
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083854135006263850, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376641268843880340, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.5299
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376641268843880340, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376641268843880340, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.64502
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376641268843880340, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376641268843880340, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376641268843880340, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376641268843880340, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376641268843880340, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376641268843880340, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376641268843880340, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350857924634731825, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: chargeSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350857924634731825, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
+      propertyPath: chargeStepAmount
+      value: 20
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
 --- !u!1 &805362490
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,8 +848,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
-  informationObjectPrefab: {fileID: 4602626972012524021, guid: 48bf757237884c94e886372af19e47e4, type: 3}
-  informationPosition: {x: 0, y: 0, z: 0}
+  informationObjectPrefab:
+  - {fileID: 4602626972012524021, guid: 48bf757237884c94e886372af19e47e4, type: 3}
 --- !u!4 &1543565173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2316742949952278746, guid: a73f336627426024d9bc6236ae3f25f5, type: 3}
@@ -919,8 +996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
-  informationObjectPrefab: {fileID: 4602626972012524021, guid: 48bf757237884c94e886372af19e47e4, type: 3}
-  informationPosition: {x: 0, y: 0, z: 0}
+  informationObjectPrefab: []
 --- !u!1001 &2387818295641179739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1178,3 +1254,4 @@ SceneRoots:
   - {fileID: 1068748521}
   - {fileID: 6101861056853742118}
   - {fileID: 2406865529732701176}
+  - {fileID: 269494863}

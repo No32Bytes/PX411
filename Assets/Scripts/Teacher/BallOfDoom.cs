@@ -5,7 +5,7 @@ public class BallOfDoom : MonoBehaviour
 {
 
     private Player playerPlayer;
-    [SerializeField] private TeacherMullerEntity muller;
+    [SerializeField] private BossMuller muller;
 
     private bool canDamage = false;
 
