@@ -21,6 +21,7 @@ public class BaseEntity : MonoBehaviour
 
         EntityAwake();
     }
+
     public Rigidbody GetEntityRigibody()
     {
         if (!gameObject.TryGetComponent(out Rigidbody entityRigibody))
