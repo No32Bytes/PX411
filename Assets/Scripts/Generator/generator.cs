@@ -2,20 +2,36 @@ using UnityEngine;
 
 public class Generator : BaseEntity
 {
-    [Header("Generator Settings")]
+    [System.Serializable]
+    public struct GeneratorItemRequirement
+    {
+        public string internalName;
+        public int requiredAmount;
+        [HideInInspector] public int currentAmount;
+    }
+
+    [Header("Item Einstellungen")]
     [SerializeField] private string hammerInternalName = "hammer";
-    [SerializeField] private string screwInternalName = "screw";
-    [SerializeField] private int requiredScrews = 4;
+    [SerializeField] private GeneratorItemRequirement screwRequirement = new GeneratorItemRequirement { internalName = "screw", requiredAmount = 4 };
+    [SerializeField] private GeneratorItemRequirement cableRequirement = new GeneratorItemRequirement { internalName = "cable", requiredAmount = 1 };
+    [SerializeField] private GeneratorItemRequirement fuelRequirement = new GeneratorItemRequirement { internalName = "fuel", requiredAmount = 1 };
+    [SerializeField] private GeneratorItemRequirement oilRequirement = new GeneratorItemRequirement { internalName = "oil", requiredAmount = 1 };
 
-    [Header("Generator State")]
+    [Header("Generator Zustand")]
     [SerializeField] private bool isRepaired = false;
-    [SerializeField] private int currentScrewsInstalled = 0;
 
-    [Header("Visuals / Audio (Optional für Test)")]
+    [Header("Sounds")]
+    [SerializeField] private AudioSource generatorAudioSource;
+    [SerializeField] private SimpleSoundEffect screwSound;
+    [SerializeField] private SimpleSoundEffect cableSound;
+    [SerializeField] private SimpleSoundEffect fuelSound;
+    [SerializeField] private SimpleSoundEffect oilSound;
+    [SerializeField] private SimpleSoundEffect hammerSound;
+    [SerializeField] private SimpleSoundEffect failSound;
+
+    [Header("Visuals")]
     [SerializeField] private GameObject brokenVisuals;
     [SerializeField] private GameObject repairedVisuals;
-    [SerializeField] private AudioSource generatorAudioSource;
-    [SerializeField] private SimpleSoundEffect repairSoundEffect;
 
     public bool IsRepaired => isRepaired;
 
@@ -28,60 +44,98 @@ public class Generator : BaseEntity
     {
         if (isRepaired)
         {
-            Debug.Log("Der Generator läuft bereits fleißig!");
+            Debug.Log("Der Generator läuft bereits!");
             return;
         }
 
+        var inventory = GlobalDataStore.GetInventory();
         var stateManager = GlobalDataStore.GetStateManager();
-        if (stateManager == null || stateManager.playerState == null || stateManager.playerState.playerItemHandler == null)
+        
+        if (inventory == null || stateManager == null || stateManager.playerState == null || stateManager.playerState.playerItemHandler == null)
         {
-            Debug.LogError("[Generator] PlayerItemHandler konnte nicht gefunden werden!");
+            Debug.LogError("[Generator] Inventar oder PlayerItemHandler nicht gefunden!");
             return;
         }
 
         PlayerItemHandler itemHandler = stateManager.playerState.playerItemHandler;
 
-        if (itemHandler.EquippedItemInternalName != hammerInternalName)
+        bool allPartsInstalled = AllPartsInstalled();
+
+        if (!allPartsInstalled)
         {
-            Debug.Log($"[TEST] Du hältst nicht den Hammer! Aktuell in der Hand: '{itemHandler.EquippedItemInternalName}'");
+            if (TryInstallStoreableItem(inventory, itemHandler, ref screwRequirement, screwSound)) return;
+            if (TryInstallStoreableItem(inventory, itemHandler, ref cableRequirement, cableSound)) return;
+            if (TryInstallStoreableItem(inventory, itemHandler, ref fuelRequirement, fuelSound)) return;
+            if (TryInstallStoreableItem(inventory, itemHandler, ref oilRequirement, oilSound)) return;
+
+            Debug.Log("Du hast keine passenden Teile (Schrauben, Kabel, Benzin oder Öl) im Inventar!");
+            PlaySound(failSound);
             return;
         }
 
-        var inventory = GlobalDataStore.GetInventory();
-        if (inventory.GetCollectableInventoryItem(screwInternalName, out var screwItem))
+        if (allPartsInstalled)
         {
-            if (currentScrewsInstalled < requiredScrews)
-            {
-                currentScrewsInstalled++;
-                Debug.Log($"[TEST] Schraube festgedreht! ({currentScrewsInstalled}/{requiredScrews})");
-
-                
-                if (repairSoundEffect != null && generatorAudioSource != null)
-                    repairSoundEffect.Play(generatorAudioSource);
-
-                inventory.DropItem(screwInternalName, out _); 
-            }
-
-            if (currentScrewsInstalled >= requiredScrews)
+            if (itemHandler.EquippedItemInternalName == hammerInternalName)
             {
                 isRepaired = true;
+                PlaySound(hammerSound);
                 UpdateGeneratorState();
-                Debug.Log("🎉 [TEST] DER GENERATOR IST REPARIERT!");
+                Debug.Log("REPARATUR ERFOLGREICH! Der Generator brummt!");
+            }
+            else
+            {
+                Debug.Log($"Alle Teile sind verbaut! Rüste jetzt den Hammer ({hammerInternalName}) aus, um den Generator final zu reparieren!");
+                PlaySound(failSound);
             }
         }
-        else
+    }
+
+    private bool TryInstallStoreableItem(Inventory inventory, PlayerItemHandler itemHandler, ref GeneratorItemRequirement req, SimpleSoundEffect actionSound)
+    {
+        if (req.currentAmount >= req.requiredAmount) return false;
+
+        if (inventory.GetStoreableInventoryItem(req.internalName, out _))
         {
-            Debug.Log($"[TEST] Dir fehlen Schrauben im Inventar! Gesucht wird: '{screwInternalName}'");
+            if (inventory.DropItem(req.internalName, out _))
+            {
+                req.currentAmount++;
+                Debug.Log($"[Generator] {req.internalName} installiert! ({req.currentAmount}/{req.requiredAmount})");
+                
+                PlaySound(actionSound);
+
+                if (itemHandler.EquippedItemInternalName == req.internalName)
+                {
+                    itemHandler.UnEquipCurrentItem();
+                }
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private bool AllPartsInstalled()
+    {
+        return screwRequirement.currentAmount >= screwRequirement.requiredAmount &&
+               cableRequirement.currentAmount >= cableRequirement.requiredAmount &&
+               fuelRequirement.currentAmount >= fuelRequirement.requiredAmount &&
+               oilRequirement.currentAmount >= oilRequirement.requiredAmount;
+    }
+
+    private void PlaySound(SimpleSoundEffect effect)
+    {
+        if (effect != null && generatorAudioSource != null)
+        {
+            effect.Play(generatorAudioSource);
         }
     }
 
     private void UpdateGeneratorState()
     {
-        
         if (brokenVisuals != null) brokenVisuals.SetActive(!isRepaired);
         if (repairedVisuals != null) repairedVisuals.SetActive(isRepaired);
 
-        
         if (isRepaired)
         {
             if (generatorAudioSource != null && !generatorAudioSource.isPlaying)

@@ -158,7 +158,7 @@ public class PlayerItemHandler : MonoBehaviour
         Destroy(equippedItemGameObject);
         equippedItemGameObject = null;
     }
-    private void UnEquipCurrentItem()
+    public void UnEquipCurrentItem()
     {
         if (equippedItem == null)
             return;
