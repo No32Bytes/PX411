@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 42a68b79689d702439d31c9f9d842cd1
+guid: 79d1790a66971704bac1e5d0de0da0fa
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -19,11 +19,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Fenster
     second: {fileID: 2100000, guid: f3b18550fe837be42b317c6f6264da37, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: faca22300dfd94e498ce790e71b29d58, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -52,6 +47,26 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: ecf6ed7abb4775a458b3a77826b013ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: 06cd81db0bdedc649a9b3085ca189a14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.011
+    second: {fileID: 2100000, guid: ee29977ac3357af43a0e32d6b54380e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.012
+    second: {fileID: 2100000, guid: 32c7198ed101b904db61d59ce3c5ac80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: diese Blaue
     second: {fileID: 2100000, guid: 54a091deb79140f44a861e56c4f1733b, type: 2}
   materials:
@@ -70,7 +85,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
+    importAnimatedCustomProperties: 1
     importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
@@ -84,14 +99,14 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 3
     addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
+    importCameras: 1
     importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2

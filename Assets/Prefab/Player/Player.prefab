@@ -1623,6 +1623,9 @@ MonoBehaviour:
   maxItemInteractionDistance: 1
   interactActionCooldownS: 0.1
   holdActionCooldownS: 0.1
+  interactAnimation:
+    animator: {fileID: 6688645440453263909}
+    paramterName: RightArmInteraction
 --- !u!114 &1701829394085909098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3103,7 +3106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 461392702117330276, guid: e2e88455f13399c44b681ed507ca2fce, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 473569195900417044, guid: e2e88455f13399c44b681ed507ca2fce, type: 3}
       propertyPath: m_Layer

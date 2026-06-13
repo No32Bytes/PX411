@@ -63,7 +63,7 @@ public class PlayerLook : MonoBehaviour
         {
             if (interactAction.InteractWithCooldown())
             {
-                interactAnimation.ValueBool = true;
+                interactAnimation.SetTrigger();
                 baseEntity.EntityInteraction();
                 return;
             }

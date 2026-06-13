@@ -1,1 +1,2 @@
 Assets/Art/**/*.png filter=lfs diff=lfs merge=lfs -text
+Assets/Art/Models/Schule/**/*.fbx filter=lfs diff=lfs merge=lfs -text
