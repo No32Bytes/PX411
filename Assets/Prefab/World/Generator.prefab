@@ -182,14 +182,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Generator
   entityId: 
   usePhysics: 0
-  screwItemData: {fileID: 11400000, guid: 28b7e0c14646ec14fa40ac2adfec4102, type: 2}
-  requiredScrews: 4
-  cableItemData: {fileID: 11400000, guid: 6b35c354abfb2664a9808335e8080dc2, type: 2}
-  requiredCables: 1
-  fuelItemData: {fileID: 11400000, guid: edea15c36369111429673dd1d4a5d7a6, type: 2}
-  requiredFuel: 1
-  oilItemData: {fileID: 11400000, guid: 89b95d70c5f590a4ebadb9417b494f65, type: 2}
-  requriedOil: 1
+  screwRequirement:
+    targetItemData: {fileID: 11400000, guid: 28b7e0c14646ec14fa40ac2adfec4102, type: 2}
+    requiredAmount: 4
+  cableRequirement:
+    targetItemData: {fileID: 11400000, guid: 6b35c354abfb2664a9808335e8080dc2, type: 2}
+    requiredAmount: 1
+  fuelRequirement:
+    targetItemData: {fileID: 11400000, guid: edea15c36369111429673dd1d4a5d7a6, type: 2}
+    requiredAmount: 1
+  oilRequirement:
+    targetItemData: {fileID: 11400000, guid: 89b95d70c5f590a4ebadb9417b494f65, type: 2}
+    requiredAmount: 1
   hammerItemData: {fileID: 11400000, guid: a2666281bd8146640a061b5e13ba88d2, type: 2}
   screwSound: {fileID: 11400000, guid: 3e69ce467c27a744b8331150d1e284ef, type: 2}
   cableSound: {fileID: 11400000, guid: 3d9f72b26ba2cca4aa704771ad7973a0, type: 2}
@@ -208,7 +212,7 @@ AudioSource:
   m_GameObject: {fileID: 3219832673823543176}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1996806640146640373, guid: 869cba9b06f71b445ad96093144a6f23, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0

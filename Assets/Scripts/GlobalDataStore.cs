@@ -1,6 +1,7 @@
 using UnityEngine;
 [DefaultExecutionOrder(-1)]
 
+[RequireComponent(typeof(AudioManager))]
 public class GlobalDataStore : MonoBehaviour
 {
     public ItemDataBase itemDataBase;
@@ -8,6 +9,8 @@ public class GlobalDataStore : MonoBehaviour
     public SettingsManager settingsManager;
     public StateManager stateManager;
     public static GlobalDataStore Instance { get; private set; }
+
+    private AudioManager audioManager;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -30,6 +33,7 @@ public class GlobalDataStore : MonoBehaviour
         settingsManager = new(Application.persistentDataPath);
         saveManager = new(Application.persistentDataPath);
         stateManager = new();
+        audioManager = GetComponent<AudioManager>();
         if (!gameObject.TryGetComponent(out stateManager.eventSystem))
             throw new System.Exception("GlobalDataStore must be possess an Eventsystem must be manually added");
 
@@ -59,4 +63,9 @@ public class GlobalDataStore : MonoBehaviour
     {
         return Instance.saveManager.currentSave.inventory;
     }
+    public static AudioManager GetAudioManager()
+    {
+        return Instance.audioManager;
+    }
+
 }

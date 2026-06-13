@@ -8,7 +8,7 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] private float maxItemInteractionDistance = 1f;
     [SerializeField] private float interactActionCooldownS;
     [SerializeField] private float holdActionCooldownS;
-
+    [SerializeField] private AnimationParamterInfo interactAnimation;
     private InputHandlerCooldown interactAction, holdAction;
     private float xRotation = 0f;
     private InputHandler lookAction;
@@ -43,11 +43,18 @@ public class PlayerLook : MonoBehaviour
     private void HandlePlayerLooking()
     {
         Ray raycast = new(playerRef.playerCamera.transform.position, playerRef.playerCamera.transform.forward);
+        GameObject hitObject = null;
         if (Physics.Raycast(raycast, out RaycastHit raycastHit, Mathf.Infinity, playerInteractionLayerMask) || !(raycastHit.distance < maxItemInteractionDistance))
+        {
+            hitObject = raycastHit.transform.gameObject;
             HandlePlayerLookingRaycastHit(raycastHit);
+        }
 
         if (holdAction.InteractWithCooldown() && EntityDraggable.IsEntitySelected())
             EntityDraggable.CurrentDraggedEntity.DeselectEntity();
+
+        EntityInformationView entityInformationView = hitObject == null ? null : hitObject.transform.gameObject.GetComponent<EntityInformationView>();
+        EntityInformationView.SelectEntity(entityInformationView);
     }
     private void HandlePlayerLookingRaycastHit(RaycastHit raycastHit)
     {
@@ -56,6 +63,7 @@ public class PlayerLook : MonoBehaviour
         {
             if (interactAction.InteractWithCooldown())
             {
+                interactAnimation.ValueBool = true;
                 baseEntity.EntityInteraction();
                 return;
             }
@@ -69,9 +77,6 @@ public class PlayerLook : MonoBehaviour
                     entityDraggable.SelectEntity(playerRef.playerCamera);
             }
         }
-
-        EntityInformationView entityInformationView = hitObject.GetComponent<EntityInformationView>();
-        EntityInformationView.SelectEntity(entityInformationView);
     }
 
     public void HandlePlayerLookAttack(float damageAmount)

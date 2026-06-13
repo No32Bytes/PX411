@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070baa4e3ded2494f93ba97ce90d2238, type: 3}
+  m_Name: Fuel
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  displayName: BenzinKanister
+  internalName: fuel
+  icon: {fileID: 0}
+  description: 
+  collisionSoundEffect: {fileID: 0}
+  storeableItemData:
+    storeable: 1
+    spawnPrefab: {fileID: 5807157868605555780, guid: 73dc996e93bf962468795d997925bac7, type: 3}
+  heldItemData:
+    equippable: 1
+    heldItemPrefab: {fileID: 5807157868605555780, guid: b1b6573b45aa65447974dc21f88093dd, type: 3}
+    throwVelocity: 10
+    attackSoundEffect: {fileID: 0}

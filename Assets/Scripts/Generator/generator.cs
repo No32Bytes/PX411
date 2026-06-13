@@ -6,27 +6,15 @@ public class Generator : BaseEntity
     [System.Serializable]
     public struct GeneratorItemRequirement
     {
-        public string internalName;
+        public ItemData targetItemData;
         public int requiredAmount;
-        [HideInInspector] public int currentAmount;
     }
-
-
-
-    [Header("Item Einstellungen")]
-    [SerializeField] private ItemData screwItemData;
-    [SerializeField] private int requiredScrews = 4;
-    [SerializeField] private ItemData cableItemData;
-    [SerializeField] private int requiredCables = 1;
-    [SerializeField] private ItemData fuelItemData;
-    [SerializeField] private int requiredFuel = 1;
-    [SerializeField] private ItemData oilItemData;
-    [SerializeField] private int requriedOil = 1;
+    [Header("Items")]
+    [SerializeField] private GeneratorItemRequirement screwRequirement;
+    [SerializeField] private GeneratorItemRequirement cableRequirement;
+    [SerializeField] private GeneratorItemRequirement fuelRequirement;
+    [SerializeField] private GeneratorItemRequirement oilRequirement;
     [SerializeField] private ItemData hammerItemData;
-    private GeneratorItemRequirement screwRequirement;
-    private GeneratorItemRequirement cableRequirement;
-    private GeneratorItemRequirement fuelRequirement;
-    private GeneratorItemRequirement oilRequirement;
     [System.Serializable]
     struct GeneratorData
     {
@@ -53,20 +41,8 @@ public class Generator : BaseEntity
     private AudioSource generatorAudioSource;
     private bool IsRepaired => data.isRepaired;
 
-    protected override void EntityAwake()
-    {
-        screwRequirement = new() { internalName = screwItemData.internalName, requiredAmount = requiredScrews };
-        cableRequirement = new() { internalName = cableItemData.internalName, requiredAmount = requiredCables };
-        fuelRequirement = new() { internalName = fuelItemData.internalName, requiredAmount = requiredFuel };
-        oilRequirement = new() { internalName = oilItemData.internalName, requiredAmount = requriedOil };
-    }
-
     private void SaveData()
     {
-        data.screws = screwRequirement.currentAmount;
-        data.cables = cableRequirement.currentAmount;
-        data.fuel = fuelRequirement.currentAmount;
-        data.oil = oilRequirement.currentAmount;
         OnDisable();
     }
     private void OnDisable()
@@ -104,10 +80,10 @@ public class Generator : BaseEntity
 
         if (!allPartsInstalled)
         {
-            if (TryInstallStoreableItem(inventory, itemHandler, ref screwRequirement, screwSound)) return;
-            if (TryInstallStoreableItem(inventory, itemHandler, ref cableRequirement, cableSound)) return;
-            if (TryInstallStoreableItem(inventory, itemHandler, ref fuelRequirement, fuelSound)) return;
-            if (TryInstallStoreableItem(inventory, itemHandler, ref oilRequirement, oilSound)) return;
+            if (TryInstallStoreableItem(inventory, itemHandler, ref screwRequirement, ref data.screws, screwSound)) return;
+            if (TryInstallStoreableItem(inventory, itemHandler, ref cableRequirement, ref data.cables, cableSound)) return;
+            if (TryInstallStoreableItem(inventory, itemHandler, ref fuelRequirement, ref data.fuel, fuelSound)) return;
+            if (TryInstallStoreableItem(inventory, itemHandler, ref oilRequirement, ref data.oil, oilSound)) return;
 
             //Debug.Log("Du hast keine passenden Teile (Schrauben, Kabel, Benzin oder Öl) im Inventar!");
             PlaySound(failSound);
@@ -132,20 +108,20 @@ public class Generator : BaseEntity
         }
     }
 
-    private bool TryInstallStoreableItem(Inventory inventory, PlayerItemHandler itemHandler, ref GeneratorItemRequirement req, SimpleSoundEffect actionSound)
+    private bool TryInstallStoreableItem(Inventory inventory, PlayerItemHandler itemHandler, ref GeneratorItemRequirement req, ref int currentAmount, SimpleSoundEffect actionSound)
     {
-        if (req.currentAmount >= req.requiredAmount) return false;
+        if (currentAmount >= req.requiredAmount) return false;
 
-        if (inventory.GetStoreableInventoryItem(req.internalName, out InventoryItem item))
+        if (inventory.GetStoreableInventoryItem(req.targetItemData.internalName, out InventoryItem item))
         {
             if (item.RemoveItemForever())
             {
-                req.currentAmount++;
+                currentAmount++;
                 //Debug.Log($"[Generator] {req.internalName} installiert! ({req.currentAmount}/{req.requiredAmount})");
 
                 PlaySound(actionSound);
 
-                if (itemHandler.EquippedItemInternalName == req.internalName)
+                if (itemHandler.EquippedItemInternalName == req.targetItemData.internalName)
                 {
                     itemHandler.UnEquipCurrentItem();
                 }
@@ -160,10 +136,10 @@ public class Generator : BaseEntity
 
     private bool AllPartsInstalled()
     {
-        return screwRequirement.currentAmount >= screwRequirement.requiredAmount &&
-               cableRequirement.currentAmount >= cableRequirement.requiredAmount &&
-               fuelRequirement.currentAmount >= fuelRequirement.requiredAmount &&
-               oilRequirement.currentAmount >= oilRequirement.requiredAmount;
+        return data.screws >= screwRequirement.requiredAmount &&
+               data.cables >= cableRequirement.requiredAmount &&
+               data.fuel >= fuelRequirement.requiredAmount &&
+               data.oil >= oilRequirement.requiredAmount;
     }
 
     private void PlaySound(SimpleSoundEffect effect)
