@@ -11,7 +11,7 @@ public class DoorEntity : BaseEntity
     [SerializeField] private bool antiClockWise = false;
     [SerializeField] private bool isOpen = false;
     [SerializeField] private BaseSoundEffect doorMovementSound;
-    [SerializeField] private AudioSource audioSource;
+    private AudioSource audioSource;
     private float targetRotation;
     private void Awake()
     {
