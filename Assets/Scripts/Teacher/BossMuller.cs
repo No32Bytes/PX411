@@ -13,6 +13,7 @@ public class BossMuller : EnemeyEntity
     [SerializeField] private BaseSoundEffect bossDamageSound;
     [SerializeField] private BaseSoundEffect bossChargeSound;
     [SerializeField] private BaseSoundEffect bossStompSound;
+    [SerializeField] private BaseSoundEffect bossStompDamageSound;
     private Vector3 gravityVector;
 
     private PlayerMovement playerMovement;
@@ -143,7 +144,7 @@ public class BossMuller : EnemeyEntity
     {
         if (attackGroundTimer == attackGroundTimerStart)
         {
-            AudioUtil.PlaySoundEffect(bossStompSound,audioSource); 
+            AudioUtil.PlaySoundEffect(bossStompSound, audioSource);
             attackGround.Play();
         }
 
@@ -176,7 +177,7 @@ public class BossMuller : EnemeyEntity
         }
         else if (attackChargeTimer > 0f && chargeStep < chargeStepAmount)
         {
-            AudioUtil.PlaySoundEffect(bossChargeSound,audioSource); 
+            AudioUtil.PlaySoundEffect(bossChargeSound, audioSource);
             chargeStep++;
             chargeState = true;
             characterController.Move(chargeRichtung);
@@ -255,8 +256,10 @@ public class BossMuller : EnemeyEntity
         if (player.GetEntityId() == playerPlayer.GetEntityId())
         {
             attackGroundDidDamage = true;
-            playerPlayer.Damage(groundDamage);
+            player.Damage(groundDamage);
+            AudioUtil.PlaySoundEffect(bossStompDamageSound, player.OverrideDamageAudioSource);
         }
+
     }
 
     //Acid attack;  the acid attack state

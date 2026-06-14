@@ -8,7 +8,7 @@ public class BaseEntity : MonoBehaviour
         if (string.IsNullOrEmpty(entityId))
             Debug.Log(gameObject.name + " - has an empty entityId");
 
-        
+
 
         if (!GlobalDataStore.GetSaveData().entityStateStore.GetEntityIdEnabledState(entityId))
         {

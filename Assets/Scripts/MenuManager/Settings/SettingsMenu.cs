@@ -43,6 +43,6 @@ public class SettingsMenu : MonoBehaviour
     {
         if (GlobalDataStore.GetStateManager().playerState.player.PauseActionRef.InteractWithCooldown())
             BackButtonOnClick();
-        
+
     }
 }

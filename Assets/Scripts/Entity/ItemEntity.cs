@@ -54,7 +54,7 @@ public class ItemEntity : BaseEntity
 
         if (!gameObject.TryGetComponent(out Rigidbody rigidbody))
         {
-            if (rigidbody.linearVelocity.magnitude < itemData.heldItemData.minDamageVelocity)
+            if (rigidbody.linearVelocity.magnitude < itemData.minDamageVelocity)
                 return false;
         }
         return true;
@@ -65,23 +65,23 @@ public class ItemEntity : BaseEntity
         bool canDamage = CanDamage();
 
 
-        if (!collider.gameObject.TryGetComponent(out Player player))
+        if (collider.gameObject.TryGetComponent(out Player player))
         {
             AudioUtil.PlaySoundEffect(itemData.collisionSoundEffect, audioSource);
             if (canDamage)
             {
-                player.Damage(itemData.throwDamage);
+                player.Damage(itemData.collisionDamage);
                 lastDamage = Time.time;
             }
             return;
         }
 
-        if (!collider.gameObject.TryGetComponent(out EnemeyEntity enemeyEntity))
+        if (collider.gameObject.TryGetComponent(out EnemeyEntity enemeyEntity))
         {
             AudioUtil.PlaySoundEffect(itemData.collisionSoundEffect, audioSource);
             if (canDamage)
             {
-                enemeyEntity.EntityDamage(itemData.throwDamage);
+                enemeyEntity.EntityDamage(itemData.collisionDamage);
                 lastDamage = Time.time;
             }
             return;

@@ -31,7 +31,6 @@ public class ItemData : ScriptableObject
         public bool equippable;
         public GameObject heldItemPrefab;
         public float throwVelocity;
-        public float minDamageVelocity;
         public BaseSoundEffect attackSoundEffect;
         public BaseSoundEffect throwSoundEffect;
         public float weaponDamage;
@@ -46,5 +45,6 @@ public class ItemData : ScriptableObject
     }
     public int InternalNameIntHash => HashUtil.FNV1.ComputeHash_24Bytes(internalName);
 
-    public float throwDamage = 0.0f;
+    public float minDamageVelocity = 99f;
+    public float collisionDamage = 0.0f;
 }

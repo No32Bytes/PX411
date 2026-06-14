@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
             movementState = MovementState.Walking;
         }
 
-        if(movementVector.magnitude < 0.1)
+        if (movementVector.magnitude < 0.1)
             movementState = MovementState.None;
 
         if (!isGroundedCheck)
@@ -97,8 +97,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovementState()
     {
-        if (audioSource.isPlaying)
+        if (audioSource.isPlaying && movementState != MovementState.Jumping)
             return;
+        if (audioSource.isPlaying && movementState != MovementState.Landing)
+            return;
+        audioSource.Stop();
+
         BaseSoundEffect toPlay;
         switch (movementState)
         {

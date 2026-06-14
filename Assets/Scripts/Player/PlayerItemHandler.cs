@@ -79,9 +79,10 @@ public class PlayerItemHandler : MonoBehaviour
         if (!PlayerItemActionStateCheck())
             return;
 
+        BaseSoundEffect throwSound = equippedItem.ItemData.heldItemData.throwSoundEffect;
         if (!ThrowItem(equippedItem.InternalName))
             return;
-        AudioUtil.PlaySoundEffect(equippedItem.ItemData.heldItemData.throwSoundEffect, audioSource);
+        AudioUtil.PlaySoundEffect(throwSound, audioSource);
 
         UpdateEquippedItem();
     }

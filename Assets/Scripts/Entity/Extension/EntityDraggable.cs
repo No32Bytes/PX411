@@ -32,13 +32,20 @@ public class EntityDraggable : MonoBehaviour
     }
     public static Camera playerCamera = null;
 
+    [SerializeField] private RandomSoundEffect collisionSoundEffect;
+    [SerializeField] private float minDamageVelocity;
+    [SerializeField] private float collisionDamage;
+    const float damageDelay = 1f;
+    float lastDamage;
     private bool isSelected = false;
     private float distance = 0f;
     private Vector3 remainingMoveVector = Vector3.zero;
     private float linearDampingSave;
     private Rigidbody entityRigibody;
+    private AudioSource audioSource;
     private void Awake()
     {
+        audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
         entityRigibody = GetComponent<Rigidbody>();
         entityRigibody.maxLinearVelocity = EntityDraggableConfig.MaxLinearVelocity;
         isSelected = false;
@@ -102,5 +109,48 @@ public class EntityDraggable : MonoBehaviour
 
         entityRigibody.linearDamping = linearDampingSave;
         entityRigibody.mass /= EntityDraggableConfig.selectedMultMass;
+    }
+
+    private bool CanDamage()
+    {
+        if (lastDamage + damageDelay > Time.time)
+            return false;
+
+        if (!gameObject.TryGetComponent(out Rigidbody rigidbody))
+        {
+            if (rigidbody.linearVelocity.magnitude < minDamageVelocity)
+                return false;
+        }
+        return true;
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (gameObject.TryGetComponent<ItemEntity>(out _))
+            return;
+        bool canDamage = CanDamage();
+
+
+        if (collider.gameObject.TryGetComponent(out Player player))
+        {
+            AudioUtil.PlaySoundEffect(collisionSoundEffect, audioSource);
+            if (canDamage)
+            {
+                player.Damage(collisionDamage);
+                lastDamage = Time.time;
+            }
+            return;
+        }
+
+        if (collider.gameObject.TryGetComponent(out EnemeyEntity enemeyEntity))
+        {
+            AudioUtil.PlaySoundEffect(collisionSoundEffect, audioSource);
+            if (canDamage)
+            {
+                enemeyEntity.EntityDamage(collisionDamage);
+                lastDamage = Time.time;
+            }
+            return;
+        }
     }
 }
