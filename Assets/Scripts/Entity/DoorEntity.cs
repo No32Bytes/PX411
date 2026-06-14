@@ -1,4 +1,5 @@
 using System;
+using System.IO.Compression;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshRenderer))]
@@ -9,6 +10,7 @@ public class DoorEntity : BaseEntity
     [SerializeField] private float maxRotationChange = 180f;
     [SerializeField] private bool rotateAroundZAxis = false;
     [SerializeField] private bool antiClockWise = false;
+    [SerializeField] private bool useRotationZAxis = false;
     [SerializeField] private bool isOpen = false;
     [SerializeField] private BaseSoundEffect doorMovementSound;
     private AudioSource audioSource;
@@ -23,10 +25,12 @@ public class DoorEntity : BaseEntity
     {
         float startRotation = isOpen ? targetRotationOpen : targetRotationClose;
 
-        Vector3 angles = new(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z)
-        {
-            y = startRotation
-        };
+        Vector3 angles = new(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
+        if (useRotationZAxis)
+            angles.z = startRotation;
+        else
+            angles.y = startRotation;
+
         transform.localEulerAngles = angles;
         targetRotation = GetCurrentRotation();
     }
@@ -63,6 +67,7 @@ public class DoorEntity : BaseEntity
             audioSource.Stop();
             return;
         }
+        Debug.Log(currenRotation);
 
         if (!audioSource.isPlaying)
         {
@@ -87,7 +92,13 @@ public class DoorEntity : BaseEntity
 
         if (Math.Abs(rotationChange) < 1)
         {
-            Vector3 setNextRotation = new(transform.localEulerAngles.x, targetRotation, transform.localEulerAngles.z);
+            Vector3 setNextRotation = new(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
+
+            if (useRotationZAxis)
+                setNextRotation.z = targetRotation;
+            else
+                setNextRotation.y = targetRotation;
+
             transform.localEulerAngles = setNextRotation;
             return;
         }
@@ -108,6 +119,9 @@ public class DoorEntity : BaseEntity
     }
     private float GetCurrentRotation()
     {
+        if (useRotationZAxis)
+            return transform.localEulerAngles.z;
+
         return transform.localEulerAngles.y;
     }
 }
