@@ -1,19 +1,22 @@
 using UnityEngine;
 using InputUtil;
-using Unity.VisualScripting;
+
 public class PlayerLook : MonoBehaviour
 {
     [SerializeField] private PlayerReferences playerRef;
     [SerializeField] private LayerMask playerInteractionLayerMask;
     [SerializeField] private float maxItemInteractionDistance = 1f;
     [SerializeField] private float interactActionCooldownS;
+    [SerializeField] private BaseSoundEffect interactActionSound;
     [SerializeField] private float holdActionCooldownS;
     [SerializeField] private AnimationParamterInfo interactAnimation;
     private InputHandlerCooldown interactAction, holdAction;
     private float xRotation = 0f;
     private InputHandler lookAction;
+    private AudioSource audioSource;
     void Awake()
     {
+        audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
         GlobalDataStore.GetStateManager().playerState.playerLook = this;
     }
     void Start()
@@ -63,6 +66,7 @@ public class PlayerLook : MonoBehaviour
         {
             if (interactAction.InteractWithCooldown())
             {
+                AudioUtil.PlaySoundEffect(interactActionSound, audioSource);
                 interactAnimation.SetTrigger();
                 baseEntity.EntityInteraction();
                 return;

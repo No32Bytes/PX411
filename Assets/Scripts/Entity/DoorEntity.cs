@@ -10,9 +10,12 @@ public class DoorEntity : BaseEntity
     [SerializeField] private bool rotateAroundZAxis = false;
     [SerializeField] private bool antiClockWise = false;
     [SerializeField] private bool isOpen = false;
+    [SerializeField] private BaseSoundEffect doorMovementSound;
+    [SerializeField] private AudioSource audioSource;
     private float targetRotation;
     private void Awake()
     {
+        audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
         entityId = "door";
         usePhysics = false;
     }
@@ -33,6 +36,7 @@ public class DoorEntity : BaseEntity
     }
     protected void ToggleDoorState()
     {
+        audioSource.Stop();
         if (isOpen)
             DoorClose();
         else
@@ -55,7 +59,15 @@ public class DoorEntity : BaseEntity
         if (currenRotation < 0)
             currenRotation = 360 - currenRotation;
         if (currenRotation == targetRotation)
+        {
+            audioSource.Stop();
             return;
+        }
+
+        if (!audioSource.isPlaying)
+        {
+            AudioUtil.PlaySoundEffect(doorMovementSound, audioSource);
+        }
 
         float rotationChange = targetRotation - currenRotation;
         if (isOpen && rotationChange < 0)

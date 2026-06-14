@@ -7,8 +7,10 @@ public class AudioManager : MonoBehaviour
 {
     [Header("AudioManager")]
     [SerializeField] private AudioMixerGroup musicMixerGroup;
+    [SerializeField] private AudioMixerGroup soundMixerGroup;
     [SerializeField] private List<SoundTrack> soundTrackStore = new();
     public List<SoundTrack> InternalGetSoundTrackStore => soundTrackStore;
+    public AudioMixerGroup SoundMixerGroup => soundMixerGroup;
     public static AudioManager Instance { get; private set; }
 
     private AudioSource audioSource;

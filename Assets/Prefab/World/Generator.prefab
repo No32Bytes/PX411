@@ -201,6 +201,8 @@ MonoBehaviour:
   oilSound: {fileID: 0}
   hammerSound: {fileID: 11400000, guid: 6dac5b5d8216cbc429be9272549231fd, type: 2}
   failSound: {fileID: 11400000, guid: 104ccf69c72aec949a7bcf805320532d, type: 2}
+  startingSound: {fileID: 11400000, guid: 0eb08089289491846a46d88a04a49f6f, type: 2}
+  runningSound: {fileID: 0}
   brokenVisuals: {fileID: 2406512249883037220}
   repairedVisuals: {fileID: 0}
 --- !u!82 &2045940505659822811

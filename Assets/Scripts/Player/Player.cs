@@ -10,12 +10,17 @@ public class Player : MonoBehaviour
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private float togglePauseMenuCooldownS = 0.5f;
     [SerializeField] private float toggleHandyUIActionCooldownS = 0.1f;
+    [Header("Sound")]
+    [SerializeField] private BaseSoundEffect damageSound;
+    [SerializeField] private BaseSoundEffect deathSound;
     private InputHandlerCooldown toggleHandyUIAction;
     public InputHandlerCooldown pauseAction;
     private AudioListener audioListener;
-
+    private AudioSource audioSource;
+    public InputHandlerCooldown PauseActionRef => pauseAction;
     private void Awake()
     {
+        audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
         audioListener = gameObject.AddComponent<AudioListener>();
         healthBar.SetOnDeathCallback(OnPlayerDeath);
 
@@ -56,7 +61,10 @@ public class Player : MonoBehaviour
 
         if (audioListener.enabled == true)
             if (pauseAction.InteractWithCooldown())
+            {
+                DisableHandyScreenUI();
                 LoadPauseMenu();
+            }
     }
 
     private void LoadPauseMenu()
@@ -97,11 +105,12 @@ public class Player : MonoBehaviour
 
     private void OnPlayerDeath()
     {
-
+        AudioUtil.PlaySoundEffect(deathSound, audioSource);
     }
 
     public void Damage(float damageAmount)
     {
+        AudioUtil.PlaySoundEffect(damageSound, audioSource);
         healthBar.ReduceHealth(damageAmount);
     }
 

@@ -2206,6 +2206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b4944e621d0cd4095bfb71de0a886c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsKeybindsMenu
+  settingsMenuRef: {fileID: 883981725}
+  settingsKeybindMenuRef: {fileID: 775436792}
   keybindManagerData: {fileID: 11400000, guid: c2fc892e53571ef429114f99dbf17640, type: 2}
   keybindHelperPrefab: {fileID: 1119415860225909049, guid: 1f69e222e9d401041890cc527c645ade, type: 3}
   keybindScrollView: {fileID: 1100914968}

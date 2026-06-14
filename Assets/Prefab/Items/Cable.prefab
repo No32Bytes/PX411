@@ -48,6 +48,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5865230394840854603, guid: c57c29cb41326834c9c2ea62db57a3aa, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3428653752911259681, guid: c57c29cb41326834c9c2ea62db57a3aa, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c57c29cb41326834c9c2ea62db57a3aa, type: 3}
       propertyPath: m_Name
       value: Cable

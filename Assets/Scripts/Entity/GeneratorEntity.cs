@@ -27,12 +27,14 @@ public class Generator : BaseEntity
     private GeneratorData data = new();
 
     [Header("Sounds")]
-    [SerializeField] private SimpleSoundEffect screwSound;
-    [SerializeField] private SimpleSoundEffect cableSound;
-    [SerializeField] private SimpleSoundEffect fuelSound;
-    [SerializeField] private SimpleSoundEffect oilSound;
-    [SerializeField] private SimpleSoundEffect hammerSound;
-    [SerializeField] private SimpleSoundEffect failSound;
+    [SerializeField] private BaseSoundEffect screwSound;
+    [SerializeField] private BaseSoundEffect cableSound;
+    [SerializeField] private BaseSoundEffect fuelSound;
+    [SerializeField] private BaseSoundEffect oilSound;
+    [SerializeField] private BaseSoundEffect hammerSound;
+    [SerializeField] private BaseSoundEffect failSound;
+    [SerializeField] private BaseSoundEffect startingSound;
+    [SerializeField] private BaseSoundEffect runningSound;
 
     [Header("Visuals")]
     [SerializeField] private GameObject brokenVisuals;
@@ -40,6 +42,14 @@ public class Generator : BaseEntity
 
     private AudioSource generatorAudioSource;
     private bool IsRepaired => data.isRepaired;
+
+    enum MotorState
+    {
+        Disabled,
+        Starting,
+        Running,
+    }
+    MotorState motorState;
 
     private void SaveData()
     {
@@ -86,7 +96,7 @@ public class Generator : BaseEntity
             if (TryInstallStoreableItem(inventory, itemHandler, ref oilRequirement, ref data.oil, oilSound)) return;
 
             //Debug.Log("Du hast keine passenden Teile (Schrauben, Kabel, Benzin oder Öl) im Inventar!");
-            PlaySound(failSound);
+            AudioUtil.PlaySoundEffect(failSound, generatorAudioSource);
             return;
         }
 
@@ -96,30 +106,30 @@ public class Generator : BaseEntity
             {
                 data.isRepaired = true;
                 SaveData();
-                PlaySound(hammerSound);
+                AudioUtil.PlaySoundEffect(hammerSound, generatorAudioSource);
                 UpdateGeneratorState();
                 //Debug.Log("REPARATUR ERFOLGREICH! Der Generator brummt!");
             }
             else
             {
                 //Debug.Log($"Alle Teile sind verbaut! Rüste jetzt den Hammer ({hammerItemData.internalName}) aus, um den Generator final zu reparieren!");
-                PlaySound(failSound);
+                AudioUtil.PlaySoundEffect(failSound, generatorAudioSource);
             }
         }
     }
 
-    private bool TryInstallStoreableItem(Inventory inventory, PlayerItemHandler itemHandler, ref GeneratorItemRequirement req, ref int currentAmount, SimpleSoundEffect actionSound)
+    private bool TryInstallStoreableItem(Inventory inventory, PlayerItemHandler itemHandler, ref GeneratorItemRequirement req, ref int currentAmount, BaseSoundEffect actionSound)
     {
         if (currentAmount >= req.requiredAmount) return false;
 
-        if (inventory.GetStoreableInventoryItem(req.targetItemData.internalName, out InventoryItem item))
+        if (inventory.GetInventoryItem(req.targetItemData.internalName, out InventoryItem item))
         {
             if (item.RemoveItemForever())
             {
                 currentAmount++;
                 //Debug.Log($"[Generator] {req.internalName} installiert! ({req.currentAmount}/{req.requiredAmount})");
 
-                PlaySound(actionSound);
+                AudioUtil.PlaySoundEffect(actionSound, generatorAudioSource);
 
                 if (itemHandler.EquippedItemInternalName == req.targetItemData.internalName)
                 {
@@ -142,31 +152,37 @@ public class Generator : BaseEntity
                data.oil >= oilRequirement.requiredAmount;
     }
 
-    private void PlaySound(SimpleSoundEffect effect)
-    {
-        if (effect != null && generatorAudioSource != null)
-        {
-            effect.Play(generatorAudioSource);
-        }
-    }
-
     private void UpdateGeneratorState()
     {
         if (brokenVisuals != null) brokenVisuals.SetActive(!IsRepaired);
         if (repairedVisuals != null) repairedVisuals.SetActive(IsRepaired);
 
-        if (IsRepaired)
+        if (IsRepaired && motorState == MotorState.Disabled)
+            motorState = MotorState.Starting;
+    }
+
+    private void FixedUpdate()
+    {
+        if (!IsRepaired)
+            return;
+        if (generatorAudioSource.isPlaying)
+            return;
+
+        switch (motorState)
         {
-            if (generatorAudioSource != null && !generatorAudioSource.isPlaying)
-            {
+            case MotorState.Disabled:
+                return;
+            case MotorState.Starting:
+                AudioUtil.PlaySoundEffect(startingSound, generatorAudioSource);
+                motorState = MotorState.Running;
+                return;
+            case MotorState.Running:
+                generatorAudioSource.clip = null;
                 generatorAudioSource.loop = true;
-                generatorAudioSource.Play();
-            }
-        }
-        else
-        {
-            if (generatorAudioSource != null)
-                generatorAudioSource.Stop();
+                AudioUtil.PlaySoundEffect(runningSound, generatorAudioSource);
+                return;
+            default:
+                break;
         }
     }
 }

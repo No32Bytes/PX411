@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour
     }
     private void Update()
     {
-        var pauseAction = GlobalDataStore.GetStateManager().playerState.player.pauseAction;
+        var pauseAction = GlobalDataStore.GetStateManager().playerState.player.PauseActionRef;
 
         if (pauseAction.InteractWithCooldown())
             ReturnButtonOnClick();

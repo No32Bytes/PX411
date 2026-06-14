@@ -24,7 +24,7 @@ public class PlayerItemHandler : MonoBehaviour
     private AudioSource audioSource;
     private void Awake()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
         GlobalDataStore.GetStateManager().playerState.playerItemHandler = this;
     }
     private void Start()
@@ -71,9 +71,8 @@ public class PlayerItemHandler : MonoBehaviour
         if (!PlayerItemActionStateCheck())
             return;
 
-        if (equippedItem.ItemData.heldItemData.attackSoundEffect != null)
-            equippedItem.ItemData.heldItemData.attackSoundEffect.Play(audioSource);
-        GlobalDataStore.GetStateManager().playerState.playerLook.HandlePlayerLookAttack(equippedItem.ItemData.weaponDamage);
+        AudioUtil.PlaySoundEffect(equippedItem.ItemData.heldItemData.attackSoundEffect, audioSource);
+        GlobalDataStore.GetStateManager().playerState.playerLook.HandlePlayerLookAttack(equippedItem.ItemData.heldItemData.weaponDamage);
     }
     public void PlayerItemThrow()
     {
@@ -82,6 +81,7 @@ public class PlayerItemHandler : MonoBehaviour
 
         if (!ThrowItem(equippedItem.InternalName))
             return;
+        AudioUtil.PlaySoundEffect(equippedItem.ItemData.heldItemData.throwSoundEffect, audioSource);
 
         UpdateEquippedItem();
     }

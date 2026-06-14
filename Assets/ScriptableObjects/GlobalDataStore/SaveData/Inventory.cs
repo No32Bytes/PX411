@@ -96,4 +96,13 @@ public class Inventory
     }
     public List<InventoryItem> GetCollectableInventory() { return collectableInventory; }
     public List<InventoryItem> GetStoreableInventory() { return storeableInventory; }
+
+    public bool GetInventoryItem(string internalName, out InventoryItem inventoryItem)
+    {
+
+        if (GetCollectableInventoryItem(internalName, out inventoryItem))
+            return true;
+
+        return GetStoreableInventoryItem(internalName, out inventoryItem);
+    }
 }

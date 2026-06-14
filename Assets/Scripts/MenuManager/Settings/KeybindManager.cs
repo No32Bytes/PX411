@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class KeybindManager : MonoBehaviour
 {
+    [SerializeField] private GameObject settingsMenuRef;
+    [SerializeField] private GameObject settingsKeybindMenuRef;
     [SerializeField] private KeybindManagerConfig keybindManagerData;
     [SerializeField] private GameObject keybindHelperPrefab;
     [SerializeField] private ScrollRect keybindScrollView;
@@ -74,5 +76,14 @@ public class KeybindManager : MonoBehaviour
         currentRebindKeyOperation = rebindKeyOperation;
         Action<InputControl> executeAction = new(currentRebindKeyOperation.rebindActionExecute);
         currentInputListener = InputSystem.onAnyButtonPress.Call(executeAction);
+    }
+
+    void Update()
+    {
+        if (!GlobalDataStore.GetStateManager().playerState.player.PauseActionRef.InteractWithCooldown())
+            return;
+
+        settingsMenuRef.SetActive(true);
+        settingsKeybindMenuRef.SetActive(false);
     }
 }

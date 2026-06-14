@@ -9,6 +9,10 @@ public class BossMuller : EnemeyEntity
     [SerializeField] private Canvas overlayMullerUI;
     [SerializeField] private HealthBar healthBar = new();
     [SerializeField] private float gravity = -9.81f;
+    [Header("Sound")]
+    [SerializeField] private BaseSoundEffect bossDamageSound;
+    [SerializeField] private BaseSoundEffect bossChargeSound;
+    [SerializeField] private BaseSoundEffect bossStompSound;
     private Vector3 gravityVector;
 
     private PlayerMovement playerMovement;
@@ -34,6 +38,12 @@ public class BossMuller : EnemeyEntity
     private bool starttiming;
     [SerializeField] private float startTimerMax = 2f;
     [SerializeField] private float attackChargeTimerStart = 5f;
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
+    }
 
     private void Start()
     {
@@ -132,7 +142,10 @@ public class BossMuller : EnemeyEntity
     public void AttackGround()
     {
         if (attackGroundTimer == attackGroundTimerStart)
+        {
+            AudioUtil.PlaySoundEffect(bossStompSound,audioSource); 
             attackGround.Play();
+        }
 
         attackGroundTimer -= Time.fixedDeltaTime;
     }
@@ -143,7 +156,7 @@ public class BossMuller : EnemeyEntity
     {
         if (attackChargeTimer >= 0)
             return;
-        Vector3 playerPosition = playerMovement.moveTransform.position;
+        Vector3 playerPosition = playerMovement.MoveTransform.position;
         chargeRichtung = playerPosition - transform.position;
         chargeRichtung.y = 0;
         chargeRichtung /= chargeStepAmount;
@@ -163,6 +176,7 @@ public class BossMuller : EnemeyEntity
         }
         else if (attackChargeTimer > 0f && chargeStep < chargeStepAmount)
         {
+            AudioUtil.PlaySoundEffect(bossChargeSound,audioSource); 
             chargeStep++;
             chargeState = true;
             characterController.Move(chargeRichtung);
@@ -189,7 +203,7 @@ public class BossMuller : EnemeyEntity
         if (!isPlayer)
             return;
 
-        playerMovement.playerMovementController.Move(chargeRichtung);
+        playerMovement.PlayerMovementController.Move(chargeRichtung);
         if (chargeState == true)
         {
             playerPlayer.Damage(chargeDamage);
@@ -203,7 +217,7 @@ public class BossMuller : EnemeyEntity
     public void AcidAttackActivate()
     {
         //Debug.Log("AcidAttack");
-        Vector3 playerPosition = playerMovement.moveTransform.position;
+        Vector3 playerPosition = playerMovement.MoveTransform.position;
 
         throwDirections.Clear();
         Vector3 throwDirection;
@@ -273,6 +287,7 @@ public class BossMuller : EnemeyEntity
 
     public override void EntityDamage(float amount)
     {
+        AudioUtil.PlaySoundEffect(bossDamageSound, audioSource);
         healthBar.ReduceHealth(amount);
     }
     public override void EntityHeal(float amount)
