@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c8be6f13da53a804ca134b8d4526d6e2
+guid: 1f9b1767cac7d7d4eb9c0bf4c6eec572
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: HeizungBake
-    second: {fileID: 2100000, guid: 0e1e691363bce7b47b29ac2d148983cb, type: 2}
+      name: BesenBake
+    second: {fileID: 2100000, guid: c7a764f6ae9dde9428b5eef1c940a31f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -38,7 +38,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.25
     meshCompression: 3
     addColliders: 1
     useSRGBMaterialColor: 1
@@ -96,7 +96,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.0025
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1
