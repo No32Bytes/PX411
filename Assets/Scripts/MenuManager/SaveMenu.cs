@@ -5,6 +5,8 @@ using SaveMenuElements;
 public class SaveMenu : MonoBehaviour
 {
     [SerializeField] private MenuManager menuManagerRef;
+    [SerializeField] private GameObject backButton;
+    [SerializeField] private GameObject forwardButton;
     [Header("SaveSlots")]
     [SerializeField] private SaveSlot[] saveSlots;
     private int maxPage = 0;
@@ -58,6 +60,9 @@ public class SaveMenu : MonoBehaviour
             saveSlot.SetSaveName(cachedSaveIDs[i + currentPage * saveSlots.Length]);
             saveSlot.DisplaySaveStats();
         }
+
+        backButton.SetActive(currentPage != 0);
+        forwardButton.SetActive(currentPage != maxPage);
     }
 
     public void ForceReload()

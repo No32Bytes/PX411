@@ -5,6 +5,7 @@ using UnityEngine;
 public class GlobalDataStore : MonoBehaviour
 {
     public ItemDataBase itemDataBase;
+    public Behaviour[] awakeComponents;
     public SaveManager saveManager;
     public SettingsManager settingsManager;
     public StateManager stateManager;
@@ -15,12 +16,14 @@ public class GlobalDataStore : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject);
+            DestroyImmediate(gameObject);
             return;
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        foreach (Behaviour component in awakeComponents)
+            component.enabled = true;
         Initalize();
     }
     private void OnApplicationQuit()

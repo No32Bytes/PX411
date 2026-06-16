@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.6464524
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2907228
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.278729
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
       propertyPath: m_LocalRotation.w
@@ -92,6 +92,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3602280720750836806}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5136440988717940709}
   m_SourcePrefab: {fileID: 100100000, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
 --- !u!1 &4425555618728232500 stripped
 GameObject:
@@ -134,3 +137,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.15, z: 0.55}
   m_Center: {x: 0, y: 0.06, z: 0}
+--- !u!114 &5136440988717940709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4425555618728232500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab:
+  - {fileID: 3014204856633051911, guid: cdee7f58680fd374a97582431c9819ae, type: 3}

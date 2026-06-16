@@ -3,6 +3,7 @@ using UnityEngine;
 public class ItemEntity : BaseEntity
 {
     [SerializeField] private ItemData itemData;
+    public ItemData ItemData => itemData;
     private AudioSource audioSource;
     const float damageDelay = 1f;
     float lastDamage;
@@ -25,7 +26,7 @@ public class ItemEntity : BaseEntity
         if (!playerItemHandler.HasItemEquipped)
             playerItemHandler.EquipItem(itemData.internalName);
 
-        DestroyEntity();
+        Destroy(gameObject);
     }
     public static bool TryDropItem(Camera playerCamera, ItemData itemData, string itemEntityId, float distance, float startVelocity = 0f)
     {

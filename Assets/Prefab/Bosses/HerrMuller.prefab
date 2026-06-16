@@ -335,6 +335,7 @@ MonoBehaviour:
   bossDamageSound: {fileID: 11400000, guid: 88f3af3b2cdbed04ca2078f2313d1027, type: 2}
   bossChargeSound: {fileID: 0}
   bossStompSound: {fileID: 0}
+  bossStompDamageSound: {fileID: 0}
   balls:
   - {fileID: 5522730629307906073}
   - {fileID: 280558982632091976}
@@ -525,6 +526,7 @@ MonoBehaviour:
   muller: {fileID: 7350857924634731825}
   timerMax: 5
   damage: 10
+  collisionSoundEffect: {fileID: 0}
 --- !u!1 &4514745739264683762
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,6 +655,7 @@ MonoBehaviour:
   muller: {fileID: 7350857924634731825}
   timerMax: 5
   damage: 10
+  collisionSoundEffect: {fileID: 0}
 --- !u!1 &4814825682510865684
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,6 +784,7 @@ MonoBehaviour:
   muller: {fileID: 7350857924634731825}
   timerMax: 5
   damage: 10
+  collisionSoundEffect: {fileID: 0}
 --- !u!1 &7042401622169026056
 GameObject:
   m_ObjectHideFlags: 0
