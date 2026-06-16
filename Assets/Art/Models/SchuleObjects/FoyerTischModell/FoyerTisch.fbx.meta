@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5cc79e20341b10944a51d8f21640e59e
+guid: f74f854ad3bdb9743a32d2cb24467cb3
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: BuchBake
-    second: {fileID: 2100000, guid: 3fb52ec426972594791edb53681c92f9, type: 2}
+      name: FoyerTischBake
+    second: {fileID: 2100000, guid: af0eeb917069f8e4781ca49f8833364e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -38,7 +38,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.5
+    globalScale: 5
     meshCompression: 3
     addColliders: 1
     useSRGBMaterialColor: 1
@@ -96,7 +96,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.5
+    globalScale: 5
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
