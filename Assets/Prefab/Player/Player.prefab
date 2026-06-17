@@ -1359,9 +1359,9 @@ MonoBehaviour:
     healthSlider: {fileID: 7499082087463225246}
   togglePauseMenuCooldownS: 0.2
   toggleHandyUIActionCooldownS: 0.1
-  damageDelay: 0
-  damageSound: {fileID: 0}
-  deathSound: {fileID: 0}
+  damageDelay: 0.25
+  damageSound: {fileID: 11400000, guid: cc4f8f91a7df93e4dac56f89ca1bc934, type: 2}
+  deathSound: {fileID: 11400000, guid: 3986b98c9b6a45c4caf8c345247310d8, type: 2}
 --- !u!114 &2986001983048084926
 MonoBehaviour:
   m_ObjectHideFlags: 0

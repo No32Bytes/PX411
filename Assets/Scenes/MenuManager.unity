@@ -1330,6 +1330,7 @@ GameObject:
   - component: {fileID: 439476517}
   - component: {fileID: 439476516}
   - component: {fileID: 439476518}
+  - component: {fileID: 439476519}
   m_Layer: 5
   m_Name: Border
   m_TagString: Untagged
@@ -1438,6 +1439,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &439476519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439476514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90623d0a02ff38447a52e084f3efb5c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonPlaySoundOnClick
+  selectSound: {fileID: 11400000, guid: b9ebf0179c9c5d042a6a729a04e144c0, type: 2}
+  button: {fileID: 439476518}
 --- !u!1001 &448401692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1588,18 +1603,6 @@ PrefabInstance:
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3825519123228027721, guid: 1007fbae58590af498075aa7617d3b09, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3825519123228027721, guid: 1007fbae58590af498075aa7617d3b09, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3825519123228027721, guid: 1007fbae58590af498075aa7617d3b09, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3825519123228027721, guid: 1007fbae58590af498075aa7617d3b09, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1645,10 +1648,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3825519123228027721, guid: 1007fbae58590af498075aa7617d3b09, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3825519123228027721, guid: 1007fbae58590af498075aa7617d3b09, type: 3}
-      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5120560167495866067, guid: 1007fbae58590af498075aa7617d3b09, type: 3}
@@ -2029,7 +2028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &596657375
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3518,7 +3517,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f65092db0f20a7e4c83feff57708beb1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a541d6a538d00d54c946ab59b7579120, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6216,7 +6215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2073499499
 RectTransform:
   m_ObjectHideFlags: 0

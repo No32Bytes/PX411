@@ -200,7 +200,7 @@ MonoBehaviour:
   fuelSound: {fileID: 11400000, guid: 0d835060b4cdd84418e6838b37047ed0, type: 2}
   oilSound: {fileID: 0}
   hammerSound: {fileID: 11400000, guid: 6dac5b5d8216cbc429be9272549231fd, type: 2}
-  failSound: {fileID: 11400000, guid: 104ccf69c72aec949a7bcf805320532d, type: 2}
+  failSound: {fileID: 11400000, guid: 8f8e8c10f7bc44849b91956cc65bc6f4, type: 2}
   startingSound: {fileID: 11400000, guid: 0eb08089289491846a46d88a04a49f6f, type: 2}
   runningSound: {fileID: 0}
   brokenVisuals: {fileID: 2406512249883037220}

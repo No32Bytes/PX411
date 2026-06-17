@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 235bd5dd2489ac94a86ade2ffab703fa
+guid: 4e3a62e845fe44740827bdb1ed96dfd3
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: TastaturBake.001
-    second: {fileID: 2100000, guid: c7d5e601d73db5348a922625088a47b5, type: 2}
+      name: BildschirmBake
+    second: {fileID: 2100000, guid: 7d61b3554d250e340b1d02ea9f48c519, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -38,7 +38,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 2
     meshCompression: 3
     addColliders: 1
     useSRGBMaterialColor: 1
@@ -96,7 +96,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.02
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

@@ -20,7 +20,8 @@ public class Player : MonoBehaviour
     private AudioSource audioSource;
     public AudioSource OverrideDamageAudioSource => audioSource;
     public InputHandlerCooldown PauseActionRef => pauseAction;
-    float lastDamage;
+    private float lastDamage;
+    private bool isDead;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
         healthBar.SetOnDeathCallback(OnPlayerDeath);
 
         GlobalDataStore.GetStateManager().playerState.player = this;
+        isDead = false;
     }
 
     private void Start()
@@ -109,17 +111,25 @@ public class Player : MonoBehaviour
 
     private void OnPlayerDeath()
     {
+        if (isDead)
+            return;
+            
+        audioSource.Stop();
         AudioUtil.PlaySoundEffect(deathSound, audioSource);
+        isDead = true;
     }
 
     public void Damage(float damageAmount)
     {
+        if (isDead)
+            return;
         if (lastDamage + damageDelay > Time.time)
             return;
 
         lastDamage = Time.time;
         AudioUtil.PlaySoundEffect(damageSound, audioSource);
         healthBar.ReduceHealth(damageAmount);
+
     }
 
     public void Heal(float healAmount)

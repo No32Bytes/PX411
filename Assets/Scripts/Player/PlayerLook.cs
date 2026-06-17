@@ -14,10 +14,12 @@ public class PlayerLook : MonoBehaviour
     private float xRotation = 0f;
     private InputHandler lookAction;
     private AudioSource audioSource;
+    private bool entityInformationViewFrameDisable;
     void Awake()
     {
         audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
         GlobalDataStore.GetStateManager().playerState.playerLook = this;
+        entityInformationViewFrameDisable = false;
     }
     void Start()
     {
@@ -57,6 +59,11 @@ public class PlayerLook : MonoBehaviour
             EntityDraggable.CurrentDraggedEntity.DeselectEntity();
 
         EntityInformationView entityInformationView = hitObject == null ? null : hitObject.transform.gameObject.GetComponent<EntityInformationView>();
+        if (entityInformationViewFrameDisable)
+        {
+            entityInformationView = null;
+            entityInformationViewFrameDisable = false;
+        }
         EntityInformationView.SelectEntity(entityInformationView);
     }
     private void HandlePlayerLookingRaycastHit(RaycastHit raycastHit)
@@ -69,6 +76,7 @@ public class PlayerLook : MonoBehaviour
                 AudioUtil.PlaySoundEffect(interactActionSound, audioSource);
                 interactAnimation.SetTrigger();
                 baseEntity.EntityInteraction();
+                entityInformationViewFrameDisable = true;
                 return;
             }
         }

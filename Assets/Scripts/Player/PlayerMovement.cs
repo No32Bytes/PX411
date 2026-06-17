@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         Landing,
     };
     MovementState movementState;
+    MovementState lockedState;
 
     public Transform MoveTransform => transform;
 
@@ -81,27 +82,34 @@ public class PlayerMovement : MonoBehaviour
         }
         if (isGroundedCheck && gravityVector.y < 0)
             gravityVector.y = 0;
+
+        if (movementState == MovementState.InAir && isGroundedCheck)
+            lockedState = MovementState.Landing;
+
         if (isGroundedCheck && jumpAction.IsPressed())
         {
             gravityVector.y = (float)Math.Sqrt(jumpHeight * -2f * gravity);
-            movementState = MovementState.Jumping;
+            lockedState = MovementState.Jumping;
         }
 
-        if (movementState == MovementState.InAir && isGroundedCheck)
-            movementState = MovementState.Landing;
 
         characterController.Move(gravityVector * Time.deltaTime);
+    }
 
+    private void FixedUpdate()
+    {
         HandleMovementState();
     }
 
     private void HandleMovementState()
     {
-        if (audioSource.isPlaying && movementState != MovementState.Jumping)
+        if (audioSource.isPlaying && lockedState == MovementState.None)
             return;
-        if (audioSource.isPlaying && movementState != MovementState.Landing)
-            return;
-        audioSource.Stop();
+        if (lockedState != MovementState.None)
+        {
+            movementState = lockedState;
+            audioSource.Stop();
+        }
 
         BaseSoundEffect toPlay;
         switch (movementState)
@@ -122,6 +130,7 @@ public class PlayerMovement : MonoBehaviour
                 return;
         }
 
+        lockedState = MovementState.None;
         AudioUtil.PlaySoundEffect(toPlay, audioSource);
     }
     public bool IsGrounded()
