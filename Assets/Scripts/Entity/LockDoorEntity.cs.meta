@@ -1,2 +1,12 @@
 fileFormatVersion: 2
 guid: 49991e6bf2903f743b20948c409dcd50
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - doorMovementSound: {fileID: 11400000, guid: e748eb78a8b6a14419e95b3e4960d686, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

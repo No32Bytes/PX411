@@ -1412,7 +1412,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   maxItemInteractionDistance: 1
-  interactActionCooldownS: 0.1
+  interactActionCooldownS: 0.25
   interactActionSound: {fileID: 0}
   holdActionCooldownS: 0.1
   interactAnimation:

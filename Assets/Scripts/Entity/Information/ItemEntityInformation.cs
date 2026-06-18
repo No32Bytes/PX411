@@ -1,15 +1,12 @@
 using TMPro;
 using UnityEngine;
 
-class ItemEntityInformation : MonoBehaviour
+class ItemEntityInformation : BaseEntityInformation
 {
     [SerializeField] private TMP_Text itemEntityName;
-    private GameObject sourceGameObject;
-    private ItemEntity itemEntity;
     public void Awake()
     {
-        sourceGameObject = EntityInformationView.Current.SourceGameObject;
-        if (!sourceGameObject.TryGetComponent(out itemEntity))
+        if (!SourceGameObject.TryGetComponent(out ItemEntity itemEntity))
             return;
 
         itemEntityName.text = itemEntity.ItemData.displayName;

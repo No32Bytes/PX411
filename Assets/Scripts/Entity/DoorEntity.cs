@@ -6,12 +6,14 @@ public class DoorEntity : BaseEntity
 {
     [SerializeField] private float targetRotationClose;
     [SerializeField] private float targetRotationOpen;
-    [SerializeField] private float rotationSpeed = 0.5f;
+    [SerializeField] private float rotationSpeed = 2f;
     [SerializeField] private bool antiClockWise = false;
     [SerializeField] private bool isOpen = false;
+    public bool IsOpen => isOpen;
     [SerializeField] private BaseSoundEffect doorMovementSound;
     private AudioSource audioSource;
     private float targetRotation;
+    private readonly float clipDoorAngle = 0.0005f;
     private void Awake()
     {
         audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
@@ -28,10 +30,7 @@ public class DoorEntity : BaseEntity
 
     private void Update()
     {
-        float currenRotation = transform.eulerAngles.y;
-        if (currenRotation < 0)
-            currenRotation = 360 - currenRotation;
-
+        float currenRotation = GetCurrentRotation();
         if (currenRotation == targetRotation)
         {
             audioSource.Stop();
@@ -42,12 +41,13 @@ public class DoorEntity : BaseEntity
             AudioUtil.PlaySoundEffect(doorMovementSound, audioSource);
 
         float rotationChangeMax = targetRotation - currenRotation;
+
         if (isOpen && rotationChangeMax < 0)
             rotationChangeMax *= -1;
         if (!isOpen && rotationChangeMax > 0)
             rotationChangeMax *= -1;
 
-        if(antiClockWise)
+        if (antiClockWise)
             rotationChangeMax *= -1;
 
         float rotationChange = rotationChangeMax * rotationSpeed * Time.deltaTime;
@@ -55,7 +55,34 @@ public class DoorEntity : BaseEntity
         if (Math.Abs(rotationChange) > Math.Abs(rotationChangeMax))
             rotationChange = rotationChangeMax;
 
-        SetRotation(currenRotation + rotationChange);
+        if (Math.Abs(rotationChange) < clipDoorAngle)
+        {
+            SetRotation(targetRotation);
+            return;
+        }
+
+        transform.Rotate(0, rotationChange, 0, Space.World);
+
+        float min = Mathf.Min(targetRotationClose, targetRotationOpen);
+        float max = Mathf.Max(targetRotationClose, targetRotationOpen);
+
+        float clamp = Mathf.Clamp(GetCurrentRotation(), min, max);
+        if (clamp == GetCurrentRotation() && antiClockWise && !isOpen)
+            SetRotation(targetRotation);
+
+
+        if (clamp != GetCurrentRotation() && !antiClockWise && !isOpen)
+            SetRotation(targetRotation);
+
+
+    }
+
+    private float GetCurrentRotation()
+    {
+        float currenRotation = transform.eulerAngles.y;
+        if (currenRotation < 0)
+            currenRotation = 360 - currenRotation;
+        return currenRotation;
     }
 
     private void SetRotation(float rotation)
@@ -85,7 +112,11 @@ public class DoorEntity : BaseEntity
 
     public void DoorClose()
     {
+
         targetRotation = targetRotationClose;
+        if (targetRotation == 0)
+            targetRotation = 360;
+
         isOpen = false;
     }
 }
