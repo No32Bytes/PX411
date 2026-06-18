@@ -28,6 +28,24 @@ public class AudioUtil
             return ref GlobalDataStore.GetSettingsData().audioMusicVolume;
         return ref GlobalDataStore.GetSettingsData().audioSoundVolume;
     }
+    public static void PlaySoundEffect(BaseSoundEffect soundEffect, AudioSource source)
+    {
+        if (soundEffect == null)
+            return;
+        if (source == null)
+            return;
+        if (source.isPlaying)
+            return;
+        soundEffect.Play(source);
+    }
+    public static AudioSource CreateSoundEffectAudioSource(GameObject gameObject)
+    {
+        AudioSource source = gameObject.AddComponent<AudioSource>();
+        var mixerGroup = GlobalDataStore.GetAudioManager().SoundMixerGroup;
+        if (mixerGroup != null)
+            source.outputAudioMixerGroup = mixerGroup;
+        return source;
+    }
     public struct Constants
     {
         public const float defaultVolume = 0.5f;

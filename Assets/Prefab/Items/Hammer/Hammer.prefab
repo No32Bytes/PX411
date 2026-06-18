@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3579185994446601061
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00000003774895
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5199454138550840167, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1051650288681082413, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_Name
+      value: Hammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -5199454138550840167, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+    - {fileID: -1051650288681082413, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7098441955435259101}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3602280720750836806}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5136440988717940709}
+  m_SourcePrefab: {fileID: 100100000, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+--- !u!1 &4425555618728232500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3154c02749bd4ac448f0624c1f16cb96, type: 3}
+  m_PrefabInstance: {fileID: 3579185994446601061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-7098441955435259101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4425555618728232500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367241c503402b4468a26db4533ea48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemEntity
+  entityId: 
+  usePhysics: 1
+  itemData: {fileID: 11400000, guid: a2666281bd8146640a061b5e13ba88d2, type: 2}
+--- !u!65 &3602280720750836806
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4425555618728232500}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.15, z: 0.55}
+  m_Center: {x: 0, y: 0.06, z: 0}
+--- !u!114 &5136440988717940709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4425555618728232500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab:
+  - {fileID: 3014204856633051911, guid: cdee7f58680fd374a97582431c9819ae, type: 3}

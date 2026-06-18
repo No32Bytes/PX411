@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1203e39d79edd4b90be896d7e4ea2b, type: 3}
+  m_Name: SpringenPlayer
+  m_EditorClassIdentifier: Assembly-CSharp::RandomSoundEffect
+  audioClip:
+  - {fileID: 8300000, guid: ea4c2a7e43bb9d5429bf577002350a7b, type: 3}
+  - {fileID: 8300000, guid: 9bbd8d6b42a60e2418e2a040d7bdedce, type: 3}
+  - {fileID: 8300000, guid: f02fcc0c464b0e04aa773d0e36bc70af, type: 3}
+  volume: 1
+  pitch:
+    min: 0.9
+    max: 1.1

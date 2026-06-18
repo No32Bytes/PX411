@@ -41,9 +41,11 @@ public class SettingsMenu : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
+        if (GlobalDataStore.GetStateManager().playerState.player == null)
+            return;
+
+        if (GlobalDataStore.GetStateManager().playerState.player.PauseActionRef.InteractWithCooldown())
             BackButtonOnClick();
-        }
+
     }
 }

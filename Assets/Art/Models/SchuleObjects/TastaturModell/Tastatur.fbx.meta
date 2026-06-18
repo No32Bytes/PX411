@@ -3,7 +3,12 @@ guid: 235bd5dd2489ac94a86ade2ffab703fa
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TastaturBake.001
+    second: {fileID: 2100000, guid: c7d5e601d73db5348a922625088a47b5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

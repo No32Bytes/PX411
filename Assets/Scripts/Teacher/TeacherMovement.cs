@@ -1,10 +1,5 @@
-using Entity;
-using InputUtil;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-using UnityEngine.AI;
 
 public class TeacherMovement : MonoBehaviour
 {
@@ -12,7 +7,7 @@ public class TeacherMovement : MonoBehaviour
     public Transform playerCamera;
 
     public float speed = 2f;
-    static float chaseSpeed = 2f;
+    readonly float chaseSpeed = 2f;
     public float rotationSpeed = 5f;
 
     public float stopDistance = 5f;
@@ -29,7 +24,7 @@ public class TeacherMovement : MonoBehaviour
     private bool isChasing = false;
     private bool isReturning = false;
 
-    private List<Vector3> chasePath = new List<Vector3>();
+    private readonly List<Vector3> chasePath = new();
     private int returnIndex = 0;
 
     void Run()

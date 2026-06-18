@@ -18,10 +18,14 @@ MonoBehaviour:
   description: 
   collisionSoundEffect: {fileID: 0}
   storeableItemData:
-    storeable: 1
+    storeable: 0
     spawnPrefab: {fileID: 3026074305386334450, guid: c4880a68d9e48b44a805cea63d490c29, type: 3}
   heldItemData:
     equippable: 0
     heldItemPrefab: {fileID: 0}
     throwVelocity: 5
     attackSoundEffect: {fileID: 0}
+    throwSoundEffect: {fileID: 0}
+    weaponDamage: 0
+  minDamageVelocity: 99
+  throwDamage: 0

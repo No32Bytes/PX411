@@ -8,7 +8,7 @@ public class ItemData : ScriptableObject
     public string internalName;
     public Sprite icon;
     [TextArea] public string description;
-    public SimpleSoundEffect collisionSoundEffect;
+    public BaseSoundEffect collisionSoundEffect;
 
     [Serializable]
     public struct StoreableItemData
@@ -31,7 +31,9 @@ public class ItemData : ScriptableObject
         public bool equippable;
         public GameObject heldItemPrefab;
         public float throwVelocity;
-        public SimpleSoundEffect attackSoundEffect;
+        public BaseSoundEffect attackSoundEffect;
+        public BaseSoundEffect throwSoundEffect;
+        public float weaponDamage;
     }
     public HeldItemData heldItemData;
     public bool Equippable
@@ -43,5 +45,6 @@ public class ItemData : ScriptableObject
     }
     public int InternalNameIntHash => HashUtil.FNV1.ComputeHash_24Bytes(internalName);
 
-    public float weaponDamage = 0.0f;
+    public float minDamageVelocity = 99f;
+    public float collisionDamage = 0.0f;
 }

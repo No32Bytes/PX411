@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private MenuManager menuManagerRef;
@@ -20,7 +19,7 @@ public class PauseMenu : MonoBehaviour
     }
     private void Update()
     {
-        var pauseAction = GlobalDataStore.GetStateManager().playerState.player.pauseAction;
+        var pauseAction = GlobalDataStore.GetStateManager().playerState.player.PauseActionRef;
 
         if (pauseAction.InteractWithCooldown())
             ReturnButtonOnClick();

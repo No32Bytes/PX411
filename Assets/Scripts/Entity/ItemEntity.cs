@@ -3,9 +3,14 @@ using UnityEngine;
 public class ItemEntity : BaseEntity
 {
     [SerializeField] private ItemData itemData;
-
+    public ItemData ItemData => itemData;
+    private AudioSource audioSource;
+    const float damageDelay = 1f;
+    float lastDamage;
     protected override void EntityAwake()
     {
+        lastDamage = 0.0f;
+        audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
         if (GlobalDataStore.GetInventory().HasItemBeenCollected(itemData.internalName, entityId))
             DestroyEntity();
     }
@@ -21,12 +26,12 @@ public class ItemEntity : BaseEntity
         if (!playerItemHandler.HasItemEquipped)
             playerItemHandler.EquipItem(itemData.internalName);
 
-        DestroyEntity();
+        Destroy(gameObject);
     }
     public static bool TryDropItem(Camera playerCamera, ItemData itemData, string itemEntityId, float distance, float startVelocity = 0f)
     {
         Vector3 prefabCreatePosition = playerCamera.transform.position + playerCamera.transform.forward * distance;
-        Vector3 prefabSize = itemData.storeableItemData.spawnPrefab.GetComponent<BoxCollider>().size;
+        Vector3 prefabSize = itemData.storeableItemData.spawnPrefab.GetComponent<Collider>().bounds.size;
 
         bool isSpaceEmpty = !Physics.CheckBox(prefabCreatePosition, prefabSize / 2);
         if (isSpaceEmpty)
@@ -41,5 +46,46 @@ public class ItemEntity : BaseEntity
 
         }
         return isSpaceEmpty;
+    }
+
+    private bool CanDamage()
+    {
+        if (lastDamage + damageDelay > Time.time)
+            return false;
+
+        if (!gameObject.TryGetComponent(out Rigidbody rigidbody))
+        {
+            if (rigidbody.linearVelocity.magnitude < itemData.minDamageVelocity)
+                return false;
+        }
+        return true;
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        bool canDamage = CanDamage();
+
+
+        if (collider.gameObject.TryGetComponent(out Player player))
+        {
+            AudioUtil.PlaySoundEffect(itemData.collisionSoundEffect, audioSource);
+            if (canDamage)
+            {
+                player.Damage(itemData.collisionDamage);
+                lastDamage = Time.time;
+            }
+            return;
+        }
+
+        if (collider.gameObject.TryGetComponent(out EnemeyEntity enemeyEntity))
+        {
+            AudioUtil.PlaySoundEffect(itemData.collisionSoundEffect, audioSource);
+            if (canDamage)
+            {
+                enemeyEntity.EntityDamage(itemData.collisionDamage);
+                lastDamage = Time.time;
+            }
+            return;
+        }
     }
 }

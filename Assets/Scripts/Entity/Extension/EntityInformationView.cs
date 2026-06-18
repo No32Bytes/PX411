@@ -6,7 +6,7 @@ public class EntityInformationView : MonoBehaviour
     public static EntityInformationView Current { get; private set; } = null;
     public static void SelectEntity(EntityInformationView entityNew)
     {
-        if (Current == entityNew)
+        if (Equals(Current, entityNew))
             return;
 
         if (Current != null)
@@ -17,13 +17,17 @@ public class EntityInformationView : MonoBehaviour
         if (entityNew != null)
             Current.Show();
     }
-
+    [SerializeField] private GameObject sourceGameObject;
+    public GameObject SourceGameObject => sourceGameObject;
     [SerializeField] private GameObject[] informationObjectPrefab;
     private readonly List<GameObject> informationObjectInstance = new();
     public void Show()
     {
         if (informationObjectInstance.Count != 0)
             return;
+
+        if (sourceGameObject == null)
+            sourceGameObject = gameObject;
 
         GameObject infoView = GlobalDataStore.GetStateManager().playerState.playerRef.overlayInformationView;
         if (infoView == null)

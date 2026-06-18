@@ -332,18 +332,22 @@ MonoBehaviour:
     healthRegenRate: 1
     healthSlider: {fileID: 4033319679052496958}
   gravity: -9.81
+  bossDamageSound: {fileID: 11400000, guid: 88f3af3b2cdbed04ca2078f2313d1027, type: 2}
+  bossChargeSound: {fileID: 0}
+  bossStompSound: {fileID: 0}
+  bossStompDamageSound: {fileID: 0}
   balls:
   - {fileID: 5522730629307906073}
   - {fileID: 280558982632091976}
   - {fileID: 809079985866223375}
-  attackGroundTimer: 0
+  attackGroundTimerStart: 6
   attackGround: {fileID: 7754739236338801146}
-  attackChargeTimer: 0
-  chargeSpeed: 0.1
   chargeDamage: 50
   groundDamage: 10
+  chargeStepAmount: 10
   throwSpeed: 0.05
   startTimerMax: 2
+  attackChargeTimerStart: 5
 --- !u!136 &1992025077955528301
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -522,6 +526,7 @@ MonoBehaviour:
   muller: {fileID: 7350857924634731825}
   timerMax: 5
   damage: 10
+  collisionSoundEffect: {fileID: 0}
 --- !u!1 &4514745739264683762
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +655,7 @@ MonoBehaviour:
   muller: {fileID: 7350857924634731825}
   timerMax: 5
   damage: 10
+  collisionSoundEffect: {fileID: 0}
 --- !u!1 &4814825682510865684
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +784,7 @@ MonoBehaviour:
   muller: {fileID: 7350857924634731825}
   timerMax: 5
   damage: 10
+  collisionSoundEffect: {fileID: 0}
 --- !u!1 &7042401622169026056
 GameObject:
   m_ObjectHideFlags: 0

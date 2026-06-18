@@ -10,16 +10,27 @@ public class Player : MonoBehaviour
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private float togglePauseMenuCooldownS = 0.5f;
     [SerializeField] private float toggleHandyUIActionCooldownS = 0.1f;
+    [SerializeField] float damageDelay;
+    [Header("Sound")]
+    [SerializeField] private BaseSoundEffect damageSound;
+    [SerializeField] private BaseSoundEffect deathSound;
     private InputHandlerCooldown toggleHandyUIAction;
     public InputHandlerCooldown pauseAction;
     private AudioListener audioListener;
+    private AudioSource audioSource;
+    public AudioSource OverrideDamageAudioSource => audioSource;
+    public InputHandlerCooldown PauseActionRef => pauseAction;
+    private float lastDamage;
+    private bool isDead;
 
     private void Awake()
     {
+        audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
         audioListener = gameObject.AddComponent<AudioListener>();
         healthBar.SetOnDeathCallback(OnPlayerDeath);
 
         GlobalDataStore.GetStateManager().playerState.player = this;
+        isDead = false;
     }
 
     private void Start()
@@ -56,7 +67,10 @@ public class Player : MonoBehaviour
 
         if (audioListener.enabled == true)
             if (pauseAction.InteractWithCooldown())
+            {
+                DisableHandyScreenUI();
                 LoadPauseMenu();
+            }
     }
 
     private void LoadPauseMenu()
@@ -97,12 +111,25 @@ public class Player : MonoBehaviour
 
     private void OnPlayerDeath()
     {
-
+        if (isDead)
+            return;
+            
+        audioSource.Stop();
+        AudioUtil.PlaySoundEffect(deathSound, audioSource);
+        isDead = true;
     }
 
     public void Damage(float damageAmount)
     {
+        if (isDead)
+            return;
+        if (lastDamage + damageDelay > Time.time)
+            return;
+
+        lastDamage = Time.time;
+        AudioUtil.PlaySoundEffect(damageSound, audioSource);
         healthBar.ReduceHealth(damageAmount);
+
     }
 
     public void Heal(float healAmount)
