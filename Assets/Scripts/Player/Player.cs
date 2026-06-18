@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
     {
         if (isDead)
             return;
-            
+
         audioSource.Stop();
         AudioUtil.PlaySoundEffect(deathSound, audioSource);
         isDead = true;

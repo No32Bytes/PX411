@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: BesenBake
     second: {fileID: 2100000, guid: c7a764f6ae9dde9428b5eef1c940a31f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BesenSchildBake
+    second: {fileID: 2100000, guid: f21a3a8a33a41be4fa5168d3ff15ccab, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -39,8 +44,8 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 0.25
-    meshCompression: 3
-    addColliders: 1
+    meshCompression: 0
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1
