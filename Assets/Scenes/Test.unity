@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 96edfbbbb39d2c446acc602f111e2243
+  m_OcclusionCullingData: {fileID: 36300000, guid: 610b88a507d43d8448b8a142774485ff, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -733,7 +733,7 @@ MonoBehaviour:
   sourceGameObject: {fileID: 0}
   informationObjectPrefab:
   - {fileID: 4602626972012524021, guid: 48bf757237884c94e886372af19e47e4, type: 3}
---- !u!1001 &2015105009
+--- !u!1001 &395493770624061344
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -800,15 +800,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 857974607693062053, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.728
+      value: 16.01
       objectReference: {fileID: 0}
     - target: {fileID: 857974607693062053, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.36
+      value: 2.136
       objectReference: {fileID: 0}
     - target: {fileID: 857974607693062053, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -70.96
+      value: -86.85
       objectReference: {fileID: 0}
     - target: {fileID: 857974607693062053, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -838,25 +838,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4558536933535554284, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558536933535554284, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5947897615398049941, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 9039394068981085245, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9039394068981085245, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -871,4 +855,4 @@ SceneRoots:
   - {fileID: 1086840390}
   - {fileID: 1068748521}
   - {fileID: 6101861056853742118}
-  - {fileID: 2015105009}
+  - {fileID: 395493770624061344}

@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c68552b65e49e0546840085455a69c0e, type: 3}
       propertyPath: m_Name
-      value: Tisch 1
+      value: Tisch
       objectReference: {fileID: 0}
     - target: {fileID: 3084659099208158215, guid: c68552b65e49e0546840085455a69c0e, type: 3}
       propertyPath: m_Convex
@@ -70,7 +70,66 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c68552b65e49e0546840085455a69c0e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2852559961993091136}
+    - targetCorrespondingSourceObject: {fileID: -946628093936610221, guid: c68552b65e49e0546840085455a69c0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5734806383385934960}
+    - targetCorrespondingSourceObject: {fileID: -5157565494645553997, guid: c68552b65e49e0546840085455a69c0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1995006196499046159}
   m_SourcePrefab: {fileID: 100100000, guid: c68552b65e49e0546840085455a69c0e, type: 3}
+--- !u!1 &2172593215137461350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -946628093936610221, guid: c68552b65e49e0546840085455a69c0e, type: 3}
+  m_PrefabInstance: {fileID: 7852726095407341621}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &5734806383385934960
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2172593215137461350}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4794677411186531106, guid: c68552b65e49e0546840085455a69c0e, type: 3}
+--- !u!1 &6095298036251419782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5157565494645553997, guid: c68552b65e49e0546840085455a69c0e, type: 3}
+  m_PrefabInstance: {fileID: 7852726095407341621}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1995006196499046159
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095298036251419782}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.01302539, y: 0.006525389, z: 0.00032539055}
+  m_Center: {x: 0, y: 0, z: 0.00014999996}
 --- !u!1 &6934159239245782372 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c68552b65e49e0546840085455a69c0e, type: 3}
@@ -115,3 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ae85410b3f95446bb4c7e7e4fe7854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityDraggable
+  collisionSoundEffect: {fileID: 0}
+  minDamageVelocity: 0
+  collisionDamage: 0

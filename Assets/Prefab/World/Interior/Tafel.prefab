@@ -60,9 +60,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5738652481458682899, guid: e41c3e79c9edd2f41af58c07abb448ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4061771571884573680, guid: e41c3e79c9edd2f41af58c07abb448ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e41c3e79c9edd2f41af58c07abb448ff, type: 3}
       propertyPath: m_Name
       value: Tafel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e41c3e79c9edd2f41af58c07abb448ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074949000434516003, guid: e41c3e79c9edd2f41af58c07abb448ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917293668810776838, guid: e41c3e79c9edd2f41af58c07abb448ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402575777700048777, guid: e41c3e79c9edd2f41af58c07abb448ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191486317411370699, guid: e41c3e79c9edd2f41af58c07abb448ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
