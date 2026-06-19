@@ -733,7 +733,7 @@ MonoBehaviour:
   sourceGameObject: {fileID: 0}
   informationObjectPrefab:
   - {fileID: 4602626972012524021, guid: 48bf757237884c94e886372af19e47e4, type: 3}
---- !u!1001 &395493770624061344
+--- !u!1001 &2015105009
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -855,4 +855,4 @@ SceneRoots:
   - {fileID: 1086840390}
   - {fileID: 1068748521}
   - {fileID: 6101861056853742118}
-  - {fileID: 395493770624061344}
+  - {fileID: 2015105009}
