@@ -77,6 +77,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9c7ef26c8e89bcb418ae89ff7e37dd71, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4151558155764576626}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9c7ef26c8e89bcb418ae89ff7e37dd71, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2156747534813443876}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9c7ef26c8e89bcb418ae89ff7e37dd71, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5860055762952917545}
   m_SourcePrefab: {fileID: 100100000, guid: 9c7ef26c8e89bcb418ae89ff7e37dd71, type: 3}
 --- !u!1 &4096072631016284237 stripped
 GameObject:
@@ -146,3 +152,33 @@ MonoBehaviour:
   collisionSoundEffect: {fileID: 0}
   minDamageVelocity: 0
   collisionDamage: 0
+--- !u!114 &2156747534813443876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4096072631016284237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367241c503402b4468a26db4533ea48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemEntity
+  entityId: 
+  usePhysics: 1
+  itemData: {fileID: 11400000, guid: 69c1e65b35c184949b61d9ee448fb9d9, type: 2}
+--- !u!114 &-5860055762952917545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4096072631016284237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab:
+  - {fileID: 3014204856633051911, guid: cdee7f58680fd374a97582431c9819ae, type: 3}

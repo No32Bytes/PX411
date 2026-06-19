@@ -43,6 +43,9 @@ public class EntityStateStore
     }
     public bool GetEntityIdEnabledState(string entityId)
     {
+        if (!FindEntityState(entityId, out _))
+            return true;
+
         return GetEntityState(entityId).isEnabled;
     }
     public void SetEntityStateData(string entityId, string entityStateData)
@@ -51,6 +54,9 @@ public class EntityStateStore
     }
     public string GetEntityStateData(string entityId)
     {
+        if (!FindEntityState(entityId, out _))
+            return "";
+
         return GetEntityState(entityId).entityStateData;
     }
     public void SetEntityStateDataObject(string entityId, object stateData)
@@ -60,6 +66,7 @@ public class EntityStateStore
     }
     public void GetEntityStateDataObject<T>(string entityId, out T stateData)
     {
+
         stateData = default;
         string json = GetEntityStateData(entityId);
         if (string.IsNullOrEmpty(json))

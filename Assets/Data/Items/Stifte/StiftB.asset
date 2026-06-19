@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 070baa4e3ded2494f93ba97ce90d2238, type: 3}
-  m_Name: StifteW
+  m_Name: StiftB
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  displayName: "wei\xDFer Stift"
-  internalName: StiftW
+  displayName: blauer Stift
+  internalName: StiftB
   icon: {fileID: 0}
   description: 
   collisionSoundEffect: {fileID: 11400000, guid: 90ba777376779f946b6665885851e85f, type: 2}
   storeableItemData:
     storeable: 1
-    spawnPrefab: {fileID: 6483788065916284252, guid: 18da74a6e90b6b24eae6d0495e0d5a09, type: 3}
+    spawnPrefab: {fileID: 5067311081956136638, guid: 16d1a813202b88f459e1228f3a1d5475, type: 3}
   heldItemData:
     equippable: 1
-    heldItemPrefab: {fileID: 0}
+    heldItemPrefab: {fileID: 5067311081956136638, guid: 6f7721496a4153842bc73933291deab6, type: 3}
     throwVelocity: 20
     attackSoundEffect: {fileID: 11400000, guid: e748eb78a8b6a14419e95b3e4960d686, type: 2}
     throwSoundEffect: {fileID: 11400000, guid: 0ccf2c785e0f8aa4aa071bd43796321c, type: 2}

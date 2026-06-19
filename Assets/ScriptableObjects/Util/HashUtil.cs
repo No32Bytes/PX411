@@ -8,7 +8,7 @@ namespace HashUtil
         private const uint FNV_PRIME = 16777619u;
         public static int ComputeHash_24Bytes(string input)
         {
-            if(string.IsNullOrEmpty(input))
+            if (string.IsNullOrEmpty(input))
                 return 0;
             uint hash = FNV_OFFSET;
             foreach (byte b in Encoding.UTF8.GetBytes(input))

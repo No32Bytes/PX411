@@ -6,7 +6,11 @@ public class BaseEntity : MonoBehaviour
     private void Awake()
     {
         if (string.IsNullOrEmpty(entityId))
-            Debug.Log(gameObject.name + " - has an empty entityId");
+        {
+            //Debug.Log(gameObject.name + " - has an empty entityId");
+            entityId = gameObject.name + transform.position.ToString();
+        }
+
 
 
 

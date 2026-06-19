@@ -59,15 +59,13 @@ public class Inventory
             return false;
 
         storeableInventory[index].RemoveItem();
-        if (storeableInventory[index].ItemCount == 0)
-            storeableInventory.RemoveAt(index);
 
         return true;
     }
     public void RemoveItemFromInventory(string internalName)
     {
         ItemData itemData = GlobalDataStore.GetItemDataBase().GetItemDataFromInternalName(internalName);
-        if(!itemData.Storeable)
+        if (!itemData.Storeable)
             return;
 
         int index = storeableInventory.FindIndex((item) => item.InternalName == internalName);

@@ -22,7 +22,7 @@ MonoBehaviour:
     spawnPrefab: {fileID: 4096072631016284237, guid: c10f6f11631aec948af1368847644eaf, type: 3}
   heldItemData:
     equippable: 1
-    heldItemPrefab: {fileID: 0}
+    heldItemPrefab: {fileID: 4096072631016284237, guid: 551b13f1ae8f1f6418b25f4b60038020, type: 3}
     throwVelocity: 20
     attackSoundEffect: {fileID: 11400000, guid: e748eb78a8b6a14419e95b3e4960d686, type: 2}
     throwSoundEffect: {fileID: 11400000, guid: 0ccf2c785e0f8aa4aa071bd43796321c, type: 2}

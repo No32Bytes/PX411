@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 070baa4e3ded2494f93ba97ce90d2238, type: 3}
-  m_Name: StifteR
+  m_Name: StiftR
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   displayName: roter Stift
   internalName: StiftR
@@ -22,7 +22,7 @@ MonoBehaviour:
     spawnPrefab: {fileID: 8401235881884602977, guid: 3a4b34b59a10a9646a7e15d43365a116, type: 3}
   heldItemData:
     equippable: 1
-    heldItemPrefab: {fileID: 0}
+    heldItemPrefab: {fileID: 8401235881884602977, guid: 03ffa58f80700e743a35838a05bbab5d, type: 3}
     throwVelocity: 20
     attackSoundEffect: {fileID: 11400000, guid: e748eb78a8b6a14419e95b3e4960d686, type: 2}
     throwSoundEffect: {fileID: 11400000, guid: 0ccf2c785e0f8aa4aa071bd43796321c, type: 2}
