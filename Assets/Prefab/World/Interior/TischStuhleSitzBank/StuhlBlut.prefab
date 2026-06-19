@@ -79,6 +79,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cac385082c34f864fa40cd8aaa590c88, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2721556937253927127}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cac385082c34f864fa40cd8aaa590c88, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4618362605436588564}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cac385082c34f864fa40cd8aaa590c88, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4250477578995843811}
   m_SourcePrefab: {fileID: 100100000, guid: cac385082c34f864fa40cd8aaa590c88, type: 3}
 --- !u!1 &8807217854398658815 stripped
 GameObject:
@@ -107,3 +113,45 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7275918751514927625, guid: cac385082c34f864fa40cd8aaa590c88, type: 3}
+--- !u!54 &4618362605436588564
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8807217854398658815}
+  serializedVersion: 5
+  m_Mass: 10
+  m_LinearDamping: 0.5
+  m_AngularDamping: 5
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4250477578995843811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8807217854398658815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ae85410b3f95446bb4c7e7e4fe7854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityDraggable
+  collisionSoundEffect: {fileID: 0}
+  minDamageVelocity: 0
+  collisionDamage: 0

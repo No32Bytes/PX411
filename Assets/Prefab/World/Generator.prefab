@@ -189,7 +189,7 @@ MonoBehaviour:
     targetItemData: {fileID: 11400000, guid: 6b35c354abfb2664a9808335e8080dc2, type: 2}
     requiredAmount: 1
   fuelRequirement:
-    targetItemData: {fileID: 11400000, guid: edea15c36369111429673dd1d4a5d7a6, type: 2}
+    targetItemData: {fileID: 11400000, guid: cd0fca08c51836c4896fca80d000409e, type: 2}
     requiredAmount: 1
   oilRequirement:
     targetItemData: {fileID: 11400000, guid: 89b95d70c5f590a4ebadb9417b494f65, type: 2}

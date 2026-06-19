@@ -45,6 +45,13 @@ public class PlayerLook : MonoBehaviour
 
         HandlePlayerLooking();
     }
+
+    private void FixedUpdate()
+    {
+        if (EntityDraggable.IsEntitySelected())
+            EntityDraggable.CurrentDraggedEntity.ManualFixedUpdate();
+
+    }
     private void HandlePlayerLooking()
     {
         Ray raycast = new(playerRef.playerCamera.transform.position, playerRef.playerCamera.transform.forward);
@@ -54,6 +61,7 @@ public class PlayerLook : MonoBehaviour
             hitObject = raycastHit.transform.gameObject;
             HandlePlayerLookingRaycastHit(raycastHit);
         }
+
 
         if (holdAction.InteractWithCooldown() && EntityDraggable.IsEntitySelected())
             EntityDraggable.CurrentDraggedEntity.DeselectEntity();

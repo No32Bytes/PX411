@@ -2,8 +2,8 @@ using UnityEngine;
 
 public struct EntityDraggableConfig
 {
-    public const float MaxDistance = 5f;
-    public const float MaxLinearVelocity = 10f;
+    public const float MaxDistance = 10f;
+    public const float MaxLinearVelocity = 15f;
     public const float selectedMultMass = 10f;
     public const float IgnoreCalcDistance = 0.1f;
     public const float CloseDistanceBegin = 8f;
@@ -50,7 +50,7 @@ public class EntityDraggable : MonoBehaviour
         entityRigibody.maxLinearVelocity = EntityDraggableConfig.MaxLinearVelocity;
         isSelected = false;
     }
-    private void FixedUpdate()
+    public void ManualFixedUpdate()
     {
         if (!isSelected || !playerCamera)
             return;
@@ -73,7 +73,7 @@ public class EntityDraggable : MonoBehaviour
     private void Move(Vector3 moveVector)
     {
         Vector3 partialMoveVector = CalculatePartialMoveVector(moveVector);
-        entityRigibody.AddForce(partialMoveVector * partialMoveVector.magnitude, ForceMode.Impulse);
+        entityRigibody.AddForce(partialMoveVector * partialMoveVector.magnitude, ForceMode.Acceleration);
         entityRigibody.AddForce(EntityDraggableConfig.antiGravityModifier * entityRigibody.mass * Vector3.up);
         entityRigibody.linearDamping = EntityDraggableConfig.targetPositionSlowDown / moveVector.sqrMagnitude;
 

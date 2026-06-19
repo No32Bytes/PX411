@@ -19,13 +19,13 @@ MonoBehaviour:
   collisionSoundEffect: {fileID: 11400000, guid: 90ba777376779f946b6665885851e85f, type: 2}
   storeableItemData:
     storeable: 1
-    spawnPrefab: {fileID: 4425555618728232500, guid: f27f2a66b0c145f449d4cace56a2aecc, type: 3}
+    spawnPrefab: {fileID: 4425555618728232500, guid: a432dff6265890444a833caff867b523, type: 3}
   heldItemData:
     equippable: 1
     heldItemPrefab: {fileID: 5134407310201198290, guid: b48a0f3fdefec41428a2e3c2eded050d, type: 3}
     throwVelocity: 25
     attackSoundEffect: {fileID: 11400000, guid: e748eb78a8b6a14419e95b3e4960d686, type: 2}
     throwSoundEffect: {fileID: 11400000, guid: 0ccf2c785e0f8aa4aa071bd43796321c, type: 2}
-    weaponDamage: 50
+    weaponDamage: 12
   minDamageVelocity: 99
-  collisionDamage: 50
+  collisionDamage: 10

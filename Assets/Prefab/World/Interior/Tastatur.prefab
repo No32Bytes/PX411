@@ -75,5 +75,58 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 235bd5dd2489ac94a86ade2ffab703fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6883142438490147005}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 235bd5dd2489ac94a86ade2ffab703fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4395060815611121853}
   m_SourcePrefab: {fileID: 100100000, guid: 235bd5dd2489ac94a86ade2ffab703fa, type: 3}
+--- !u!1 &2548372818093832424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 235bd5dd2489ac94a86ade2ffab703fa, type: 3}
+  m_PrefabInstance: {fileID: 3430839402672375225}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &6883142438490147005
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2548372818093832424}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0.5
+  m_AngularDamping: 5
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4395060815611121853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2548372818093832424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ae85410b3f95446bb4c7e7e4fe7854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityDraggable
+  collisionSoundEffect: {fileID: 0}
+  minDamageVelocity: 0
+  collisionDamage: 0

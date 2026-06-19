@@ -16,12 +16,16 @@ MonoBehaviour:
   internalName: fuel
   icon: {fileID: 0}
   description: 
-  collisionSoundEffect: {fileID: 0}
+  collisionSoundEffect: {fileID: 11400000, guid: 90ba777376779f946b6665885851e85f, type: 2}
   storeableItemData:
     storeable: 1
-    spawnPrefab: {fileID: 5807157868605555780, guid: 73dc996e93bf962468795d997925bac7, type: 3}
+    spawnPrefab: {fileID: 8520755417573624008, guid: 7b111eeaaff1a8346886ef00e310e98f, type: 3}
   heldItemData:
     equippable: 1
-    heldItemPrefab: {fileID: 5807157868605555780, guid: b1b6573b45aa65447974dc21f88093dd, type: 3}
-    throwVelocity: 10
-    attackSoundEffect: {fileID: 0}
+    heldItemPrefab: {fileID: 8520755417573624008, guid: 9ae9045e8da3bc74c91fb1add661a39e, type: 3}
+    throwVelocity: 0
+    attackSoundEffect: {fileID: 11400000, guid: e748eb78a8b6a14419e95b3e4960d686, type: 2}
+    throwSoundEffect: {fileID: 11400000, guid: 0ccf2c785e0f8aa4aa071bd43796321c, type: 2}
+    weaponDamage: 20
+  minDamageVelocity: 30
+  collisionDamage: 15

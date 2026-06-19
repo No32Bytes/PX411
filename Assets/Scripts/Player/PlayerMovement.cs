@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 2f;
+    [SerializeField] private float pushPower = 2f;
     [Header("Sounds")]
     [SerializeField] private BaseSoundEffect walkSound;
     [SerializeField] private BaseSoundEffect runningSound;
@@ -132,6 +133,21 @@ public class PlayerMovement : MonoBehaviour
 
         lockedState = MovementState.None;
         AudioUtil.PlaySoundEffect(toPlay, audioSource);
+    }
+
+
+    public void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Rigidbody body = hit.collider.attachedRigidbody;
+        if (body == null || body.isKinematic)
+            return;
+
+        if (hit.moveDirection.y < -0.3)
+            return;
+
+        Vector3 pushDir = new(hit.moveDirection.x, 0, hit.moveDirection.z);
+        body.linearVelocity = pushDir * pushPower;
+
     }
     public bool IsGrounded()
     {

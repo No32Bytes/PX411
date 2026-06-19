@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 070baa4e3ded2494f93ba97ce90d2238, type: 3}
-  m_Name: Screw
+  m_Name: Schraube
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   displayName: Schraube
   internalName: screw
   icon: {fileID: 0}
   description: 
-  collisionSoundEffect: {fileID: 0}
+  collisionSoundEffect: {fileID: 11400000, guid: 90ba777376779f946b6665885851e85f, type: 2}
   storeableItemData:
     storeable: 0
     spawnPrefab: {fileID: 3026074305386334450, guid: c4880a68d9e48b44a805cea63d490c29, type: 3}
@@ -28,4 +28,4 @@ MonoBehaviour:
     throwSoundEffect: {fileID: 0}
     weaponDamage: 0
   minDamageVelocity: 99
-  throwDamage: 0
+  collisionDamage: 0

@@ -31,11 +31,15 @@ public class InventoryItem
 
     public bool RemoveItem()
     {
-        if (itemCount == 0) return false;
-        if (itemEntityIdsCollected.Count == 0) return false;
+        if (itemCount == 0 || itemEntityIdsCollected.Count == 0)
+            return false;
+
 
         itemCount--;
         itemEntityIdsCollected.RemoveAt(itemEntityIdsCollected.Count - 1);
+        if (itemCount == 0 || itemEntityIdsCollected.Count == 0)
+
+            GlobalDataStore.GetInventory().RemoveItemFromInventory(internalName);
         return true;
     }
     public bool RemoveItemForever()

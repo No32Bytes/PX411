@@ -75,6 +75,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0894351c6547ed3428c004eb960dc63b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9063896089031656146}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0894351c6547ed3428c004eb960dc63b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4777227606704643082}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0894351c6547ed3428c004eb960dc63b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -136178047430794635}
   m_SourcePrefab: {fileID: 100100000, guid: 0894351c6547ed3428c004eb960dc63b, type: 3}
 --- !u!1 &5067311081956136638 stripped
 GameObject:
@@ -102,3 +108,45 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.015980035, y: 0.27555692, z: 0.018364364}
   m_Center: {x: -0.000000015215022, y: 0.010675778, z: 0.15472649}
+--- !u!54 &-4777227606704643082
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5067311081956136638}
+  serializedVersion: 5
+  m_Mass: 0.5
+  m_LinearDamping: 0.5
+  m_AngularDamping: 5
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-136178047430794635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5067311081956136638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ae85410b3f95446bb4c7e7e4fe7854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityDraggable
+  collisionSoundEffect: {fileID: 0}
+  minDamageVelocity: 0
+  collisionDamage: 0

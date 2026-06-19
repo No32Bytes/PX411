@@ -1438,7 +1438,8 @@ MonoBehaviour:
     staminaSlider: {fileID: 1972594212440028730}
     noSprintTime: 250
   gravity: -9.81
-  jumpHeight: 2
+  jumpHeight: 1
+  pushPower: 2
   walkSound: {fileID: 11400000, guid: 3a9d4ec5f00283b4f9f205c06752bc9e, type: 2}
   runningSound: {fileID: 11400000, guid: aeb1d63cf2cb95f4fb977edb30f48c02, type: 2}
   jumpingSound: {fileID: 11400000, guid: fba224c80c09fe344bac87f47a78b4be, type: 2}
@@ -3049,7 +3050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 461392702117330276, guid: e2e88455f13399c44b681ed507ca2fce, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 473569195900417044, guid: e2e88455f13399c44b681ed507ca2fce, type: 3}
       propertyPath: m_Layer
