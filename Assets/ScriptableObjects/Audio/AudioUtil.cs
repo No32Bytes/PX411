@@ -38,9 +38,11 @@ public class AudioUtil
             return;
         soundEffect.Play(source);
     }
-    public static AudioSource CreateSoundEffectAudioSource(GameObject gameObject)
+    public static AudioSource CreateSoundEffectAudioSource(GameObject gameObject, float maxDistance = 30f)
     {
         AudioSource source = gameObject.AddComponent<AudioSource>();
+        source.spatialBlend = 1.0f;
+        source.maxDistance = maxDistance;
         var mixerGroup = GlobalDataStore.GetAudioManager().SoundMixerGroup;
         if (mixerGroup != null)
             source.outputAudioMixerGroup = mixerGroup;

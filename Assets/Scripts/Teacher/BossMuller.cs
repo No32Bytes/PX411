@@ -9,11 +9,15 @@ public class BossMuller : EnemeyEntity
     [SerializeField] private Canvas overlayMullerUI;
     [SerializeField] private HealthBar healthBar = new();
     [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private float chaseDistance = 25f;
     [Header("Sound")]
-    [SerializeField] private BaseSoundEffect bossDamageSound;
-    [SerializeField] private BaseSoundEffect bossChargeSound;
-    [SerializeField] private BaseSoundEffect bossStompSound;
-    [SerializeField] private BaseSoundEffect bossStompDamageSound;
+    [SerializeField] private BaseSoundEffect damageSound;
+    [SerializeField] private BaseSoundEffect startSound;
+    [SerializeField] private BaseSoundEffect chaseSound;
+    [SerializeField] private BaseSoundEffect chargeSound;
+    [SerializeField] private BaseSoundEffect stompSound;
+    [SerializeField] private BaseSoundEffect talkSound;
+    [SerializeField] private BaseSoundEffect AcidThrowSound;
     private Vector3 gravityVector;
 
     private PlayerMovement playerMovement;
@@ -41,6 +45,19 @@ public class BossMuller : EnemeyEntity
     [SerializeField] private float attackChargeTimerStart = 5f;
     private AudioSource audioSource;
 
+    enum SoundState
+    {
+        None,
+        Chase,
+        Charge,
+        Stomp,
+        Talk,
+        AcidThrow,
+    };
+    bool fightStarted;
+    bool throwAcidSoundPlay;
+    SoundState soundState;
+
     private void Awake()
     {
         audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
@@ -54,6 +71,8 @@ public class BossMuller : EnemeyEntity
 
         healthBar.SetOnDeathCallback(OnDeath);
         characterController = GetComponent<CharacterController>();
+        fightStarted = false;
+        soundState = SoundState.None;
 
         StartAttackTimerActivate(startTimerMax);
     }
@@ -71,10 +90,6 @@ public class BossMuller : EnemeyEntity
             gravityVector.y = 0;
         characterController.Move(gravityVector * Time.deltaTime);
 
-        ChargeAttackActivate();
-        //states for the attacks, every frame active, only activated by using the corresponding activate fuctions
-
-
         //Timer for Attacks
         StartAttackTimer();
 
@@ -89,6 +104,58 @@ public class BossMuller : EnemeyEntity
 
         //Timer for Attacks
         StartAttackTimer();
+
+        if (!audioSource.isPlaying && soundState == SoundState.None && Random.Range(1, 5) == 1)
+            soundState = SoundState.Talk;
+
+        if (soundState == SoundState.Talk)
+        {
+            Vector3 playerPos = GlobalDataStore.GetStateManager().playerState.playerRef.playerCamera.transform.position;
+            float distance = (playerPos - transform.position).magnitude;
+            if(distance >= chaseDistance)
+                soundState = SoundState.Chase;
+        }
+
+        HandleSoundState();
+    }
+
+
+    private void HandleSoundState()
+    {
+        if (audioSource.isPlaying)
+            return;
+
+        BaseSoundEffect toPlay;
+        switch (soundState)
+        {
+            case SoundState.Chase:
+                toPlay = chaseSound;
+                break;
+            case SoundState.Charge:
+                toPlay = chargeSound;
+                break;
+            case SoundState.Stomp:
+                toPlay = stompSound;
+                break;
+            case SoundState.Talk:
+                toPlay = talkSound;
+                break;
+            case SoundState.AcidThrow:
+                toPlay = AcidThrowSound;
+                break;
+            case SoundState.None:
+            default:
+                return;
+        }
+
+        if (!fightStarted)
+        {
+            toPlay = startSound;
+            fightStarted = true;
+        }
+
+        soundState = SoundState.None;
+        AudioUtil.PlaySoundEffect(toPlay, audioSource);
     }
 
     public void StartAttackTimerActivate(float timer)
@@ -99,6 +166,9 @@ public class BossMuller : EnemeyEntity
 
     public void StartAttackTimer()
     {
+        if (audioSource.isPlaying)
+            return;
+
         startTimer -= Time.fixedDeltaTime;
         if (startTimer <= 0 && starttiming == true)
         {
@@ -144,7 +214,7 @@ public class BossMuller : EnemeyEntity
     {
         if (attackGroundTimer == attackGroundTimerStart)
         {
-            AudioUtil.PlaySoundEffect(bossStompSound, audioSource);
+            soundState = SoundState.Stomp;
             attackGround.Play();
         }
 
@@ -177,7 +247,8 @@ public class BossMuller : EnemeyEntity
         }
         else if (attackChargeTimer > 0f && chargeStep < chargeStepAmount)
         {
-            AudioUtil.PlaySoundEffect(bossChargeSound, audioSource);
+            if (chargeStep == 0)
+                soundState = SoundState.Charge;
             chargeStep++;
             chargeState = true;
             characterController.Move(chargeRichtung);
@@ -244,6 +315,7 @@ public class BossMuller : EnemeyEntity
         foreach (var ball in balls)
             ball.ActiveTimer();
 
+        throwAcidSoundPlay = true;
     }
 
     public void DoGroundDamage(GameObject other)
@@ -257,7 +329,6 @@ public class BossMuller : EnemeyEntity
         {
             attackGroundDidDamage = true;
             player.Damage(groundDamage);
-            AudioUtil.PlaySoundEffect(bossStompDamageSound, player.OverrideDamageAudioSource);
         }
 
     }
@@ -267,6 +338,12 @@ public class BossMuller : EnemeyEntity
     {
         for (int i = 0; i < balls.Length; i++)
         {
+            if (throwAcidSoundPlay)
+            {
+                throwAcidSoundPlay = false;
+                soundState = SoundState.AcidThrow;
+            }
+
             BallOfDoom ball = balls[i];
             if (ball.CanBallDamage())
                 ball.transform.Translate(throwDirections[i] * throwSpeed);
@@ -290,7 +367,7 @@ public class BossMuller : EnemeyEntity
 
     public override void EntityDamage(float amount)
     {
-        AudioUtil.PlaySoundEffect(bossDamageSound, audioSource);
+        AudioUtil.PlaySoundEffect(damageSound, audioSource);
         healthBar.ReduceHealth(amount);
     }
     public override void EntityHeal(float amount)

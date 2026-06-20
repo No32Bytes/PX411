@@ -202,9 +202,9 @@ MonoBehaviour:
   hammerSound: {fileID: 11400000, guid: 6dac5b5d8216cbc429be9272549231fd, type: 2}
   failSound: {fileID: 11400000, guid: 8f8e8c10f7bc44849b91956cc65bc6f4, type: 2}
   startingSound: {fileID: 11400000, guid: 0eb08089289491846a46d88a04a49f6f, type: 2}
-  runningSound: {fileID: 0}
+  runningSound: {fileID: 11400000, guid: c3ea9b19a24371143a1e179e2b73ebd3, type: 2}
   brokenVisuals: {fileID: 2406512249883037220}
-  repairedVisuals: {fileID: 0}
+  repairedVisuals: {fileID: 2406512249883037220}
 --- !u!82 &2045940505659822811
 AudioSource:
   m_ObjectHideFlags: 0
@@ -227,9 +227,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 30
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -262,7 +262,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

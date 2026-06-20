@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private float pushPower = 2f;
+    [SerializeField] private float inAirTimeLandSoundPlay = 2f;
+    [SerializeField] private LayerMask groundLayerMask;
+    [SerializeField] private float groundCheckLength = 0.1f;
     [Header("Sounds")]
     [SerializeField] private BaseSoundEffect walkSound;
     [SerializeField] private BaseSoundEffect runningSound;
@@ -31,11 +34,12 @@ public class PlayerMovement : MonoBehaviour
         Walking,
         Running,
         Jumping,
-        InAir,
+        inAir,
         Landing,
     };
     MovementState movementState;
     MovementState lockedState;
+    float inAir;
 
     public Transform MoveTransform => transform;
 
@@ -49,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         movementAction = new("Move");
         jumpAction = new("Jump");
         runAction = new("Sprint");
+        inAir = 0f;
     }
     void Update()
     {
@@ -79,13 +84,17 @@ public class PlayerMovement : MonoBehaviour
         if (!isGroundedCheck)
         {
             gravityVector.y += gravity * Time.deltaTime;
-            movementState = MovementState.InAir;
+            inAir += Time.deltaTime;
+            movementState = MovementState.inAir;
         }
         if (isGroundedCheck && gravityVector.y < 0)
             gravityVector.y = 0;
 
-        if (movementState == MovementState.InAir && isGroundedCheck)
+        if (inAir > inAirTimeLandSoundPlay && isGroundedCheck)
+        {
             lockedState = MovementState.Landing;
+            inAir = 0f;
+        }
 
         if (isGroundedCheck && jumpAction.IsPressed())
         {
@@ -109,6 +118,7 @@ public class PlayerMovement : MonoBehaviour
         if (lockedState != MovementState.None)
         {
             movementState = lockedState;
+            lockedState = MovementState.None;
             audioSource.Stop();
         }
 
@@ -151,7 +161,10 @@ public class PlayerMovement : MonoBehaviour
     }
     public bool IsGrounded()
     {
-        return characterController.isGrounded;
+        if (characterController.isGrounded)
+            return true;
+
+        return Physics.Raycast(transform.position, -transform.up, groundCheckLength, groundLayerMask);
     }
 
     public void ReducePlayerStamina(float staminaMinusAmount) { staminaBar.ReduceStamina(staminaMinusAmount); }
