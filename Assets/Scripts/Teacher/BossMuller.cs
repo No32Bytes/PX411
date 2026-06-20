@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Entity;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -10,6 +11,7 @@ public class BossMuller : EnemeyEntity
     [SerializeField] private HealthBar healthBar = new();
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float chaseDistance = 25f;
+    [SerializeField] private float startFightDistance = 100f;
     [Header("Sound")]
     [SerializeField] private BaseSoundEffect damageSound;
     [SerializeField] private BaseSoundEffect startSound;
@@ -18,6 +20,7 @@ public class BossMuller : EnemeyEntity
     [SerializeField] private BaseSoundEffect stompSound;
     [SerializeField] private BaseSoundEffect talkSound;
     [SerializeField] private BaseSoundEffect AcidThrowSound;
+    [SerializeField] private float talkSoundDelay = 1f;
     private Vector3 gravityVector;
 
     private PlayerMovement playerMovement;
@@ -55,12 +58,16 @@ public class BossMuller : EnemeyEntity
         AcidThrow,
     };
     bool fightStarted;
+    bool fightStartedPlayed;
     bool throwAcidSoundPlay;
     SoundState soundState;
+    float talkSoundLast;
 
     private void Awake()
     {
         audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
+        audioSource.rolloffMode = AudioRolloffMode.Linear;
+        audioSource.maxDistance = startFightDistance;
     }
 
     private void Start()
@@ -72,6 +79,7 @@ public class BossMuller : EnemeyEntity
         healthBar.SetOnDeathCallback(OnDeath);
         characterController = GetComponent<CharacterController>();
         fightStarted = false;
+        fightStartedPlayed = false;
         soundState = SoundState.None;
 
         StartAttackTimerActivate(startTimerMax);
@@ -89,14 +97,24 @@ public class BossMuller : EnemeyEntity
         if (isGroundedCheck && gravityVector.y < 0)
             gravityVector.y = 0;
         characterController.Move(gravityVector * Time.deltaTime);
-
-        //Timer for Attacks
-        StartAttackTimer();
-
     }
 
     private void FixedUpdate()
     {
+        bool startFight = false;
+        if (!fightStarted)
+        {
+            if (GlobalDataStore.GetStateManager().playerState.playerRef == null)
+                return;
+            if (GlobalDataStore.GetStateManager().playerState.playerRef.playerCamera == null)
+                return;
+            Vector3 playerPos = GlobalDataStore.GetStateManager().playerState.playerRef.playerCamera.transform.position;
+            float distance = (playerPos - transform.position).magnitude;
+            if (distance > startFightDistance)
+                return;
+            startFight = true;
+        }
+
         //states for the attacks, every frame active, only activated by using the corresponding activate fuctions
         AttackGround();
         ChargeAttack();
@@ -105,18 +123,23 @@ public class BossMuller : EnemeyEntity
         //Timer for Attacks
         StartAttackTimer();
 
-        if (!audioSource.isPlaying && soundState == SoundState.None && Random.Range(1, 5) == 1)
+        if (!audioSource.isPlaying && soundState == SoundState.None && Random.Range(1, 20) == 1 && talkSoundLast + talkSoundDelay < Time.fixedTime)
+        {
             soundState = SoundState.Talk;
+            talkSoundLast = Time.fixedTime;
+        }
 
         if (soundState == SoundState.Talk)
         {
             Vector3 playerPos = GlobalDataStore.GetStateManager().playerState.playerRef.playerCamera.transform.position;
             float distance = (playerPos - transform.position).magnitude;
-            if(distance >= chaseDistance)
+            if (distance >= chaseDistance)
                 soundState = SoundState.Chase;
         }
 
         HandleSoundState();
+        if (startFight)
+            fightStarted = true;
     }
 
 
@@ -125,7 +148,7 @@ public class BossMuller : EnemeyEntity
         if (audioSource.isPlaying)
             return;
 
-        BaseSoundEffect toPlay;
+        BaseSoundEffect toPlay = null;
         switch (soundState)
         {
             case SoundState.Chase:
@@ -145,13 +168,14 @@ public class BossMuller : EnemeyEntity
                 break;
             case SoundState.None:
             default:
-                return;
+                break;
         }
 
-        if (!fightStarted)
+        if (!fightStartedPlayed)
         {
             toPlay = startSound;
-            fightStarted = true;
+            fightStartedPlayed = true;
+            talkSoundLast = Time.fixedTime;
         }
 
         soundState = SoundState.None;

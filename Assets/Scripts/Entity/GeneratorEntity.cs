@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class Generator : BaseEntity
+public class GeneratorEntity : BaseEntity
 {
     [System.Serializable]
     public struct GeneratorItemRequirement
@@ -10,13 +10,13 @@ public class Generator : BaseEntity
         public int requiredAmount;
     }
     [Header("Items")]
-    [SerializeField] private GeneratorItemRequirement screwRequirement;
-    [SerializeField] private GeneratorItemRequirement cableRequirement;
-    [SerializeField] private GeneratorItemRequirement fuelRequirement;
-    [SerializeField] private GeneratorItemRequirement oilRequirement;
+    public GeneratorItemRequirement screwRequirement;
+    public GeneratorItemRequirement cableRequirement;
+    public GeneratorItemRequirement fuelRequirement;
+    public GeneratorItemRequirement oilRequirement;
     [SerializeField] private ItemData hammerItemData;
     [System.Serializable]
-    struct GeneratorData
+    public struct GeneratorData
     {
         public int screws;
         public int cables;
@@ -25,6 +25,7 @@ public class Generator : BaseEntity
         public bool isRepaired;
     };
     private GeneratorData data = new();
+    public GeneratorData GeneratorState => data;
 
     [Header("Sounds")]
     [SerializeField] private BaseSoundEffect screwSound;
@@ -144,7 +145,7 @@ public class Generator : BaseEntity
         return false;
     }
 
-    private bool AllPartsInstalled()
+    public bool AllPartsInstalled()
     {
         return data.screws >= screwRequirement.requiredAmount &&
                data.cables >= cableRequirement.requiredAmount &&

@@ -332,10 +332,16 @@ MonoBehaviour:
     healthRegenRate: 1
     healthSlider: {fileID: 4033319679052496958}
   gravity: -9.81
-  bossDamageSound: {fileID: 11400000, guid: 88f3af3b2cdbed04ca2078f2313d1027, type: 2}
-  bossChargeSound: {fileID: 0}
-  bossStompSound: {fileID: 0}
-  bossStompDamageSound: {fileID: 0}
+  chaseDistance: 50
+  startFightDistance: 125
+  damageSound: {fileID: 11400000, guid: e67c59a81de1ac24c8ecb5d4c1321695, type: 2}
+  startSound: {fileID: 11400000, guid: e6b27c2da3aebfd44be775b78581389d, type: 2}
+  chaseSound: {fileID: 11400000, guid: f295a8844371e2b43a07b50c14c425ec, type: 2}
+  chargeSound: {fileID: 0}
+  stompSound: {fileID: 11400000, guid: 3a303aa8c3e4fee4091193834ed1839b, type: 2}
+  talkSound: {fileID: 11400000, guid: bf194e0aa6889e24597c11f8c2d18dd5, type: 2}
+  AcidThrowSound: {fileID: 11400000, guid: 494ebf6720212df4382c1caededb2cfd, type: 2}
+  talkSoundDelay: 25
   balls:
   - {fileID: 5522730629307906073}
   - {fileID: 280558982632091976}

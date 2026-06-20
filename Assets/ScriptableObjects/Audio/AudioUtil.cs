@@ -43,6 +43,7 @@ public class AudioUtil
         AudioSource source = gameObject.AddComponent<AudioSource>();
         source.spatialBlend = 1.0f;
         source.maxDistance = maxDistance;
+        source.clip = null;
         var mixerGroup = GlobalDataStore.GetAudioManager().SoundMixerGroup;
         if (mixerGroup != null)
             source.outputAudioMixerGroup = mixerGroup;
