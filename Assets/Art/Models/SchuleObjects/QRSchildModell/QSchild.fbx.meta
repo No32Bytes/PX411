@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: QRSchildBake
-    second: {fileID: 2100000, guid: d707e7b3ac53e4f458a37a7ff4ec08d7, type: 2}
+      name: Material.004
+    second: {fileID: 2100000, guid: 15a0c7459ea81ac419cefc5a4b32ef45, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -39,7 +39,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 2
+    meshCompression: 3
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b5f5fc476df4bcb4ea05c7eb418754bc
+guid: d6be3ad103dbfe843be7723fe072747d
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 122da14178aadb14c84f98942dc9ac60, type: 2}
+      name: AufhangerBake
+    second: {fileID: 2100000, guid: a8124ccd6e4b5484f8b8d338a2f2bfbb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

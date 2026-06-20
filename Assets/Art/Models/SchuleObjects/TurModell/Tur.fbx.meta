@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b5f5fc476df4bcb4ea05c7eb418754bc
+guid: f98f93f1bfa31314f9b0c263c46c69f3
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 122da14178aadb14c84f98942dc9ac60, type: 2}
+      name: TurBake
+    second: {fileID: 2100000, guid: 4445de1733811a6418f964283a239626, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
