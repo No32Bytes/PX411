@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlobalDataStore
   itemDataBase: {fileID: 11400000, guid: a0ea307f7cd17694596c011c2220235e, type: 2}
+  entityInformationViewInteractInfo: {fileID: 3014204856633051911, guid: 0515b1d7d736fb04da9ced3603755318, type: 3}
   awakeComponents:
   - {fileID: 4646194904821042808}
   - {fileID: 3986613924344579339}

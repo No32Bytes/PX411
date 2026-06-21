@@ -5,6 +5,7 @@ using UnityEngine;
 public class GlobalDataStore : MonoBehaviour
 {
     public ItemDataBase itemDataBase;
+    public GameObject entityInformationViewInteractInfo;
     public Behaviour[] awakeComponents;
     public SaveManager saveManager;
     public SettingsManager settingsManager;

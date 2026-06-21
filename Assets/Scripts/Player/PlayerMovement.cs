@@ -91,10 +91,10 @@ public class PlayerMovement : MonoBehaviour
             gravityVector.y = 0;
 
         if (inAir > inAirTimeLandSoundPlay && isGroundedCheck)
-        
+
             lockedState = MovementState.Landing;
-        
-        if(isGroundedCheck)
+
+        if (isGroundedCheck)
             inAir = 0f;
 
         if (isGroundedCheck && jumpAction.IsPressed())

@@ -26,6 +26,7 @@ public class ItemEntity : BaseEntity
         if (!playerItemHandler.HasItemEquipped)
             playerItemHandler.EquipItem(itemData.internalName);
 
+        GlobalDataStore.GetStateManager().playerState.playerLook.DisableEntityInformationViewThisFrame();
         Destroy(gameObject);
     }
     public static bool TryDropItem(Camera playerCamera, ItemData itemData, string itemEntityId, float distance, float startVelocity = 0f)

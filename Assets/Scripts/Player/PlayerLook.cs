@@ -84,7 +84,6 @@ public class PlayerLook : MonoBehaviour
                 AudioUtil.PlaySoundEffect(interactActionSound, audioSource);
                 interactAnimation.SetTrigger();
                 baseEntity.EntityInteraction();
-                entityInformationViewFrameDisable = true;
                 return;
             }
         }
@@ -97,6 +96,11 @@ public class PlayerLook : MonoBehaviour
                     entityDraggable.SelectEntity(playerRef.playerCamera);
             }
         }
+    }
+
+    public void DisableEntityInformationViewThisFrame()
+    {
+        entityInformationViewFrameDisable = true;
     }
 
     public void HandlePlayerLookAttack(float damageAmount)

@@ -239,17 +239,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -7258631410891668714, guid: 26fe41370cec43b42a13bbc5bc7f3e49, type: 3}
-      propertyPath: entityId
-      value: cable
-      objectReference: {fileID: 0}
     - target: {fileID: 1162940226141868279, guid: 26fe41370cec43b42a13bbc5bc7f3e49, type: 3}
       propertyPath: m_Name
       value: Cable
-      objectReference: {fileID: 0}
-    - target: {fileID: 1162940226141868279, guid: 26fe41370cec43b42a13bbc5bc7f3e49, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1974906871169059405, guid: 26fe41370cec43b42a13bbc5bc7f3e49, type: 3}
       propertyPath: m_LocalPosition.x
@@ -304,17 +296,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -5924282608765314769, guid: 7b111eeaaff1a8346886ef00e310e98f, type: 3}
-      propertyPath: entityId
-      value: benzin
-      objectReference: {fileID: 0}
     - target: {fileID: 8520755417573624008, guid: 7b111eeaaff1a8346886ef00e310e98f, type: 3}
       propertyPath: m_Name
       value: BenzinKanister
-      objectReference: {fileID: 0}
-    - target: {fileID: 8520755417573624008, guid: 7b111eeaaff1a8346886ef00e310e98f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9039882533437067890, guid: 7b111eeaaff1a8346886ef00e310e98f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -369,10 +353,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -7098441955435259101, guid: a432dff6265890444a833caff867b523, type: 3}
-      propertyPath: entityId
-      value: hammer
-      objectReference: {fileID: 0}
     - target: {fileID: 3900517291879013518, guid: a432dff6265890444a833caff867b523, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.7677
@@ -416,10 +396,6 @@ PrefabInstance:
     - target: {fileID: 4425555618728232500, guid: a432dff6265890444a833caff867b523, type: 3}
       propertyPath: m_Name
       value: Hammer
-      objectReference: {fileID: 0}
-    - target: {fileID: 4425555618728232500, guid: a432dff6265890444a833caff867b523, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -548,10 +524,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5595890067616254479, guid: 43481067860e6944d80c76962b44224b, type: 3}
-      propertyPath: entityId
-      value: ol
-      objectReference: {fileID: 0}
     - target: {fileID: 6193388790041527119, guid: 43481067860e6944d80c76962b44224b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.489193
@@ -596,14 +568,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: OlKanister
       objectReference: {fileID: 0}
-    - target: {fileID: 6825353561858087413, guid: 43481067860e6944d80c76962b44224b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9051455665825878700, guid: 43481067860e6944d80c76962b44224b, type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -617,17 +581,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 605002251775057865, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
-      propertyPath: entityId
-      value: s4
-      objectReference: {fileID: 0}
     - target: {fileID: 3893700346316719989, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
       propertyPath: m_Name
       value: Schraube (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3893700346316719989, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4414340694927629775, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1003,7 +959,6 @@ GameObject:
   - component: {fileID: 1376330988}
   - component: {fileID: 1376330987}
   - component: {fileID: 1376330986}
-  - component: {fileID: 1376330989}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -1104,21 +1059,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376330984}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1376330989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376330984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
-  sourceGameObject: {fileID: 0}
-  informationObjectPrefab:
-  - {fileID: 4602626972012524021, guid: 48bf757237884c94e886372af19e47e4, type: 3}
 --- !u!1001 &1486674669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1127,17 +1067,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 605002251775057865, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
-      propertyPath: entityId
-      value: s3
-      objectReference: {fileID: 0}
     - target: {fileID: 3893700346316719989, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
       propertyPath: m_Name
       value: Schraube (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3893700346316719989, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4414340694927629775, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1261,17 +1193,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 605002251775057865, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
-      propertyPath: entityId
-      value: s2
-      objectReference: {fileID: 0}
     - target: {fileID: 3893700346316719989, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
       propertyPath: m_Name
       value: Schraube (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3893700346316719989, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4414340694927629775, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1383,17 +1307,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 605002251775057865, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
-      propertyPath: entityId
-      value: s1
-      objectReference: {fileID: 0}
     - target: {fileID: 3893700346316719989, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
       propertyPath: m_Name
       value: Schraube
-      objectReference: {fileID: 0}
-    - target: {fileID: 3893700346316719989, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4414340694927629775, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1450,7 +1366,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 857974607693062053, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 5.977
       objectReference: {fileID: 0}
     - target: {fileID: 857974607693062053, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1458,7 +1374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 857974607693062053, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: -69.3
       objectReference: {fileID: 0}
     - target: {fileID: 857974607693062053, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1525,10 +1441,10 @@ SceneRoots:
   - {fileID: 829408097}
   - {fileID: 261766093}
   - {fileID: 2116992590}
-  - {fileID: 1712500299}
   - {fileID: 1486674669}
   - {fileID: 972625817}
   - {fileID: 581386367}
   - {fileID: 958877709}
+  - {fileID: 1712500299}
   - {fileID: 637343606}
   - {fileID: 1536224345}

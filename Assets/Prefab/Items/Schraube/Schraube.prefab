@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 42f6682727f06bd459b8ef7719642a0a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -19.679617
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 42f6682727f06bd459b8ef7719642a0a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.751
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 42f6682727f06bd459b8ef7719642a0a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 10.744648
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 42f6682727f06bd459b8ef7719642a0a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -122,6 +122,10 @@ MonoBehaviour:
   sourceGameObject: {fileID: 0}
   informationObjectPrefab:
   - {fileID: 3014204856633051911, guid: cdee7f58680fd374a97582431c9819ae, type: 3}
+  interactionInfo:
+    hasInfo: 0
+    displayText: 
+    interactInfo: {fileID: 0}
 --- !u!65 &8006288716467711633
 BoxCollider:
   m_ObjectHideFlags: 0

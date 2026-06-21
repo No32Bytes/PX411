@@ -165,7 +165,11 @@ public class GeneratorEntity : BaseEntity
     private void FixedUpdate()
     {
         if (!IsRepaired)
+        {
+            EntityInformationView.SetInteractInfo(gameObject, "Reparieren");
             return;
+        }
+        EntityInformationView.SetInteractInfo(gameObject, "", false);
         if (generatorAudioSource.isPlaying)
             return;
 

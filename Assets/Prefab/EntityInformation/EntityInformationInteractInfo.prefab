@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5451273948847174201
+--- !u!1 &3014204856633051911
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2990850202694473318}
-  - component: {fileID: 4134179940458549864}
+  - component: {fileID: 2946871159484237139}
+  - component: {fileID: 7416809595675675049}
   m_Layer: 5
-  m_Name: DoorEntityInformation
+  m_Name: EntityInformationInteractInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2990850202694473318
+--- !u!4 &2946871159484237139
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5451273948847174201}
+  m_GameObject: {fileID: 3014204856633051911}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -450, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 2785391750883277326}
+  - {fileID: 935732059324061314}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4134179940458549864
+--- !u!114 &7416809595675675049
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5451273948847174201}
+  m_GameObject: {fileID: 3014204856633051911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 394a38a514cbfac48a6afcee1b8913a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 688cecf8b8a015c4db0d4e6fb9a0564c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorEntityInformation
-  actionText: {fileID: 3272105365391058871}
---- !u!1001 &7204000310112716518
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationInteractInfo
+  interactText: {fileID: 518769574033705787}
+--- !u!1001 &5305821240627653226
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2990850202694473318}
+    m_TransformParent: {fileID: 2946871159484237139}
     m_Modifications:
     - target: {fileID: 4998559180016188648, guid: f997a39e0a401924d8a8d8aa46354550, type: 3}
       propertyPath: m_Pivot.x
@@ -80,7 +80,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4998559180016188648, guid: f997a39e0a401924d8a8d8aa46354550, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 400
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4998559180016188648, guid: f997a39e0a401924d8a8d8aa46354550, type: 3}
       propertyPath: m_SizeDelta.y
@@ -120,7 +120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4998559180016188648, guid: f997a39e0a401924d8a8d8aa46354550, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -450
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4998559180016188648, guid: f997a39e0a401924d8a8d8aa46354550, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -139,27 +139,22 @@ PrefabInstance:
       value: LabelUI
       objectReference: {fileID: 0}
     - target: {fileID: 5661335220257431889, guid: f997a39e0a401924d8a8d8aa46354550, type: 3}
-      propertyPath: m_fontSize
-      value: 89.5
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 5876314062165126372, guid: f997a39e0a401924d8a8d8aa46354550, type: 3}
-      propertyPath: m_Type
-      value: 0
+    - target: {fileID: 5661335220257431889, guid: f997a39e0a401924d8a8d8aa46354550, type: 3}
+      propertyPath: m_fontSize
+      value: 53.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f997a39e0a401924d8a8d8aa46354550, type: 3}
---- !u!224 &2785391750883277326 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4998559180016188648, guid: f997a39e0a401924d8a8d8aa46354550, type: 3}
-  m_PrefabInstance: {fileID: 7204000310112716518}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3272105365391058871 stripped
+--- !u!114 &518769574033705787 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5661335220257431889, guid: f997a39e0a401924d8a8d8aa46354550, type: 3}
-  m_PrefabInstance: {fileID: 7204000310112716518}
+  m_PrefabInstance: {fileID: 5305821240627653226}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -167,3 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!224 &935732059324061314 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4998559180016188648, guid: f997a39e0a401924d8a8d8aa46354550, type: 3}
+  m_PrefabInstance: {fileID: 5305821240627653226}
+  m_PrefabAsset: {fileID: 0}

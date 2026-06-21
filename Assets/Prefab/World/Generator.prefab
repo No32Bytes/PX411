@@ -207,6 +207,10 @@ MonoBehaviour:
   sourceGameObject: {fileID: 0}
   informationObjectPrefab:
   - {fileID: 8576436623092071069, guid: 86413020b2c43fd4994ad0731bf42d0b, type: 3}
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
+    interactInfo: {fileID: 3014204856633051911, guid: 0515b1d7d736fb04da9ced3603755318, type: 3}
 --- !u!1001 &4966258531586876002
 PrefabInstance:
   m_ObjectHideFlags: 0

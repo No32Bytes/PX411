@@ -27,7 +27,10 @@ public class DoorEntity : BaseEntity
         targetRotation = startRotation;
         SetRotation(startRotation);
     }
-
+    private void FixedUpdate()
+    {
+        UpdateDoorInfoView();
+    }
     private void Update()
     {
         float currenRotation = GetCurrentRotation();
@@ -108,6 +111,8 @@ public class DoorEntity : BaseEntity
     {
         targetRotation = targetRotationOpen;
         isOpen = true;
+
+        UpdateDoorInfoView();
     }
 
     public void DoorClose()
@@ -118,5 +123,14 @@ public class DoorEntity : BaseEntity
             targetRotation = 360;
 
         isOpen = false;
+        UpdateDoorInfoView();
+    }
+
+    public void UpdateDoorInfoView()
+    {
+        if (isOpen)
+            EntityInformationView.SetInteractInfo(gameObject, "Schließen");
+        else
+            EntityInformationView.SetInteractInfo(gameObject, "Öffnen");
     }
 }
