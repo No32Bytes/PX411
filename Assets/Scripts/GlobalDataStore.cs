@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Audio;
 [DefaultExecutionOrder(-1)]
 
 [RequireComponent(typeof(AudioManager))]
 public class GlobalDataStore : MonoBehaviour
 {
+    public AudioMixer masterMixer;
     public ItemDataBase itemDataBase;
     public GameObject entityInformationViewInteractInfo;
     public Behaviour[] awakeComponents;

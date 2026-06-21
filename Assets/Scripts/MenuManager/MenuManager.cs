@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
     public GameObject pauseMenuRef;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Camera menuCamera;
+    [SerializeField] private SoundTrack mainMenuThemeGroup;
 
     private void Awake()
     {
@@ -24,6 +25,11 @@ public class MenuManager : MonoBehaviour
         }
 
         AddOverlayCameraToTargetCamera();
+    }
+    public void Start()
+    {
+        GlobalDataStore.GetAudioManager().PlaySoundTrackGroup(mainMenuThemeGroup);
+        GlobalDataStore.Instance.settingsManager.LoadVolumeSettings();
     }
     public void ForceAwake()
     {

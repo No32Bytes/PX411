@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172c68df290f171428851c0113368f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlobalDataStore
+  masterMixer: {fileID: 24100000, guid: 869cba9b06f71b445ad96093144a6f23, type: 2}
   itemDataBase: {fileID: 11400000, guid: a0ea307f7cd17694596c011c2220235e, type: 2}
   entityInformationViewInteractInfo: {fileID: 3014204856633051911, guid: 0515b1d7d736fb04da9ced3603755318, type: 3}
   awakeComponents:
@@ -113,4 +114,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   musicMixerGroup: {fileID: 7857975254284373963, guid: 869cba9b06f71b445ad96093144a6f23, type: 2}
   soundMixerGroup: {fileID: -1996806640146640373, guid: 869cba9b06f71b445ad96093144a6f23, type: 2}
-  soundTrackStore: []
+  soundTrackStore:
+  - {fileID: 11400000, guid: b6ca32e7125cc5b44a2d1f629e617f9d, type: 2}
+  - {fileID: 11400000, guid: 53f45ffd0b53d184e98471340efc771f, type: 2}
+  - {fileID: 11400000, guid: a0a34bf0e1a4ce245b0cf12b6889bcf6, type: 2}
+  - {fileID: 11400000, guid: 7353ffa0e847653468a1c8e7775e05bb, type: 2}
+  - {fileID: 11400000, guid: 6b2094d9b082ee749acfb6caa5274d40, type: 2}
+  - {fileID: 11400000, guid: 8bf43c9b1c662de4faca1eac52088355, type: 2}
+  - {fileID: 11400000, guid: 5c3f9bbadac3cf24e961d072a0d07f88, type: 2}

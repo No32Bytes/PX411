@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     [Header("Sound")]
     [SerializeField] private BaseSoundEffect damageSound;
     [SerializeField] private BaseSoundEffect deathSound;
+    [SerializeField] private SoundTrack soundTrackBackgroundGroup;
     private InputHandlerCooldown toggleHandyUIAction;
     public InputHandlerCooldown pauseAction;
     private AudioListener audioListener;
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour
         toggleHandyUIAction = new("ToggleHandyUI", toggleHandyUIActionCooldownS, InputHandlerCooldown.CooldownType.TimeUnscaled);
 
         EnableGamePlay();
+        GlobalDataStore.GetAudioManager().PlaySoundTrackGroup(soundTrackBackgroundGroup);
     }
 
     private void Update()
@@ -49,6 +51,10 @@ public class Player : MonoBehaviour
         {
             GlobalDataStore.GetStateManager().playerState.signalUnloadPauseMenu.Reset();
             EnableGamePlay();
+            GlobalDataStore.GetAudioManager().CurrentSoundTrackGroup = GlobalDataStore.GetStateManager().playerState.lastSoundTrackGroup;
+            GlobalDataStore.GetAudioManager().CurrentSoundTrackId = GlobalDataStore.GetStateManager().playerState.lastSoundTrackId;
+            GlobalDataStore.GetAudioManager().SetCurrentSoundTrackTime(GlobalDataStore.GetStateManager().playerState.lastSoundTrackTime);
+            GlobalDataStore.GetAudioManager().ReloadAfterManualSet();
         }
 
         if (toggleHandyUIAction.InteractWithCooldown())
@@ -80,6 +86,9 @@ public class Player : MonoBehaviour
 
         GlobalDataStore.GetStateManager().menuManger.TitleMenuOpen = false;
         GlobalDataStore.GetStateManager().menuManger.menuOverlayCameraTarget = playerRef.playerCamera;
+        GlobalDataStore.GetStateManager().playerState.lastSoundTrackGroup = GlobalDataStore.GetAudioManager().CurrentSoundTrackGroup;
+        GlobalDataStore.GetStateManager().playerState.lastSoundTrackId = GlobalDataStore.GetAudioManager().CurrentSoundTrackId;
+        GlobalDataStore.GetStateManager().playerState.lastSoundTrackTime = GlobalDataStore.GetAudioManager().GetCurrentSoundTrackTime();
         SceneManager.LoadScene(GlobalDataStore.GetStateManager().menuManger.MenuMangerScenceId, LoadSceneMode.Additive);
     }
     private void DisableGamePlay()
@@ -119,7 +128,7 @@ public class Player : MonoBehaviour
         isDead = true;
     }
 
-    public void Damage(float damageAmount)
+    public void Damage(float damageAmount, bool playSound = true)
     {
         if (isDead)
             return;
@@ -127,7 +136,8 @@ public class Player : MonoBehaviour
             return;
 
         lastDamage = Time.time;
-        AudioUtil.PlaySoundEffect(damageSound, audioSource);
+        if (playSound)
+            AudioUtil.PlaySoundEffect(damageSound, audioSource);
         healthBar.ReduceHealth(damageAmount);
 
     }

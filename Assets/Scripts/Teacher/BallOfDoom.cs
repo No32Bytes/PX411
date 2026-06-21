@@ -7,7 +7,9 @@ public class BallOfDoom : MonoBehaviour
     private Player playerPlayer;
     [SerializeField] private BossMuller muller;
     private bool canDamage = false;
-
+    private bool inUse = false;
+    public bool InUse => inUse;
+    [HideInInspector] public Vector3 throwDirection;
     private float timer;
     [SerializeField] private float timerMax = 2f;
     [SerializeField] private int damage = 10;
@@ -19,11 +21,13 @@ public class BallOfDoom : MonoBehaviour
     private void Awake()
     {
         audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
+        audioSource.spatialBlend = 0f;
     }
 
     void Start()
     {
         playerPlayer = GlobalDataStore.GetStateManager().playerState.player;
+        BackToMuller();
     }
 
     void Update()
@@ -33,6 +37,8 @@ public class BallOfDoom : MonoBehaviour
         {
             TimerUpdate();
         }
+        if (inUse && !CanBallDamage())
+            BackToMuller();
     }
 
 
@@ -43,7 +49,7 @@ public class BallOfDoom : MonoBehaviour
         if (isPlayer && canDamage)
         {
             AudioUtil.PlaySoundEffect(collisionSoundEffect, audioSource);
-            playerPlayer.Damage(damage);
+            playerPlayer.Damage(damage, false);
             canDamage = false;
             BackToMuller();
         }
@@ -57,7 +63,8 @@ public class BallOfDoom : MonoBehaviour
     public void BackToMuller()
     {
         transform.position = muller.MullerTransform.position;
-        gameObject.SetActive(false);
+        gameObject.GetComponent<Renderer>().enabled = false;
+        gameObject.GetComponent<Collider>().enabled = false;
     }
 
     private void TimerUpdate()
@@ -67,6 +74,7 @@ public class BallOfDoom : MonoBehaviour
         {
             timerActive = false;
             canDamage = false;
+            inUse = false;
             BackToMuller();
             timer = timerMax;
 
@@ -75,10 +83,12 @@ public class BallOfDoom : MonoBehaviour
 
     public void ActiveTimer()
     {
-        gameObject.SetActive(true);
+        gameObject.GetComponent<Renderer>().enabled = true;
+        gameObject.GetComponent<Collider>().enabled = true;
         canDamage = true;
         timer = timerMax;
         timerActive = true;
+        inUse = true;
     }
 
 

@@ -16,6 +16,9 @@ public class StateManager
         public PlayerReferences playerRef;
         public PlayerItemHandler playerItemHandler;
         public PlayerLook playerLook;
+        public string lastSoundTrackGroup; 
+        public string lastSoundTrackId;
+        public float lastSoundTrackTime;
     };
     public MenuMangerState menuManger = new();
     public PlayerState playerState = new();

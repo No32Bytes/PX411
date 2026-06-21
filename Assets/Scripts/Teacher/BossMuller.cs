@@ -20,15 +20,18 @@ public class BossMuller : EnemeyEntity
     [SerializeField] private BaseSoundEffect stompSound;
     [SerializeField] private BaseSoundEffect talkSound;
     [SerializeField] private BaseSoundEffect AcidThrowSound;
+    [SerializeField] private SoundTrack bossMusic;
     [SerializeField] private float talkSoundDelay = 1f;
     private Vector3 gravityVector;
 
     private PlayerMovement playerMovement;
     private Player playerPlayer;
+    [Header("Attacks")]
 
     [SerializeField] private BallOfDoom[] balls;
     private readonly List<Vector3> throwDirections = new();
     [SerializeField] private float attackGroundTimerStart = 6f;
+    [SerializeField] private float attackChargeTimerStart = 5f;
     private bool attackGroundDidDamage;
     private float attackGroundTimer = 0f;
     [SerializeField] private ParticleSystem attackGround;
@@ -45,8 +48,7 @@ public class BossMuller : EnemeyEntity
     private float startTimer;
     private bool starttiming;
     [SerializeField] private float startTimerMax = 2f;
-    [SerializeField] private float attackChargeTimerStart = 5f;
-    private AudioSource audioSource;
+    private readonly List<AudioSource> audioSourceStack = new();
 
     enum SoundState
     {
@@ -62,12 +64,26 @@ public class BossMuller : EnemeyEntity
     bool throwAcidSoundPlay;
     SoundState soundState;
     float talkSoundLast;
+    private string preBossSoundTrackGroup;
+    private bool startMusic;
 
     private void Awake()
     {
-        audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
-        audioSource.rolloffMode = AudioRolloffMode.Linear;
-        audioSource.maxDistance = startFightDistance;
+        for (int i = 0; i < 3; i++)
+        {
+
+            AudioSource audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
+            audioSource.spatialBlend = 0.5f;
+            audioSource.rolloffMode = AudioRolloffMode.Linear;
+            audioSource.maxDistance = startFightDistance * 2;
+            audioSourceStack.Add(audioSource);
+        }
+        characterController = GetComponent<CharacterController>();
+        fightStarted = false;
+        fightStartedPlayed = false;
+        startMusic = false;
+        healthBar.SetOnDeathCallback(OnDeath);
+        soundState = SoundState.None;
     }
 
     private void Start()
@@ -75,12 +91,6 @@ public class BossMuller : EnemeyEntity
         playerPlayer = GlobalDataStore.GetStateManager().playerState.player;
         playerMovement = playerPlayer.GetComponent<PlayerMovement>();
         overlayMullerUI.worldCamera = GlobalDataStore.GetStateManager().playerState.playerRef.playerOverlayCamera;
-
-        healthBar.SetOnDeathCallback(OnDeath);
-        characterController = GetComponent<CharacterController>();
-        fightStarted = false;
-        fightStartedPlayed = false;
-        soundState = SoundState.None;
 
         StartAttackTimerActivate(startTimerMax);
     }
@@ -123,7 +133,7 @@ public class BossMuller : EnemeyEntity
         //Timer for Attacks
         StartAttackTimer();
 
-        if (!audioSource.isPlaying && soundState == SoundState.None && Random.Range(1, 20) == 1 && talkSoundLast + talkSoundDelay < Time.fixedTime)
+        if (!AudioSourceAllPlaying() && soundState == SoundState.None && Random.Range(1, 20) == 1 && talkSoundLast + talkSoundDelay < Time.fixedTime)
         {
             soundState = SoundState.Talk;
             talkSoundLast = Time.fixedTime;
@@ -145,7 +155,7 @@ public class BossMuller : EnemeyEntity
 
     private void HandleSoundState()
     {
-        if (audioSource.isPlaying)
+        if (AudioSourceAllPlaying())
             return;
 
         BaseSoundEffect toPlay = null;
@@ -171,15 +181,26 @@ public class BossMuller : EnemeyEntity
                 break;
         }
 
+        if (startMusic && AudioSourceNumPlaying() != 0)
+            return;
+
+        if (startMusic)
+        {
+            GlobalDataStore.GetAudioManager().PlaySoundTrackGroup(bossMusic);
+            startMusic = false;
+        }
         if (!fightStartedPlayed)
         {
             toPlay = startSound;
             fightStartedPlayed = true;
+            preBossSoundTrackGroup = GlobalDataStore.GetAudioManager().CurrentSoundTrackGroup;
+            GlobalDataStore.GetAudioManager().Pause();
+            startMusic = true;
             talkSoundLast = Time.fixedTime;
         }
 
         soundState = SoundState.None;
-        AudioUtil.PlaySoundEffect(toPlay, audioSource);
+        AudioUtil.PlaySoundEffect(toPlay, AudioSourceGetFree());
     }
 
     public void StartAttackTimerActivate(float timer)
@@ -190,9 +211,6 @@ public class BossMuller : EnemeyEntity
 
     public void StartAttackTimer()
     {
-        if (audioSource.isPlaying)
-            return;
-
         startTimer -= Time.fixedDeltaTime;
         if (startTimer <= 0 && starttiming == true)
         {
@@ -201,8 +219,34 @@ public class BossMuller : EnemeyEntity
             StartAttackTimerActivate(startTimerMax);
         }
     }
-
-
+    private int AudioSourceNumPlaying()
+    {
+        int playing = 0;
+        foreach (var audioSource in audioSourceStack)
+        {
+            if (audioSource.isPlaying)
+                playing++;
+        }
+        return playing;
+    }
+    private AudioSource AudioSourceGetFree()
+    {
+        foreach (AudioSource audioSource in audioSourceStack)
+        {
+            if (!audioSource.isPlaying)
+                return audioSource;
+        }
+        return null;
+    }
+    private bool AudioSourceAllPlaying()
+    {
+        foreach (AudioSource audioSource in audioSourceStack)
+        {
+            if (!audioSource.isPlaying)
+                return false;
+        }
+        return true;
+    }
     public void StartAttack()
     {
         int x = Random.Range(1, 4);
@@ -236,6 +280,9 @@ public class BossMuller : EnemeyEntity
     //ground attack; ground attack state
     public void AttackGround()
     {
+        if (soundState != SoundState.None)
+            return;
+
         if (attackGroundTimer == attackGroundTimerStart)
         {
             soundState = SoundState.Stomp;
@@ -263,6 +310,9 @@ public class BossMuller : EnemeyEntity
     //Charge attack; charge attack state
     public void ChargeAttack()
     {
+        if (soundState != SoundState.None)
+            return;
+
         attackChargeTimer -= Time.fixedDeltaTime;
         if (attackChargeTimer > 3f)
         {
@@ -337,7 +387,19 @@ public class BossMuller : EnemeyEntity
         throwDirections.Add(throwDirection);
 
         foreach (var ball in balls)
+        {
+            if (ball.InUse)
+                return;
+            if (ball.CanBallDamage())
+                return;
+
+            if (throwDirections.Count == 0)
+                break;
+
+            ball.throwDirection = throwDirections[0];
             ball.ActiveTimer();
+            throwDirections.RemoveAt(0);
+        }
 
         throwAcidSoundPlay = true;
     }
@@ -360,17 +422,20 @@ public class BossMuller : EnemeyEntity
     //Acid attack;  the acid attack state
     public void AcidAttack()
     {
-        for (int i = 0; i < balls.Length; i++)
-        {
-            if (throwAcidSoundPlay)
-            {
-                throwAcidSoundPlay = false;
-                soundState = SoundState.AcidThrow;
-            }
+        if (soundState != SoundState.None)
+            return;
 
-            BallOfDoom ball = balls[i];
-            if (ball.CanBallDamage())
-                ball.transform.Translate(throwDirections[i] * throwSpeed);
+        if (throwAcidSoundPlay)
+        {
+            throwAcidSoundPlay = false;
+            soundState = SoundState.AcidThrow;
+        }
+
+        foreach (BallOfDoom ball in balls)
+        {
+            if (!ball.InUse || !ball.CanBallDamage())
+                return;
+            ball.transform.Translate(ball.throwDirection * throwSpeed);
         }
     }
 
@@ -386,12 +451,13 @@ public class BossMuller : EnemeyEntity
 
     private void OnDeath()
     {
+        GlobalDataStore.GetAudioManager().PlaySoundTrackGroupString(preBossSoundTrackGroup);
         Destroy(gameObject);
     }
 
     public override void EntityDamage(float amount)
     {
-        AudioUtil.PlaySoundEffect(damageSound, audioSource);
+        AudioUtil.PlaySoundEffect(damageSound, AudioSourceGetFree());
         healthBar.ReduceHealth(amount);
     }
     public override void EntityHeal(float amount)

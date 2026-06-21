@@ -601,16 +601,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60ef45309e2176f4baacc66e41f8763a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryItemUI
-  inventoryItem:
-    internalName: 
-    itemCount: 0
-    itemEntityIdsCollected: []
   itemIcon: {fileID: 3110514325998926027}
   itemName: {fileID: 4791338232284709258}
   itemCount: {fileID: 7027576647801791831}
   itemDescription: {fileID: 2138910236578771561}
   dropButton: {fileID: 8199739775581340223}
   equipButton: {fileID: 8316174072515475176}
+  equipButtonText: {fileID: 6587080600153177191}
 --- !u!1 &5953836814021942629
 GameObject:
   m_ObjectHideFlags: 0

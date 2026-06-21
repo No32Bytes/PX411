@@ -42,5 +42,13 @@ public class SettingsManager
                 InputSystem.actions.LoadBindingOverridesFromJson(settingsData.bindingOverridesJson);
 
         settingsData ??= new();
+
+    }
+    public void LoadVolumeSettings()
+    {
+        var audioMixer = GlobalDataStore.Instance.masterMixer;
+        audioMixer.SetFloat(AudioUtil.Constants.masterVolumeParameter, AudioUtil.ConvertRawVolumeToVolume(settingsData.audioMasterVolume));
+        audioMixer.SetFloat(AudioUtil.Constants.musicVolumeParameter, AudioUtil.ConvertRawVolumeToVolume(settingsData.audioMusicVolume));
+        audioMixer.SetFloat(AudioUtil.Constants.soundVolumeParameter, AudioUtil.ConvertRawVolumeToVolume(settingsData.audioSoundVolume));
     }
 }

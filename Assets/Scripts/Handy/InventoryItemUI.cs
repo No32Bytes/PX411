@@ -10,6 +10,7 @@ public class InventoryItemUI : MonoBehaviour
     [SerializeField] private TMP_Text itemDescription;
     [SerializeField] private Button dropButton;
     [SerializeField] private Button equipButton;
+    [SerializeField] private TMP_Text equipButtonText;
     private InventoryItem inventoryItem;
     public void SetInventoryItemUI(InventoryItem inventoryItem)
     {
@@ -34,16 +35,27 @@ public class InventoryItemUI : MonoBehaviour
         equipButton.gameObject.SetActive(itemData.Equippable);
         if (itemData.Equippable)
             equipButton.onClick.AddListener(EquipButtonOnClick);
+
+        if (GlobalDataStore.GetStateManager().playerState.playerItemHandler.EquippedItemInternalName == inventoryItem.InternalName)
+        {
+            equipButtonText.text = "Unequip";
+            equipButton.onClick.AddListener(UnequipButtonOnClick);
+        }
     }
     private void EquipButtonOnClick()
     {
         GlobalDataStore.GetStateManager().playerState.playerItemHandler.EquipItem(inventoryItem.InternalName);
         GlobalDataStore.GetStateManager().playerState.player.DisableHandyScreenUI();
     }
+
+    private void UnequipButtonOnClick()
+    {
+        GlobalDataStore.GetStateManager().playerState.playerItemHandler.UnEquipCurrentItem();
+        GlobalDataStore.GetStateManager().playerState.player.DisableHandyScreenUI();
+    }
     private void DropButtonOnClick()
     {
         GlobalDataStore.GetStateManager().playerState.playerItemHandler.DropItem(inventoryItem.InternalName);
         GlobalDataStore.GetStateManager().playerState.player.DisableHandyScreenUI();
-
     }
 }

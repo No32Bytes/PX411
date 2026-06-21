@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -15,8 +14,8 @@ public class AudioManager : MonoBehaviour
     private AudioSource audioSourceSFX;
     public AudioSource GlobalSoundAudioSource => audioSourceSFX;
     private bool isPlaying = false;
-    private string currentSoundTrackId = "";
-    private string currentSoundTrackGroup = "";
+    public string CurrentSoundTrackId { get; set; } = "";
+    public string CurrentSoundTrackGroup { get; set; } = "";
     private readonly List<SoundTrack> soundTrackQueue = new();
     private void Awake()
     {
@@ -29,7 +28,8 @@ public class AudioManager : MonoBehaviour
         audioSourceSFX.spatialBlend = 0.0f;
     }
 
-    private void FixedUpdate()
+
+    private void Update()
     {
         if (!isPlaying)
             return;
@@ -51,13 +51,13 @@ public class AudioManager : MonoBehaviour
     }
     private void HandleEmptySoundTrackQueue()
     {
-        if (!string.IsNullOrEmpty(currentSoundTrackId))
+        if (!string.IsNullOrEmpty(CurrentSoundTrackId))
         {
-            soundTrackQueue.Add(soundTrackStore.Find(track => track.GetSoundTrackId() == currentSoundTrackId));
+            soundTrackQueue.Add(soundTrackStore.Find(track => track.GetSoundTrackId() == CurrentSoundTrackId));
             return;
         }
 
-        List<SoundTrack> soundTracks = soundTrackStore.FindAll(track => track.GetSoundTrackGroup() == currentSoundTrackGroup);
+        List<SoundTrack> soundTracks = soundTrackStore.FindAll(track => track.GetSoundTrackGroup() == CurrentSoundTrackGroup);
         if (soundTracks.Count == 0)
         {
             isPlaying = false;
@@ -68,17 +68,30 @@ public class AudioManager : MonoBehaviour
     }
     public void PlaySoundTrackId(SoundTrack soundTrack)
     {
-        currentSoundTrackId = soundTrack.GetSoundTrackId();
+        PlaySoundTrackIdString(soundTrack.GetSoundTrackId());
+    }
+    public void PlaySoundTrackGroup(SoundTrack soundTrack)
+    {
+        PlaySoundTrackGroupString(soundTrack.GetSoundTrackGroup());
+    }
+    public void PlaySoundTrackIdString(string soundTrackId)
+    {
+        CurrentSoundTrackId = soundTrackId;
         soundTrackQueue.Clear();
         audioSourceMusic.Stop();
         isPlaying = true;
     }
-    public void PlaySoundTrackGroup(SoundTrack soundTrack)
+    public void PlaySoundTrackGroupString(string soundTrackGroup)
     {
-        currentSoundTrackGroup = soundTrack.GetSoundTrackGroup();
+        CurrentSoundTrackGroup = soundTrackGroup;
         soundTrackQueue.Clear();
         audioSourceMusic.Stop();
         isPlaying = true;
+    }
+    public void ReloadAfterManualSet()
+    {
+        isPlaying = true;
+        audioSourceMusic.Stop();
     }
     public void Pause()
     {
@@ -89,5 +102,14 @@ public class AudioManager : MonoBehaviour
     {
         isPlaying = true;
         audioSourceMusic.UnPause();
+    }
+
+    public float GetCurrentSoundTrackTime()
+    {
+        return audioSourceMusic.time;
+    }
+    public void SetCurrentSoundTrackTime(float time)
+    {
+        audioSourceMusic.time = time;
     }
 }

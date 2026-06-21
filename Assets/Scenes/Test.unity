@@ -5,8 +5,8 @@ OcclusionCullingSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_OcclusionBakeSettings:
-    smallestOccluder: 0.5
-    smallestHole: 2
+    smallestOccluder: 0.25
+    smallestHole: 1
     backfaceThreshold: 100
   m_SceneGUID: 96edfbbbb39d2c446acc602f111e2243
   m_OcclusionCullingData: {fileID: 36300000, guid: 0ca6b2cc2b4a7594d826a12363d8b4d8, type: 2}
@@ -243,6 +243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cable
       objectReference: {fileID: 0}
+    - target: {fileID: 1162940226141868279, guid: 26fe41370cec43b42a13bbc5bc7f3e49, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1974906871169059405, guid: 26fe41370cec43b42a13bbc5bc7f3e49, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.63509
@@ -299,6 +303,10 @@ PrefabInstance:
     - target: {fileID: 8520755417573624008, guid: 7b111eeaaff1a8346886ef00e310e98f, type: 3}
       propertyPath: m_Name
       value: BenzinKanister
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520755417573624008, guid: 7b111eeaaff1a8346886ef00e310e98f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9039882533437067890, guid: 7b111eeaaff1a8346886ef00e310e98f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -396,6 +404,10 @@ PrefabInstance:
     - target: {fileID: 4425555618728232500, guid: a432dff6265890444a833caff867b523, type: 3}
       propertyPath: m_Name
       value: Hammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425555618728232500, guid: a432dff6265890444a833caff867b523, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -568,6 +580,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OlKanister
       objectReference: {fileID: 0}
+    - target: {fileID: 6825353561858087413, guid: 43481067860e6944d80c76962b44224b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -584,6 +600,10 @@ PrefabInstance:
     - target: {fileID: 3893700346316719989, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
       propertyPath: m_Name
       value: Schraube (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893700346316719989, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4414340694927629775, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1071,6 +1091,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Schraube (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3893700346316719989, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4414340694927629775, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.679617
@@ -1126,19 +1150,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2186080952361581124, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2186080952361581124, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3041164587691399986, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
       propertyPath: m_Name
       value: HerrMuller
-      objectReference: {fileID: 0}
-    - target: {fileID: 3041164587691399986, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6376641268843880340, guid: f3ad3ea88dbf2ce4a973ffed3727fd40, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1196,6 +1216,10 @@ PrefabInstance:
     - target: {fileID: 3893700346316719989, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
       propertyPath: m_Name
       value: Schraube (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893700346316719989, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4414340694927629775, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1311,6 +1335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Schraube
       objectReference: {fileID: 0}
+    - target: {fileID: 3893700346316719989, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4414340694927629775, guid: 4de68b3c70fee1348b6216befa02634d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.679617
@@ -1366,7 +1394,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 857974607693062053, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.977
+      value: 45.22
       objectReference: {fileID: 0}
     - target: {fileID: 857974607693062053, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1374,7 +1402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 857974607693062053, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -69.3
+      value: 45.81
       objectReference: {fileID: 0}
     - target: {fileID: 857974607693062053, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1437,7 +1465,6 @@ SceneRoots:
   - {fileID: 1086840390}
   - {fileID: 1068748521}
   - {fileID: 6101861056853742118}
-  - {fileID: 2015105009}
   - {fileID: 829408097}
   - {fileID: 261766093}
   - {fileID: 2116992590}
@@ -1448,3 +1475,4 @@ SceneRoots:
   - {fileID: 1712500299}
   - {fileID: 637343606}
   - {fileID: 1536224345}
+  - {fileID: 2015105009}

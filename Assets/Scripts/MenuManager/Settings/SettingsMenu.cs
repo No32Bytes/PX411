@@ -1,8 +1,6 @@
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.UI;
 using SettingsElements;
-using UnityEngine.InputSystem;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -10,7 +8,6 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private MenuManager menuManagerRef;
 
     [Header("AudioSettings")]
-    [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider masterVolumeSliderIn, soundVolumeSliderIn, musicVolumeSliderIn;
 
     [Header("OtherSettings")]
@@ -23,7 +20,6 @@ public class SettingsMenu : MonoBehaviour
 
     private void Start()
     {
-        AudioVolumeSlider.SetGlobalAudioMixer(audioMixer);
         new AudioVolumeSlider(masterVolumeSliderIn, AudioUtil.Constants.masterVolumeParameter);
         new AudioVolumeSlider(soundVolumeSliderIn, AudioUtil.Constants.soundVolumeParameter);
         new AudioVolumeSlider(musicVolumeSliderIn, AudioUtil.Constants.musicVolumeParameter);
