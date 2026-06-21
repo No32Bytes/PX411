@@ -305,6 +305,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Schule
       objectReference: {fileID: 0}
+    - target: {fileID: 1610655544905320518, guid: 44fcc1b55c112d14a959bc5ff320dff2, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610655544905320518, guid: 44fcc1b55c112d14a959bc5ff320dff2, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610655544905320518, guid: 44fcc1b55c112d14a959bc5ff320dff2, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610655544905320518, guid: 44fcc1b55c112d14a959bc5ff320dff2, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610655544905320518, guid: 44fcc1b55c112d14a959bc5ff320dff2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 4623f76c2259fd445ae1daca8356ab63, type: 3}
+    - target: {fileID: 1610655544905320518, guid: 44fcc1b55c112d14a959bc5ff320dff2, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 895a4260f6852124390715765ae81873, type: 2}
+    - target: {fileID: 4861473354262734587, guid: 44fcc1b55c112d14a959bc5ff320dff2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -2572967989333021709, guid: 79d1790a66971704bac1e5d0de0da0fa, type: 3}

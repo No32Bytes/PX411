@@ -20,7 +20,13 @@ public class StateManager
         public string lastSoundTrackId;
         public float lastSoundTrackTime;
     };
+    public class BossState
+    {
+        public string bossType;
+        public GameObject boss;  
+    };
     public MenuMangerState menuManger = new();
     public PlayerState playerState = new();
+    public BossState bossState = new();
     public EventSystem eventSystem;
 };

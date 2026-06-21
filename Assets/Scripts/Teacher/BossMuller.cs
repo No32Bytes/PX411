@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Entity;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -69,6 +68,8 @@ public class BossMuller : EnemeyEntity
 
     private void Awake()
     {
+        GlobalDataStore.GetStateManager().bossState.bossType = typeof(BossMuller).ToString();
+        GlobalDataStore.GetStateManager().bossState.boss = gameObject;
         for (int i = 0; i < 3; i++)
         {
 
@@ -98,7 +99,6 @@ public class BossMuller : EnemeyEntity
 
     private void Update()
     {
-
         bool isGroundedCheck = IsGrounded();
         healthBar.Update();
 
@@ -435,7 +435,7 @@ public class BossMuller : EnemeyEntity
         {
             if (!ball.InUse || !ball.CanBallDamage())
                 return;
-            ball.transform.Translate(ball.throwDirection * throwSpeed);
+            ball.transform.Translate(throwSpeed * Time.deltaTime * ball.throwDirection,Space.World);
         }
     }
 

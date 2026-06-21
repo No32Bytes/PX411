@@ -45,6 +45,10 @@ public class GlobalDataStore : MonoBehaviour
 
         DebugDev.DebugFunction.Start();
     }
+    private void Start()
+    {
+        settingsManager.LoadVolumeSettings();
+    }
     private void Update()
     {
         DebugDev.DebugFunction.Update();

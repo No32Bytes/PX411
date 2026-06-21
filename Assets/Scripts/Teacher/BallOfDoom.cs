@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
@@ -5,14 +6,16 @@ public class BallOfDoom : MonoBehaviour
 {
 
     private Player playerPlayer;
-    [SerializeField] private BossMuller muller;
+    private BossMuller muller;
     private bool canDamage = false;
     private bool inUse = false;
     public bool InUse => inUse;
     [HideInInspector] public Vector3 throwDirection;
+    private Vector3 rotationDirection;
     private float timer;
     [SerializeField] private float timerMax = 2f;
     [SerializeField] private int damage = 10;
+    [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private BaseSoundEffect collisionSoundEffect;
 
     private bool timerActive = false;
@@ -26,6 +29,12 @@ public class BallOfDoom : MonoBehaviour
 
     void Start()
     {
+        if (typeof(BossMuller).ToString() != GlobalDataStore.GetStateManager().bossState.bossType)
+        {
+            Debug.Log("BallOfDoom must be in scence with the given boss");
+            return;
+        }
+        muller = GlobalDataStore.GetStateManager().bossState.boss.GetComponent<BossMuller>();
         playerPlayer = GlobalDataStore.GetStateManager().playerState.player;
         BackToMuller();
     }
@@ -39,6 +48,8 @@ public class BallOfDoom : MonoBehaviour
         }
         if (inUse && !CanBallDamage())
             BackToMuller();
+
+        gameObject.transform.Rotate(rotationSpeed * Time.deltaTime * rotationDirection, Space.World);
     }
 
 
@@ -89,6 +100,7 @@ public class BallOfDoom : MonoBehaviour
         timer = timerMax;
         timerActive = true;
         inUse = true;
+        rotationDirection = new Vector3(Random.Range(1, 10), Random.Range(1, 10), Random.Range(1, 10)).normalized;
     }
 
 

@@ -7,16 +7,6 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Bricks
-    second: {fileID: 2100000, guid: 95f97f8e92195984db90cb7b188dfc56, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Fehlt
-    second: {fileID: 2100000, guid: 6df39243e247999459e929e77d690a02, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Fenster
     second: {fileID: 2100000, guid: f3b18550fe837be42b317c6f6264da37, type: 2}
   - first:
@@ -34,11 +24,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material.003
     second: {fileID: 2100000, guid: 864b9114abb296c45b65eb1439393f43, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.004
-    second: {fileID: 2100000, guid: a241db84cdac2a440809b1a7d833ff27, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -64,11 +49,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material.012
     second: {fileID: 2100000, guid: 32c7198ed101b904db61d59ce3c5ac80, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: diese Blaue
-    second: {fileID: 2100000, guid: 54a091deb79140f44a861e56c4f1733b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -144,7 +124,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -159,11 +139,11 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1

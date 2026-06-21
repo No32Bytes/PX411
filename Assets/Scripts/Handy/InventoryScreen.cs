@@ -8,6 +8,7 @@ public class InventoryScreen : MonoBehaviour
     [SerializeField] private float scrollViewExtend = 500;
     [SerializeField] private GameObject inventoryItemUI;
     [SerializeField] private GameObject inventoryEmptyMessage;
+    [SerializeField] private bool isInventoryCollectable;
     private void OnEnable()
     {
         RenderInventoryScreen();
@@ -31,11 +32,24 @@ public class InventoryScreen : MonoBehaviour
         for (int i = 0; i < inventoryScrollView.content.transform.childCount; i++)
             Destroy(inventoryScrollView.content.GetChild(i).gameObject);
 
-        List<InventoryItem> inventory = GlobalDataStore.GetInventory().GetStoreableInventory();
+        List<InventoryItem> inventory;
+        if (isInventoryCollectable)
+            inventory = GlobalDataStore.GetInventory().GetCollectableInventory();
+        else
+            inventory = GlobalDataStore.GetInventory().GetStoreableInventory();
+
         foreach (InventoryItem inventoryItem in inventory)
         {
-            InventoryItemUI inventorySlot = Instantiate(inventoryItemUI, inventoryScrollView.content.transform).GetComponent<InventoryItemUI>();
-            inventorySlot.SetInventoryItemUI(inventoryItem);
+            if (isInventoryCollectable)
+            {
+                InventoryItemUIBase inventorySlot = Instantiate(inventoryItemUI, inventoryScrollView.content.transform).GetComponent<InventoryItemUIBase>();
+                inventorySlot.SetInventoryItemUI(inventoryItem);
+            }
+            else
+            {
+                InventoryItemUI inventorySlot = Instantiate(inventoryItemUI, inventoryScrollView.content.transform).GetComponent<InventoryItemUI>();
+                inventorySlot.SetInventoryItemUI(inventoryItem);
+            }
         }
         if (inventory.Count <= 2)
             inventoryScrollView.content.transform.localPosition = new Vector3(scrollViewExtend / 2, 0, 0);

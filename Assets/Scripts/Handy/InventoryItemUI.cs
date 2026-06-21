@@ -2,34 +2,17 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryItemUI : MonoBehaviour
+public class InventoryItemUI : InventoryItemUIBase
 {
-    [SerializeField] private Image itemIcon;
-    [SerializeField] private TMP_Text itemName;
-    [SerializeField] private TMP_Text itemCount;
-    [SerializeField] private TMP_Text itemDescription;
     [SerializeField] private Button dropButton;
     [SerializeField] private Button equipButton;
     [SerializeField] private TMP_Text equipButtonText;
-    private InventoryItem inventoryItem;
-    public void SetInventoryItemUI(InventoryItem inventoryItem)
+    new public void SetInventoryItemUI(InventoryItem inventoryItemIn)
     {
-        this.inventoryItem = inventoryItem;
+        base.SetInventoryItemUI(inventoryItemIn);
         ItemData itemData = inventoryItem.ItemData;
 
-        itemIcon.overrideSprite = itemData.icon;
-
-        itemName.text = itemData.displayName;
-
-        if (inventoryItem.ItemCount == 1)
-            itemCount.text = "";
-        else
-            itemCount.text = inventoryItem.ItemCount + "x";
-
-        itemDescription.text = itemData.description;
-
         dropButton.onClick.AddListener(DropButtonOnClick);
-
 
         equipButton.enabled = itemData.Equippable;
         equipButton.gameObject.SetActive(itemData.Equippable);

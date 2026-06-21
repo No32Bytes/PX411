@@ -1,0 +1,36 @@
+{
+  "name": "com.rishiraj10.urp-doublesided-shaders",
+  "version": "1.0.5",
+  "displayName": "URP Double-Sided Shaders",
+  "description": "Enhanced double-sided URP shaders (Lite & Standard, Metallic & Specular) with full double-sided rendering, dithered transparent shadows, detail maps, parallax, and a custom Material Inspector.",
+  "unity": "2022.3",
+  "unityRelease": "62f3",
+  "documentationUrl": "https://github.com/Rishiraj10/urp-doublesided-shaders",
+  "changelogUrl": "https://github.com/Rishiraj10/urp-doublesided-shaders/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/Rishiraj10/urp-doublesided-shaders/blob/main/LICENSE.md",
+  "dependencies": {
+    "com.unity.render-pipelines.universal": "14.0.0"
+  },
+  "keywords": [
+    "urp",
+    "shader",
+    "doublesided",
+    "double-sided",
+    "foliage",
+    "vegetation",
+    "fabric",
+    "transparency",
+    "pbr",
+    "rishiraj10"
+  ],
+  "author": {
+    "name": "Rishiraj",
+    "email": "m1000.pseudocide@gmail.com",
+    "url": "https://my-portfolio-rishiraj.vercel.app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rishiraj10/urp-doublesided-shaders.git"
+  },
+  "license": "MIT"
+}
