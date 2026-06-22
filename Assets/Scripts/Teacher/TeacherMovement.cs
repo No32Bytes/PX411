@@ -11,9 +11,15 @@ public class TeacherMovement : MonoBehaviour
     public GameObject rightArmContainer;
     public Transform eyePosition;
 
+    [Header("Audio-Einstellungen")]
+    [SerializeField] private AudioSource footstepAudioSource;
+    [SerializeField] private BaseSoundEffect footstepClip;
+    [SerializeField] private float patrolStepInterval = 0.35f;
+    [SerializeField] private float chaseStepInterval = 0.18f;
+
     [Header("Geschwindigkeiten")]
     public float speed = 2f;
-    readonly float chaseSpeed = 5f;
+    readonly float chaseSpeed = 12f;
     public float rotationSpeed = 5f;
 
     [Header("Distanzen & Timer")]
@@ -30,6 +36,7 @@ public class TeacherMovement : MonoBehaviour
     private int currentTargetIndex = 0;
     private float timer = 0f;
     private float loseTimer = 0f;
+    private float footstepTimer = 0f;
     private bool isChasing = false;
     private bool isReturning = false;
     private bool isCrossingLink = false;
@@ -58,6 +65,11 @@ public class TeacherMovement : MonoBehaviour
         {
             eyePosition = transform;
         }
+
+        if (footstepAudioSource == null)
+        {
+            footstepAudioSource = GetComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -69,6 +81,8 @@ public class TeacherMovement : MonoBehaviour
         }
 
         if (isCrossingLink) return;
+
+        HandleFootsteps();
 
         float dist = Vector3.Distance(transform.position, playerCamera.position);
         bool holding = rightArmContainer.activeSelf;
@@ -146,6 +160,28 @@ public class TeacherMovement : MonoBehaviour
                 isReturning = false;
             }
             return;
+        }
+    }
+
+    private void HandleFootsteps()
+    {
+        if (agent.remainingDistance > 0.1f && !agent.isStopped)
+        {
+            footstepTimer += Time.deltaTime;
+            float currentInterval = isChasing ? chaseStepInterval : patrolStepInterval;
+
+            if (footstepTimer >= currentInterval)
+            {
+                if (footstepAudioSource != null && footstepClip != null)
+                {
+                    AudioUtil.PlaySoundEffect(footstepClip, footstepAudioSource);
+                }
+                footstepTimer = 0f;
+            }
+        }
+        else
+        {
+            footstepTimer = 0f;
         }
     }
 

@@ -20,8 +20,8 @@ public class DoorEntity : BaseEntity
         entityId = "door";
         usePhysics = false;
 
-        if (targetRotationClose > targetRotationOpen)
-            Debug.LogError("Error: targetRotationClose must be smaller than targetRotationOpen + " + transform.position + transform.name);
+        //if (targetRotationClose > targetRotationOpen)
+        //    Debug.LogError("Error: targetRotationClose must be smaller than targetRotationOpen + " + transform.position + transform.name);
     }
 
     private void Start()

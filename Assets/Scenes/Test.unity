@@ -119,91 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &49688224
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.757071
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 35.55321
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      propertyPath: m_Name
-      value: Tur
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 49688226}
-  m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
---- !u!1 &49688225 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-  m_PrefabInstance: {fileID: 49688224}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &49688226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 49688225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96de2489862150347812e6f985946e76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorEntity
-  entityId: 
-  usePhysics: 1
-  targetRotationClose: 0
-  targetRotationOpen: 90
-  rotationSpeed: 2
-  antiClockWise: 0
-  isOpen: 0
-  doorMovementSound: {fileID: 0}
 --- !u!1 &131254657
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,10 +891,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7892591299419616066, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9039394068981085245, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1003,4 +914,3 @@ SceneRoots:
   - {fileID: 6101861056853742118}
   - {fileID: 2015105009}
   - {fileID: 4283093086300643548}
-  - {fileID: 49688224}
