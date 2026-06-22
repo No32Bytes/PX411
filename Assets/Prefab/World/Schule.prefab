@@ -2449,10 +2449,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Einrichtung
       objectReference: {fileID: 0}
-    - target: {fileID: 8045727518923426641, guid: aa27f6143eaea7447812abaa784e1ec1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
