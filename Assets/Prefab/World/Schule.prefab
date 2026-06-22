@@ -267,6 +267,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8409799976087011757}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8840445418701814804}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &1229110919094675939 stripped
 Transform:
@@ -298,6 +301,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &8840445418701814804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893057150993920857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &282131095213357258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -361,6 +381,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8155642664793409760}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4309349950398202995}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &1293923068390350779 stripped
 Transform:
@@ -392,6 +415,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &4309349950398202995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927294900750468353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &395493771295408209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -687,6 +727,10 @@ PrefabInstance:
     - target: {fileID: 2878756083207029821, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_Name
       value: Schule
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878756083207029821, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2890548558147049754, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_IsActive
@@ -2935,6 +2979,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3563727880915347910}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3444639871598654617}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &1456187878139944287 stripped
 Transform:
@@ -2966,6 +3013,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &3444639871598654617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2269457439603722213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &575042335131298733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3025,6 +3089,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4900941945978687655}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6435355522548322008}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &1577475266405485788 stripped
 Transform:
@@ -3056,6 +3123,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &6435355522548322008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211128643334182502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &727151865905978493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3201,6 +3285,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4630153624332990786}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1742241371299243633}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &1376418363350410875 stripped
 GameObject:
@@ -3227,6 +3314,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &1742241371299243633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376418363350410875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &1752416586945477825 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -3291,6 +3395,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7098793425032152541}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6078563883997741176}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &1576839793394357149 stripped
 GameObject:
@@ -3317,6 +3424,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &6078563883997741176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576839793394357149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &2209543230641981735 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -3385,6 +3509,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2419670145057719859}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7065086884199847915}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &1451305667348844245 stripped
 GameObject:
@@ -3411,6 +3538,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &7065086884199847915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451305667348844245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &2265242976234411119 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -3475,6 +3619,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 661435687687232242}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4870093788146180040}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &193958372798687912 stripped
 Transform:
@@ -3506,6 +3653,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &4870093788146180040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719103352277872658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &1365386556768001046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3569,6 +3733,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3517369204595765729}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4248403948459713452}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &66559239134362471 stripped
 Transform:
@@ -3600,6 +3767,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &4248403948459713452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839824482879136221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &1426898189619260725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3663,6 +3847,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2602596100497478184}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 565733874290120392}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &131722349026789956 stripped
 Transform:
@@ -3694,6 +3881,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &565733874290120392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763404580423241982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &1487575188637018397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3753,6 +3957,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4694404843337452201}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3536390486063648356}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &484780517896179308 stripped
 Transform:
@@ -3784,6 +3991,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &3536390486063648356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004753502067168470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &1492510156096759864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3847,6 +4071,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 83739140177804595}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1149049407063419203}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &479864828611055433 stripped
 Transform:
@@ -3878,6 +4105,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &1149049407063419203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000645914959844851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &1505235855408454803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3937,6 +4181,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5845990013284834563}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4673797150376788921}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &503568189587913698 stripped
 Transform:
@@ -3968,6 +4215,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &4673797150376788921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988214891173290328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &1574358983131391971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4027,6 +4291,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7900107130953049786}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4119135930423772114}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &560587892236370066 stripped
 Transform:
@@ -4058,6 +4325,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &4119135930423772114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904180206083906088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &1643972973656223603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4121,6 +4405,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5263492406549757435}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3624171599849810016}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &346271555933734914 stripped
 Transform:
@@ -4152,6 +4439,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &3624171599849810016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118551362317111992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &1795363167338574778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4211,6 +4515,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5043525936334289699}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5950616836688476848}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &125851706811928177 stripped
 GameObject:
@@ -4237,6 +4544,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &5950616836688476848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125851706811928177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &789482168674325707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -4305,6 +4629,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3476975766307328986}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2212126113378377860}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &183492407741546775 stripped
 GameObject:
@@ -4331,6 +4658,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &2212126113378377860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183492407741546775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &702620863905323949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -4395,6 +4739,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5515542992225646161}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5943074605734930364}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &371493816233439881 stripped
 GameObject:
@@ -4421,6 +4768,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &5943074605734930364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371493816233439881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &1039239719317760051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -4645,6 +5009,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4627193203647071757}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1483406882852718951}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &520125596296190653 stripped
 GameObject:
@@ -4671,6 +5038,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &1483406882852718951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520125596296190653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &899607038368333831 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -4735,6 +5119,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4192209522536604605}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6227654747501301292}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &3733009773303047295 stripped
 Transform:
@@ -4766,6 +5153,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &6227654747501301292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4072802385204510405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &2561108369262952607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4825,6 +5229,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5383240004743886929}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7433143875854621284}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &3572558395404543982 stripped
 Transform:
@@ -4856,6 +5263,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &7433143875854621284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242274584954223956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &2620485455943086037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4915,6 +5339,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4713704789982859999}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 595457618679049178}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &3910093368579786916 stripped
 Transform:
@@ -4946,6 +5373,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &595457618679049178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4397942741917454878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &2781011961170132824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5009,6 +5453,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3164105132617910452}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6670530430024559608}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &3784861195500509225 stripped
 Transform:
@@ -5040,6 +5487,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &6670530430024559608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4597427108506469011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &2794183076148132936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5099,6 +5563,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6995966776944953627}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2473301380894635577}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &3807875006632303417 stripped
 Transform:
@@ -5130,6 +5597,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &2473301380894635577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581175155507085699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &2810355152411256370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5193,6 +5677,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4437786627870613453}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6540253173823367654}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &3827716153199214915 stripped
 Transform:
@@ -5224,6 +5711,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &6540253173823367654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4491521643382217721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &2816355801108050769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5287,6 +5791,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 814489594922131463}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6026455037173634731}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &3822166564182447136 stripped
 Transform:
@@ -5318,6 +5825,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &6026455037173634731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4485796961366576794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &2904152693064021318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5377,6 +5901,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3116156851484981902}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8292797102772984100}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &3537836171528554637 stripped
 GameObject:
@@ -5403,6 +5930,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &8292797102772984100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3537836171528554637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &4202768763940803127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -5471,6 +6015,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3214844467104337564}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3643938443601479867}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &3542570414489158432 stripped
 GameObject:
@@ -5497,6 +6044,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &3643938443601479867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3542570414489158432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &4207045575907940762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -5561,6 +6125,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6979970069908885335}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3973025183559219956}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &3585252895367903839 stripped
 GameObject:
@@ -5587,6 +6154,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &3973025183559219956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3585252895367903839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &4218377720400732389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -5651,6 +6235,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 612169382811285572}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2830769347549803160}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &3669942744451409336 stripped
 GameObject:
@@ -5677,6 +6264,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &2830769347549803160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3669942744451409336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &4153886587274149634 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -5745,6 +6349,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6560580419266420214}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4025797095109693337}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &3973654104482815280 stripped
 GameObject:
@@ -5771,6 +6378,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &4025797095109693337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3973654104482815280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &4354578376926218122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -5839,6 +6463,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5660328464230769623}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3403019448244423967}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &4014850823524646129 stripped
 GameObject:
@@ -5865,6 +6492,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &3403019448244423967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4014850823524646129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &4394472144578192971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -5933,6 +6577,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4406996375870078616}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7981494036344908773}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &3924683897925371938 stripped
 GameObject:
@@ -5959,6 +6606,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &7981494036344908773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3924683897925371938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &4412568424966378136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -6027,6 +6691,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1029678962104134549}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 152453163128042263}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &2474124758207371697 stripped
 Transform:
@@ -6058,6 +6725,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &152453163128042263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962818762291757835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &3611939841221896678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6121,6 +6805,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4059988044004555260}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8904377131131737322}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &2323457970232561303 stripped
 Transform:
@@ -6152,6 +6839,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &8904377131131737322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3131483995120030765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &3739848782868581365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6215,6 +6919,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5749441557263875980}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 910154650928217262}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &2447768210323319940 stripped
 Transform:
@@ -6246,6 +6953,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &910154650928217262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3077058724827821630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &3812945780863898038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6305,6 +7029,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 933696198240626261}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1433956150036132568}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &2807125121119565511 stripped
 Transform:
@@ -6336,6 +7063,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &1433956150036132568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3296416950646238333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &3923559320779362138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6399,6 +7143,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7640489474315917974}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6727486381402359101}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &2625014719372961835 stripped
 Transform:
@@ -6430,6 +7177,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &6727486381402359101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3397469309714690705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &3995145382068142353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6493,6 +7257,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1429789055613512839}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8802757531416152056}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &2697444101651523168 stripped
 Transform:
@@ -6524,6 +7291,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &8802757531416152056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3325045976763808986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &4209773487666178448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6587,6 +7371,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4556276322731699863}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4377709603333409602}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &2538177044523308123 stripped
 GameObject:
@@ -6613,6 +7400,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &4377709603333409602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2538177044523308123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &2914596685947375329 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -6677,6 +7481,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5060624692894024836}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8378105069958974286}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &2880040576528516705 stripped
 GameObject:
@@ -6703,6 +7510,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &8378105069958974286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2880040576528516705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &3223492156895386843 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -6767,6 +7591,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 344981127728194013}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2538784932772913252}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &5951245767759140363 stripped
 Transform:
@@ -6798,6 +7625,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &2538784932772913252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6475264572472478897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &4683617000746026329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6857,6 +7701,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2768680568416052192}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5787669365523708520}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &5972098871867548200 stripped
 Transform:
@@ -6888,6 +7735,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &5787669365523708520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6461250277170051218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &4771447488674004261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6951,6 +7815,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6294227193435825297}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7161361578139847918}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &5776203682782141012 stripped
 Transform:
@@ -6982,6 +7849,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &7161361578139847918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6585074136877891822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &4789031082454794115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7041,6 +7925,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6423305381697017494}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5362428984658229648}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &5794068893284309234 stripped
 Transform:
@@ -7072,6 +7959,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &5362428984658229648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6567227205765186120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &4898291134355904566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7135,6 +8039,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 993429043548982117}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3811397711341385938}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &5901014332411821895 stripped
 Transform:
@@ -7166,6 +8073,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &3811397711341385938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6534527250200880637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &5099651069140759578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7229,6 +8153,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3107875369372709170}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5406221021885440919}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &6114548197379330923 stripped
 Transform:
@@ -7260,6 +8187,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &5406221021885440919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6886265088420645329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &5143350892570995117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7323,6 +8267,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 64618760167543498}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 451508282035939129}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &6160500920263003868 stripped
 Transform:
@@ -7354,6 +8301,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &451508282035939129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6788523735907177574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &5343877364757310273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7413,6 +8377,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6302485106155007993}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8515045547667358787}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &6015736091820414602 stripped
 GameObject:
@@ -7439,6 +8406,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &8515045547667358787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6015736091820414602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &6356796474931776560 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -7507,6 +8491,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2817799428749534824}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4714270857016200212}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &6138972860185955533 stripped
 GameObject:
@@ -7533,6 +8520,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &4714270857016200212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6138972860185955533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &6807705300629821047 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -7601,6 +8605,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7139904468663080234}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8918678107770740061}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &6085278957971138410 stripped
 GameObject:
@@ -7627,6 +8634,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &8918678107770740061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6085278957971138410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &6861392722812943824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -7691,6 +8715,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3207584115817114391}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4471143326130428393}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &6113981197118885139 stripped
 GameObject:
@@ -7717,6 +8744,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &4471143326130428393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6113981197118885139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &6886823163762579369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -7781,6 +8825,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8239681438754533467}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 151945947813758305}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &6255563895602890444 stripped
 GameObject:
@@ -7807,6 +8854,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &151945947813758305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6255563895602890444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &6745242791004806262 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -7875,6 +8939,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7608231608102007111}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2380885584159206116}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &6235014529635413641 stripped
 GameObject:
@@ -7901,6 +8968,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &2380885584159206116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6235014529635413641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &6759032239199171635 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -7965,6 +9049,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 724198938859002182}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9217094843456388943}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &4768868943843469387 stripped
 Transform:
@@ -7996,6 +9083,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &9217094843456388943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5288841854465274609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &5796394803609826180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8059,6 +9163,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2944474223824666988}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7403643087129776300}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &4786845695506830581 stripped
 Transform:
@@ -8090,6 +9197,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &7403643087129776300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270788679268994639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &5916648754799375187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8149,6 +9273,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1276813908528758221}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 876641094590551548}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &4612403043870004258 stripped
 Transform:
@@ -8180,6 +9307,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &876641094590551548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5424968990638018200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &6006429749509667694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8243,6 +9387,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6420050133045146513}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3503756182153343450}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &4703311174354279455 stripped
 Transform:
@@ -8274,6 +9421,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &3503756182153343450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5336295193433032357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &6081862011922132034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8333,6 +9497,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3051743697450885149}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9115720840065095653}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &5078294385721871155 stripped
 Transform:
@@ -8364,6 +9531,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &9115720840065095653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5562624466344759689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &6111453170251526968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8423,6 +9607,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2635281321313397962}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 145316110293398095}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &5102185680060634185 stripped
 Transform:
@@ -8454,6 +9641,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &145316110293398095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5585952806921637619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &6147383432325616412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8517,6 +9721,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2512705707477214467}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6417799901101814470}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &5138959267419419757 stripped
 Transform:
@@ -8548,6 +9755,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &6417799901101814470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483854467697487575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &6269983044757242768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8611,6 +9835,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5665851560610701163}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8694333933113992842}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &4980366340321043681 stripped
 Transform:
@@ -8642,6 +9869,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &8694333933113992842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5644699596288802395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &6284348705787090836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8701,6 +9945,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8370759751565792656}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7565318398913027182}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &4983471902648414437 stripped
 Transform:
@@ -8732,6 +9979,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &7565318398913027182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5648369241700690527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &6450820580996294763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8795,6 +10059,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8306915258420794686}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3177806380352334117}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &4670407772414662048 stripped
 GameObject:
@@ -8821,6 +10088,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &3177806380352334117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4670407772414662048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &5448035806001205018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -8889,6 +10173,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3607186792305583853}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2186891040906730784}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &4830065777326926337 stripped
 GameObject:
@@ -8915,6 +10202,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &2186891040906730784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4830065777326926337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &5209547215322214587 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -8983,6 +10287,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4708015252579084441}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 369672992353808416}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &4976106358672194197 stripped
 GameObject:
@@ -9009,6 +10316,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &369672992353808416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4976106358672194197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &5640053690418569263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -9073,6 +10397,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3893552415685231955}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2238377983050751756}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &5012814330974378465 stripped
 GameObject:
@@ -9099,6 +10426,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &2238377983050751756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5012814330974378465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &5682074605364659035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -9163,6 +10507,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 607660243325329948}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 140252469096369850}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &8259738162919787098 stripped
 Transform:
@@ -9194,6 +10541,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &140252469096369850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8785305389225873632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &7065569117675756213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9253,6 +10617,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5318138637720429176}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6238457879674315950}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &8075892280899616196 stripped
 Transform:
@@ -9284,6 +10651,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &6238457879674315950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8888000723739436926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &7236229287810107215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9343,6 +10727,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5219799943209909874}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6102574046274244777}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &8535135628548677694 stripped
 Transform:
@@ -9374,6 +10761,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &6102574046274244777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023300565494200964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &7293508853178467756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9437,6 +10841,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7343987894817441895}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3428555725686578456}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &8586424093560087261 stripped
 Transform:
@@ -9468,6 +10875,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &3428555725686578456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8962950049117075559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &7479219288707641897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9531,6 +10955,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5803014624418867864}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7512068211320184260}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &8490730887501354328 stripped
 Transform:
@@ -9562,6 +10989,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &7512068211320184260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9123996446042148834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &7515473652052670542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9625,6 +11069,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6923913222502822461}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3659915490735279288}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &8149588207999632773 stripped
 GameObject:
@@ -9651,6 +11098,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &3659915490735279288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8149588207999632773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &8814379993858023231 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -9715,6 +11179,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3043519043351776323}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8756768451247045030}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &8103716615378950683 stripped
 GameObject:
@@ -9741,6 +11208,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &8756768451247045030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8103716615378950683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &8880535511306305697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -9805,6 +11289,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1348369537769610061}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 71971520855886663}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &8342405645329732954 stripped
 GameObject:
@@ -9831,6 +11318,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &71971520855886663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8342405645329732954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &8686877504057102304 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -9895,6 +11399,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6786808799004305552}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6740338065194945690}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &8328095115509543866 stripped
 GameObject:
@@ -9921,6 +11428,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &6740338065194945690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328095115509543866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &8707858102016076032 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -10075,6 +11599,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3912062465956889110}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8865522567177526379}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &7088395801695347707 stripped
 Transform:
@@ -10106,6 +11633,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &8865522567177526379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7571917393327012161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &8126715891761269252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10165,6 +11709,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3653126225493981655}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6132446859616338146}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &7122796421697006965 stripped
 Transform:
@@ -10196,6 +11743,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &6132446859616338146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7607302389751363535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &8196248657747823636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10259,6 +11823,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3486020013421600453}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4301202813695970276}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &7178817151850736485 stripped
 Transform:
@@ -10290,6 +11857,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &4301202813695970276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7560304103872213471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &8216222564865905999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10353,6 +11937,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8504486158645210060}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5159549699952495708}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &6925206318361752126 stripped
 Transform:
@@ -10384,6 +11971,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &5159549699952495708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7732846414930012292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &8271778582656600454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10443,6 +12047,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6832211809980659607}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2707237393580498546}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &6977736476929945335 stripped
 Transform:
@@ -10474,6 +12081,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &2707237393580498546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7754696045833073741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &8275938020628925444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10533,6 +12157,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4412275896980291417}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3805012370126306945}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &6972888718875241333 stripped
 Transform:
@@ -10564,6 +12191,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &3805012370126306945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7750551970927309263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &8390845539837587882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10623,6 +12267,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 580899214536895859}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3374646280484193483}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &7380521414550296283 stripped
 Transform:
@@ -10654,6 +12301,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &3374646280484193483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7865309923018493025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &8405062808479959752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10717,6 +12381,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7772981924481515021}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6503901761914673200}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &7402348264648093113 stripped
 Transform:
@@ -10748,6 +12415,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &6503901761914673200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7922320114951943939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!1001 &8701531593120803371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10807,6 +12491,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9154383709393501434}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2552548405748191704}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &7032222236549453792 stripped
 GameObject:
@@ -10833,6 +12520,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &2552548405748191704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032222236549453792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &7700214667214474586 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -10901,6 +12605,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5263446124225726434}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1427597316722887406}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &7136851120312150224 stripped
 GameObject:
@@ -10927,6 +12634,23 @@ MonoBehaviour:
   antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &1427597316722887406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7136851120312150224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &7512251450924053098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -10991,6 +12715,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1383803474033202078}
+    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2502347776883064838}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!1 &7191969317599609584 stripped
 GameObject:
@@ -11017,6 +12744,23 @@ MonoBehaviour:
   antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
+--- !u!114 &2502347776883064838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7191969317599609584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 0}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 1
+    displayText: 
 --- !u!4 &7531374625942984778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}

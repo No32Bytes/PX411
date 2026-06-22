@@ -10,7 +10,8 @@ public class LockDoorEntity : DoorEntity
         public int optionalcount;
         public string optionalTargetItemEntityID;
     };
-    [SerializeField] Requirement[] requirements;
+    [SerializeField] private BaseCustomEventExecute eventExecute;
+    [SerializeField] private Requirement[] requirements;
     bool completedRequirements;
     private void Awake()
     {
@@ -47,7 +48,12 @@ public class LockDoorEntity : DoorEntity
     public override void EntityInteraction()
     {
         AllRequirementsCompleted();
-        if (completedRequirements)
-            ToggleDoorState();
+        if (eventExecute == null)
+        {
+            if (completedRequirements)
+                ToggleDoorState();
+        }
+        else
+            eventExecute.Execute();
     }
 }

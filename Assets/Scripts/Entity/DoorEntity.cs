@@ -19,6 +19,9 @@ public class DoorEntity : BaseEntity
         audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
         entityId = "door";
         usePhysics = false;
+
+        if (targetRotationClose > targetRotationOpen)
+            Debug.LogError("Error: targetRotationClose must be smaller than targetRotationOpen + " + transform.position + transform.name);
     }
 
     private void Start()
@@ -34,7 +37,8 @@ public class DoorEntity : BaseEntity
     private void Update()
     {
         float currenRotation = GetCurrentRotation();
-        if (currenRotation == targetRotation)
+        float absoluteDiff = Math.Abs(currenRotation) - Math.Abs(targetRotation);
+        if (currenRotation == targetRotation || Math.Abs(absoluteDiff) < clipDoorAngle)
         {
             audioSource.Stop();
             return;
@@ -43,13 +47,23 @@ public class DoorEntity : BaseEntity
         if (!audioSource.isPlaying)
             AudioUtil.PlaySoundEffect(doorMovementSound, audioSource);
 
+        bool getDifferentAngle = false;
+        if (!isOpen)
+            getDifferentAngle = true;
+        if (antiClockWise)
+            getDifferentAngle = !getDifferentAngle;
+
         float rotationChangeMax = targetRotation - currenRotation;
+        if (getDifferentAngle)
+        {
+            if (rotationChangeMax > 0)
+                rotationChangeMax = 360 - rotationChangeMax;
+            else
+                rotationChangeMax = 360 + rotationChangeMax;
+        }
 
-        if (isOpen && rotationChangeMax < 0)
+        if (!isOpen)
             rotationChangeMax *= -1;
-        if (!isOpen && rotationChangeMax > 0)
-            rotationChangeMax *= -1;
-
         if (antiClockWise)
             rotationChangeMax *= -1;
 
@@ -64,22 +78,28 @@ public class DoorEntity : BaseEntity
             return;
         }
 
+
         transform.Rotate(0, rotationChange, 0, Space.World);
 
-        float min = Mathf.Min(targetRotationClose, targetRotationOpen);
-        float max = Mathf.Max(targetRotationClose, targetRotationOpen);
+        float minValid = targetRotationOpen;
+        float maxValid = targetRotationClose;
+        if (minValid > maxValid)
+            (minValid, maxValid) = (maxValid, minValid);
 
-        float clamp = Mathf.Clamp(GetCurrentRotation(), min, max);
-        if (clamp == GetCurrentRotation() && antiClockWise && !isOpen)
-            SetRotation(targetRotation);
+        if (!antiClockWise)
+        {
+            if (GetCurrentRotation() > maxValid || GetCurrentRotation() < minValid)
+                SetRotation(targetRotation);
+        }
 
-
-        if (clamp != GetCurrentRotation() && !antiClockWise && !isOpen)
-            SetRotation(targetRotation);
-
+        if (antiClockWise)
+        {
+            minValid = 360 - minValid;
+            if (GetCurrentRotation() > minValid || GetCurrentRotation() < maxValid)
+                SetRotation(targetRotation);
+        }
 
     }
-
     private float GetCurrentRotation()
     {
         float currenRotation = transform.eulerAngles.y;

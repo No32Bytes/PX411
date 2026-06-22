@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     {
         pauseAction = new("Pause", togglePauseMenuCooldownS, InputHandlerCooldown.CooldownType.TimeUnscaled);
         toggleHandyUIAction = new("ToggleHandyUI", toggleHandyUIActionCooldownS, InputHandlerCooldown.CooldownType.TimeUnscaled);
+        playerRef.handyScreenUI.SetActive(false);
 
         EnableGamePlay();
         GlobalDataStore.GetAudioManager().PlaySoundTrackGroup(soundTrackBackgroundGroup);
@@ -53,8 +54,8 @@ public class Player : MonoBehaviour
             EnableGamePlay();
             GlobalDataStore.GetAudioManager().CurrentSoundTrackGroup = GlobalDataStore.GetStateManager().playerState.lastSoundTrackGroup;
             GlobalDataStore.GetAudioManager().CurrentSoundTrackId = GlobalDataStore.GetStateManager().playerState.lastSoundTrackId;
-            GlobalDataStore.GetAudioManager().SetCurrentSoundTrackTime(GlobalDataStore.GetStateManager().playerState.lastSoundTrackTime);
             GlobalDataStore.GetAudioManager().ReloadAfterManualSet();
+            GlobalDataStore.GetAudioManager().SetCurrentSoundTrackTime(GlobalDataStore.GetStateManager().playerState.lastSoundTrackTime);
         }
 
         if (toggleHandyUIAction.InteractWithCooldown())
