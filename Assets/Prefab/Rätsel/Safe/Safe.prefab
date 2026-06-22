@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TruheOffen
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9f31d88f2d5bda44831e0391d673168, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -513,7 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeButtonEntityBridge
   entityId: 
-  usePhysics: 1
+  usePhysics: 0
 --- !u!114 &4682171095145911251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,7 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeButtonEntityBridge
   entityId: 
-  usePhysics: 1
+  usePhysics: 0
 --- !u!114 &306630664333527670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -585,7 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeButtonEntityBridge
   entityId: 
-  usePhysics: 1
+  usePhysics: 0
 --- !u!114 &3884193700252174014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,7 +625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeButtonEntityBridge
   entityId: 
-  usePhysics: 1
+  usePhysics: 0
 --- !u!114 &6179767901485874122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,7 +661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeButtonEntityBridge
   entityId: 
-  usePhysics: 1
+  usePhysics: 0
 --- !u!114 &6287461761107548475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,7 +714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeButtonEntityBridge
   entityId: 
-  usePhysics: 1
+  usePhysics: 0
 --- !u!1 &4910037006073577635 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7122149654559838290, guid: 1d092715dcfe5be48b9ac224b290c2ac, type: 3}
@@ -729,7 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeButtonEntityBridge
   entityId: 
-  usePhysics: 1
+  usePhysics: 0
 --- !u!114 &2649297714486734563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,7 +769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeButtonEntityBridge
   entityId: 
-  usePhysics: 1
+  usePhysics: 0
 --- !u!114 &6167515715307041526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,7 +815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeButtonEntityBridge
   entityId: 
-  usePhysics: 1
+  usePhysics: 0
 --- !u!114 &3574957784871978599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,7 +851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeButtonEntityBridge
   entityId: 
-  usePhysics: 1
+  usePhysics: 0
 --- !u!114 &2974569024411769176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,7 +887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeButtonEntityBridge
   entityId: 
-  usePhysics: 1
+  usePhysics: 0
 --- !u!114 &3451728671858998080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -919,7 +923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeButtonEntityBridge
   entityId: 
-  usePhysics: 1
+  usePhysics: 0
 --- !u!114 &7937711235857007835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955,7 +959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeButtonEntityBridge
   entityId: 
-  usePhysics: 1
+  usePhysics: 0
 --- !u!114 &6773599576533029143
 MonoBehaviour:
   m_ObjectHideFlags: 0
