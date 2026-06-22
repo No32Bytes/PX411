@@ -16,14 +16,14 @@ public class StateManager
         public PlayerReferences playerRef;
         public PlayerItemHandler playerItemHandler;
         public PlayerLook playerLook;
-        public string lastSoundTrackGroup; 
+        public string lastSoundTrackGroup;
         public string lastSoundTrackId;
         public float lastSoundTrackTime;
     };
     public class BossState
     {
         public string bossType;
-        public GameObject boss;  
+        public GameObject boss;
     };
     public MenuMangerState menuManger = new();
     public PlayerState playerState = new();

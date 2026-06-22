@@ -51,9 +51,9 @@ public class TeacherMovement : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
-        agent.angularSpeed = rotationSpeed * 50f; 
+        agent.angularSpeed = rotationSpeed * 50f;
         agent.acceleration = 20f;
-        agent.updateRotation = true; 
+        agent.updateRotation = true;
 
         var stateManager = GlobalDataStore.GetStateManager();
         if (stateManager != null && stateManager.playerState != null)
@@ -96,7 +96,7 @@ public class TeacherMovement : MonoBehaviour
             isReturning = false;
             isChasing = true;
             loseTimer = 0f;
-            timer = timeUntilChase; 
+            timer = timeUntilChase;
             returnPoint = transform.position;
         }
 
@@ -234,7 +234,7 @@ public class TeacherMovement : MonoBehaviour
         isCrossingLink = true;
 
         OffMeshLinkData data = agent.currentOffMeshLinkData;
-        Vector3 startPos = data.startPos; 
+        Vector3 startPos = data.startPos;
         Vector3 endPos = data.endPos;
 
         startPos.y = transform.position.y;
@@ -249,7 +249,7 @@ public class TeacherMovement : MonoBehaviour
         while (Vector3.Distance(transform.position, startPos) > 0.1f)
         {
             transform.position = Vector3.MoveTowards(transform.position, startPos, currentSpeed * Time.deltaTime);
-            
+
             Vector3 direction = (startPos - transform.position).normalized;
             direction.y = 0;
             if (direction != Vector3.zero)
@@ -257,8 +257,8 @@ public class TeacherMovement : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             }
-            
-            yield return null; 
+
+            yield return null;
         }
 
         transform.position = startPos;
@@ -266,7 +266,7 @@ public class TeacherMovement : MonoBehaviour
         while (Vector3.Distance(transform.position, endPos) > 0.05f)
         {
             transform.position = Vector3.MoveTowards(transform.position, endPos, currentSpeed * Time.deltaTime);
-            
+
             Vector3 direction = (endPos - transform.position).normalized;
             direction.y = 0;
             if (direction != Vector3.zero)
@@ -274,19 +274,19 @@ public class TeacherMovement : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             }
-            
-            yield return null; 
+
+            yield return null;
         }
 
         transform.position = endPos;
         agent.Warp(endPos);
 
         agent.CompleteOffMeshLink();
-        
+
         agent.updatePosition = true;
         agent.updateRotation = true;
         agent.isStopped = false;
-        
+
         isCrossingLink = false;
 
         if (isChasing)

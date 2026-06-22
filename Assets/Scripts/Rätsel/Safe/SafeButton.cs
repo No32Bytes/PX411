@@ -12,7 +12,7 @@ public class SafeButton : MonoBehaviour
 
     public void TriggerButton()
     {
-        if (safeMainScript == null) 
+        if (safeMainScript == null)
         {
             return;
         }

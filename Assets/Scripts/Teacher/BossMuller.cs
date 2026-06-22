@@ -435,7 +435,7 @@ public class BossMuller : EnemeyEntity
         {
             if (!ball.InUse || !ball.CanBallDamage())
                 return;
-            ball.transform.Translate(throwSpeed * Time.deltaTime * ball.throwDirection,Space.World);
+            ball.transform.Translate(throwSpeed * Time.deltaTime * ball.throwDirection, Space.World);
         }
     }
 

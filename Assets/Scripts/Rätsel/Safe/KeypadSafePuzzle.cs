@@ -33,10 +33,10 @@ public class KeypadSafePuzzle : MonoBehaviour
 
     private string[] playerColorInputs = new string[4];
     private int[] playerNumberInputs = new int[4];
-    
+
     private int colorIndex = 0;
     private int numberIndex = 0;
-    
+
     private bool colorsValidated = false;
     private bool isUnlocked = false;
 
