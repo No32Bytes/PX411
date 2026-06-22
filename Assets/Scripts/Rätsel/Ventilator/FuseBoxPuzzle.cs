@@ -39,15 +39,6 @@ public class FuseBoxPuzzle : MonoBehaviour
             if (requiredLevers[i].leverColor.ToLower() == color.ToLower())
             {
                 currentPositions[i] = position;
-                
-                if (position == requiredLevers[i].requiredPosition)
-                {
-                    Debug.Log("<color=green>[Rätsel-Check]</color> Hebel <b>" + color + "</b> steht jetzt in der <b>RICHTIGEN</b> Position!");
-                }
-                else
-                {
-                    Debug.Log("<color=orange>[Rätsel-Check]</color> Hebel <b>" + color + "</b> wurde bewegt, ist aber in dieser Position noch <b>FALSCH</b>.");
-                }
                 break;
             }
         }
@@ -71,8 +62,6 @@ public class FuseBoxPuzzle : MonoBehaviour
     private void SolvePuzzle()
     {
         isSolved = true;
-
-        Debug.Log("<color=green><b>[Rätsel-Erfolg] ALLE HEBEL STEHEN KORREKT! Das Rätsel ist gelöst!</b></color>");
 
         AudioSource sucess = AudioUtil.CreateSoundEffectAudioSource(gameObject);
         AudioUtil.PlaySoundEffect(powerOnSound, sucess);
