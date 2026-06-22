@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0728874285a43e4ea59a0d6e6516d0b, type: 3}
   m_Name: OpenSafe
   m_EditorClassIdentifier: Assembly-CSharp::SimpleSoundEffect
-  audioClip: {fileID: 0}
-  volume: 1
+  audioClip: {fileID: 8300000, guid: 357265a64eb06c14e8a9549cd3d1a40d, type: 3}
+  volume: 0.5
   pitch:
     min: 1
     max: 1

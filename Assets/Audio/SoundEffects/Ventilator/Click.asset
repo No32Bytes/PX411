@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0728874285a43e4ea59a0d6e6516d0b, type: 3}
-  m_Name: Button
+  m_Name: Click
   m_EditorClassIdentifier: Assembly-CSharp::SimpleSoundEffect
-  audioClip: {fileID: 8300000, guid: d68fbd1c230781749a94922506a86e5a, type: 3}
-  volume: 0.3
+  audioClip: {fileID: 0}
+  volume: 1
   pitch:
     min: 1
     max: 1

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0728874285a43e4ea59a0d6e6516d0b, type: 3}
   m_Name: Success
   m_EditorClassIdentifier: Assembly-CSharp::SimpleSoundEffect
-  audioClip: {fileID: 0}
-  volume: 1
+  audioClip: {fileID: 8300000, guid: 9d432a6e47e6bf946b67e51472d7ed26, type: 3}
+  volume: 0.5
   pitch:
     min: 1
     max: 1
