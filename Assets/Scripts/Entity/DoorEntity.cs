@@ -137,7 +137,6 @@ public class DoorEntity : BaseEntity
 
     public void DoorClose()
     {
-
         targetRotation = targetRotationClose;
         if (targetRotation == 0)
             targetRotation = 360;

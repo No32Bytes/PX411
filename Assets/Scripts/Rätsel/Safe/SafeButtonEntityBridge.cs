@@ -9,7 +9,7 @@ public class SafeButtonEntityBridge : BaseEntity
         targetButton = GetComponent<SafeButton>();
         if (targetButton == null)
         {
-            
+
         }
     }
 
