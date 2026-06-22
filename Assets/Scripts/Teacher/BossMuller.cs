@@ -11,6 +11,7 @@ public class BossMuller : EnemeyEntity
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float chaseDistance = 25f;
     [SerializeField] private float startFightDistance = 100f;
+    [SerializeField] private float rotationSpeed = 20f;
     [Header("Sound")]
     [SerializeField] private BaseSoundEffect damageSound;
     [SerializeField] private BaseSoundEffect startSound;
@@ -21,6 +22,8 @@ public class BossMuller : EnemeyEntity
     [SerializeField] private BaseSoundEffect AcidThrowSound;
     [SerializeField] private SoundTrack bossMusic;
     [SerializeField] private float talkSoundDelay = 1f;
+    [SerializeField] private GameObject bossModell;
+    public Transform ballOfDoomSpawn;
     private Vector3 gravityVector;
 
     private PlayerMovement playerMovement;
@@ -42,12 +45,15 @@ public class BossMuller : EnemeyEntity
     private int chargeStep;
     [SerializeField] private int chargeStepAmount = 10;
     [SerializeField] private float throwSpeed = 0.05f;
-
     //Attacks Timer
     private float startTimer;
     private bool starttiming;
     [SerializeField] private float startTimerMax = 2f;
     private readonly List<AudioSource> audioSourceStack = new();
+    [Header("AnimationParameters")]
+    [SerializeField] private AnimationParamterInfo throwTrigger;
+    [SerializeField] private AnimationParamterInfo stompTrigger;
+    [SerializeField] private AnimationParamterInfo walkBool;
 
     enum SoundState
     {
@@ -60,11 +66,12 @@ public class BossMuller : EnemeyEntity
     };
     bool fightStarted;
     bool fightStartedPlayed;
-    bool throwAcidSoundPlay;
     SoundState soundState;
     float talkSoundLast;
     private string preBossSoundTrackGroup;
     private bool startMusic;
+    private Camera playerCamera;
+    private bool lookAtPlayer;
 
     private void Awake()
     {
@@ -72,7 +79,6 @@ public class BossMuller : EnemeyEntity
         GlobalDataStore.GetStateManager().bossState.boss = gameObject;
         for (int i = 0; i < 3; i++)
         {
-
             AudioSource audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
             audioSource.spatialBlend = 0.5f;
             audioSource.rolloffMode = AudioRolloffMode.Linear;
@@ -85,10 +91,12 @@ public class BossMuller : EnemeyEntity
         startMusic = false;
         healthBar.SetOnDeathCallback(OnDeath);
         soundState = SoundState.None;
+        lookAtPlayer = true;
     }
 
     private void Start()
     {
+        playerCamera = GlobalDataStore.GetStateManager().playerState.playerRef.playerCamera;
         playerPlayer = GlobalDataStore.GetStateManager().playerState.player;
         playerMovement = playerPlayer.GetComponent<PlayerMovement>();
         overlayMullerUI.worldCamera = GlobalDataStore.GetStateManager().playerState.playerRef.playerOverlayCamera;
@@ -107,6 +115,8 @@ public class BossMuller : EnemeyEntity
         if (isGroundedCheck && gravityVector.y < 0)
             gravityVector.y = 0;
         characterController.Move(gravityVector * Time.deltaTime);
+
+
     }
 
     private void FixedUpdate()
@@ -125,6 +135,7 @@ public class BossMuller : EnemeyEntity
             startFight = true;
         }
 
+        LookAtPlayer();
         //states for the attacks, every frame active, only activated by using the corresponding activate fuctions
         AttackGround();
         ChargeAttack();
@@ -152,7 +163,6 @@ public class BossMuller : EnemeyEntity
             fightStarted = true;
     }
 
-
     private void HandleSoundState()
     {
         if (AudioSourceAllPlaying())
@@ -172,9 +182,6 @@ public class BossMuller : EnemeyEntity
                 break;
             case SoundState.Talk:
                 toPlay = talkSound;
-                break;
-            case SoundState.AcidThrow:
-                toPlay = AcidThrowSound;
                 break;
             case SoundState.None:
             default:
@@ -273,25 +280,28 @@ public class BossMuller : EnemeyEntity
             return;
 
         }
-        //Debug.Log("GroundAttack");
+        Debug.Log("GroundAttack");
         attackGroundDidDamage = false;
         attackGroundTimer = attackGroundTimerStart;
     }
     //ground attack; ground attack state
     public void AttackGround()
     {
-        if (soundState != SoundState.None)
-            return;
-
         if (attackGroundTimer == attackGroundTimerStart)
         {
             soundState = SoundState.Stomp;
-            attackGround.Play();
+            stompTrigger.SetTrigger();
         }
 
         attackGroundTimer -= Time.fixedDeltaTime;
     }
 
+    public void AttackGroundAnimation()
+    {
+        attackGround.Play();
+        AudioUtil.PlaySoundEffect(stompSound, AudioSourceGetFree());
+        stompTrigger.ResetTrigger();
+    }
 
     //Charge attack; activate the charge attack state
     public void ChargeAttackActivate()
@@ -305,7 +315,7 @@ public class BossMuller : EnemeyEntity
 
         attackChargeTimer = attackChargeTimerStart;
         chargeStep = 0;
-        //Debug.Log("ChargeAttack");
+        Debug.Log("ChargeAttack");
     }
     //Charge attack; charge attack state
     public void ChargeAttack()
@@ -316,7 +326,9 @@ public class BossMuller : EnemeyEntity
         attackChargeTimer -= Time.fixedDeltaTime;
         if (attackChargeTimer > 3f)
         {
-            //Debug.Log(attackChargeTimer);
+            Debug.Log(attackChargeTimer);
+            lookAtPlayer = false;
+            walkBool.ValueBool = true;
             chargeState = false;
         }
         else if (attackChargeTimer > 0f && chargeStep < chargeStepAmount)
@@ -336,10 +348,27 @@ public class BossMuller : EnemeyEntity
         {
             if (attackChargeTimer >= 0)
                 attackChargeTimer = 0;
+            walkBool.ValueBool = false;
             chargeState = false;
+            lookAtPlayer = true;
             chargeRichtung = Vector3.zero;
         }
 
+    }
+
+    public void LookAtPlayer()
+    {
+        if (!lookAtPlayer)
+            return;
+
+        Vector3 dir = (playerCamera.transform.position - bossModell.transform.position).normalized;
+        dir.y = 0;
+
+        if (dir != Vector3.zero)
+        {
+            Quaternion rot = Quaternion.LookRotation(dir);
+            bossModell.transform.rotation = Quaternion.Slerp(bossModell.transform.rotation, rot, rotationSpeed * Time.fixedDeltaTime);
+        }
     }
 
     //Charge attack; collision with player and damage
@@ -362,8 +391,28 @@ public class BossMuller : EnemeyEntity
 
     public void AcidAttackActivate()
     {
-        //Debug.Log("AcidAttack");
-        Vector3 playerPosition = playerMovement.MoveTransform.position;
+        throwTrigger.SetTrigger();
+    }
+
+    public void DoGroundDamage(GameObject other)
+    {
+        if (attackGroundDidDamage)
+            return;
+        if (!other.TryGetComponent(out Player player))
+            return;
+
+        if (player.GetEntityId() == playerPlayer.GetEntityId())
+        {
+            attackGroundDidDamage = true;
+            player.Damage(groundDamage);
+        }
+
+    }
+
+    //Acid attack;  the acid attack state
+    public void AcidAttackAnimation()
+    {
+        Vector3 playerPosition = playerCamera.transform.position;
 
         throwDirections.Clear();
         Vector3 throwDirection;
@@ -389,9 +438,9 @@ public class BossMuller : EnemeyEntity
         foreach (var ball in balls)
         {
             if (ball.InUse)
-                return;
+                continue;
             if (ball.CanBallDamage())
-                return;
+                continue;
 
             if (throwDirections.Count == 0)
                 break;
@@ -401,36 +450,13 @@ public class BossMuller : EnemeyEntity
             throwDirections.RemoveAt(0);
         }
 
-        throwAcidSoundPlay = true;
-    }
 
-    public void DoGroundDamage(GameObject other)
-    {
-        if (attackGroundDidDamage)
-            return;
-        if (!other.TryGetComponent(out Player player))
-            return;
-
-        if (player.GetEntityId() == playerPlayer.GetEntityId())
-        {
-            attackGroundDidDamage = true;
-            player.Damage(groundDamage);
-        }
+        AudioUtil.PlaySoundEffect(AcidThrowSound, AudioSourceGetFree());
+        throwTrigger.ResetTrigger();
 
     }
-
-    //Acid attack;  the acid attack state
     public void AcidAttack()
     {
-        if (soundState != SoundState.None)
-            return;
-
-        if (throwAcidSoundPlay)
-        {
-            throwAcidSoundPlay = false;
-            soundState = SoundState.AcidThrow;
-        }
-
         foreach (BallOfDoom ball in balls)
         {
             if (!ball.InUse || !ball.CanBallDamage())

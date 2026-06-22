@@ -6,7 +6,6 @@ public class DoorEntity : BaseEntity
     [SerializeField] private float targetRotationClose;
     [SerializeField] private float targetRotationOpen;
     [SerializeField] private float rotationSpeed = 100f; // Tipp: Höherer Wert, da Grad pro Sekunde gesucht sind
-    [SerializeField] private bool antiClockWise = false;
     [SerializeField] private bool isOpen = false;
     public bool IsOpen => isOpen;
     [SerializeField] private BaseSoundEffect doorMovementSound;
@@ -14,7 +13,7 @@ public class DoorEntity : BaseEntity
     private float targetRotation;
     private readonly float clipDoorAngle = 0.05f;
 
-    private void Awake()
+    protected void Awake()
     {
         audioSource = AudioUtil.CreateSoundEffectAudioSource(gameObject);
         entityId = "door";

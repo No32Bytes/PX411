@@ -9,15 +9,17 @@ public class LockDoorEntity : DoorEntity
         public ItemData itemData;
         public int optionalcount;
         public string optionalTargetItemEntityID;
+        public string requireFlag;
     };
     [SerializeField] private BaseCustomEventExecute eventExecute;
     [SerializeField] private Requirement[] requirements;
     bool completedRequirements;
-    private void Awake()
+    new private void Awake()
     {
         entityId = "door";
         usePhysics = false;
         completedRequirements = false;
+        base.Awake();
     }
 
     private void AllRequirementsCompleted()
@@ -27,6 +29,13 @@ public class LockDoorEntity : DoorEntity
 
         foreach (Requirement req in requirements)
         {
+            if (!string.IsNullOrEmpty(req.requireFlag))
+            {
+                if (GlobalDataStore.GetInventory().flag.Contains(req.requireFlag))
+                    continue;
+                return;
+            }
+
             if (!GlobalDataStore.GetInventory().GetInventoryItem(req.itemData.internalName, out InventoryItem item))
                 return;
 

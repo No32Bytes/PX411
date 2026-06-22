@@ -12,6 +12,12 @@ public class Inventory
 {
     [SerializeField] private List<InventoryItem> collectableInventory = new();
     [SerializeField] private List<InventoryItem> storeableInventory = new();
+    public List<string> flag = new();
+    public void AddFlag(string flagStr)
+    {
+        if (!flag.Contains(flagStr))
+            flag.Add(flagStr);
+    }
     private static bool HasItemBeenCollectedInInventory(List<InventoryItem> targetInventory, string internalName, string itemEntityId)
     {
         int index = targetInventory.FindIndex((item) => item.InternalName == internalName);

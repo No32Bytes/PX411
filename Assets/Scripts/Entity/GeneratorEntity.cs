@@ -40,6 +40,7 @@ public class GeneratorEntity : BaseEntity
     [Header("Visuals")]
     [SerializeField] private GameObject brokenVisuals;
     [SerializeField] private GameObject repairedVisuals;
+    [SerializeField] private string powerID;
 
     private AudioSource generatorAudioSource;
     private bool IsRepaired => data.isRepaired;
@@ -169,6 +170,7 @@ public class GeneratorEntity : BaseEntity
             EntityInformationView.SetInteractInfo(gameObject, "Reparieren");
             return;
         }
+        GlobalDataStore.GetInventory().AddFlag(powerID);
         EntityInformationView.SetInteractInfo(gameObject, "", false);
         if (generatorAudioSource.isPlaying)
             return;
