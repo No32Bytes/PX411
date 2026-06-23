@@ -144,7 +144,7 @@ public class TeacherMovement : MonoBehaviour
 
                 if (playerPlayer != null)
                 {
-                    playerPlayer.Damage(damagePerSecond);
+                    playerPlayer.Damage(damagePerSecond * Time.deltaTime);
                 }
             }
             else
