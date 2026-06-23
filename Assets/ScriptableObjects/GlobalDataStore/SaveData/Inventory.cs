@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class InventoryConfig
 {
-    public static readonly int MaxInventorySize = 10;
+    public static readonly int MaxInventorySize = 20;
 }
 
 [Serializable]

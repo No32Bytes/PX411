@@ -26,6 +26,6 @@ MonoBehaviour:
     throwVelocity: 0
     attackSoundEffect: {fileID: 11400000, guid: e748eb78a8b6a14419e95b3e4960d686, type: 2}
     throwSoundEffect: {fileID: 11400000, guid: 0ccf2c785e0f8aa4aa071bd43796321c, type: 2}
-    weaponDamage: 20
+    weaponDamage: 12
   minDamageVelocity: 30
   collisionDamage: 15

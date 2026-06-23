@@ -124,6 +124,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4770811996745808, guid: bca594c573c90ca418251c16138a40ad, type: 3}
   m_PrefabInstance: {fileID: 3675732082347312733}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &411460374
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1288947806861617954, guid: fceb1312b342ebe48af4d04c7a805134, type: 3}
+      propertyPath: m_Name
+      value: BossMullerDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700066390219825039, guid: fceb1312b342ebe48af4d04c7a805134, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.19459
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700066390219825039, guid: fceb1312b342ebe48af4d04c7a805134, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0177
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700066390219825039, guid: fceb1312b342ebe48af4d04c7a805134, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.02762
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700066390219825039, guid: fceb1312b342ebe48af4d04c7a805134, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700066390219825039, guid: fceb1312b342ebe48af4d04c7a805134, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700066390219825039, guid: fceb1312b342ebe48af4d04c7a805134, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700066390219825039, guid: fceb1312b342ebe48af4d04c7a805134, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700066390219825039, guid: fceb1312b342ebe48af4d04c7a805134, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700066390219825039, guid: fceb1312b342ebe48af4d04c7a805134, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700066390219825039, guid: fceb1312b342ebe48af4d04c7a805134, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1983715445089199700, guid: fceb1312b342ebe48af4d04c7a805134, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: fceb1312b342ebe48af4d04c7a805134, type: 3}
 --- !u!1001 &496758707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -295,7 +355,7 @@ Light:
   serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -485,6 +545,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1701829394085909098, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
+      propertyPath: runMultiplicator
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4558536933535554284, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -492,6 +556,18 @@ PrefabInstance:
     - target: {fileID: 4558536933535554284, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282268218314828477, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
+      propertyPath: m_Range
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282268218314828477, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
+      propertyPath: m_Intensity
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282268218314828477, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5947897615398049941, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
       propertyPath: m_Name
@@ -1019,5 +1095,6 @@ SceneRoots:
   - {fileID: 1919167745}
   - {fileID: 8392196122066202655}
   - {fileID: 6765675245155616236}
+  - {fileID: 411460374}
   - {fileID: 496758707}
   - {fileID: 1699379474}

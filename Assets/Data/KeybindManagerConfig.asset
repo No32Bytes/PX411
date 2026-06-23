@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03844929fc98104090d9c985cf48892, type: 3}
   m_Name: KeybindManagerConfig
   m_EditorClassIdentifier: Assembly-CSharp::KeybindManagerConfig
-  showOnlyEnabled: 0
+  showOnlyEnabled: 1
   activeActionMaps:
-  - Player
+  - Handy
   configData:
   - actionName: Move
     relativeBindingIndex: 0
@@ -91,7 +91,7 @@ MonoBehaviour:
   - actionName: Crouch
     relativeBindingIndex: 1
     displayName: Crouch
-    showKeybind: 1
+    showKeybind: 0
   - actionName: Jump
     relativeBindingIndex: 0
     displayName: Jump
@@ -270,7 +270,7 @@ MonoBehaviour:
     showKeybind: 0
   - actionName: ToggleHandyUI
     relativeBindingIndex: 0
-    displayName: Toggle Handy Screen
+    displayName: Open HandyScreen
     showKeybind: 1
   - actionName: ToggleHandy
     relativeBindingIndex: 0
