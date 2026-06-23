@@ -2438,6 +2438,10 @@ PrefabInstance:
       value: -0.082286835
       objectReference: {fileID: 0}
     - target: {fileID: 2296807018257542294, guid: 374f6fbf39b911b4399701867177ad3a, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296807018257542294, guid: 374f6fbf39b911b4399701867177ad3a, type: 3}
       propertyPath: eyePosition
       value: 
       objectReference: {fileID: 828090046514212581}
@@ -2448,6 +2452,10 @@ PrefabInstance:
     - target: {fileID: 2296807018257542294, guid: 374f6fbf39b911b4399701867177ad3a, type: 3}
       propertyPath: loseDistance
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296807018257542294, guid: 374f6fbf39b911b4399701867177ad3a, type: 3}
+      propertyPath: rotationSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2296807018257542294, guid: 374f6fbf39b911b4399701867177ad3a, type: 3}
       propertyPath: timeUntilChase
@@ -2916,6 +2924,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 8739098743535401342}
     m_Modifications:
     - target: {fileID: 631359675220495850, guid: 7cfd6f799928daf4aaa30c4c2e4e0118, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 631359675220495850, guid: 7cfd6f799928daf4aaa30c4c2e4e0118, type: 3}
       propertyPath: eyePosition
       value: 
       objectReference: {fileID: 7330883269302884766}
@@ -2926,6 +2938,10 @@ PrefabInstance:
     - target: {fileID: 631359675220495850, guid: 7cfd6f799928daf4aaa30c4c2e4e0118, type: 3}
       propertyPath: loseDistance
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 631359675220495850, guid: 7cfd6f799928daf4aaa30c4c2e4e0118, type: 3}
+      propertyPath: rotationSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 631359675220495850, guid: 7cfd6f799928daf4aaa30c4c2e4e0118, type: 3}
       propertyPath: timeUntilChase
@@ -4092,6 +4108,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4002433570085390238, guid: 195a6d11fa7fc3940aa810bab1880f30, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002433570085390238, guid: 195a6d11fa7fc3940aa810bab1880f30, type: 3}
       propertyPath: eyePosition
       value: 
       objectReference: {fileID: 4170980057292541993}
@@ -4102,6 +4122,10 @@ PrefabInstance:
     - target: {fileID: 4002433570085390238, guid: 195a6d11fa7fc3940aa810bab1880f30, type: 3}
       propertyPath: loseDistance
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002433570085390238, guid: 195a6d11fa7fc3940aa810bab1880f30, type: 3}
+      propertyPath: rotationSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4002433570085390238, guid: 195a6d11fa7fc3940aa810bab1880f30, type: 3}
       propertyPath: timeUntilChase
