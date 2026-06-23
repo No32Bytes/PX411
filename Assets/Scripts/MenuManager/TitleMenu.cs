@@ -12,8 +12,7 @@ public class TitleMenu : MonoBehaviour
     public void StartButtonOnClick()
     {
         GlobalDataStore.GetStateManager().menuManger.TitleMenuOpen = false;
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene("Scenes/Test");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void QuitButtonOnClick()
     {

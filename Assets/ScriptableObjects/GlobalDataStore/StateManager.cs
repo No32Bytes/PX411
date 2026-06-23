@@ -8,6 +8,7 @@ public class StateManager
         public bool TitleMenuOpen = true;
         public int MenuMangerScenceId = 0;
         public Camera menuOverlayCameraTarget;
+        public bool loadIntoGameScenceDirect = false;
     };
     public class PlayerState
     {

@@ -30,6 +30,13 @@ public class MenuManager : MonoBehaviour
     {
         GlobalDataStore.GetAudioManager().PlaySoundTrackGroup(mainMenuThemeGroup);
         GlobalDataStore.Instance.settingsManager.LoadVolumeSettings();
+
+        if (GlobalDataStore.GetStateManager().menuManger.loadIntoGameScenceDirect)
+        {
+            GlobalDataStore.GetStateManager().menuManger.loadIntoGameScenceDirect = false;
+            titleMenuRef.GetComponent<TitleMenu>().StartButtonOnClick();
+            return;
+        }
     }
     public void ForceAwake()
     {

@@ -56,7 +56,7 @@ public class PlayerLook : MonoBehaviour
     {
         Ray raycast = new(playerRef.playerCamera.transform.position, playerRef.playerCamera.transform.forward);
         GameObject hitObject = null;
-        if (Physics.Raycast(raycast, out RaycastHit raycastHit, Mathf.Infinity, playerInteractionLayerMask) || !(raycastHit.distance < maxItemInteractionDistance))
+        if (Physics.Raycast(raycast, out RaycastHit raycastHit, Mathf.Infinity, playerInteractionLayerMask) && (raycastHit.distance < maxItemInteractionDistance))
         {
             hitObject = raycastHit.transform.gameObject;
             HandlePlayerLookingRaycastHit(raycastHit);

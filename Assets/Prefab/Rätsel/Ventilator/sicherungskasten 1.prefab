@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5492238488470252705}
   - component: {fileID: 3464598882342881624}
   - component: {fileID: 5312996691547548069}
+  - component: {fileID: 8988977086881541092}
   m_Layer: 0
   m_Name: Hebel_2
   m_TagString: Untagged
@@ -28,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222166196497561904}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.30364868, y: 0, z: -0, w: 0.9527841}
+  m_LocalRotation: {x: -0.30365065, y: 0, z: 0, w: 0.95278347}
   m_LocalPosition: {x: -0, y: 1.3613739, z: -0.10422492}
   m_LocalScale: {x: 100, y: 99.99999, z: 99.99999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6121699178988855343}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -35.354, y: 0, z: 0}
 --- !u!33 &9043915199317190092
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -104,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6049cde8fa28ff041a8e7960f8d652b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LeverButton
-  mainCabinet: {fileID: 0}
+  mainCabinet: {fileID: 3674014997043193404}
   leverColor: blue
 --- !u!114 &5312996691547548069
 MonoBehaviour:
@@ -120,6 +121,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LeverEntityBridge
   entityId: 
   usePhysics: 0
+--- !u!65 &8988977086881541092
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222166196497561904}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.002999999, y: 0.0030000026, z: 0.016500004}
+  m_Center: {x: -5.23869e-10, y: -8.8009966e-10, z: 0.008250002}
 --- !u!1 &1686470298850981553
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +153,7 @@ GameObject:
   - component: {fileID: 6121699178988855343}
   - component: {fileID: 3674014997043193404}
   - component: {fileID: 9157225855767836851}
+  - component: {fileID: 5598235878285243009}
   m_Layer: 0
   m_Name: sicherungskasten 1
   m_TagString: Untagged
@@ -146,7 +169,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686470298850981553}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -14.788, y: 8.395, z: 11.111012}
   m_LocalScale: {x: 0.20000002, y: 0.2, z: 0.20000002}
   m_ConstrainProportionsScale: 0
@@ -174,9 +197,9 @@ MonoBehaviour:
   - leverColor: red
     requiredPosition: 0
   - leverColor: blue
-    requiredPosition: 2
-  - leverColor: green
     requiredPosition: 1
+  - leverColor: green
+    requiredPosition: 2
   targetToDeactivate: {fileID: 0}
   audioSource: {fileID: 9157225855767836851}
   leverClickSound: {fileID: 11400000, guid: eec397ef843492b47af16f1030fb5430, type: 2}
@@ -278,6 +301,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!64 &5598235878285243009
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686470298850981553}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &3206574915095552000
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,6 +516,7 @@ GameObject:
   - component: {fileID: 4074334062153053629}
   - component: {fileID: 8466325972746242248}
   - component: {fileID: 8167305625005105018}
+  - component: {fileID: 8133584145087174174}
   m_Layer: 0
   m_Name: Hebel_1
   m_TagString: Untagged
@@ -486,13 +532,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4788055261745503952}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.30364868, y: 0, z: -0, w: 0.9527841}
+  m_LocalRotation: {x: -0.30365065, y: 0, z: 0, w: 0.95278347}
   m_LocalPosition: {x: 0.7999999, y: 1.3613739, z: -0.10422492}
   m_LocalScale: {x: 100, y: 99.99999, z: 99.99999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6121699178988855343}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -35.354, y: 0, z: 0}
 --- !u!33 &7410288802988052787
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -562,7 +608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6049cde8fa28ff041a8e7960f8d652b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LeverButton
-  mainCabinet: {fileID: 0}
+  mainCabinet: {fileID: 3674014997043193404}
   leverColor: red
 --- !u!114 &8167305625005105018
 MonoBehaviour:
@@ -578,6 +624,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LeverEntityBridge
   entityId: 
   usePhysics: 0
+--- !u!65 &8133584145087174174
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4788055261745503952}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.002999999, y: 0.0030000026, z: 0.016500004}
+  m_Center: {x: -0.000000060128514, y: -8.8009966e-10, z: 0.008250002}
 --- !u!1 &7540068798308495989
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +872,7 @@ GameObject:
   - component: {fileID: 5276080921764692336}
   - component: {fileID: 845465267052952224}
   - component: {fileID: 6525841550774629363}
+  - component: {fileID: 2268891509162890841}
   m_Layer: 0
   m_Name: Hebel_3
   m_TagString: Untagged
@@ -820,13 +888,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8743598233869291455}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.30364868, y: 0, z: -0, w: 0.9527841}
+  m_LocalRotation: {x: -0.30365065, y: 0, z: 0, w: 0.95278347}
   m_LocalPosition: {x: -0.7999999, y: 1.3613739, z: -0.10422492}
   m_LocalScale: {x: 100, y: 99.99999, z: 99.99999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6121699178988855343}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -35.354, y: 0, z: 0}
 --- !u!33 &4272104869521497759
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -910,5 +978,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6049cde8fa28ff041a8e7960f8d652b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LeverButton
-  mainCabinet: {fileID: 0}
+  mainCabinet: {fileID: 3674014997043193404}
   leverColor: green
+--- !u!65 &2268891509162890841
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8743598233869291455}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.002999999, y: 0.0030000026, z: 0.016500004}
+  m_Center: {x: -5.23869e-10, y: -8.8009966e-10, z: 0.008250002}

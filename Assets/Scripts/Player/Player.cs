@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
         pauseAction = new("Pause", togglePauseMenuCooldownS, InputHandlerCooldown.CooldownType.TimeUnscaled);
         toggleHandyUIAction = new("ToggleHandyUI", toggleHandyUIActionCooldownS, InputHandlerCooldown.CooldownType.TimeUnscaled);
         playerRef.handyScreenUI.SetActive(false);
+        playerRef.deathScreenUI.SetActive(isDead);
 
         EnableGamePlay();
         GlobalDataStore.GetAudioManager().PlaySoundTrackGroup(soundTrackBackgroundGroup);
@@ -126,7 +127,10 @@ public class Player : MonoBehaviour
 
         audioSource.Stop();
         AudioUtil.PlaySoundEffect(deathSound, audioSource);
+
+        EnableHandyScreenUI();
         isDead = true;
+        playerRef.deathScreenUI.SetActive(isDead);
     }
 
     public void Damage(float damageAmount, bool playSound = true)

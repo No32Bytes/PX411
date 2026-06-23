@@ -10,6 +10,7 @@ public class TeacherMovement : MonoBehaviour
     public Transform playerCamera;
     public GameObject rightArmContainer;
     public Transform eyePosition;
+    [SerializeField] private AnimationParamterInfo walkBool;
 
     [Header("Audio-Einstellungen")]
     [SerializeField] private AudioSource footstepAudioSource;
@@ -107,6 +108,7 @@ public class TeacherMovement : MonoBehaviour
         {
             if (playerIsVisible)
             {
+                walkBool.ValueBool = true;
                 agent.ResetPath();
                 timer += Time.deltaTime;
                 LookAtPlayer();
@@ -126,10 +128,12 @@ public class TeacherMovement : MonoBehaviour
 
         if (isChasing)
         {
+            walkBool.ValueBool = true;
             agent.speed = chaseSpeed;
 
             if (dist <= damageDistance)
             {
+                walkBool.ValueBool = false;
                 agent.isStopped = true;
                 LookAtPlayer();
 
@@ -144,7 +148,7 @@ public class TeacherMovement : MonoBehaviour
 
                 if (playerPlayer != null)
                 {
-                    playerPlayer.Damage(damagePerSecond * Time.deltaTime);
+                    playerPlayer.Damage(damagePerSecond);
                 }
             }
             else
@@ -246,6 +250,7 @@ public class TeacherMovement : MonoBehaviour
     {
         if (targets.Length == 0) return;
 
+        walkBool.ValueBool = true;
         agent.speed = speed;
         Transform target = targets[currentTargetIndex];
         agent.SetDestination(target.position);
