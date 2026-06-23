@@ -67,6 +67,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c57c29cb41326834c9c2ea62db57a3aa, type: 3}
       insertIndex: -1
       addedObject: {fileID: -7258631410891668714}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c57c29cb41326834c9c2ea62db57a3aa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1408142406194876815}
   m_SourcePrefab: {fileID: 100100000, guid: c57c29cb41326834c9c2ea62db57a3aa, type: 3}
 --- !u!1 &1162940226141868279 stripped
 GameObject:
@@ -88,3 +91,20 @@ MonoBehaviour:
   entityId: 
   usePhysics: 1
   itemData: {fileID: 11400000, guid: 6b35c354abfb2664a9808335e8080dc2, type: 2}
+--- !u!114 &-1408142406194876815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162940226141868279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
+  sourceGameObject: {fileID: 3014204856633051911, guid: cdee7f58680fd374a97582431c9819ae, type: 3}
+  informationObjectPrefab: []
+  interactionInfo:
+    hasInfo: 0
+    displayText: 
