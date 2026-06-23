@@ -63,6 +63,9 @@ public class LockDoorEntity : DoorEntity
                 ToggleDoorState();
         }
         else
-            eventExecute.Execute();
+        {
+            if (completedRequirements)
+                eventExecute.Execute();
+        }
     }
 }

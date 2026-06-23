@@ -35,7 +35,7 @@ public class DoorEntity : BaseEntity
     private void Update()
     {
         float currentRotation = GetCurrentRotation();
-        
+
         // Nutzt Unitys eingebaute Kreis-Differenz-Berechnung
         if (Mathf.Abs(Mathf.DeltaAngle(currentRotation, targetRotation)) < clipDoorAngle)
         {
