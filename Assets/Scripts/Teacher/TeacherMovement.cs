@@ -46,10 +46,13 @@ public class TeacherMovement : MonoBehaviour
 
     private Player playerPlayer;
     private NavMeshAgent agent;
+    private Collider teacherCollider;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        teacherCollider = GetComponent<Collider>();
+
         agent.speed = speed;
         agent.angularSpeed = rotationSpeed * 50f;
         agent.acceleration = 20f;
@@ -125,27 +128,63 @@ public class TeacherMovement : MonoBehaviour
         {
             agent.speed = chaseSpeed;
 
+            if (dist <= damageDistance)
+            {
+                agent.isStopped = true;
+                LookAtPlayer();
+
+                if (playerPlayer != null && teacherCollider != null)
+                {
+                    Collider playerCollider = playerPlayer.GetComponent<Collider>();
+                    if (playerCollider != null)
+                    {
+                        Physics.IgnoreCollision(teacherCollider, playerCollider, true);
+                    }
+                }
+
+                if (playerPlayer != null)
+                {
+                    playerPlayer.Damage(damagePerSecond);
+                }
+            }
+            else
+            {
+                agent.isStopped = false;
+
+                if (playerPlayer != null && teacherCollider != null)
+                {
+                    Collider playerCollider = playerPlayer.GetComponent<Collider>();
+                    if (playerCollider != null)
+                    {
+                        Physics.IgnoreCollision(teacherCollider, playerCollider, false);
+                    }
+                }
+            }
+
             if (playerIsVisibleInChase && dist <= loseDistance)
             {
                 loseTimer = 0f;
                 lastKnownPlayerPosition = playerCamera.position;
-                agent.SetDestination(lastKnownPlayerPosition);
+                if (!agent.isStopped) agent.SetDestination(lastKnownPlayerPosition);
             }
             else
             {
                 loseTimer += Time.deltaTime;
-                agent.SetDestination(lastKnownPlayerPosition);
-            }
-
-            if (dist <= damageDistance && playerPlayer != null)
-            {
-                playerPlayer.Damage(damagePerSecond);
+                if (!agent.isStopped) agent.SetDestination(lastKnownPlayerPosition);
             }
 
             if (loseTimer >= loseChaseCooldown || dist > loseDistance * 1.5f)
             {
                 isChasing = false;
                 isReturning = true;
+                agent.isStopped = false;
+
+                if (playerPlayer != null && teacherCollider != null)
+                {
+                    Collider playerCollider = playerPlayer.GetComponent<Collider>();
+                    if (playerCollider != null) Physics.IgnoreCollision(teacherCollider, playerCollider, false);
+                }
+
                 agent.SetDestination(returnPoint);
             }
             return;
