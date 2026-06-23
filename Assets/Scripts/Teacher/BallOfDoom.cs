@@ -73,7 +73,7 @@ public class BallOfDoom : MonoBehaviour
 
     public void BackToMuller()
     {
-        transform.position = muller.MullerTransform.position;
+        transform.position = muller.ballOfDoomSpawn.position;
         gameObject.GetComponent<Renderer>().enabled = false;
         gameObject.GetComponent<Collider>().enabled = false;
     }

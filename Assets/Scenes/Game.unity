@@ -5,7 +5,7 @@ OcclusionCullingSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_OcclusionBakeSettings:
-    smallestOccluder: 1
+    smallestOccluder: 0.25
     smallestHole: 0.25
     backfaceThreshold: 100
   m_SceneGUID: fc7290cc931e79543b121905748d0f32
@@ -505,12 +505,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 440100491876115528, guid: f853bbeab42d28b46a86b4eee7696d70, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 508783073627056440, guid: f853bbeab42d28b46a86b4eee7696d70, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 4558536933535554284, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 667207883713526226, guid: f853bbeab42d28b46a86b4eee7696d70, type: 3}
@@ -643,10 +639,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490057500481389676, guid: f853bbeab42d28b46a86b4eee7696d70, type: 3}
       propertyPath: m_Name
-      value: Schule
+      value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2656216510088914537, guid: f853bbeab42d28b46a86b4eee7696d70, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 9039394068981085245, guid: 0c18d8ada5692214287b4d1584edc94e, type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2809150705832315270, guid: f853bbeab42d28b46a86b4eee7696d70, type: 3}
@@ -1782,7 +1778,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 1902664976}
   - {fileID: 996632046}
-  - {fileID: 395493771102040034}
+  - {fileID: 496758707}
   - {fileID: 1919167745}
   - {fileID: 8392196122066202655}
   - {fileID: 6765675245155616236}
+  - {fileID: 4706355505860525399}
+  - {fileID: 7773369784780543038}

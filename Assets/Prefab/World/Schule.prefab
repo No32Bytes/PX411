@@ -298,7 +298,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &8840445418701814804
@@ -412,7 +411,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &4309349950398202995
@@ -450,7 +448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 245057423397708825, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 280583672727376067, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -530,7 +528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822436098090475328, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 823227431933308458, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_Convex
@@ -550,7 +548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1030321519125616859, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1089370821919512756, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_IsActive
@@ -578,7 +576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1485400207675110875, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1490205690255362127, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_IsActive
@@ -730,7 +728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2659132070605611758, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2662706847905960310, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_Convex
@@ -1206,7 +1204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5798900530099447623, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5805009213361914395, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1482,7 +1480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7725673711658760526, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7737260258056222928, guid: d0c8ba6ef8117c44fb86d38d246eaee1, type: 3}
       propertyPath: m_Convex
@@ -1869,7 +1867,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 260
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &4399746674675082038
@@ -1911,7 +1908,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 80
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &866957309062109781
@@ -1953,7 +1949,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 280
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &7550091049639190023
@@ -1995,7 +1990,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 80
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &8282984063235089997
@@ -2037,7 +2031,6 @@ MonoBehaviour:
   targetRotationClose: 270
   targetRotationOpen: 20
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &1220555168932449782
@@ -2079,7 +2072,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 280
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &8551387138500016218
@@ -2121,7 +2113,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 280
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &8087288386919488003
@@ -2163,7 +2154,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 80
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &14269344559704085
@@ -2205,7 +2195,6 @@ MonoBehaviour:
   targetRotationClose: 270
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &7154648097937933721
@@ -2247,7 +2236,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 280
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &7959440201300170509
@@ -2289,7 +2277,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 190
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &6833590614388540286
@@ -2331,7 +2318,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 80
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &7032981294884263085
@@ -2373,7 +2359,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 80
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &5413354468358585946
@@ -2415,7 +2400,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 100
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &78225162140848445
@@ -2457,7 +2441,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 280
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &5841459871878304128
@@ -2499,7 +2482,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 80
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &8400063830686099323
@@ -2541,7 +2523,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 280
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &5258082464646600494
@@ -2583,7 +2564,6 @@ MonoBehaviour:
   targetRotationClose: 270
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &7534510272738521886
@@ -2630,7 +2610,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 80
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &5957206966383367115
@@ -2672,7 +2651,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 260
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &5125444218324537851
@@ -2714,7 +2692,6 @@ MonoBehaviour:
   targetRotationClose: 270
   targetRotationOpen: 350
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &6607417090326526772
@@ -2756,7 +2733,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 80
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &3834896926463334298
@@ -2798,7 +2774,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 260
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &6611670684106356297
@@ -2840,7 +2815,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 10
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &6382108361538607374
@@ -2882,7 +2856,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 280
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &1102770139350035479
@@ -2924,7 +2897,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 80
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &8508390672575301565
@@ -3038,7 +3010,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &3444639871598654617
@@ -3148,7 +3119,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &6435355522548322008
@@ -3339,7 +3309,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &1742241371299243633
@@ -3449,7 +3418,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &6078563883997741176
@@ -3563,7 +3531,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &7065086884199847915
@@ -3678,7 +3645,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &4870093788146180040
@@ -3792,7 +3758,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &4248403948459713452
@@ -3906,7 +3871,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &565733874290120392
@@ -4016,7 +3980,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &3536390486063648356
@@ -4130,7 +4093,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &1149049407063419203
@@ -4240,7 +4202,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &4673797150376788921
@@ -4350,7 +4311,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &4119135930423772114
@@ -4464,7 +4424,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &3624171599849810016
@@ -4569,7 +4528,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &5950616836688476848
@@ -4653,56 +4611,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3476975766307328986}
-    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2212126113378377860}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
---- !u!1 &183492407741546775 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-  m_PrefabInstance: {fileID: 2008202339726752988}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3476975766307328986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183492407741546775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96de2489862150347812e6f985946e76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorEntity
-  entityId: 
-  usePhysics: 1
-  targetRotationClose: 0
-  targetRotationOpen: 90
-  rotationSpeed: 220
-  antiClockWise: 0
-  isOpen: 0
-  doorMovementSound: {fileID: 0}
---- !u!114 &2212126113378377860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183492407741546775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
-  sourceGameObject: {fileID: 0}
-  informationObjectPrefab: []
-  interactionInfo:
-    hasInfo: 1
-    displayText: 
 --- !u!4 &702620863905323949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -4793,7 +4703,6 @@ MonoBehaviour:
   targetRotationClose: 270
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &5943074605734930364
@@ -4922,6 +4831,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 6.149
       objectReference: {fileID: 0}
+    - target: {fileID: 4642768726718735722, guid: aa27f6143eaea7447812abaa784e1ec1, type: 3}
+      propertyPath: powerID
+      value: generatorPowerBossMullerDoor
+      objectReference: {fileID: 0}
     - target: {fileID: 4894832844864101034, guid: aa27f6143eaea7447812abaa784e1ec1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.06
@@ -4961,6 +4874,10 @@ PrefabInstance:
     - target: {fileID: 8045727518923426641, guid: aa27f6143eaea7447812abaa784e1ec1, type: 3}
       propertyPath: m_Name
       value: Einrichtung
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351825932753291609, guid: aa27f6143eaea7447812abaa784e1ec1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8352021994393025269, guid: aa27f6143eaea7447812abaa784e1ec1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15233,7 +15150,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &1483406882852718951
@@ -15348,7 +15264,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &6227654747501301292
@@ -15458,7 +15373,6 @@ MonoBehaviour:
   targetRotationClose: 270
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &7433143875854621284
@@ -15568,7 +15482,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &595457618679049178
@@ -15682,7 +15595,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &6670530430024559608
@@ -15792,7 +15704,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &2473301380894635577
@@ -15906,7 +15817,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &6540253173823367654
@@ -16020,7 +15930,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &6026455037173634731
@@ -16125,7 +16034,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &8292797102772984100
@@ -16239,7 +16147,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &3643938443601479867
@@ -16349,7 +16256,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &3973025183559219956
@@ -16459,7 +16365,6 @@ MonoBehaviour:
   targetRotationClose: 270
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &2830769347549803160
@@ -16573,7 +16478,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &4025797095109693337
@@ -16687,7 +16591,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &3403019448244423967
@@ -16801,7 +16704,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &7981494036344908773
@@ -16920,7 +16822,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &152453163128042263
@@ -17034,7 +16935,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &8904377131131737322
@@ -17148,7 +17048,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &910154650928217262
@@ -17258,7 +17157,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &1433956150036132568
@@ -17372,7 +17270,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &6727486381402359101
@@ -17486,7 +17383,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &8802757531416152056
@@ -17595,7 +17491,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &4377709603333409602
@@ -17705,7 +17600,6 @@ MonoBehaviour:
   targetRotationClose: 270
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &8378105069958974286
@@ -17820,7 +17714,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &2538784932772913252
@@ -17930,7 +17823,6 @@ MonoBehaviour:
   targetRotationClose: 270
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &5787669365523708520
@@ -18044,7 +17936,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &7161361578139847918
@@ -18154,7 +18045,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &5362428984658229648
@@ -18268,7 +18158,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &3811397711341385938
@@ -18382,7 +18271,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &5406221021885440919
@@ -18496,7 +18384,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &451508282035939129
@@ -18601,7 +18488,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &8515045547667358787
@@ -18715,7 +18601,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &4714270857016200212
@@ -18829,7 +18714,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &8918678107770740061
@@ -18939,7 +18823,6 @@ MonoBehaviour:
   targetRotationClose: 270
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &4471143326130428393
@@ -19049,7 +18932,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &151945947813758305
@@ -19163,7 +19045,6 @@ MonoBehaviour:
   targetRotationClose: 180
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &2380885584159206116
@@ -19278,7 +19159,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &9217094843456388943
@@ -19392,7 +19272,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &7403643087129776300
@@ -19502,7 +19381,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &876641094590551548
@@ -19616,7 +19494,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &3503756182153343450
@@ -19726,7 +19603,6 @@ MonoBehaviour:
   targetRotationClose: 270
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &9115720840065095653
@@ -19836,7 +19712,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &145316110293398095
@@ -19950,7 +19825,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &6417799901101814470
@@ -20064,7 +19938,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &8694333933113992842
@@ -20174,7 +20047,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &7565318398913027182
@@ -20283,7 +20155,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &3177806380352334117
@@ -20397,7 +20268,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &2186891040906730784
@@ -20511,7 +20381,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &369672992353808416
@@ -20591,56 +20460,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3893552415685231955}
-    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2238377983050751756}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
---- !u!1 &5012814330974378465 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-  m_PrefabInstance: {fileID: 6684586696251073578}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3893552415685231955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5012814330974378465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96de2489862150347812e6f985946e76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorEntity
-  entityId: 
-  usePhysics: 1
-  targetRotationClose: 90
-  targetRotationOpen: 0
-  rotationSpeed: 220
-  antiClockWise: 1
-  isOpen: 0
-  doorMovementSound: {fileID: 0}
---- !u!114 &2238377983050751756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5012814330974378465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
-  sourceGameObject: {fileID: 0}
-  informationObjectPrefab: []
-  interactionInfo:
-    hasInfo: 1
-    displayText: 
 --- !u!4 &5682074605364659035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
@@ -20736,7 +20557,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &140252469096369850
@@ -20908,7 +20728,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &6102574046274244777
@@ -21022,7 +20841,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 90
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &3428555725686578456
@@ -21101,61 +20919,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5803014624418867864}
-    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7512068211320184260}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &8490730887501354328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
   m_PrefabInstance: {fileID: 7479219288707641897}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &9123996446042148834 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-  m_PrefabInstance: {fileID: 7479219288707641897}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5803014624418867864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9123996446042148834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96de2489862150347812e6f985946e76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorEntity
-  entityId: 
-  usePhysics: 1
-  targetRotationClose: 0
-  targetRotationOpen: 90
-  rotationSpeed: 220
-  antiClockWise: 0
-  isOpen: 0
-  doorMovementSound: {fileID: 0}
---- !u!114 &7512068211320184260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9123996446042148834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
-  sourceGameObject: {fileID: 0}
-  informationObjectPrefab: []
-  interactionInfo:
-    hasInfo: 1
-    displayText: 
 --- !u!1001 &7515473652052670542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21245,7 +21015,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &3659915490735279288
@@ -21355,7 +21124,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &8756768451247045030
@@ -21465,7 +21233,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &71971520855886663
@@ -21575,7 +21342,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &6740338065194945690
@@ -21780,7 +21546,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &8865522567177526379
@@ -21890,7 +21655,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &6132446859616338146
@@ -21969,61 +21733,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3486020013421600453}
-    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4301202813695970276}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &7178817151850736485 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
   m_PrefabInstance: {fileID: 8196248657747823636}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7560304103872213471 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-  m_PrefabInstance: {fileID: 8196248657747823636}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3486020013421600453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7560304103872213471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96de2489862150347812e6f985946e76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorEntity
-  entityId: 
-  usePhysics: 1
-  targetRotationClose: 0
-  targetRotationOpen: 90
-  rotationSpeed: 220
-  antiClockWise: 0
-  isOpen: 0
-  doorMovementSound: {fileID: 0}
---- !u!114 &4301202813695970276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7560304103872213471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
-  sourceGameObject: {fileID: 0}
-  informationObjectPrefab: []
-  interactionInfo:
-    hasInfo: 1
-    displayText: 
 --- !u!1001 &8216222564865905999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22083,61 +21799,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8504486158645210060}
-    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5159549699952495708}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &6925206318361752126 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
   m_PrefabInstance: {fileID: 8216222564865905999}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7732846414930012292 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-  m_PrefabInstance: {fileID: 8216222564865905999}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8504486158645210060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7732846414930012292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96de2489862150347812e6f985946e76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorEntity
-  entityId: 
-  usePhysics: 1
-  targetRotationClose: 0
-  targetRotationOpen: 270
-  rotationSpeed: 220
-  antiClockWise: 1
-  isOpen: 0
-  doorMovementSound: {fileID: 0}
---- !u!114 &5159549699952495708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7732846414930012292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
-  sourceGameObject: {fileID: 0}
-  informationObjectPrefab: []
-  interactionInfo:
-    hasInfo: 1
-    displayText: 
 --- !u!1001 &8271778582656600454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22228,7 +21896,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 0
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &2707237393580498546
@@ -22303,61 +21970,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4412275896980291417}
-    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3805012370126306945}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &6972888718875241333 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
   m_PrefabInstance: {fileID: 8275938020628925444}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7750551970927309263 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-  m_PrefabInstance: {fileID: 8275938020628925444}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4412275896980291417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7750551970927309263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96de2489862150347812e6f985946e76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorEntity
-  entityId: 
-  usePhysics: 1
-  targetRotationClose: 90
-  targetRotationOpen: 0
-  rotationSpeed: 220
-  antiClockWise: 1
-  isOpen: 0
-  doorMovementSound: {fileID: 0}
---- !u!114 &3805012370126306945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7750551970927309263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
-  sourceGameObject: {fileID: 0}
-  informationObjectPrefab: []
-  interactionInfo:
-    hasInfo: 1
-    displayText: 
 --- !u!1001 &8390845539837587882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22448,7 +22067,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &3374646280484193483
@@ -22527,61 +22145,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7772981924481515021}
-    - targetCorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6503901761914673200}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
 --- !u!4 &7402348264648093113 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305661883124000625, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
   m_PrefabInstance: {fileID: 8405062808479959752}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7922320114951943939 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1825493026071379403, guid: f0bdf3afe814506469d925df2548bf89, type: 3}
-  m_PrefabInstance: {fileID: 8405062808479959752}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7772981924481515021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7922320114951943939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96de2489862150347812e6f985946e76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorEntity
-  entityId: 
-  usePhysics: 1
-  targetRotationClose: 0
-  targetRotationOpen: 270
-  rotationSpeed: 220
-  antiClockWise: 1
-  isOpen: 0
-  doorMovementSound: {fileID: 0}
---- !u!114 &6503901761914673200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7922320114951943939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f50629dabfe90c4ba922b11e3282bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EntityInformationView
-  sourceGameObject: {fileID: 0}
-  informationObjectPrefab: []
-  interactionInfo:
-    hasInfo: 1
-    displayText: 
 --- !u!1001 &8701531593120803371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22667,7 +22237,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &2552548405748191704
@@ -22781,7 +22350,6 @@ MonoBehaviour:
   targetRotationClose: 0
   targetRotationOpen: 270
   rotationSpeed: 220
-  antiClockWise: 1
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &1427597316722887406
@@ -22891,7 +22459,6 @@ MonoBehaviour:
   targetRotationClose: 90
   targetRotationOpen: 180
   rotationSpeed: 220
-  antiClockWise: 0
   isOpen: 0
   doorMovementSound: {fileID: 0}
 --- !u!114 &2502347776883064838
