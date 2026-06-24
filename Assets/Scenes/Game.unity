@@ -370,6 +370,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f853bbeab42d28b46a86b4eee7696d70, type: 3}
+--- !u!1 &721997211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8888000723739436926, guid: f853bbeab42d28b46a86b4eee7696d70, type: 3}
+  m_PrefabInstance: {fileID: 496758707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1310179244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6692616953639941487, guid: 18061e65c7ef3764a9de1592740fcc07, type: 3}
@@ -1000,7 +1005,7 @@ PrefabInstance:
     - target: {fileID: 3674014997043193404, guid: 9e442084af5a1184cb80cd7f080c4b82, type: 3}
       propertyPath: targetToDeactivate
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 721997211}
     - target: {fileID: 6121699178988855343, guid: 9e442084af5a1184cb80cd7f080c4b82, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.788
