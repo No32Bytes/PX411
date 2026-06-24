@@ -31,8 +31,9 @@
  * ════════════════════════════════════════════════════════════════════════════════
  */
 
-Shader "DoubleSided/Lite/Metallic"
-{
+ 
+ Shader "DoubleSided/Lite/Metallic"
+ {
     Properties
     {
         // ─── Surface Type ───────────────────────────────────────────────────────────
@@ -104,7 +105,7 @@ Shader "DoubleSided/Lite/Metallic"
             Cull [_CullMode]
 
             HLSLPROGRAM
-            #pragma target 2.0
+            #pragma target 4.5
 
             // ── Feature Keywords ────────────────────────────────────────────────────
             #pragma shader_feature_local _SURFACE_TYPE_OPAQUE _SURFACE_TYPE_CUTOUT _SURFACE_TYPE_TRANSPARENT
@@ -351,7 +352,7 @@ Shader "DoubleSided/Lite/Metallic"
             Cull [_CullMode]
 
             HLSLPROGRAM
-            #pragma target 2.0
+            #pragma target 4.5
             #pragma shader_feature_local_fragment _ALPHATEST_ON
             #pragma shader_feature_local_fragment _SURFACE_TYPE_TRANSPARENT
             #pragma multi_compile_instancing
@@ -482,7 +483,7 @@ Shader "DoubleSided/Lite/Metallic"
             Cull [_CullMode]
 
             HLSLPROGRAM
-            #pragma target 2.0
+            #pragma target 4.5
             #pragma shader_feature_local_fragment _ALPHATEST_ON
             #pragma multi_compile_instancing
             #pragma multi_compile _ DOTS_INSTANCING_ON
@@ -540,7 +541,7 @@ Shader "DoubleSided/Lite/Metallic"
             Cull [_CullMode]
 
             HLSLPROGRAM
-            #pragma target 2.0
+            #pragma target 4.5
             #pragma shader_feature_local_fragment _ALPHATEST_ON
             #pragma shader_feature_local_fragment _NORMALMAP
             #pragma multi_compile_instancing

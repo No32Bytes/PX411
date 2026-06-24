@@ -18,5 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/BossFight/BossFightMuller.unity
     guid: 348b04b52d7ac194ca3c82956c59bdd1
   m_configObjects:
+    com.unity.adaptivePerformance.basic.provider_settings: {fileID: 11400000, guid: 49e8cba61cce24d44a4711a07405963c, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: cd3c4159f63496842b7b589ace0b608b, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 4e61caccb070fab40a3698698fa311d1, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

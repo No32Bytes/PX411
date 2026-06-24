@@ -3,7 +3,7 @@ using UnityEngine;
 public class HandyScreen : MonoBehaviour
 {
     [SerializeField] private GameObject cheatMenuButton;
-    private bool cheatMenuEnabled = false;
+    private bool cheatMenuEnabled = true;
     private float timer;
     public void OnReturnButtonOnClick()
     {
