@@ -1,5 +1,6 @@
 using Entity;
 using InputUtil;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] private BaseSoundEffect damageSound;
     [SerializeField] private BaseSoundEffect deathSound;
     [SerializeField] private SoundTrack soundTrackBackgroundGroup;
+    [SerializeField] private TMP_Text OpenInventory;
     private InputHandlerCooldown toggleHandyUIAction;
     public InputHandlerCooldown pauseAction;
     private AudioListener audioListener;
@@ -81,6 +83,16 @@ public class Player : MonoBehaviour
             }
     }
 
+    private void FixedUpdate()
+    {
+        string newText = toggleHandyUIAction.inputAction.GetBindingDisplayString();
+        if (string.IsNullOrEmpty(newText))
+            return;
+        if (newText == OpenInventory.text)
+            return;
+
+        OpenInventory.text = "Open Handy with " + newText;
+    }
     private void LoadPauseMenu()
     {
         DisableGamePlay();
